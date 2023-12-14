@@ -74,9 +74,7 @@ function Searchbar({
   }, [displaySearchPopup.value]);
 
   return (
-    <div
-      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden"
-      style={{ gridTemplateRows: "min-content auto" }}
+    <div class="w-full grid gap-8 overflow-y-hidden" // style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join">
         <Button
@@ -114,7 +112,7 @@ function Searchbar({
         />
         <Button
           type="button"
-          class="join-item btn-ghost btn-square hidden sm:inline-flex"
+          class="md:hidden join-item btn-ghost btn-square hidden sm:inline-flex"
           onClick={() => displaySearchPopup.value = false}
         >
           <Icon id="XMark" size={24} strokeWidth={2} />

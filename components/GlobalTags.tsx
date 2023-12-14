@@ -7,8 +7,8 @@ function GlobalTags() {
       <meta name="view-transition" content="same-origin" />
 
       {/* Tailwind v3 CSS file */}
-      <link href={asset("/styles.css")} rel="stylesheet" />
-
+      <link href={asset("/tailwind.css")} rel="stylesheet" />
+      <link href={asset("/style.css")} rel="stylesheet" />
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
     </Head>

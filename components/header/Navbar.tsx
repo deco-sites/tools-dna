@@ -16,6 +16,7 @@ import { navbarHeight } from "./constants.ts";
 
 function Navbar({ items, searchbar, logo }: {
   items: SiteNavigationElement[];
+  // extras: SiteNavigationElement[];
   searchbar?: SearchbarProps;
   logo?: { src: string; alt: string };
 }) {
@@ -49,33 +50,47 @@ function Navbar({ items, searchbar, logo }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6">
-        <div class="flex-none w-44">
+      <div
+        style="gap: 5rem"
+        class="container hidden md:flex flex-row justify-between items-center border-b border-base-200 w-full container"
+      >
+        <div class="flex-none">
           {logo && (
             <a
               href="/"
               aria-label="Store logo"
-              class="block px-4 py-3 w-[160px]"
+              class="block px-4 py-3 w-[204px]"
             >
-              <Image src={logo.src} alt={logo.alt} width={126} height={16} />
+              <Image src={logo.src} alt={logo.alt} width={204} height={45} />
             </a>
           )}
         </div>
-        <div class="flex-auto flex justify-center">
-          {items.map((item) => <NavItem item={item} />)}
-        </div>
-        <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <SearchButton />
+        <div class="flex-auto searchbar-content">
           <Searchbar searchbar={searchbar} />
+        </div>
+        <div class="flex-none flex items-center justify-end gap-2">
+          {/* <SearchButton /> */}
           <a
-            class="btn btn-circle btn-sm btn-ghost"
+            class="w-auto flex btn btn-circle btn-sm btn-ghost"
             href="/login"
             aria-label="Log in"
+            style="border: 1px solid #4BAEE9; height: auto;border-radius: 30px;
+             padding-right: 15px"
           >
-            <Icon id="User" size={24} strokeWidth={0.4} />
+            <Icon
+              style="padding: 10px;border-radius: 100px;background: #4BAEE9; width: 48px; height:48px; color: #ffffff;"
+              id="User"
+              size={24}
+              strokeWidth={0.4}
+            />
+            <p>
+              Olá! Faça seu <strong>Login</strong>
+              <br></br>
+              ou <strong>Cadastre-se</strong>
+            </p>
           </a>
           <a
-            class="btn btn-circle btn-sm btn-ghost"
+            class="btn btn-circle btn-sm btn-ghost wishlist-button"
             href="/wishlist"
             aria-label="Wishlist"
           >
@@ -87,11 +102,20 @@ function Navbar({ items, searchbar, logo }: {
             />
           </a>
           {platform === "vtex" && <CartButtonVTEX />}
+          {platform === "wake" && (
+            <div class="wake-button">
+              <CartButtonWake />
+            </div>
+          )}
           {platform === "vnda" && <CartButtonVDNA />}
-          {platform === "wake" && <CartButtonWake />}
           {platform === "linx" && <CartButtonLinx />}
           {platform === "shopify" && <CartButtonShopify />}
           {platform === "nuvemshop" && <CartButtonNuvemshop />}
+        </div>
+      </div>
+      <div class="relative hidden md:flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 py-4">
+        <div class="flex-auto flex justify-center">
+          {items.map((item) => <NavItem item={item} />)}
         </div>
       </div>
     </>
