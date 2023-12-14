@@ -105,6 +105,7 @@ function ProductCardCustom(
       {l?.basics?.ctaText || "Ver produto"}
     </a>
   );
+  const brandContent = brand?.name;
 
   return (
     <div
@@ -240,6 +241,10 @@ function ProductCardCustom(
           <div
             // class="flex flex-col gap-0"
           >
+            {/* BRAND IMAGE */}
+            <a style="display: block;min-height: 32px" href={`/fabricante/${brandContent?.replace(" ", "-")}`}>
+              <img style={{ maxWidth: "100px" }} src={`https://worldtools.fbitsstatic.net/img/fb/${brandContent?.replace(" ", "-")}.png`} />
+            </a>
             {l?.hide?.productName ? "" : (
               <h2
                 class="card-name truncate text-base lg:text-lg text-base-content"

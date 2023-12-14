@@ -11,11 +11,13 @@ export interface Props {
 function ExtraItems({ links }: Props) {
   return (
     <>
-      {/* {links.map(({ href, title }) => (
+      {
+        /* {links.map(({ href, title }) => (
         <a href={href} aria-label={title}>
           <p>{title}</p>
         </a>
-      ))} */}
+      ))} */
+      }
     </>
   );
 }

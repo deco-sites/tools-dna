@@ -29,6 +29,7 @@ export const Preview = (props: Props) => {
               "@type": "Brand",
               "@id": "2000000",
               "name": "deco.cx",
+              "logo": "",
             },
             "inProductGroupWithID": "33",
             "sku": "165",
