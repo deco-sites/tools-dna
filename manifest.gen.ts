@@ -28,19 +28,20 @@ import * as $$$$$$20 from "./sections/Links/Shortcuts.tsx";
 import * as $$$$$$21 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$22 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$23 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$24 from "./sections/Product/CustomShelfGrid.tsx";
-import * as $$$$$$25 from "./sections/Product/ImageGalleryFrontBack.tsx";
-import * as $$$$$$26 from "./sections/Product/ImageGallerySlider.tsx";
-import * as $$$$$$27 from "./sections/Product/NotFound.tsx";
-import * as $$$$$$28 from "./sections/Product/NotFoundChallenge.tsx";
-import * as $$$$$$29 from "./sections/Product/ProductInfo.tsx";
-import * as $$$$$$30 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$31 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$32 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$33 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$34 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$35 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$36 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$24 from "./sections/Product/CustomOddGrid.tsx";
+import * as $$$$$$25 from "./sections/Product/CustomShelfGrid.tsx";
+import * as $$$$$$26 from "./sections/Product/ImageGalleryFrontBack.tsx";
+import * as $$$$$$27 from "./sections/Product/ImageGallerySlider.tsx";
+import * as $$$$$$28 from "./sections/Product/NotFound.tsx";
+import * as $$$$$$29 from "./sections/Product/NotFoundChallenge.tsx";
+import * as $$$$$$30 from "./sections/Product/ProductInfo.tsx";
+import * as $$$$$$31 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$32 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$33 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$34 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$35 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$36 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$37 from "./sections/Theme/Theme.tsx";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
@@ -74,19 +75,20 @@ const manifest = {
     "deco-sites/tools-dna/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$21,
     "deco-sites/tools-dna/sections/Miscellaneous/CookieConsent.tsx": $$$$$$22,
     "deco-sites/tools-dna/sections/Newsletter/Newsletter.tsx": $$$$$$23,
-    "deco-sites/tools-dna/sections/Product/CustomShelfGrid.tsx": $$$$$$24,
-    "deco-sites/tools-dna/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$25,
-    "deco-sites/tools-dna/sections/Product/ImageGallerySlider.tsx": $$$$$$26,
-    "deco-sites/tools-dna/sections/Product/NotFound.tsx": $$$$$$27,
-    "deco-sites/tools-dna/sections/Product/NotFoundChallenge.tsx": $$$$$$28,
-    "deco-sites/tools-dna/sections/Product/ProductInfo.tsx": $$$$$$29,
-    "deco-sites/tools-dna/sections/Product/ProductShelf.tsx": $$$$$$30,
-    "deco-sites/tools-dna/sections/Product/ProductShelfTabbed.tsx": $$$$$$31,
-    "deco-sites/tools-dna/sections/Product/SearchResult.tsx": $$$$$$32,
-    "deco-sites/tools-dna/sections/Product/Wishlist.tsx": $$$$$$33,
-    "deco-sites/tools-dna/sections/Social/InstagramPosts.tsx": $$$$$$34,
-    "deco-sites/tools-dna/sections/Social/WhatsApp.tsx": $$$$$$35,
-    "deco-sites/tools-dna/sections/Theme/Theme.tsx": $$$$$$36,
+    "deco-sites/tools-dna/sections/Product/CustomOddGrid.tsx": $$$$$$24,
+    "deco-sites/tools-dna/sections/Product/CustomShelfGrid.tsx": $$$$$$25,
+    "deco-sites/tools-dna/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$26,
+    "deco-sites/tools-dna/sections/Product/ImageGallerySlider.tsx": $$$$$$27,
+    "deco-sites/tools-dna/sections/Product/NotFound.tsx": $$$$$$28,
+    "deco-sites/tools-dna/sections/Product/NotFoundChallenge.tsx": $$$$$$29,
+    "deco-sites/tools-dna/sections/Product/ProductInfo.tsx": $$$$$$30,
+    "deco-sites/tools-dna/sections/Product/ProductShelf.tsx": $$$$$$31,
+    "deco-sites/tools-dna/sections/Product/ProductShelfTabbed.tsx": $$$$$$32,
+    "deco-sites/tools-dna/sections/Product/SearchResult.tsx": $$$$$$33,
+    "deco-sites/tools-dna/sections/Product/Wishlist.tsx": $$$$$$34,
+    "deco-sites/tools-dna/sections/Social/InstagramPosts.tsx": $$$$$$35,
+    "deco-sites/tools-dna/sections/Social/WhatsApp.tsx": $$$$$$36,
+    "deco-sites/tools-dna/sections/Theme/Theme.tsx": $$$$$$37,
   },
   "apps": {
     "deco-sites/tools-dna/apps/decohub.ts": $$$$$$$$$$$0,

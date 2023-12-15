@@ -70,12 +70,14 @@ export default function Newsletter(props: Props) {
           {form.buttonText}
         </button>
       </div>
-      {/* {form.helpText && (
+      {
+        /* {form.helpText && (
         <div
           class="text-sm"
           dangerouslySetInnerHTML={{ __html: form.helpText }}
         />
-      )} */}
+      )} */
+      }
     </form>
   );
 

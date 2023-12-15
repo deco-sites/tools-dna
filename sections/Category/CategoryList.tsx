@@ -87,10 +87,13 @@ function CategoryList(props: Props) {
         description={header.description || ""}
         alignment={layout.headerAlignment || "center"}
       />
-      <div class="grid-category-list" >
-        {list.map(({ tag, label, description, href, image, buttonText },index, ) => (
+      <div class="grid-category-list">
+        {list.map((
+          { tag, label, description, href, image, buttonText },
+          index,
+        ) => (
           <>
-            <a href={href} class="card-content flex flex-col gap-4 lg:h-auto" >
+            <a href={href} class="card-content flex flex-col gap-4 lg:h-auto">
               {layout.categoryCard?.textPosition === "top" &&
                 (
                   <CardText

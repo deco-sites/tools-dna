@@ -137,13 +137,61 @@
     color: #164195;
 }
 
+.shelf-custom-items.odd {
+    margin: 3rem 0px;
+}
+.shelf-custom-items.odd .card-compact {
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: row-reverse;
+    border-color: var(--blue-dark-1);
+}
+.shelf-custom-items.odd .card-compact > figure {
+    width: calc(100% - 190px);
+}
+.shelf-custom-items.odd .card-compact > div {
+    width: 100%;
+}
+.shelf-custom-items.odd .card-compact > div .card-name {
+    margin-bottom: 50px;
+}
+
+.shelf-custom-items.odd .card-compact:nth-child(1),
+.shelf-custom-items.odd .card-compact:nth-child(2),
+.shelf-custom-items.odd .card-compact:nth-child(3) {
+    background-color: var(--blue-dark-1);
+}
+
+.shelf-custom-items.odd .card-compact:nth-child(1) > div .card-name,
+.shelf-custom-items.odd .card-compact:nth-child(2) > div .card-name,
+.shelf-custom-items.odd .card-compact:nth-child(3) > div .card-name,
+.shelf-custom-items.odd .card-compact:nth-child(1) > div .card-oldPrice,
+.shelf-custom-items.odd .card-compact:nth-child(2) > div .card-oldPrice,
+.shelf-custom-items.odd .card-compact:nth-child(3) > div .card-oldPrice,
+.shelf-custom-items.odd .card-compact:nth-child(1) > div .card-price,
+.shelf-custom-items.odd .card-compact:nth-child(2) > div .card-price,
+.shelf-custom-items.odd .card-compact:nth-child(3) > div .card-price,
+.shelf-custom-items.odd .card-compact:nth-child(1) > div .card-installments,
+.shelf-custom-items.odd .card-compact:nth-child(2) > div .card-installments,
+.shelf-custom-items.odd .card-compact:nth-child(3) > div .card-installments {
+    color: #ffffff;
+}
+.shelf-custom-items.odd .card-compact:nth-child(1) > div .card-price,
+.shelf-custom-items.odd .card-compact:nth-child(2) > div .card-price,
+.shelf-custom-items.odd .card-compact:nth-child(3) > div .card-price {
+    font-weight: 800;
+}
+
+/* [data-manifest-key="deco-sites/tools-dna/sections/Product/CustomOddGrid.tsx"] .container {
+    max-width: 1440px;
+} */
 
 
 .showcase-header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 56px;
-    margin-top: 32px;
+    /* margin-top: 32px; */
 }
 .showcase-header h2 {
     display: flex;
@@ -233,4 +281,18 @@
 }
 .grid-category-list a.card-content div.text-center h3 {
     color: var(--blue-dark-2);
+}
+
+[data-manifest-key="deco-sites/tools-dna/sections/Product/CustomOddGrid.tsx"] .showcase-header {
+    margin-top: 32px;
+}
+[data-manifest-key="deco-sites/tools-dna/sections/Content/Logos.tsx"] .showcase-header {
+    margin-bottom: 0;
+}
+
+.icon-content .text-primary {
+    color: var(--blue-dark-1);
+}
+.text-content .text-item {
+    font-size: 14px;
 }

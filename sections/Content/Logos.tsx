@@ -52,17 +52,25 @@ function Logos(props: Props) {
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <div class="w-full text-center items-center">
+      <div class="w-full text-center items-center justify-between flex">
         {list.map((element) => (
           <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
             <div class="flex w-full h-full items-center justify-center">
-              <Image
-                width={300}
-                height={300}
+              <a href={element.altText} >
+              <img 
+                loading="lazy"
+                class="max-w-full max-h-full" 
+                src={element.image}
+                alt={element.altText || ""} 
+                />
+              {/* <Image
+                width={220}
+                height={40}
                 src={element.image}
                 alt={element.altText || ""}
                 class="max-w-full max-h-full"
-              />
+                /> */}
+              </a>
             </div>
           </div>
         ))}

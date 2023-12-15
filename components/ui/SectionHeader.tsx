@@ -39,7 +39,7 @@ function Header(props: Props) {
                       height={72}
                     />
                   )}
-                  
+
                   {props.title}
                 </h2>
               )}
@@ -53,7 +53,7 @@ function Header(props: Props) {
                   }
                   ${props.fontSize === "Normal" ? "lg:text-sm" : "lg:text-sm"}
                 `}
-                dangerouslySetInnerHTML={{__html: props.description}}
+                  dangerouslySetInnerHTML={{ __html: props.description }}
                 >
                   {/* {props.description} */}
                 </h3>

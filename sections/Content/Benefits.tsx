@@ -7,7 +7,7 @@ export interface Props {
   benefits?: Array<{
     label: string;
     icon: AvailableIcons;
-    description: string;
+    description?: string;
   }>;
   layout?: {
     variation?: "Simple" | "With border" | "Color reverse";
@@ -48,7 +48,7 @@ export default function Benefits(
       <div
         class={`${
           reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
-        } flex gap-4 ${
+        } flex gap-4 items-center ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
         } ${
           showDivider && benefitLayout !== "piledup"
@@ -58,7 +58,7 @@ export default function Benefits(
           showDivider && !reverse ? "lg:pb-0" : ""
         }`}
       >
-        <div class="flex-none">
+        <div class="flex-none icon-content">
           <Icon
             id={benefit.icon}
             class={reverse ? "text-base-100" : "text-primary"}
@@ -68,21 +68,21 @@ export default function Benefits(
             fill="currentColor"
           />
         </div>
-        <div class="flex-auto flex flex-col gap-1 lg:gap-2">
+        <div class="flex-auto flex flex-col gap-1 lg:gap-2 text-content">
           <div
-            class={`text-base lg:text-xl leading-7 ${
+            class={`text-item leading-7 ${
               reverse ? "text-base-100" : "text-base-content"
             }`}
           >
             {benefit.label}
           </div>
-          <p
+          {/* <p
             class={`text-sm leading-5 ${
               reverse ? "text-base-100" : "text-neutral"
             } ${benefitLayout == "piledup" ? "hidden lg:block" : ""}`}
           >
             {benefit.description}
-          </p>
+          </p> */}
         </div>
       </div>
     );
@@ -92,13 +92,13 @@ export default function Benefits(
     <>
       {!layout?.variation || layout?.variation === "Simple"
         ? (
-          <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
+          <div class="w-full border-b px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
             <Header
               title={title}
               description={description}
               alignment={layout?.headerAlignment || "center"}
             />
-            <div class="w-full flex justify-center">
+            <div class="w-full flex container justify-center">
               <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
                 {listOfBenefits}
               </div>

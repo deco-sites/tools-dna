@@ -33,6 +33,7 @@ export type AvailableIcons =
   | "ShoppingCart"
   | "Star"
   | "Tiktok"
+  | "World"
   | "Trash"
   | "Truck"
   | "Twitter"
