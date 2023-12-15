@@ -31,12 +31,15 @@ function Header(props: Props) {
                   ${props.fontSize === "Normal" ? "lg:text-lg" : "lg:text-xl"}
                   `}
                 >
-                  <img
-                    src={props.image}
-                    alt={props.title}
-                    width={72}
-                    height={72}
-                  />
+                  {props.image && (
+                    <img
+                      src={props.image}
+                      alt={props.title}
+                      width={72}
+                      height={72}
+                    />
+                  )}
+                  
                   {props.title}
                 </h2>
               )}
@@ -50,8 +53,9 @@ function Header(props: Props) {
                   }
                   ${props.fontSize === "Normal" ? "lg:text-sm" : "lg:text-sm"}
                 `}
+                dangerouslySetInnerHTML={{__html: props.description}}
                 >
-                  {props.description}
+                  {/* {props.description} */}
                 </h3>
               )}
           </div>

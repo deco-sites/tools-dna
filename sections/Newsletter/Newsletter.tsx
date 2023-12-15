@@ -56,10 +56,10 @@ export default function Newsletter(props: Props) {
   );
 
   const formLayout = form && (
-    <form action="/" class="flex flex-col gap-4">
-      <div class="flex flex-col lg:flex-row gap-3">
+    <form action="/" class="w-full flex flex-col gap-4">
+      <div class="relative flex flex-col lg:flex-row gap-3">
         <input
-          class="input input-bordered lg:w-80"
+          class="w-full input input-bordered"
           type="text"
           placeholder={form.placeholder}
         />
@@ -70,12 +70,12 @@ export default function Newsletter(props: Props) {
           {form.buttonText}
         </button>
       </div>
-      {form.helpText && (
+      {/* {form.helpText && (
         <div
           class="text-sm"
           dangerouslySetInnerHTML={{ __html: form.helpText }}
         />
-      )}
+      )} */}
     </form>
   );
 
@@ -94,17 +94,17 @@ export default function Newsletter(props: Props) {
       {(!layout?.content?.alignment ||
         layout?.content?.alignment === "Center") && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
-          <div class="flex justify-center">
+          <div class="flex justify-center form-content">
             {formLayout}
           </div>
         </div>
       )}
       {layout?.content?.alignment === "Left" && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
           <div class="flex justify-start">
@@ -114,10 +114,10 @@ export default function Newsletter(props: Props) {
       )}
       {layout?.content?.alignment === "Side to side" && (
         <div
-          class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`newsletter-content container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
-          <div class="flex justify-center">
+          <div class="form-content w-full flex justify-center">
             {formLayout}
           </div>
         </div>

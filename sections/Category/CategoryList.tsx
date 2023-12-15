@@ -80,27 +80,17 @@ function CategoryList(props: Props) {
   return (
     <div
       id={id}
-      class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10"
+      class="category-list container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10"
     >
       <Header
         title={header.title}
         description={header.description || ""}
         alignment={layout.headerAlignment || "center"}
       />
-
-      <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
-        {list.map((
-          { tag, label, description, href, image, buttonText },
-          index,
-        ) => (
-          <Slider.Item
-            index={index}
-            class="flex flex-col gap-4 carousel-item first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
-          >
-            <a
-              href={href}
-              class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
-            >
+      <div class="grid-category-list" >
+        {list.map(({ tag, label, description, href, image, buttonText },index, ) => (
+          <>
+            <a href={href} class="card-content flex flex-col gap-4 lg:h-auto" >
               {layout.categoryCard?.textPosition === "top" &&
                 (
                   <CardText
@@ -117,8 +107,8 @@ function CategoryList(props: Props) {
                       class="card w-full"
                       src={image}
                       alt={description || label || tag}
-                      width={160}
-                      height={195}
+                      width={100}
+                      height={100}
                       loading="lazy"
                     />
                   </figure>
@@ -135,11 +125,9 @@ function CategoryList(props: Props) {
             </a>
             {buttonText &&
               <a href={href} class="btn">{buttonText}</a>}
-          </Slider.Item>
+          </>
         ))}
-      </Slider>
-
-      <SliderJS rootId={id} />
+      </div>
     </div>
   );
 }

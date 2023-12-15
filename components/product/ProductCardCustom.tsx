@@ -242,8 +242,16 @@ function ProductCardCustom(
             // class="flex flex-col gap-0"
           >
             {/* BRAND IMAGE */}
-            <a style="display: block;min-height: 32px" href={`/fabricante/${brandContent?.replace(" ", "-")}`}>
-              <img style={{ maxWidth: "100px" }} src={`https://worldtools.fbitsstatic.net/img/fb/${brandContent?.replace(" ", "-")}.png`} />
+            <a
+              style="display: block;min-height: 32px"
+              href={`/fabricante/${brandContent?.replace(" ", "-")}`}
+            >
+              <img
+                style={{ maxWidth: "100px" }}
+                src={`https://worldtools.fbitsstatic.net/img/fb/${
+                  brandContent?.replace(" ", "-")
+                }.png`}
+              />
             </a>
             {l?.hide?.productName ? "" : (
               <h2

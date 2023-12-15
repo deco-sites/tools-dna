@@ -143,9 +143,94 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 56px;
+    margin-top: 32px;
 }
 .showcase-header h2 {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+.newsletter-content {
+    background-color: #164195;
+    border-radius: 20px;
+    padding: 60px 80px;
+}
+.newsletter-content .showcase-header {
+    margin-bottom: 0;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+}
+.newsletter-content .showcase-header h3,
+.newsletter-content .showcase-header h2 {
+    color: #ffffff;
+}
+.newsletter-content .showcase-header h3 strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.newsletter-content .form-content .text-sm {
+    display: none;
+}
+.newsletter-content .form-content input {
+    border-radius: 50px;
+}
+.newsletter-content .form-content input::placeholder {
+    font-size: 12px; 
+}
+.newsletter-content .form-content button.btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50px;
+    position: absoltu;
+    position: absolute;
+    right: 12px;
+    height: 40px;
+    width: 86px;
+    max-height: 32px;
+    min-height: 32px;
+    top: 8px;
+    font-size: 12px;
+}
+
+
+.category-list {
+    padding-bottom: 10rem;
+}
+.grid-category-list {
+    display: flex;
+    gap: 1rem;
+}
+.grid-category-list a.card-content {
+    width: 16.666%;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+}
+.grid-category-list a.card-content figure {
+    position: relative;
+    z-index: 2;
+    max-width: 120px;
+}
+.grid-category-list a.card-content div.text-center {
+    height: 196px;
+    background-color: #DFEAFF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    border-radius: 30px;
+    color: var(--blue-dark-2);
+}
+.grid-category-list a.card-content div.text-center h3 {
+    color: var(--blue-dark-2);
 }
