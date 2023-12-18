@@ -242,7 +242,8 @@ function ProductCardOdd(
             // class="flex flex-col gap-0"
           >
             {/* BRAND IMAGE */}
-            {/* <a
+            {
+              /* <a
               style="display: block;min-height: 32px"
               href={`/fabricante/${brandContent?.replace(" ", "-")}`}
             >
@@ -252,14 +253,15 @@ function ProductCardOdd(
                   brandContent?.replace(" ", "-")
                 }.png`}
               />
-            </a> */}
+            </a> */
+            }
             <a href={url && relative(url)}>
-            {l?.hide?.productName ? "" : (
-              <h2
-                class="card-name truncate text-base lg:text-lg text-base-content"
-                dangerouslySetInnerHTML={{ __html: name ?? "" }}
-              />
-            )}
+              {l?.hide?.productName ? "" : (
+                <h2
+                  class="card-name truncate text-base lg:text-lg text-base-content"
+                  dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                />
+              )}
             </a>
             {l?.hide?.productDescription ? "" : (
               <div

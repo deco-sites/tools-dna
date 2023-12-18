@@ -296,3 +296,20 @@
 .text-content .text-item {
     font-size: 14px;
 }
+
+.telefone-contatos {
+    font-weight: 600;
+    font-size: 30px;
+}
+.endereco-new {
+    max-width: 330px;
+    font-size: 16px;
+    color: var(--placeholder-color);
+    margin-left: 32px;
+}
+
+.copyright {
+    font-size: 18px;
+    text-align: center;
+    color: var(--placeholder-color);
+}
