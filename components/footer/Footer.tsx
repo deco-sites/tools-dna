@@ -223,31 +223,56 @@ function Footer({
         {(!layout?.variation || layout?.variation == "Variation 1") && (
           <div class="flex flex-col gap-10">
             <Divider />
-            <div class="flex flex-col items-center md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
-              <div class="flex flex-col" >
+            <div class="flex flex-col  items-center md:items-start md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
+              <div class="flex flex-col">
                 <div class="flex flex-row gap-4">
-                <svg width="32" height="32" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="58c90baf">
-                    <path id="193b5345" d="M6.23444 13.4161C8.71444 18.29 12.71 22.2856 17.5839 24.7656L21.3728 20.9767C21.855 20.4944 22.5267 20.3567 23.1294 20.5461C25.0583 21.1833 27.125 21.5278 29.2778 21.5278C29.7345 21.5278 30.1726 21.7092 30.4956 22.0322C30.8186 22.3552 31 22.7932 31 23.25V29.2778C31 29.7345 30.8186 30.1726 30.4956 30.4956C30.1726 30.8186 29.7345 31 29.2778 31C21.5128 31 14.0659 27.9154 8.57526 22.4247C3.08461 16.9341 0 9.48717 0 1.72222C0 1.26546 0.181448 0.827406 0.504427 0.504427C0.827406 0.181448 1.26546 0 1.72222 0H7.75C8.20676 0 8.64482 0.181448 8.96779 0.504427C9.29077 0.827406 9.47222 1.26546 9.47222 1.72222C9.47222 3.875 9.81667 5.94167 10.4539 7.87056C10.6433 8.47333 10.5056 9.145 10.0233 9.62722L6.23444 13.4161Z" fill="#164195"></path>
-                  </g>
-                </svg>
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="58c90baf">
+                      <path
+                        id="193b5345"
+                        d="M6.23444 13.4161C8.71444 18.29 12.71 22.2856 17.5839 24.7656L21.3728 20.9767C21.855 20.4944 22.5267 20.3567 23.1294 20.5461C25.0583 21.1833 27.125 21.5278 29.2778 21.5278C29.7345 21.5278 30.1726 21.7092 30.4956 22.0322C30.8186 22.3552 31 22.7932 31 23.25V29.2778C31 29.7345 30.8186 30.1726 30.4956 30.4956C30.1726 30.8186 29.7345 31 29.2778 31C21.5128 31 14.0659 27.9154 8.57526 22.4247C3.08461 16.9341 0 9.48717 0 1.72222C0 1.26546 0.181448 0.827406 0.504427 0.504427C0.827406 0.181448 1.26546 0 1.72222 0H7.75C8.20676 0 8.64482 0.181448 8.96779 0.504427C9.29077 0.827406 9.47222 1.26546 9.47222 1.72222C9.47222 3.875 9.81667 5.94167 10.4539 7.87056C10.6433 8.47333 10.5056 9.145 10.0233 9.62722L6.23444 13.4161Z"
+                        fill="#164195"
+                      >
+                      </path>
+                    </g>
+                  </svg>
                   <h2 class="text-lg telefone-contatos">
                     47 3027-1106 / 47 3027-1106
                   </h2>
                 </div>
                 <div class="flex flex-row">
                   <p class="endereco-new">
-                    Rua Desembargador Guilherme Abry, 667 - Saguaçú - Joinville/SC - 89.221-600
+                    Rua Desembargador Guilherme Abry, 667 - Saguaçú -
+                    Joinville/SC - 89.221-600
                   </p>
                 </div>
-              </div> 
+              </div>
               <div class="flex flex-row gap-8">
-                <svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  width="32"
+                  height="25"
+                  viewBox="0 0 32 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <g id="640d0d93">
-                    <path id="54747a60" d="M31.0588 0H0.941177C0.691561 0 0.452169 0.0991593 0.275664 0.275664C0.0991593 0.452169 0 0.691561 0 0.941177V22.2745C0 22.8569 0.231372 23.4155 0.643217 23.8274C1.05506 24.2392 1.61364 24.4706 2.19608 24.4706H29.8039C30.3864 24.4706 30.9449 24.2392 31.3568 23.8274C31.7686 23.4155 32 22.8569 32 22.2745V0.941177C32 0.691561 31.9008 0.452169 31.7243 0.275664C31.5478 0.0991593 31.3084 0 31.0588 0ZM16 13.4682L3.36 1.88235H28.64L16 13.4682ZM11.8698 12.2353L1.88235 21.3898V3.08078L11.8698 12.2353ZM13.2627 13.5122L15.3726 15.4384C15.5461 15.5972 15.7727 15.6852 16.0078 15.6852C16.243 15.6852 16.4696 15.5972 16.6431 15.4384L18.7451 13.5122L28.64 22.5882H3.36157L13.2627 13.5122ZM20.1302 12.2353L30.1176 3.08078V21.3898L20.1302 12.2353Z" fill="#164195"></path>
+                    <path
+                      id="54747a60"
+                      d="M31.0588 0H0.941177C0.691561 0 0.452169 0.0991593 0.275664 0.275664C0.0991593 0.452169 0 0.691561 0 0.941177V22.2745C0 22.8569 0.231372 23.4155 0.643217 23.8274C1.05506 24.2392 1.61364 24.4706 2.19608 24.4706H29.8039C30.3864 24.4706 30.9449 24.2392 31.3568 23.8274C31.7686 23.4155 32 22.8569 32 22.2745V0.941177C32 0.691561 31.9008 0.452169 31.7243 0.275664C31.5478 0.0991593 31.3084 0 31.0588 0ZM16 13.4682L3.36 1.88235H28.64L16 13.4682ZM11.8698 12.2353L1.88235 21.3898V3.08078L11.8698 12.2353ZM13.2627 13.5122L15.3726 15.4384C15.5461 15.5972 15.7727 15.6852 16.0078 15.6852C16.243 15.6852 16.4696 15.5972 16.6431 15.4384L18.7451 13.5122L28.64 22.5882H3.36157L13.2627 13.5122ZM20.1302 12.2353L30.1176 3.08078V21.3898L20.1302 12.2353Z"
+                      fill="#164195"
+                    >
+                    </path>
                   </g>
                 </svg>
-                <a href={`mailto:vendas@worldtools.com.br`}>vendas@worldtools.com.br</a>
+                <a href={`mailto:vendas@worldtools.com.br`}>
+                  vendas@worldtools.com.br
+                </a>
               </div>
               {_social}
             </div>
@@ -260,33 +285,43 @@ function Footer({
                 <h3 class="text-lg">Selos de Segurança</h3>
                 <ul class="flex items-center gap-4 flex-wrap">
                   <li title="Selo Google">
-                      <img style="max-width: 228px" src={asset(`/exemplo-selos-de-seguranca.png`)} alt="" />
+                    <img
+                      style="max-width: 228px"
+                      src={asset(`/exemplo-selos-de-seguranca.png`)}
+                      alt=""
+                    />
                   </li>
                 </ul>
               </div>
               {_sectionLinks}
               {_newsletter}
             </div>
-            
+
             <Divider />
             <div class="flex flex-col copyright">
-              © 2010 - 2023 - WORLD TOOLS COMERCIO DE FERRAMENTAS LTDA - CNPJ: 13.064.755/0001-00. Todos os Direitos Reservados.
+              © 2010 - 2023 - WORLD TOOLS COMERCIO DE FERRAMENTAS LTDA - CNPJ:
+              13.064.755/0001-00. Todos os Direitos Reservados.
               <br></br>
-              Rua Desembargador Guilherme Abry, 667 - Saguaçú - Joinville/SC - 89.221-600
+              Rua Desembargador Guilherme Abry, 667 - Saguaçú - Joinville/SC -
+              89.221-600
             </div>
-            {/* <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
-              
+            {
+              /* <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
+
               {_social}
               <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
                 {_apps}
                 {_region}
               </div>
             </div>
-            <Divider /> */}
-            {/* <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
+            <Divider /> */
+            }
+            {
+              /* <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
               <PoweredByDeco />
               {_links}
-            </div> */}
+            </div> */
+            }
           </div>
         )}
         {layout?.variation == "Variation 2" && (

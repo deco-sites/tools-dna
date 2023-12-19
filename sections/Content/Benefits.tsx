@@ -94,14 +94,14 @@ export default function Benefits(
     <>
       {!layout?.variation || layout?.variation === "Simple"
         ? (
-          <div class="w-full border-b px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
+          <div class="w-full border-b sm:border-none px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
             <Header
               title={title}
               description={description}
               alignment={layout?.headerAlignment || "center"}
             />
             <div class="w-full flex container justify-center">
-              <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
+              <div class="listOfBenefits flex gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
                 {listOfBenefits}
               </div>
             </div>

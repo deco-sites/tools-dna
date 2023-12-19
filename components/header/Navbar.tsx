@@ -42,10 +42,15 @@ function Navbar({ items, searchbar, logo }: {
           </a>
         )}
 
-        <div class="flex gap-1">
+        <div class="flex gap-1 wake-mobile-search">
           <SearchButton />
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
+          {platform === "wake" && (
+            <div class="wake-button">
+              <CartButtonWake />
+            </div>
+          )}
         </div>
       </div>
 

@@ -52,7 +52,7 @@ function Logos(props: Props) {
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <div class="w-full text-center items-center justify-between flex">
+      <div class="w-full logos-element text-center items-center justify-between flex">
         {list.map((element) => (
           <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
             <div class="flex w-full h-full items-center justify-center">

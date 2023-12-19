@@ -313,3 +313,106 @@
     text-align: center;
     color: var(--placeholder-color);
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .listOfBenefits {
+        overflow: auto;
+        padding-bottom: 12px;
+        gap: 2rem;
+    }
+    .listOfBenefits div.flex {
+        min-width: 220px;
+        border-bottom: 0;
+    }
+
+    .shelf-custom-items {
+        flex-wrap: nowrap;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+        margin-bottom: 36px;
+    }
+    .shelf-custom-items.odd {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        column-gap: 20px;
+        padding-bottom: 12px;
+        margin: 0 auto;
+        padding: 36px 0;
+        margin-bottom: 36px;
+    }
+    .shelf-custom-items .card-compact,
+    .shelf-custom-items.odd .card-compact {
+        width: 100%;
+        min-width: calc(100% - 5rem);
+    }
+    .newsletter-content {
+        padding: 40px 20px;
+        width: calc(100% - 2rem);
+    }
+    .w-full.border-b {
+        border-bottom: 0 !important;
+    }
+    .showcase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        margin-bottom: 36px;
+    }
+    .logos-element {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+    }
+    .copyright {
+        font-size: 11px;
+    }
+    .telefone-contatos {
+        font-size: 22px;
+    }
+    .endereco-new {
+        font-size: 14px;
+        margin-left: 50px;
+    }
+    .md\:items-start {
+        align-items: flex-start;
+    }
+
+    .category-list {
+        padding-bottom: 2.5rem;
+    }
+    .grid-category-list {
+        overflow-x: auto;
+        scroll-snap-align: x mandatory;
+        padding-bottom: 16px;
+    }
+    .grid-category-list a.card-content {
+        min-width: 40%;
+    }
+    .grid-category-list a.card-content div.text-center {
+        position: unset;
+        width: 100%;
+    }
+    .grid-category-list a.card-content figure {
+        max-width: 120px;
+        margin-bottom: -65px;
+    }
+    header {
+        height: 85px !important;
+    }
+    .wake-mobile-search > .btn.no-animation:nth-child(2) {
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 300px;
+    }
+    .topbar-carousel {
+        display: none;
+    }
+}
