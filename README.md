@@ -1,9 +1,9 @@
 # Storefront starter by deco.cx
 
-"TCS-Access-Token": "tcs_world_87fcfcee43194e71a38974f4494275be",
 
 A fully featured starter to help you customize and deploy an ecommerce website.
 in minutes.
+"TCS-Access-Token": "tcs_world_87fcfcee43194e71a38974f4494275be",
 
 <div style="display: flex; justify-content: center; width: 100%">
 <img width="600px" height="147px"
