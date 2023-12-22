@@ -180,7 +180,7 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="btn btn-circle glass" style="background-color: var(--primary-color)">
           <Icon
             class="text-base-100"
             size={24}
@@ -190,7 +190,7 @@ function Buttons() {
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="btn btn-circle glass" style="background-color: var(--primary-color)">
           <Icon
             class="text-base-100"
             size={24}

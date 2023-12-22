@@ -89,9 +89,9 @@ function Navbar({ items, searchbar, logo }: {
               strokeWidth={0.4}
             />
             <p>
-              Olá! Faça seu <strong>Login</strong>
+              Olá! Faça seu <strong class="strong-color">Login</strong>
               <br></br>
-              ou <strong>Cadastre-se</strong>
+              ou <strong class="strong-color">Cadastre-se</strong>
             </p>
           </a>
           <a

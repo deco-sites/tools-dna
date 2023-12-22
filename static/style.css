@@ -67,11 +67,16 @@
     border: 0;
     color: var(--primary-color);
 }
-
+.categories-items a {
+    font-size: 14px;
+}
 .categories-items:first-child {
     background-color: var(--blue-dark-1);
     border-radius: 40px;
     padding: 1px 15px;
+}
+.categories-items:first-child svg {
+    display: none;
 }
 .categories-items:first-child a.py-3 {
     color: #ffffff;
@@ -85,6 +90,29 @@
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
+}
+.categories-items:nth-child(7) a ,
+.categories-items:nth-child(8) a {
+    padding-left: .5rem;
+}
+.categories-items:nth-child(7)::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="%234BAEE9"><path d="M8.511 1.665a2 2 0 0 1 2.98 0l.7.782a2 2 0 0 0 1.601.663l1.05-.058A2 2 0 0 1 16.95 5.16l-.058 1.049a2 2 0 0 0 .663 1.6l.782.7a2 2 0 0 1 0 2.98l-.782.7a2.001 2.001 0 0 0-.663 1.602l.058 1.05a1.999 1.999 0 0 1-2.108 2.107l-1.049-.058a2.002 2.002 0 0 0-1.6.663l-.7.782a2 2 0 0 1-2.98 0l-.7-.782a2 2 0 0 0-1.602-.663l-1.05.058a2 2 0 0 1-2.107-2.108l.058-1.05a2 2 0 0 0-.663-1.6l-.782-.7a2 2 0 0 1 0-2.98l.782-.7a2 2 0 0 0 .663-1.601l-.058-1.05a2 2 0 0 1 2.108-2.106l1.05.058a2 2 0 0 0 1.6-.663l.7-.782v-.001Z" stroke-width="1.5"/><path d="M7.501 7.5h.01v.01h-.01V7.5Zm5 5h.01v.01h-.01v-.01Z" stroke-width="2.25" stroke-linejoin="round"/><path d="m13.001 7-6 6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 24px;
+}
+.categories-items:nth-child(8)::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.25.75c-.52 0-1 .13-1.524.346-.507.21-1.095.519-1.828.903l-1.779.934c-.9.472-1.618.85-2.174 1.22-.575.385-1.02.79-1.342 1.337-.322.547-.466 1.14-.536 1.843C0 8.017 0 8.858 0 9.917v.167c0 1.058 0 1.899.067 2.583.07.705.215 1.296.536 1.843.323.548.766.952 1.343 1.337.555.37 1.274.749 2.173 1.22l1.78.934c.732.384 1.32.693 1.827.903.525.217 1.003.346 1.524.346.52 0 1-.13 1.524-.346.507-.21 1.095-.519 1.828-.903l1.779-.933c.9-.473 1.618-.85 2.174-1.221.576-.385 1.02-.79 1.342-1.337.322-.547.466-1.139.536-1.843.067-.684.067-1.525.067-2.583v-.168c0-1.058 0-1.899-.067-2.583-.07-.705-.215-1.296-.536-1.843-.323-.548-.766-.952-1.342-1.337-.556-.37-1.275-.748-2.174-1.22l-1.78-.934c-.732-.384-1.32-.693-1.827-.903C10.249.879 9.77.75 9.25.75ZM6.47 3.156c.767-.402 1.303-.682 1.75-.867.433-.18.738-.248 1.03-.248.293 0 .597.069 1.03.248.447.185.983.465 1.748.867l1.721.903c.938.492 1.596.838 2.09 1.167.242.163.432.313.587.465L13.56 7.123l-7.314-3.85.225-.117ZM4.9 3.98l-.15.08c-.937.49-1.596.837-2.088 1.166-.21.136-.406.292-.587.465L9.25 9.279l2.889-1.446-7.061-3.715A.645.645 0 0 1 4.9 3.98ZM1.452 6.822a4.935 4.935 0 0 0-.1.637c-.06.614-.061 1.391-.061 2.49v.1c0 1.1 0 1.878.06 2.491.06.6.173.988.365 1.315.19.324.467.599.946.919.492.329 1.15.675 2.089 1.167l1.72.903c.766.402 1.302.682 1.748.867.141.058.268.105.386.142v-7.455L1.452 6.822Zm8.443 11.03c.118-.036.245-.083.386-.141.446-.184.982-.465 1.747-.867l1.721-.903c.938-.493 1.596-.838 2.09-1.167.478-.32.754-.595.946-.92.192-.326.304-.713.363-1.314.06-.613.061-1.39.061-2.49v-.1c0-1.1 0-1.877-.06-2.49a4.84 4.84 0 0 0-.102-.637l-2.85 1.424v2.614a.645.645 0 0 1-1.29 0V8.893L9.895 10.4v7.453Z" fill="%234BAEE9"/></svg>');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .shelf-custom-items {
@@ -190,13 +218,15 @@
 .showcase-header {
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     /* margin-top: 32px; */
 }
 .showcase-header h2 {
     display: flex;
     gap: 1rem;
     align-items: center;
+    font-weight: 600;
+    color: #272727;
 }
 
 .newsletter-content {
@@ -216,6 +246,7 @@
 .newsletter-content .showcase-header h3,
 .newsletter-content .showcase-header h2 {
     color: #ffffff;
+    line-height: normal;
 }
 .newsletter-content .showcase-header h3 strong {
     font-weight: 700;
@@ -266,7 +297,7 @@
     max-width: 120px;
 }
 .grid-category-list a.card-content div.text-center {
-    height: 196px;
+    height: 160px;
     background-color: #DFEAFF;
     display: flex;
     align-items: center;
@@ -294,7 +325,8 @@
     color: var(--blue-dark-1);
 }
 .text-content .text-item {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: normal;
 }
 
 .telefone-contatos {
@@ -314,7 +346,9 @@
     color: var(--placeholder-color);
 }
 
-
+.strong-color {
+    color: var(--primary-color);
+}
 
 @media screen and (max-width: 1024px) {
     .listOfBenefits {
