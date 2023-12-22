@@ -258,7 +258,6 @@ function ProductCardCustom(
                 class="card-name truncate text-base lg:text-lg text-base-content"
                 dangerouslySetInnerHTML={{ __html: name ?? "" }}
               />
-              
             )}
             {l?.hide?.productDescription ? "" : (
               <div
