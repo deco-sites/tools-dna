@@ -72,12 +72,13 @@ function ProductCardCustom(
     isVariantOf,
     brand,
   } = product;
+
   const id = `product-card-${productID}`;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const productGroupID = isVariantOf?.productGroupID;
   const description = product.description || isVariantOf?.description;
   const [front, back] = images ?? [];
-  const { listPrice, price, installments } = useOffer(offers);
+  const { listPrice, price, installments, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
 
@@ -244,13 +245,20 @@ function ProductCardCustom(
             {/* BRAND IMAGE */}
             <a
               style="display: block;min-height: 32px"
-              href={`/fabricante/${brandContent?.replace(" ", "-")}`}
+              // data-id={brand?.logo}
+              href={brand?.url}
             >
-              <img
+              {
+                /* <img
                 style={{ maxWidth: "100px" }}
                 src={`https://worldtools.fbitsstatic.net/img/fb/${
                   brandContent?.replace(" ", "-")
                 }.png`}
+              /> */
+              }
+              <img
+                style={{ maxWidth: "100px" }}
+                src={brand?.logo}
               />
             </a>
             {l?.hide?.productName ? "" : (
@@ -283,10 +291,11 @@ function ProductCardCustom(
                   l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                 }`}
               >
-                De {formatPrice(listPrice, offers?.priceCurrency)}
+                De: {formatPrice(listPrice, offers?.priceCurrency)}
               </div>
               <div class="card-price text-base-600 text-xl lg:text-xl">
-                {formatPrice(price, offers?.priceCurrency)}
+                {/* {formatPrice(price, offers?.priceCurrency)} */}
+                {formatPrice(pixPrice, offers?.priceCurrency)}
               </div>
             </div>
             {l?.hide?.installments
