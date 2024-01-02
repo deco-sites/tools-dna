@@ -106,7 +106,7 @@ function ProductInfo({ page, layout }: Props) {
           </span>
         </div>
         <span class="text-sm text-base-300">
-          {installments}
+          {installments} no cartão
         </span>
       </div>
       {/* Sku Selector */}
