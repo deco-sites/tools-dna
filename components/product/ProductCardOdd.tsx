@@ -160,8 +160,7 @@ function ProductCardOdd(
             />
           </svg>
           {listPrice && pixPrice &&
-            calculate(listPrice, pixPrice)
-          }
+            calculate(listPrice, pixPrice)}
         </div>
       </div>
 

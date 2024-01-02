@@ -159,8 +159,7 @@ function ProductCardCustom(
             />
           </svg>
           {listPrice && pixPrice &&
-            calculate(listPrice, pixPrice)
-          }
+            calculate(listPrice, pixPrice)}
         </div>
         <div class="installmentsTag">
           {installments}
