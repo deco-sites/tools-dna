@@ -286,7 +286,9 @@ function Footer({
                     <img
                       style="max-width: 228px"
                       src={asset(`/exemplo-selos-de-seguranca.png`)}
-                      alt=""
+                      alt="Selos de Segurança"
+                      width="228px"
+                      height={100}
                     />
                   </li>
                 </ul>

@@ -287,6 +287,9 @@ function ProductCardCustom(
               <img
                 style={{ maxWidth: "100px" }}
                 src={brand?.logo}
+                alt={brand?.name}
+                width={100}
+                height={100}
               />
             </a>
             {l?.hide?.productName ? "" : (

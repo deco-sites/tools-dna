@@ -48,21 +48,29 @@ export default function ImageGallery({
           class="min-w-full object-cover max-w-[156px] max-h-[156px] "
           src={imageOne}
           alt={alt}
+          width={100}
+          height={100}
         />
         <img
           class="min-w-full object-cover max-w-[156px] max-h-[156px] "
           src={imageTwo}
           alt={alt}
+          width={100}
+          height={100}
         />
         <img
           class="min-w-full object-cover max-w-[156px] max-h-[156px] "
           src={imageThree}
           alt={alt}
+          width={100}
+          height={100}
         />
         <img
           class="min-w-full object-cover max-w-[156px] max-h-[156px] "
           src={imageFour}
           alt={alt}
+          width={100}
+          height={100}
         />
       </div>
     </section>

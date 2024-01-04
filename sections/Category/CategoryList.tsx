@@ -109,7 +109,7 @@ function CategoryList(props: Props) {
                     <Image
                       class="card w-full"
                       src={image}
-                      alt={description || label || tag}
+                      alt={`Departamento de ${description || label || tag}`}
                       width={100}
                       height={100}
                       loading="lazy"
