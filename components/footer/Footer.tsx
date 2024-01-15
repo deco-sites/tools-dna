@@ -30,6 +30,7 @@ export interface SocialItem {
     | "Instagram"
     | "Linkedin"
     | "Tiktok"
+    | "Youtube"
     | "Twitter";
   link: string;
 }
@@ -251,7 +252,7 @@ function Footer({
                   </p>
                 </div>
               </div>
-              <div class="flex flex-row gap-8">
+              <div class="flex flex-row gap-4">
                 <svg
                   width="32"
                   height="25"

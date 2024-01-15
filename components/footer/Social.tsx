@@ -7,6 +7,7 @@ export interface SocialItem {
     | "Instagram"
     | "Linkedin"
     | "Tiktok"
+    | "Youtube"
     | "Twitter";
   link: string;
 }
@@ -37,7 +38,7 @@ export default function Social(
                     aria-label={`${item.label} Logo`}
                     class="flex gap-2 items-center"
                   >
-                    <span class="block p-1 border rounded-full">
+                    <span class="block p-1 icon-sizes border rounded-full">
                       <Icon size={24} id={item.label} />
                     </span>
                     {vertical && (
