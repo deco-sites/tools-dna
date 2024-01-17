@@ -185,7 +185,7 @@ function ProductCardCustom(
           }
         `}
         >
-          {platform === "vtex" && (
+          {platform === "wake" && (
             <WishlistButton
               productGroupID={productGroupID}
               productID={productID}

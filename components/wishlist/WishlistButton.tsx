@@ -1,8 +1,8 @@
 import { useComputed, useSignal } from "@preact/signals";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import { useWishlist } from "apps/vtex/hooks/useWishlist.ts";
-import { useUser } from "apps/vtex/hooks/useUser.ts";
+import { useWishlist } from "apps/wake/hooks/useWishlist.ts";
+import { useUser } from "apps/wake/hooks/useUser.ts";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 
 export interface Props {
@@ -51,9 +51,9 @@ function WishlistButton({
           fetching.value = true;
 
           if (inWishlist) {
-            await removeItem({ id: listItem.value!.id }!);
+            await removeItem({ productId: Number(productGroupID) }!);
           } else if (productID && productGroupID) {
-            await addItem({ sku: productID, productId: productGroupID });
+            await addItem({ productId: Number(productGroupID) });
 
             sendEvent({
               name: "add_to_wishlist",
