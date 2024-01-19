@@ -77,7 +77,7 @@ function Navbar({ items, searchbar, logo }: {
           {/* <SearchButton /> */}
           <a
             class="w-auto flex btn btn-circle btn-sm btn-ghost"
-            href="/login"
+            href="/Login"
             aria-label="Log in"
             style="border: 1px solid #4BAEE9; height: auto;border-radius: 30px;
              padding-right: 15px"

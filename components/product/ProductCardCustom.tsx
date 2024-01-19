@@ -181,7 +181,7 @@ function ProductCardCustom(
           ${
             l?.onMouseOver?.showFavoriteIcon
               ? "lg:hidden lg:group-hover:block"
-              : "lg:hidden"
+              : "lg:hidden lg:group-hover:block"
           }
         `}
         >
