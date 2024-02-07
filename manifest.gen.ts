@@ -29,74 +29,77 @@ import * as $$$$$$21 from "./sections/Links/Shortcuts.tsx";
 import * as $$$$$$22 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$23 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$24 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$25 from "./sections/Product/CustomOddGrid.tsx";
-import * as $$$$$$26 from "./sections/Product/CustomShelfGrid.tsx";
-import * as $$$$$$27 from "./sections/Product/ImageGalleryFrontBack.tsx";
-import * as $$$$$$28 from "./sections/Product/ImageGallerySlider.tsx";
-import * as $$$$$$29 from "./sections/Product/NotFound.tsx";
-import * as $$$$$$30 from "./sections/Product/NotFoundChallenge.tsx";
-import * as $$$$$$31 from "./sections/Product/ProductInfo.tsx";
-import * as $$$$$$32 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$33 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$34 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$35 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$36 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$37 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$38 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$25 from "./sections/Product/CategoryHeader.tsx";
+import * as $$$$$$26 from "./sections/Product/CustomOddGrid.tsx";
+import * as $$$$$$27 from "./sections/Product/CustomShelfGrid.tsx";
+import * as $$$$$$28 from "./sections/Product/ImageGalleryFrontBack.tsx";
+import * as $$$$$$29 from "./sections/Product/ImageGallerySlider.tsx";
+import * as $$$$$$30 from "./sections/Product/NotFound.tsx";
+import * as $$$$$$31 from "./sections/Product/NotFoundChallenge.tsx";
+import * as $$$$$$32 from "./sections/Product/ProductInfo.tsx";
+import * as $$$$$$33 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$34 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$35 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$36 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$37 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$38 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$39 from "./sections/Theme/Theme.tsx";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
 const manifest = {
   "loaders": {
-    "deco-sites/tools-dna/loaders/Layouts/ProductCard.tsx": $$$0,
-    "deco-sites/tools-dna/loaders/List/Sections.tsx": $$$1,
+    "deco-sites/palaciovtex/loaders/Layouts/ProductCard.tsx": $$$0,
+    "deco-sites/palaciovtex/loaders/List/Sections.tsx": $$$1,
   },
   "sections": {
-    "deco-sites/tools-dna/sections/Animation/Animation.tsx": $$$$$$0,
-    "deco-sites/tools-dna/sections/Category/CategoryBanner.tsx": $$$$$$1,
-    "deco-sites/tools-dna/sections/Category/CategoryList.tsx": $$$$$$2,
-    "deco-sites/tools-dna/sections/Content/Benefits.tsx": $$$$$$3,
-    "deco-sites/tools-dna/sections/Content/Contador.tsx": $$$$$$4,
-    "deco-sites/tools-dna/sections/Content/Faq.tsx": $$$$$$5,
-    "deco-sites/tools-dna/sections/Content/Logos.tsx": $$$$$$6,
-    "deco-sites/tools-dna/sections/Content/Testimonials.tsx": $$$$$$7,
-    "deco-sites/tools-dna/sections/Footer/Footer.tsx": $$$$$$8,
-    "deco-sites/tools-dna/sections/Gallery.tsx": $$$$$$9,
-    "deco-sites/tools-dna/sections/Header/ExtraItems.tsx": $$$$$$10,
-    "deco-sites/tools-dna/sections/Header/Header.tsx": $$$$$$11,
-    "deco-sites/tools-dna/sections/Images/BannerGrid.tsx": $$$$$$12,
-    "deco-sites/tools-dna/sections/Images/Carousel.tsx": $$$$$$13,
-    "deco-sites/tools-dna/sections/Images/ImageGallery.tsx": $$$$$$14,
-    "deco-sites/tools-dna/sections/Images/ShoppableBanner.tsx": $$$$$$15,
-    "deco-sites/tools-dna/sections/Layout/Container.tsx": $$$$$$16,
-    "deco-sites/tools-dna/sections/Layout/Flex.tsx": $$$$$$17,
-    "deco-sites/tools-dna/sections/Layout/Grid.tsx": $$$$$$18,
-    "deco-sites/tools-dna/sections/Layout/GridItem.tsx": $$$$$$19,
-    "deco-sites/tools-dna/sections/Links/LinkTree.tsx": $$$$$$20,
-    "deco-sites/tools-dna/sections/Links/Shortcuts.tsx": $$$$$$21,
-    "deco-sites/tools-dna/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$22,
-    "deco-sites/tools-dna/sections/Miscellaneous/CookieConsent.tsx": $$$$$$23,
-    "deco-sites/tools-dna/sections/Newsletter/Newsletter.tsx": $$$$$$24,
-    "deco-sites/tools-dna/sections/Product/CustomOddGrid.tsx": $$$$$$25,
-    "deco-sites/tools-dna/sections/Product/CustomShelfGrid.tsx": $$$$$$26,
-    "deco-sites/tools-dna/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$27,
-    "deco-sites/tools-dna/sections/Product/ImageGallerySlider.tsx": $$$$$$28,
-    "deco-sites/tools-dna/sections/Product/NotFound.tsx": $$$$$$29,
-    "deco-sites/tools-dna/sections/Product/NotFoundChallenge.tsx": $$$$$$30,
-    "deco-sites/tools-dna/sections/Product/ProductInfo.tsx": $$$$$$31,
-    "deco-sites/tools-dna/sections/Product/ProductShelf.tsx": $$$$$$32,
-    "deco-sites/tools-dna/sections/Product/ProductShelfTabbed.tsx": $$$$$$33,
-    "deco-sites/tools-dna/sections/Product/SearchResult.tsx": $$$$$$34,
-    "deco-sites/tools-dna/sections/Product/Wishlist.tsx": $$$$$$35,
-    "deco-sites/tools-dna/sections/Social/InstagramPosts.tsx": $$$$$$36,
-    "deco-sites/tools-dna/sections/Social/WhatsApp.tsx": $$$$$$37,
-    "deco-sites/tools-dna/sections/Theme/Theme.tsx": $$$$$$38,
+    "deco-sites/palaciovtex/sections/Animation/Animation.tsx": $$$$$$0,
+    "deco-sites/palaciovtex/sections/Category/CategoryBanner.tsx": $$$$$$1,
+    "deco-sites/palaciovtex/sections/Category/CategoryList.tsx": $$$$$$2,
+    "deco-sites/palaciovtex/sections/Content/Benefits.tsx": $$$$$$3,
+    "deco-sites/palaciovtex/sections/Content/Contador.tsx": $$$$$$4,
+    "deco-sites/palaciovtex/sections/Content/Faq.tsx": $$$$$$5,
+    "deco-sites/palaciovtex/sections/Content/Logos.tsx": $$$$$$6,
+    "deco-sites/palaciovtex/sections/Content/Testimonials.tsx": $$$$$$7,
+    "deco-sites/palaciovtex/sections/Footer/Footer.tsx": $$$$$$8,
+    "deco-sites/palaciovtex/sections/Gallery.tsx": $$$$$$9,
+    "deco-sites/palaciovtex/sections/Header/ExtraItems.tsx": $$$$$$10,
+    "deco-sites/palaciovtex/sections/Header/Header.tsx": $$$$$$11,
+    "deco-sites/palaciovtex/sections/Images/BannerGrid.tsx": $$$$$$12,
+    "deco-sites/palaciovtex/sections/Images/Carousel.tsx": $$$$$$13,
+    "deco-sites/palaciovtex/sections/Images/ImageGallery.tsx": $$$$$$14,
+    "deco-sites/palaciovtex/sections/Images/ShoppableBanner.tsx": $$$$$$15,
+    "deco-sites/palaciovtex/sections/Layout/Container.tsx": $$$$$$16,
+    "deco-sites/palaciovtex/sections/Layout/Flex.tsx": $$$$$$17,
+    "deco-sites/palaciovtex/sections/Layout/Grid.tsx": $$$$$$18,
+    "deco-sites/palaciovtex/sections/Layout/GridItem.tsx": $$$$$$19,
+    "deco-sites/palaciovtex/sections/Links/LinkTree.tsx": $$$$$$20,
+    "deco-sites/palaciovtex/sections/Links/Shortcuts.tsx": $$$$$$21,
+    "deco-sites/palaciovtex/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$22,
+    "deco-sites/palaciovtex/sections/Miscellaneous/CookieConsent.tsx": $$$$$$23,
+    "deco-sites/palaciovtex/sections/Newsletter/Newsletter.tsx": $$$$$$24,
+    "deco-sites/palaciovtex/sections/Product/CategoryHeader.tsx": $$$$$$25,
+    "deco-sites/palaciovtex/sections/Product/CustomOddGrid.tsx": $$$$$$26,
+    "deco-sites/palaciovtex/sections/Product/CustomShelfGrid.tsx": $$$$$$27,
+    "deco-sites/palaciovtex/sections/Product/ImageGalleryFrontBack.tsx":
+      $$$$$$28,
+    "deco-sites/palaciovtex/sections/Product/ImageGallerySlider.tsx": $$$$$$29,
+    "deco-sites/palaciovtex/sections/Product/NotFound.tsx": $$$$$$30,
+    "deco-sites/palaciovtex/sections/Product/NotFoundChallenge.tsx": $$$$$$31,
+    "deco-sites/palaciovtex/sections/Product/ProductInfo.tsx": $$$$$$32,
+    "deco-sites/palaciovtex/sections/Product/ProductShelf.tsx": $$$$$$33,
+    "deco-sites/palaciovtex/sections/Product/ProductShelfTabbed.tsx": $$$$$$34,
+    "deco-sites/palaciovtex/sections/Product/SearchResult.tsx": $$$$$$35,
+    "deco-sites/palaciovtex/sections/Product/Wishlist.tsx": $$$$$$36,
+    "deco-sites/palaciovtex/sections/Social/InstagramPosts.tsx": $$$$$$37,
+    "deco-sites/palaciovtex/sections/Social/WhatsApp.tsx": $$$$$$38,
+    "deco-sites/palaciovtex/sections/Theme/Theme.tsx": $$$$$$39,
   },
   "apps": {
-    "deco-sites/tools-dna/apps/decohub.ts": $$$$$$$$$$$0,
-    "deco-sites/tools-dna/apps/site.ts": $$$$$$$$$$$1,
+    "deco-sites/palaciovtex/apps/decohub.ts": $$$$$$$$$$$0,
+    "deco-sites/palaciovtex/apps/site.ts": $$$$$$$$$$$1,
   },
-  "name": "deco-sites/tools-dna",
+  "name": "deco-sites/palaciovtex",
   "baseUrl": import.meta.url,
 };
 

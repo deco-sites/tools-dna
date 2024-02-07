@@ -17,10 +17,13 @@ function WishlistButton({
   productID,
 }: Props) {
   const { user } = useUser();
-  console.log(user.value);
+  // console.log(user.value);
   const { loading, addItem, removeItem, getItem } = useWishlist();
   const listItem = useComputed(() =>
-    getItem({ sku: productID, productId: productGroupID })
+    getItem({ 
+      // sku: productID, 
+      productId: productGroupID || productID 
+    })
   );
   const fetching = useSignal(false);
 
@@ -39,7 +42,7 @@ function WishlistButton({
         e.preventDefault();
 
         if (!isUserLoggedIn) {
-          window.alert("Please log in before adding to your wishlist");
+          globalThis.alert("Please log in before adding to your wishlist");
 
           return;
         }

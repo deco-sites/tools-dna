@@ -31,7 +31,8 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
   };
 };
 
-function WishlistGallery({ products }: Awaited<ReturnType<typeof loader>>,
+function WishlistGallery(
+  { products }: Awaited<ReturnType<typeof loader>>,
   props: Props,
 ) {
   const platform = usePlatform();

@@ -945,6 +945,9 @@ button.swiper-pagination-bullet {
     border: 1px solid var(--border-color-1);
     padding: 30px 15px;
 }
+.shelf-custom-items.catalog .card-compact {
+    width: calc(33.33% - 20px);
+}
 
 .shelf-custom-items .card-compact .card-name::first-letter {
     text-transform: uppercase
