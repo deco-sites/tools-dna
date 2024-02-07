@@ -8,6 +8,8 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import Image from "apps/website/components/Image.tsx";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Layout {
   /**
@@ -25,7 +27,6 @@ export interface Props {
   page: ProductListingPage | null;
   layout?: Layout;
   cardLayout?: CardLayout;
-
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
 }
@@ -33,7 +34,27 @@ export interface Props {
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-10">
-      <span>Not Found!</span>
+      <div>
+        <div class="content">
+          <h2>Desculpe!</h2>
+          <span>Mas não encontramos o que você está buscando</span>
+          <a href="/">IR PARA PRODUTOS</a>
+        </div>
+        <div class="image">
+          <img
+            src={"https://s3-alpha-sig.figma.com/img/f19e/4bd9/0f73e31a9eefd72f8da92bb56a612a6e?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDou-nXEj0KkLeo6ZS8tuEvMBVRFwMFTkxnf4OYuZKF9PYcPtAVc90RLrGLIQuyeqP6ntyk1jpm8FIrN4sK-5H4idhVtPiV7NdnXc4d6OKoVlxO~GmMbyrNAjGtcsLdHQKbbLufQsSYiqEcH3jaSyRR0r4Ot2cDm7dMoqHzc5pvUh5DuCw3GnKwcGE67t0pZQ0tWN5B65sD7S9eLg4caCAOVO09nJBQ5Pdfeg2oMZKRCeCN3kGfv~aPPvYmWcHrEpw6XPBBrgO9Z0RTi5La5Y3WqmkzRT5i098Zdrw8yunQvvOS5S959BccNNwXMCjOGYgOPqiBNR4URuJINqdUi~Q__"}
+          />
+          {
+            /* {notFound?.image && (
+            <Image
+              src={notFound?.image}
+              width={notFound?.imageWidth}
+              height={notFound?.imageHeight}
+              />
+            )} */
+          }
+        </div>
+      </div>
     </div>
   );
 }

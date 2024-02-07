@@ -4,6 +4,10 @@ import ProductCard, {
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { Product } from "apps/commerce/types.ts";
 
+import ProductCardCustom, {
+  Layout as cardLayout,
+} from "$store/components/product/ProductCardCustom.tsx";
+
 export interface Columns {
   mobile?: 1 | 2;
   desktop?: 2 | 3 | 4 | 5;
@@ -36,14 +40,21 @@ function ProductGallery({ products, layout, offset }: Props) {
   const desktop = DESKTOP_COLUMNS[layout?.columns?.desktop ?? 4];
 
   return (
-    <div class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-10`}>
+    <div class={`shelf-custom-items catalog`}>
       {products?.map((product, index) => (
-        <ProductCard
+        // <ProductCard
+        //   product={product}
+        //   preload={index === 0}
+        //   index={offset + index}
+        //   layout={layout?.card}
+        //   platform={platform}
+        // />
+        <ProductCardCustom
           product={product}
-          preload={index === 0}
-          index={offset + index}
+          itemListName={""}
           layout={layout?.card}
           platform={platform}
+          index={offset + index}
         />
       ))}
     </div>
