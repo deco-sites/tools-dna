@@ -13,9 +13,9 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Slider from "deco-sites/palaciovtex/components/ui/Slider.tsx";
-import SliderJS from "deco-sites/palaciovtex/components/ui/SliderJS.tsx";
-import Icon from "deco-sites/palaciovtex/components/ui/Icon.tsx";
+import Slider from "deco-sites/tools-dna/components/ui/Slider.tsx";
+import SliderJS from "deco-sites/tools-dna/components/ui/SliderJS.tsx";
+import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
 import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
 
 interface Props {

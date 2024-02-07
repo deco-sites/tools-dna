@@ -787,9 +787,6 @@ button.swiper-pagination-bullet {
     backface-visibility: hidden;
     overflow: hidden
 }
-
-@import url(https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap);
-
 .topbar-carousel,
 .topbar-carousel li span {
     color: var(--white)
@@ -805,10 +802,6 @@ button.swiper-pagination-bullet {
     --blue-dark-2: #1D3B55;
     --placeholder-color: #727272;
     --border-color-1: #E9E9E9
-}
-
-* {
-    font-family: Mulish, sans-serif !important
 }
 
 .input:focus,
