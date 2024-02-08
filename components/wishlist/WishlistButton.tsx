@@ -20,9 +20,9 @@ function WishlistButton({
   // console.log(user.value);
   const { loading, addItem, removeItem, getItem } = useWishlist();
   const listItem = useComputed(() =>
-    getItem({ 
-      // sku: productID, 
-      productId: productGroupID || productID 
+    getItem({
+      // sku: productID,
+      productId: productGroupID || productID,
     })
   );
   const fetching = useSignal(false);

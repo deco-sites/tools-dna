@@ -10,6 +10,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
+import type { SectionProps } from "deco/types.ts";
 
 export interface Layout {
   /**
@@ -33,12 +34,12 @@ export interface Props {
 
 function NotFound() {
   return (
-    <div class="w-full flex justify-center items-center py-10">
-      <div>
-        <div class="content">
-          <h2>Desculpe!</h2>
-          <span>Mas não encontramos o que você está buscando</span>
-          <a href="/">IR PARA PRODUTOS</a>
+    <div class="w-full container flex justify-center items-center py-10">
+      <div class="flex flex-row items-start justify-between">
+        <div class="content text-left flex flex-col justify-start items-start gap-2">
+          <h2 class="font-bold text-[80px] leading-[100px] text-[#020202]">Desculpe!</h2>
+          <span class="font-normal text-[55px] leading-[70px] text-[#727272]">Mas não encontramos o que você está buscando</span>
+          <a class="bg-[#164195] mt-6 flex justify-center items-center rounded-full w-[246px] h-[60px] uppercase text-white text-center"href="/">IR PARA PRODUTOS</a>
         </div>
         <div class="image">
           <img
@@ -73,6 +74,8 @@ function Result({
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
+  console.log(breadcrumb)
+
   return (
     <>
       <div class="container px-4 sm:py-10">
@@ -83,9 +86,9 @@ function Result({
           displayFilter={layout?.variant === "drawer"}
         />
 
-        <div class="flex flex-row">
+        <div class="flex flex-row gap-8">
           {layout?.variant === "aside" && filters.length > 0 && (
-            <aside class="hidden sm:block w-min min-w-[250px]">
+            <aside class="hidden sm:block w-min min-w-[262px]">
               <Filters filters={filters} />
             </aside>
           )}

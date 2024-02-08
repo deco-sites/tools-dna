@@ -74,7 +74,17 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
-  // console.log(product)
+  // console.log(product.additionalProperty);
+  const informacoes = product.additionalProperty?.find((property) =>
+    property.name === "Informações"
+  )
+  const DadosTecnicos = product.additionalProperty?.find((property) =>
+    property.name === "Dados Técnicos"
+  )
+  const tabelaDeMedidas = product.additionalProperty?.find((property) =>
+    property.name === "Tabela de Medidas"
+  )
+
 
   return (
     <div class="flex justify-between items-start gap-[30px]">
@@ -161,8 +171,8 @@ function ProductInfo({ page, layout }: Props) {
               {layout?.name === "concat"
                 ? `${isVariantOf?.name} ${name}`
                 : layout?.name === "productGroup"
-                ? isVariantOf?.name
-                : name}
+                  ? isVariantOf?.name
+                  : name}
             </span>
           </h1>
           <p class="mt-3">Vendido e entregue por World Tools</p>
@@ -275,6 +285,11 @@ function ProductInfo({ page, layout }: Props) {
             )
             : <OutOfStock productID={productID} />}
         </div>
+
+        {/* <div class="mt-10">
+          <div dangerouslySetInnerHTML={{ __html: informacoes?.value }}></div>
+          <div dangerouslySetInnerHTML={{ __html: DadosTecnicos?.value }}></div>
+        </div> */}
         {/* Shipping Simulation */}
         {
           /* <div class="mt-8">
