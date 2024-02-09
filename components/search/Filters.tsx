@@ -73,7 +73,9 @@ function Filters({ filters }: Props) {
         .map((filter) => (
           <div class="collapse collapse-plus">
             <input type="checkbox" />
-            <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">{filter.label}</div>
+            <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">
+              {filter.label}
+            </div>
             <div class="collapse-content">
               <FilterValues {...filter} />
             </div>

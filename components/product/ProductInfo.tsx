@@ -17,6 +17,7 @@ import Slider from "deco-sites/tools-dna/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/tools-dna/components/ui/SliderJS.tsx";
 import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
 import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
+import Shipping from "$store/islands/Shipping.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -77,14 +78,13 @@ function ProductInfo({ page, layout }: Props) {
   // console.log(product.additionalProperty);
   const informacoes = product.additionalProperty?.find((property) =>
     property.name === "Informações"
-  )
+  );
   const DadosTecnicos = product.additionalProperty?.find((property) =>
     property.name === "Dados Técnicos"
-  )
+  );
   const tabelaDeMedidas = product.additionalProperty?.find((property) =>
     property.name === "Tabela de Medidas"
-  )
-
+  );
 
   return (
     <div class="flex justify-between items-start gap-[30px]">
@@ -171,8 +171,8 @@ function ProductInfo({ page, layout }: Props) {
               {layout?.name === "concat"
                 ? `${isVariantOf?.name} ${name}`
                 : layout?.name === "productGroup"
-                  ? isVariantOf?.name
-                  : name}
+                ? isVariantOf?.name
+                : name}
             </span>
           </h1>
           <p class="mt-3">Vendido e entregue por World Tools</p>
@@ -286,24 +286,26 @@ function ProductInfo({ page, layout }: Props) {
             : <OutOfStock productID={productID} />}
         </div>
 
-        {/* <div class="mt-10">
+        {/* Shipping Simulation */}
+        <div class="mt-8">
+          {platform === "wake" && (
+            <Shipping
+              items={{
+                id: Number(product.productID),
+                quantity: 1,
+                seller: seller,
+              }}
+            />
+          )}
+        </div>
+
+        {
+          /* <div class="mt-10">
           <div dangerouslySetInnerHTML={{ __html: informacoes?.value }}></div>
           <div dangerouslySetInnerHTML={{ __html: DadosTecnicos?.value }}></div>
-        </div> */}
-        {/* Shipping Simulation */}
-        {
-          /* <div class="mt-8">
-        {platform === "wake" && (
-          <ShippingSimulation
-            items={[{
-              id: Number(product.productID),
-              quantity: 1,
-              seller: seller,
-            }]}
-          />
-        )}
-      </div> */
+        </div> */
         }
+        
         {/* Description card */}
         {
           /* <div class="mt-4 sm:mt-6">

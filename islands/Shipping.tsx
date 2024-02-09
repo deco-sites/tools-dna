@@ -28,7 +28,7 @@ const formatShippingEstimate = (estimate: string) => {
 };
 
 
-function ShippingSimulation({ items }: Props) {
+function Shipping({ items }: Props) {
   const postalCode = useSignal("");
   const loading = useSignal(false);
   const [simulateResult, setSimuteResult] = useState<
@@ -53,7 +53,7 @@ function ShippingSimulation({ items }: Props) {
         deadline: obj?.deadline,
         name: obj?.name,
       }));
-
+      console.log(filterResult)
       setSimuteResult(filterResult);
     } catch (e) {
       setSimuteResult(null);
@@ -139,4 +139,4 @@ function ShippingSimulation({ items }: Props) {
   );
 }
 
-export default ShippingSimulation;
+export default Shipping;

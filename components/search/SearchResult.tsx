@@ -37,9 +37,18 @@ function NotFound() {
     <div class="w-full container flex justify-center items-center py-10">
       <div class="flex flex-row items-start justify-between">
         <div class="content text-left flex flex-col justify-start items-start gap-2">
-          <h2 class="font-bold text-[80px] leading-[100px] text-[#020202]">Desculpe!</h2>
-          <span class="font-normal text-[55px] leading-[70px] text-[#727272]">Mas não encontramos o que você está buscando</span>
-          <a class="bg-[#164195] mt-6 flex justify-center items-center rounded-full w-[246px] h-[60px] uppercase text-white text-center"href="/">IR PARA PRODUTOS</a>
+          <h2 class="font-bold text-[80px] leading-[100px] text-[#020202]">
+            Desculpe!
+          </h2>
+          <span class="font-normal text-[55px] leading-[70px] text-[#727272]">
+            Mas não encontramos o que você está buscando
+          </span>
+          <a
+            class="bg-[#164195] mt-6 flex justify-center items-center rounded-full w-[246px] h-[60px] uppercase text-white text-center"
+            href="/"
+          >
+            IR PARA PRODUTOS
+          </a>
         </div>
         <div class="image">
           <img
@@ -74,7 +83,7 @@ function Result({
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-  console.log(breadcrumb)
+  console.log(breadcrumb);
 
   return (
     <>
