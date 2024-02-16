@@ -27,7 +27,6 @@ const formatShippingEstimate = (estimate: string) => {
   if (type === "h") return `${time} horas`;
 };
 
-
 function Shipping({ items }: Props) {
   const postalCode = useSignal("");
   const loading = useSignal(false);
@@ -53,7 +52,7 @@ function Shipping({ items }: Props) {
         deadline: obj?.deadline,
         name: obj?.name,
       }));
-      console.log(filterResult)
+      console.log(filterResult);
       setSimuteResult(filterResult);
     } catch (e) {
       setSimuteResult(null);

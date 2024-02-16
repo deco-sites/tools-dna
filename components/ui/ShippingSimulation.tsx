@@ -27,7 +27,6 @@ const formatShippingEstimate = (estimate: string) => {
   if (type === "h") return `${time} horas`;
 };
 
-
 function ShippingSimulation({ items }: Props) {
   const postalCode = useSignal("");
   const loading = useSignal(false);
