@@ -38,11 +38,12 @@ export default function InstitucionalBanner({
         </div>
         <div class="w-full max-h-[610px] overflow-hidden flex">
           <Image
-            class="object-contain object-right w-full"
+            class="object-cover object-right w-full"
             src={image.src}
             width={image.width}
             height={image.height}
             alt={image.alt}
+            loading={"lazy"}
           />
         </div>
       </div>

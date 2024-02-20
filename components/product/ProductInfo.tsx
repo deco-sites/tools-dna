@@ -75,8 +75,6 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
-  console.log(product);
-
   const informacoes = product.additionalProperty?.find((property) =>
     property.name === "Informações"
   );
@@ -85,6 +83,10 @@ function ProductInfo({ page, layout }: Props) {
   );
   const tabelaDeMedidas = product.additionalProperty?.find((property) =>
     property.name === "Tabela de Medidas"
+  );
+
+  const selections = product.additionalProperty?.filter((property) => 
+    property.valueReference === "SELECTIONS"
   );
 
   return (
@@ -173,8 +175,8 @@ function ProductInfo({ page, layout }: Props) {
                 {layout?.name === "concat"
                   ? `${isVariantOf?.name} ${name}`
                   : layout?.name === "productGroup"
-                  ? isVariantOf?.name
-                  : name}
+                    ? isVariantOf?.name
+                    : name}
               </span>
             </h1>
             <p class="mt-3">Vendido e entregue por World Tools</p>
@@ -190,6 +192,26 @@ function ProductInfo({ page, layout }: Props) {
               {product.brand && (
                 <img src={product.brand.logo} alt={product.brand.name} />
               )}
+              
+            </div>
+            <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">
+              <h3 class="text-[#727272] text-base mb-4 mt-2">Opções de Escolha</h3>
+              <ul>
+                {selections && selections.map((selection, index) => (
+                  <li key={index}>
+                    <a href={selection.url} class={`
+                      mb-2 max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
+                      ${selection.value == "false" ? "opacity-50" : "opacity-100"}`
+                    }>
+                      {selection.name}
+                      {selection.value == "true" && (
+                        <Icon style={{color: "#164195"}} size={16} id="CheckSelection" strokeWidth={3}/>
+                      )} 
+                    </a>
+                  </li>
+                )) }
+              </ul>
+              
             </div>
           </div>
           {/* Sku Selector */}
