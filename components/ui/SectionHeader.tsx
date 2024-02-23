@@ -37,6 +37,7 @@ function Header(props: Props) {
                       alt={props.title}
                       width={72}
                       height={72}
+                      loading={"lazy"}
                     />
                   )}
 

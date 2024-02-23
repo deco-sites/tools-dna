@@ -79,7 +79,7 @@ function Shipping({ items }: Props) {
         <div class="border-[0.5px] border-[#A1A1A1] p-1 rounded-s w-full flex justify-between">
           <input
             type="text"
-            class="appearance-none w-[70%] outline-0 pl-3"
+            class="appearance-none focus:outline-none w-[70%] outline-0 pl-3"
             placeholder="Informar um CEP"
             value={postalCode.value}
             maxLength={8}
@@ -90,7 +90,7 @@ function Shipping({ items }: Props) {
           <Button
             type="submit"
             loading={loading.value}
-            class="bg-primary rounded-s text-white outline-0 font-semibold hover:bg-[#C20F36] hover:border-[#C20F36] text-xs h-[30px] rounded-sm lg:h-[32px] px-[20px] lg:text-[14px]"
+            class="font-bold text-white text-base bg-[#15AD40] w-24 rounded-xl h-[36px]"
           >
             Calcular
           </Button>

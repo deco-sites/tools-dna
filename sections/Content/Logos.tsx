@@ -58,10 +58,10 @@ function Logos(props: Props) {
             <div class="flex w-full h-full items-center justify-center">
               <a href={element.altText}>
                 <img
-                  loading="lazy"
                   class="max-w-full max-h-full"
                   src={element.image}
                   alt={element.altText || ""}
+                  loading={"lazy"}
                 />
                 {
                   /* <Image

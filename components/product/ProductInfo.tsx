@@ -18,6 +18,8 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
 import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
 import Shipping from "$store/islands/Shipping.tsx";
+import { calculate } from "deco-sites/tools-dna/components/product/ProductCardCustom.tsx";
+import ProductReview from "deco-sites/tools-dna/islands/ProductReview.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -29,6 +31,10 @@ interface Props {
      */
     name?: "concat" | "productGroup" | "product";
   };
+}
+
+function range(start: number, end: number) {
+  return new Array(end - start + 1).fill(1).map((d, i) => i + start);
 }
 
 function ProductInfo({ page, layout }: Props) {
@@ -60,6 +66,7 @@ function ProductInfo({ page, layout }: Props) {
     installments,
     availability,
     parcelamentoValue,
+    inventory,
   } = useOffer(offers);
   const productGroupID = isVariantOf?.productGroupID ?? "";
   const breadcrumb = {
@@ -67,6 +74,8 @@ function ProductInfo({ page, layout }: Props) {
     itemListElement: breadcrumbList?.itemListElement.slice(0, -1),
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
+
+  console.log(product);
 
   const eventItem = mapProductToAnalyticsItem({
     product,
@@ -85,18 +94,33 @@ function ProductInfo({ page, layout }: Props) {
     property.name === "Tabela de Medidas"
   );
 
-  const selections = product.additionalProperty?.filter((property) => 
+  const selections = product.additionalProperty?.filter((property) =>
     property.valueReference === "SELECTIONS"
   );
 
+  const ratingValueCustom = product.aggregateRating?.ratingValue
+    ? product.aggregateRating?.ratingValue
+    : 0;
+
   return (
     <div class="container">
-      <section class="flex flex-col md:flex-row justify-between items-start gap-[30px]">
+      <section class="mt-4 flex flex-col md:flex-row justify-between items-start gap-[30px]">
         <div
           id={id}
           class="grid grid-flow-row sm:grid-flow-col w-full max-w-[515px]"
         >
-          <div class="relative max-w-[515px]" id={id}>
+          <div
+            class="relative max-w-[515px] justify-center flex flex-col gap-4 items-center"
+            id={id}
+          >
+            <div class="absolute top-3 right-3">
+              {platform === "wake" && (
+                <WishlistButton
+                  productGroupID={productGroupID}
+                  productID={productID}
+                />
+              )}
+            </div>
             <Slider class="carousel carousel-center gap-6">
               {product.image && product.image.map((img, index) => {
                 return (
@@ -124,36 +148,37 @@ function ProductInfo({ page, layout }: Props) {
             </Slider>
 
             <Slider.PrevButton
-              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+              class="no-animation absolute left-2 top-[90%]"
               disabled
             >
-              <Icon size={24} id="ChevronLeft" strokeWidth={3} />
+              <Icon size={18} id="ChevronLeftCustom" strokeWidth={3} />
             </Slider.PrevButton>
 
             <Slider.NextButton
-              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+              class=" absolute right-2 top-[90%]"
               disabled={product.image && product.image.length < 2}
             >
-              <Icon size={24} id="ChevronRight" strokeWidth={3} />
+              <Icon size={18} id="ChevronRightCustom" strokeWidth={3} />
             </Slider.NextButton>
 
             {/* Dots */}
-            <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-row order-2 sm:order-1">
+            <Slider.Dots class="carousel max-w-[400px] carousel-center gap-1 px-4 sm:px-0 sm:flex-row order-2 sm:order-1">
               {product.image &&
                 product.image.map((img, index) => (
-                  <li class="carousel-item min-w-[63px]">
-                    <Slider.Dot index={index}>
-                      <Image
-                        class="group-disabled:border-base-300 border rounded "
-                        width={80}
-                        height={80}
-                        src={img.url!}
-                        alt={img.alternateName}
-                      />
-                    </Slider.Dot>
-                  </li>
+                  <Slider.Dot
+                    class="w-1/3 carousel-item justify-center"
+                    index={index}
+                  >
+                    <Image
+                      class="group-disabled:border-[#164195] border-2 border-solid border-[#E9E9E9] rounded-[22px] "
+                      width={125}
+                      height={108}
+                      src={img.url!}
+                      alt={img.alternateName}
+                    />
+                  </Slider.Dot>
                 ))}
-            </ul>
+            </Slider.Dots>
 
             <SliderJS rootId={id} />
           </div>
@@ -175,43 +200,71 @@ function ProductInfo({ page, layout }: Props) {
                 {layout?.name === "concat"
                   ? `${isVariantOf?.name} ${name}`
                   : layout?.name === "productGroup"
-                    ? isVariantOf?.name
-                    : name}
+                  ? isVariantOf?.name
+                  : name}
               </span>
             </h1>
-            <p class="mt-3">Vendido e entregue por World Tools</p>
-            <div>
+            {/* <p class="mt-3">Vendido e entregue por World Tools</p> */}
+            <div class="rating rating-half flex items-center">
+              {range(0, 4).map((num) => {
+                return (
+                  <input
+                    onClick={(e) => e.preventDefault()}
+                    type="radio"
+                    name={`rating-${num}`}
+                    class={`!w-4 !h-4 mask mask-star-2 !bg-[#E9E9E9] checked:!bg-[#FFC700]`}
+                    checked={num <= ratingValueCustom - 1}
+                  />
+                );
+              })}
               {product.aggregateRating && (
-                <>
-                  {product.aggregateRating.ratingValue} --
+                <div class="ml-3">
                   {product.aggregateRating.ratingCount} Avaliações
-                </>
+                </div>
               )}
             </div>
-            <div>
-              {product.brand && (
-                <img src={product.brand.logo} alt={product.brand.name} />
+            <div class="mt-2.5 pt-2.5 border-t-[#E9E9E9] border-t border-solid">
+              {product.brand && product.brand.logo && (
+                <Image
+                  class="max-w-[90px]"
+                  loading={"lazy"}
+                  width={90}
+                  src={product.brand.logo}
+                  alt={product.brand.name}
+                />
               )}
-              
             </div>
             <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">
-              <h3 class="text-[#727272] text-base mb-4 mt-2">Opções de Escolha</h3>
+              <h3 class="text-[#727272] text-base mb-4 mt-2">
+                Opções de Escolha
+              </h3>
               <ul>
-                {selections && selections.map((selection, index) => (
-                  <li key={index}>
-                    <a href={selection.url} class={`
+                {selections &&
+                  selections.map((selection, index) => (
+                    <li key={index}>
+                      <a
+                        href={selection.url}
+                        class={`
                       mb-2 max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
-                      ${selection.value == "false" ? "opacity-50" : "opacity-100"}`
-                    }>
-                      {selection.name}
-                      {selection.value == "true" && (
-                        <Icon style={{color: "#164195"}} size={16} id="CheckSelection" strokeWidth={3}/>
-                      )} 
-                    </a>
-                  </li>
-                )) }
+                      ${
+                          selection.value == "false"
+                            ? "opacity-50"
+                            : "opacity-100"
+                        }`}
+                      >
+                        {selection.name}
+                        {selection.value == "true" && (
+                          <Icon
+                            style={{ color: "#164195" }}
+                            size={16}
+                            id="CheckSelection"
+                            strokeWidth={3}
+                          />
+                        )}
+                      </a>
+                    </li>
+                  ))}
               </ul>
-              
             </div>
           </div>
           {/* Sku Selector */}
@@ -228,7 +281,29 @@ function ProductInfo({ page, layout }: Props) {
         >
           {/* Prices */}
           <div class="mt-4">
-            <div class="flex flex-col">
+            <div class="flex flex-col relative">
+              <div class="floating-tags !top-[-20px] !justify-end">
+                <div class="percentageTag">
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.463 7.07h1.214m3.643 4.858h1.214m0-5.464-6.07 6.071M8.65 1.351 7.28 2.72a1.2 1.2 0 0 1-.848.352h-2.16a1.2 1.2 0 0 0-1.199 1.2V6.43a1.2 1.2 0 0 1-.352.847L1.35 8.652a1.2 1.2 0 0 0 0 1.696l1.372 1.371a1.198 1.198 0 0 1 .351.848v2.159a1.2 1.2 0 0 0 1.2 1.2h2.159c.318 0 .623.126.847.352l1.372 1.37a1.2 1.2 0 0 0 1.697 0l1.37-1.371a1.2 1.2 0 0 1 .848-.351h2.16a1.2 1.2 0 0 0 1.199-1.2v-2.16c0-.317.126-.622.352-.847l1.37-1.372a1.2 1.2 0 0 0 0-1.696L16.278 7.28a1.2 1.2 0 0 1-.351-.848v-2.16a1.2 1.2 0 0 0-1.2-1.199h-2.159a1.2 1.2 0 0 1-.847-.352l-1.374-1.37a1.2 1.2 0 0 0-1.696 0Z"
+                      stroke="#164195"
+                    />
+                  </svg>
+                  {listPrice && pixPrice &&
+                    calculate(listPrice, pixPrice)}
+                </div>
+                <div class="installmentsTag">
+                  {installments}
+                  <br /> sem juros
+                </div>
+              </div>
               {pixPrice && (listPrice ?? 0) > pixPrice && (
                 <span class="line-through leading-[20px] text-md font-normal text-[#727272]">
                   {formatPrice(listPrice, offers?.priceCurrency)}
@@ -305,6 +380,9 @@ function ProductInfo({ page, layout }: Props) {
                       additionalProperty={additionalProperty}
                     />
                   )}
+                  {inventory && inventory < 20 && (
+                    <p class="mt-3">Apenas {inventory} peças no estoque</p>
+                  )}
                 </>
               )
               : <OutOfStock productID={productID} />}
@@ -370,6 +448,7 @@ function ProductInfo({ page, layout }: Props) {
           />
         </div>
       </section>
+
       <section>
         <div class="description mt-10">
           <div class="informacoes">
@@ -412,15 +491,37 @@ function ProductInfo({ page, layout }: Props) {
             )}
           </div>
           <div class="reviews mt-6 pt-6 border-t-[#e9e9e9] border-t border-solid">
-            <div class="flex justify-around mb-5">
-              <h3 class="font-semibold text-3xl leading-8 text-black">
+            <div class="flex justify-between mb-5">
+              <h3 class="font-semibold text-3xl leading-8 text-black flex items-center gap-16">
                 Avaliações
+                <div class="rating rating-half flex items-center">
+                  {range(0, 4).map((num) => {
+                    return (
+                      <input
+                        onClick={(e) => e.preventDefault()}
+                        type="radio"
+                        name={`rating-down-${num}`}
+                        class={`!w-4 !h-4 mask mask-star-2 !bg-[#E9E9E9] checked:!bg-[#FFC700]`}
+                        checked={num <= ratingValueCustom - 1}
+                      />
+                    );
+                  })}
+                </div>
+                <div class="flex items-center font-semibold text-3xl text-black">
+                  {product.aggregateRating?.ratingValue}
+                  <span class="font-normal text-base text-[#727272]">
+                    ({product.aggregateRating?.reviewCount} avaliações)
+                  </span>
+                </div>
               </h3>
-              <div class="flex items-end font-semibold text-3xl text-black">
-                {product.aggregateRating?.ratingValue}
-                <span class="font-normal text-base text-[#727272]">
-                  ({product.aggregateRating?.reviewCount} avaliações)
-                </span>
+              <div>
+                <button
+                  type="button"
+                  class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4"
+                >
+                  Avaliar este produto
+                </button>
+                {/* <ProductReview productId={product.productID} /> */}
               </div>
             </div>
 

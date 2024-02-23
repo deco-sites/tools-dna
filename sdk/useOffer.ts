@@ -68,12 +68,14 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
     item.name === "PIX"
   );
   const availability = offer?.availability;
+  const inventory = offer?.inventoryLevel.value;
 
   return {
     price,
     listPrice: listPrice?.price,
     availability,
     seller,
+    inventory,
     pixPrice: pixPrice?.price,
     parcelamentoValue: parcelamentoValue?.billingIncrement,
     installments: installment && price

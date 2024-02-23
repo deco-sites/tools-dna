@@ -1,3 +1,4 @@
+import { asset } from "$fresh/runtime.ts";
 import { SendEventOnView } from "$store/components/Analytics.tsx";
 import { Layout as CardLayout } from "$store/components/product/ProductCard.tsx";
 import Filters from "$store/components/search/Filters.tsx";
@@ -51,18 +52,12 @@ function NotFound() {
           </a>
         </div>
         <div class="image">
-          <img
-            src={"https://s3-alpha-sig.figma.com/img/f19e/4bd9/0f73e31a9eefd72f8da92bb56a612a6e?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDou-nXEj0KkLeo6ZS8tuEvMBVRFwMFTkxnf4OYuZKF9PYcPtAVc90RLrGLIQuyeqP6ntyk1jpm8FIrN4sK-5H4idhVtPiV7NdnXc4d6OKoVlxO~GmMbyrNAjGtcsLdHQKbbLufQsSYiqEcH3jaSyRR0r4Ot2cDm7dMoqHzc5pvUh5DuCw3GnKwcGE67t0pZQ0tWN5B65sD7S9eLg4caCAOVO09nJBQ5Pdfeg2oMZKRCeCN3kGfv~aPPvYmWcHrEpw6XPBBrgO9Z0RTi5La5Y3WqmkzRT5i098Zdrw8yunQvvOS5S959BccNNwXMCjOGYgOPqiBNR4URuJINqdUi~Q__"}
+          <Image
+            src={asset(`/package-not-found.png`)}
+            width={660}
+            height={660}
+            loading={"lazy"}
           />
-          {
-            /* {notFound?.image && (
-            <Image
-              src={notFound?.image}
-              width={notFound?.imageWidth}
-              height={notFound?.imageHeight}
-              />
-            )} */
-          }
         </div>
       </div>
     </div>

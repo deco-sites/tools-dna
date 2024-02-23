@@ -12,6 +12,7 @@ import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import { asset } from "$fresh/runtime.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export type Item = {
   label: string;
@@ -284,12 +285,13 @@ function Footer({
                 <h3 class="text-lg">Selos de Segurança</h3>
                 <ul class="flex items-center gap-4 flex-wrap">
                   <li title="Selo Google">
-                    <img
+                    <Image
                       style="max-width: 228px"
                       src={asset(`/exemplo-selos-de-seguranca.png`)}
                       alt="Selos de Segurança"
-                      width="228px"
+                      width={228}
                       height={100}
+                      loading={"lazy"}
                     />
                   </li>
                 </ul>

@@ -13,6 +13,7 @@ const ATTRIBUTES = {
   'data-slide="prev"': 'data-slide="prev"',
   'data-slide="next"': 'data-slide="next"',
   "data-dot": "data-dot",
+  "data-dots-slider": "data-dots-slider",
 };
 
 // Percentage of the item that has to be inside the container
@@ -46,12 +47,18 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
   // deno-lint-ignore no-explicit-any
   typeof (x as any).offsetLeft === "number";
 
+let dotsDebounceTimer: number;
+
 const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const root = document.getElementById(rootId);
   const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
   const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
+  const dotContainer = root?.querySelector(
+    `[${ATTRIBUTES["data-dots-slider"]}]`,
+  );
+
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
 
   if (!root || !slider || !items || items.length === 0) {
@@ -62,6 +69,32 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
     return;
   }
+
+  const fixDotsScroll = (index: number) => {
+    if (!dots || !dotContainer) return;
+
+    const item = dots.item(index);
+
+    if (!isHTMLElement(item) || !isHTMLElement(dotContainer)) {
+      console.warn(
+        `Dot at index ${index} is not an html element.`,
+      );
+
+      return;
+    }
+
+    const left = (item.offsetLeft - dotContainer.offsetLeft) -
+      item.getBoundingClientRect().width;
+
+    clearTimeout(dotsDebounceTimer);
+    dotsDebounceTimer = setTimeout(() => {
+      dotContainer.scrollTo({
+        top: 0,
+        left,
+        behavior: scroll,
+      });
+    }, 300);
+  };
 
   const getElementsInsideContainer = () => {
     const indices: number[] = [];
@@ -95,10 +128,18 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
       return;
     }
 
+    const diff = (item.offsetLeft - root.scrollLeft) - slider.scrollLeft;
+
+    const diffAbs = Math.abs(diff);
+
+    const left = diff < 0
+      ? slider.scrollLeft - diffAbs
+      : slider.scrollLeft + diffAbs;
+
     slider.scrollTo({
       top: 0,
+      left,
       behavior: scroll,
-      left: item.offsetLeft - root.offsetLeft,
     });
   };
 
@@ -138,6 +179,8 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
           dot?.removeAttribute("disabled");
         }
 
+        fixDotsScroll(index);
+
         if (!infinite) {
           if (index === 0) {
             if (item.isIntersecting) {
@@ -158,7 +201,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     { threshold: THRESHOLD, root: slider },
   );
 
-  items.forEach((item) => observer.observe(item));
+  Array.from(items).reverse().forEach((item) => observer.observe(item));
 
   for (let it = 0; it < (dots?.length ?? 0); it++) {
     dots?.item(it).addEventListener("click", () => goToItem(it));

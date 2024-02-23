@@ -62,6 +62,7 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
                       alt={image.alt}
                       width={72}
                       height={72}
+                      loading={"lazy"}
                     />
                   )}
 

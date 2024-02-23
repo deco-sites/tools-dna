@@ -57,7 +57,7 @@ const relative = (url: string) => {
   return `${link.pathname}${link.search}`;
 };
 
-const calculate = (item: number, item2: number) => {
+export const calculate = (item: number, item2: number) => {
   if ((item - item2) > 0) {
     const percentValue = Math.round((item - item2) / item * 100);
     return `${percentValue}% OFF`;
@@ -290,6 +290,7 @@ function ProductCardCustom(
                 alt={brand?.name}
                 width={100}
                 height={100}
+                loading={"lazy"}
               />
             </a>
             {l?.hide?.productName ? "" : (
