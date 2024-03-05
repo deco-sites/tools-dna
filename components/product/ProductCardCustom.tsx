@@ -67,6 +67,10 @@ export const calculate = (item: number, item2: number) => {
 const WIDTH = 314;
 const HEIGHT = 272;
 
+function range(start: number, end: number) {
+  return new Array(end - start + 1).fill(1).map((d, i) => i + start);
+}
+
 function ProductCardCustom(
   { product, preload, itemListName, layout, platform, index }: Props,
 ) {
@@ -88,6 +92,10 @@ function ProductCardCustom(
   const { listPrice, price, installments, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
+
+  const ratingValueCustom = product.aggregateRating?.ratingValue
+  ? product.aggregateRating?.ratingValue
+  : 0;
 
   const l = layout;
   const align =
@@ -166,12 +174,8 @@ function ProductCardCustom(
           <br /> sem juros
         </div>
       </div>
-      <figure
-        class="relative overflow-hidden card-figure"
-        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
-      >
-        {/* Wishlist button */}
-        <div
+              {/* Wishlist button */}
+              <div
           class={`absolute top-2 z-10
           ${
             l?.elementsPositions?.favoriteIcon === "Top left"
@@ -192,6 +196,10 @@ function ProductCardCustom(
             />
           )}
         </div>
+      <figure
+        class="relative overflow-hidden card-figure"
+        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+      >
         {/* Product Images */}
         <a
           href={url && relative(url)}
@@ -299,6 +307,26 @@ function ProductCardCustom(
                 dangerouslySetInnerHTML={{ __html: name ?? "" }}
               />
             )}
+
+          <div class="rating rating-half flex items-center">
+              {range(0, 4).map((num) => {
+                return (
+                  <input
+                    onClick={(e) => e.preventDefault()}
+                    type="radio"
+                    name={`rating-card-${num}`}
+                    class={`!w-4 !h-4 mask mask-star-2 !bg-[#E9E9E9] checked:!bg-[#FFC700]`}
+                    checked={num <= ratingValueCustom - 1}
+                  />
+                );
+              })}
+              {product.aggregateRating && (
+                <div class="ml-3">
+                  {product.aggregateRating.ratingCount} Avaliações
+                </div>
+              )}
+            </div>
+
             {l?.hide?.productDescription ? "" : (
               <div
                 class="card-description truncate text-sm lg:text-sm text-neutral"
@@ -333,7 +361,7 @@ function ProductCardCustom(
             {l?.hide?.installments
               ? ""
               : (
-                <div class="card-installments text-base lg:text-base truncate">
+                <div class="card-installments !text-[#164195] text-base lg:text-base truncate">
                   ou em <strong>{installments} no cartão</strong>
                 </div>
               )}

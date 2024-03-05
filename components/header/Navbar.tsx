@@ -57,7 +57,7 @@ function Navbar({ items, searchbar, logo }: {
       {/* Desktop Version */}
       <div
         style="gap: 5rem"
-        class="container hidden md:flex flex-row justify-between items-center border-b border-base-200 w-full container"
+        class="container hidden md:flex flex-row justify-between items-center w-full"
       >
         <div class="flex-none">
           {logo && (
@@ -118,7 +118,7 @@ function Navbar({ items, searchbar, logo }: {
           {platform === "nuvemshop" && <CartButtonNuvemshop />}
         </div>
       </div>
-      <div class="relative hidden md:flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 py-4">
+      <div class="relative hidden md:flex flex-row justify-between items-center border-t border-base-200 w-full pl-2 pr-6 py-4">
         <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem item={item} />)}
         </div>

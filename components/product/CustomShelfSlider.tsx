@@ -59,7 +59,7 @@ function CustomShelfSlider({
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item w-1/4 sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
+              class="carousel-item border border-[#E9E9E9] p-2 rounded-md w-1/4 sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
             >
               <ProductCardCustom
                 product={product}

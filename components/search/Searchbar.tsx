@@ -54,7 +54,7 @@ export interface Props {
 
 function Searchbar({
   placeholder = "What are you looking for?",
-  action = "/s",
+  action = "/s?",
   name = "q",
   loader,
   platform,

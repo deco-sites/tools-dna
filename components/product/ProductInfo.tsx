@@ -20,6 +20,7 @@ import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/I
 import Shipping from "$store/islands/Shipping.tsx";
 import { calculate } from "deco-sites/tools-dna/components/product/ProductCardCustom.tsx";
 import ProductReview from "deco-sites/tools-dna/islands/ProductReview.tsx";
+import Breadcrumb from "deco-sites/tools-dna/components/ui/Breadcrumb.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -104,6 +105,9 @@ function ProductInfo({ page, layout }: Props) {
 
   return (
     <div class="container">
+      <section class="mt-4">
+        <Breadcrumb itemListElement={breadcrumb.itemListElement} />
+      </section>
       <section class="mt-4 flex flex-col md:flex-row justify-between items-start gap-[30px]">
         <div
           id={id}
@@ -185,17 +189,16 @@ function ProductInfo({ page, layout }: Props) {
         </div>
 
         <div class="flex flex-col w-full min-w-[376px] max-w-[376px]" id={id}>
-          {/* <Breadcrumb itemListElement={breadcrumb.itemListElement} /> */}
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
               {productID && (
-                <span class="text-sm text-base-300">
+                <span class="text-sm text-[#727272]">
                   COD.: {productID}
                 </span>
               )}
             </div>
-            <h1>
+            <h1 class="mb-4">
               <span class="font-medium text-[25px] leading-[32px] lowercase">
                 {layout?.name === "concat"
                   ? `${isVariantOf?.name} ${name}`
@@ -205,7 +208,7 @@ function ProductInfo({ page, layout }: Props) {
               </span>
             </h1>
             {/* <p class="mt-3">Vendido e entregue por World Tools</p> */}
-            <div class="rating rating-half flex items-center">
+            <div class="rating rating-half flex items-center mb-6">
               {range(0, 4).map((num) => {
                 return (
                   <input
@@ -313,7 +316,7 @@ function ProductInfo({ page, layout }: Props) {
                 {formatPrice(pixPrice, offers?.priceCurrency)}
               </span>
             </div>
-            <span class="">
+            <span class="text-[#164195]">
               ou em{" "}
               <strong>
                 {installments} de{" "}
@@ -381,7 +384,7 @@ function ProductInfo({ page, layout }: Props) {
                     />
                   )}
                   {inventory && inventory < 20 && (
-                    <p class="mt-3">Apenas {inventory} peças no estoque</p>
+                    <p class="mt-3 text-center">Apenas {inventory} peças no estoque</p>
                   )}
                 </>
               )

@@ -203,7 +203,6 @@
     font-style: italic;
     font-size: 16px;
     line-height: 20px;
-    color: #020202
 }
 
 .shelf-custom-items.odd {
@@ -378,7 +377,7 @@
 .endereco-new {
     max-width: 330px;
     font-size: 16px;
-    margin-left: 32px
+    margin-left: calc(32px + 1rem);
 }
 
 .copyright {
@@ -563,11 +562,6 @@
 
 .carousel-item button:disabled .dots-rounded {
     background-color: #4BAEE9;
-}
-
-.listOfBenefits {
-    border-bottom: 1px solid #E9E9E9;
-    padding-bottom: 16px;
 }
 
 .category-list .showcase-header {

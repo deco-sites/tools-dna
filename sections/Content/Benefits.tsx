@@ -62,8 +62,8 @@ export default function Benefits(
           <Icon
             id={benefit.icon}
             class={reverse ? "text-base-100" : "text-primary"}
-            width={36}
-            height={36}
+            width={60}
+            height={60}
             strokeWidth={0.01}
             fill="currentColor"
           />
@@ -94,7 +94,7 @@ export default function Benefits(
     <>
       {!layout?.variation || layout?.variation === "Simple"
         ? (
-          <div class="w-full border-b sm:border-none px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
+          <div class="w-full sm:border-b sm:border-neutral-300 px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
             <Header
               title={title}
               description={description}
@@ -116,7 +116,7 @@ export default function Benefits(
             alignment={layout?.headerAlignment || "center"}
           />
           <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
+            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
               {listOfBenefits}
             </div>
           </div>

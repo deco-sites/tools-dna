@@ -128,7 +128,10 @@ function Cart({
               </div>
 
               <div class="p-4">
-                <a class="inline-block w-full" href={`//checkout.worldtools.com.br`}>
+                <a
+                  class="inline-block w-full"
+                  href={`//checkout.worldtools.com.br`}
+                >
                   <Button
                     data-deco="buy-button"
                     class="btn-primary btn-block"
