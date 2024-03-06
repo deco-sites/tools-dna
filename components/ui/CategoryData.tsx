@@ -65,8 +65,6 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
                       loading={"lazy"}
                     />
                   )}
-
-                  
                 </h2>
               )}
             {subtitle &&

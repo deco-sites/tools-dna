@@ -94,8 +94,8 @@ function ProductCardCustom(
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
 
   const ratingValueCustom = product.aggregateRating?.ratingValue
-  ? product.aggregateRating?.ratingValue
-  : 0;
+    ? product.aggregateRating?.ratingValue
+    : 0;
 
   const l = layout;
   const align =
@@ -174,28 +174,28 @@ function ProductCardCustom(
           <br /> sem juros
         </div>
       </div>
-              {/* Wishlist button */}
-              <div
-          class={`absolute top-2 z-10
+      {/* Wishlist button */}
+      <div
+        class={`absolute top-2 z-10
           ${
-            l?.elementsPositions?.favoriteIcon === "Top left"
-              ? "left-2"
-              : "right-2"
-          }
+          l?.elementsPositions?.favoriteIcon === "Top left"
+            ? "left-2"
+            : "right-2"
+        }
           ${
-            l?.onMouseOver?.showFavoriteIcon
-              ? "lg:hidden lg:group-hover:block"
-              : "lg:hidden lg:group-hover:block"
-          }
+          l?.onMouseOver?.showFavoriteIcon
+            ? "lg:hidden lg:group-hover:block"
+            : "lg:hidden lg:group-hover:block"
+        }
         `}
-        >
-          {platform === "wake" && (
-            <WishlistButton
-              productGroupID={productGroupID}
-              productID={productID}
-            />
-          )}
-        </div>
+      >
+        {platform === "wake" && (
+          <WishlistButton
+            productGroupID={productGroupID}
+            productID={productID}
+          />
+        )}
+      </div>
       <figure
         class="relative overflow-hidden card-figure"
         style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
@@ -308,7 +308,7 @@ function ProductCardCustom(
               />
             )}
 
-          <div class="rating rating-half flex items-center">
+            <div class="rating rating-half flex items-center">
               {range(0, 4).map((num) => {
                 return (
                   <input

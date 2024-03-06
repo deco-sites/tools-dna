@@ -8,13 +8,16 @@ import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 
 export type Props =
-  & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
+  & Pick<
+    ProductListingPage,
+    "filters" | "breadcrumb" | "sortOptions" | "pageInfo"
+  >
   & {
     displayFilter?: boolean;
   };
 
 function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions }: Props,
+  { filters, breadcrumb, displayFilter, sortOptions, pageInfo }: Props,
 ) {
   const open = useSignal(false);
 
@@ -41,7 +44,7 @@ function SearchControls(
         </>
       }
     >
-      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] mb-4">
+      <div class="flex flex-col justify-between p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] mb-4">
         <div class="flex flex-row items-center sm:p-0 mb-2">
           <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
         </div>
@@ -56,6 +59,7 @@ function SearchControls(
             Filtrar
             <Icon id="FilterList" width={16} height={16} />
           </Button>
+          {pageInfo.records} produtos encontrados
           {sortOptions.length > 0 && <Sort sortOptions={sortOptions} />}
         </div>
       </div>

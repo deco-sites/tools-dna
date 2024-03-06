@@ -10,8 +10,8 @@ import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import Image from "apps/website/components/Image.tsx";
-import { ImageWidget } from "apps/admin/widgets.ts";
-import type { SectionProps } from "deco/types.ts";
+import { Section } from "deco/blocks/section.ts";
+import CustomBreadCrumb from "deco-sites/tools-dna/components/search/CustomBreadCrumb.tsx";
 
 export interface Layout {
   /**
@@ -23,11 +23,11 @@ export interface Layout {
    */
   columns?: Columns;
 }
-
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
   layout?: Layout;
+  sections: Section[] | null;
   cardLayout?: CardLayout;
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
@@ -69,27 +69,32 @@ function Result({
   layout,
   cardLayout,
   startingPage = 0,
+  sections,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
   const perPage = pageInfo.recordPerPage || products.length;
-
   const id = useId();
 
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-  console.log(breadcrumb);
-
   return (
     <>
-      <div class="container px-4 sm:py-10">
+      <div class="container">
         <SearchControls
           sortOptions={sortOptions}
           filters={filters}
           breadcrumb={breadcrumb}
+          pageInfo={pageInfo}
           displayFilter={layout?.variant === "drawer"}
         />
+      </div>
 
+      {sections?.map(({ Component, props }, index) => (
+        <Component key={index} {...props} />
+      ))}
+
+      <div class="container px-4 sm:py-10">
         <div class="flex flex-row gap-8">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[262px]">

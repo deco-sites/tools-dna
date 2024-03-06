@@ -2,13 +2,16 @@ import Image from "apps/website/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import { useMemo } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { SectionProps } from "deco/types.ts";
 
 export interface Image {
   image: ImageWidget;
   altText: string;
 }
 
-export interface Props {
+export interface Secao {
+  /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
+  matcher?: string;
   title?: string;
   description?: string;
   images?: Image[];
@@ -30,13 +33,15 @@ const IMAGES = [
   },
 ];
 
-function Logos(props: Props) {
-  const {
-    title,
-    description,
-    images,
-    layout,
-  } = props;
+function Logos(props: SectionProps<ReturnType<typeof loader>>) {
+  const { logo } = props;
+
+  if (!logo) {
+    return null;
+  }
+
+  const { title, description, images, layout } = logo;
+
   const list = useMemo(
     () =>
       images && images.length > 0
@@ -63,15 +68,6 @@ function Logos(props: Props) {
                   alt={element.altText || ""}
                   loading={"lazy"}
                 />
-                {
-                  /* <Image
-                width={220}
-                height={40}
-                src={element.image}
-                alt={element.altText || ""}
-                class="max-w-full max-h-full"
-                /> */
-                }
               </a>
             </div>
           </div>
@@ -80,5 +76,62 @@ function Logos(props: Props) {
     </div>
   );
 }
+
+const DEFAULT_PROPS = {
+  banners: [
+    {
+      "title": "Navegue por marcas default",
+      "images": [
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/20efe83a-42be-4090-8158-707291b81501",
+          "altText": "/",
+        },
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/35bf712a-dc8d-4a5c-b2cf-098ef465a710",
+          "altText": "/",
+        },
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/8ea14f17-e198-468c-b441-e2551259f715",
+          "altText": "/",
+        },
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/a7c62fc6-517c-4346-b416-107f86c101d8",
+          "altText": "/",
+        },
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/65694d2d-c2c3-478f-87b9-5daf5115c4ef",
+          "altText": "/",
+        },
+        {
+          "image":
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/f8ddcbef-c61b-418e-98b5-f3924ae77491",
+          "altText": "/",
+        },
+      ],
+      "layout": {
+        "headerAlignment": "center",
+      },
+    },
+  ],
+};
+
+export interface Props {
+  logos?: Secao[];
+}
+
+export const loader = (props: Props, req: Request) => {
+  const { logos } = { ...DEFAULT_PROPS, ...props };
+
+  const logo = logos?.find(({ matcher }) =>
+    new URLPattern({ pathname: matcher }).test(req.url)
+  );
+
+  return { logo };
+};
 
 export default Logos;

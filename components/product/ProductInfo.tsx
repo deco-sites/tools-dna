@@ -384,7 +384,9 @@ function ProductInfo({ page, layout }: Props) {
                     />
                   )}
                   {inventory && inventory < 20 && (
-                    <p class="mt-3 text-center">Apenas {inventory} peças no estoque</p>
+                    <p class="mt-3 text-center">
+                      Apenas {inventory} peças no estoque
+                    </p>
                   )}
                 </>
               )
