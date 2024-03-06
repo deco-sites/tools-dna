@@ -6,6 +6,40 @@ import Drawer from "$store/components/ui/Drawer.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "apps/commerce/types.ts";
+import { ImageWidget } from "apps/admin/widgets.ts";
+import type { SectionProps } from "deco/types.ts";
+
+
+
+
+/**
+ * @titleBy matcher
+ */
+export interface Banner {
+  /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
+  matcher: string;
+  image: {
+    /** @description Image for big screens */
+    desktop: ImageWidget;
+    /** @description image alt text */
+    alt?: string;
+  };
+}
+
+const DEFAULT_PROPS = {
+  banners: [
+    {
+      image: {
+        mobile:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
+        desktop:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+        alt: "a",
+      },
+      matcher: "/*",
+    },
+  ],
+};
 
 export type Props =
   & Pick<
@@ -14,12 +48,16 @@ export type Props =
   >
   & {
     displayFilter?: boolean;
+    banners?: Banner[]
   };
 
 function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions, pageInfo }: Props,
+  { filters, breadcrumb, displayFilter, sortOptions, pageInfo}: Props,
+  props: SectionProps<ReturnType<typeof loader>>
 ) {
   const open = useSignal(false);
+  const itemName = breadcrumb.itemListElement.slice(-1);
+  const { banner } = props;
 
   return (
     <Drawer
@@ -46,7 +84,19 @@ function SearchControls(
     >
       <div class="flex flex-col justify-between p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] mb-4">
         <div class="flex flex-row items-center sm:p-0 mb-2">
-          <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+          <span class="text-[30px] text-[#020202] font-semibold">
+            {banner?.image && (
+              <img
+                src={banner.image.desktop}
+                alt={banner.image.alt}
+                width={72}
+                height={72}
+                loading={"lazy"}
+              />
+            )}
+            {itemName[0].name}
+          </span>
+          {/*<Breadcrumb itemListElement={breadcrumb?.itemListElement} />*/}
         </div>
 
         <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
@@ -66,5 +116,16 @@ function SearchControls(
     </Drawer>
   );
 }
+
+export const loader = (props: Props, req: Request) => {
+  const { banners } = { ...DEFAULT_PROPS, ...props };
+
+  const banner = banners.find(({ matcher }) =>
+    new URLPattern({ pathname: matcher }).test(req.url)
+  );
+
+  return { banner };
+};
+
 
 export default SearchControls;
