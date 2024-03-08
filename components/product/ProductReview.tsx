@@ -1,133 +1,99 @@
-import { Signal, useSignal } from "@preact/signals";
-import { useCallback, useState } from "preact/hooks";
+import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
+import type { JSX } from "preact";
+import Button from "deco-sites/tools-dna/components/ui/Button.tsx";
 
-function ProductReview(productId: number) {
-  const reviewRating = 5;
-  const reviewName = "";
-  const reviewEmail = "";
-  const reviewContent = "";
+export interface Form {
+  placeholder?: string;
+  buttonText?: string;
+  /** @format html */
+  helpText?: string;
+}
 
-  // const handleReview = useCallback(async () => {
-  //   try {
-  //     const createReview = invoke.wake.actions.review.create({
-  //       email: reviewEmail,
-  //       name: reviewName,
-  //       productVariantId: productId,
-  //       rating: reviewRating,
-  //       review: reviewContent,
-  //     });
-  //     console.log(createReview);
-  //   } catch (e) {
-  //     console.log(e);
-  //     return;
-  //   } finally {
-  //     console.log("deu erro total");
-  //   }
-  // }, []);
+export interface Props {
+  IDProduct: string;
+  layout?: {
+    tiled?: boolean;
+  };
+}
+
+function ProductReview({ IDProduct, layout = {} }: Props) {
+  const { tiled = false } = layout;
+  const loading = useSignal(false);
+
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    try {
+      loading.value = true;
+
+      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
+      const email = (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+      const review = (e.currentTarget.elements.namedItem("review") as RadioNodeList)?.value;
+      const rating = (e.currentTarget.elements.namedItem("ddlNota") as RadioNodeList)?.value;
+
+      await invoke.wake.actions.review.create({
+        email,
+        name,
+        productVariantId: Number(IDProduct),
+        rating: Number(rating),
+        review,
+      })
+    } finally {
+      loading.value = false;
+    }
+  };
 
   return (
-    <>
-      <h2>
-        Avalie esse produto
-      </h2>
-      <form
-        id="formAvaliacao"
-        class="form-antispam"
-        method="post"
-        onSubmit={(e) => {
-          e.preventDefault();
-          // handleReview();
-        }}
-      >
-        <div class="avaliainputs">
-          <div class="left">
+    <div
+      class={`flex ${
+        tiled
+          ? "flex-col gap-4 lg:flex-row lg:w-full lg:justify-between"
+          : "flex-col gap-4"
+      }`}
+    >
+      <div class="flex flex-col gap-4">
+          <h3 class={tiled ? "text-2xl lg:text-3xl" : "text-lg"}>
+            Titulo
+          </h3>
+        <div>Descrição</div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <form
+          class="form-control"
+          onSubmit={handleSubmit}
+        >
+          <div class="flex flex-wrap gap-3">
             <input
-              class="input inputAvaliacao"
-              id="txtAvaliacaoNome"
-              name="txtAvaliacaoNome"
-              type={"text"}
-              value="Nome"
+              name="name"
+              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+              placeholder={"Digite seu nome"}
             />
-          </div>
-          <div class="left">
             <input
-              class="input inputAvaliacao"
-              value={reviewEmail}
-              // onChange={(e) => {
-              //   reviewEmail.value = e.currentTarget.value;
-              // }}
-              id="txtAvaliacaoEmail"
-              name="txtAvaliacaoEmail"
-              type={"text"}
+              name="email"
+              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+              placeholder={"Digite seu email"}
             />
+            <textarea name="review" placeholder={"O que achou do produto?"}></textarea>
+
+            <select name="ddlNota">
+              <option selected value="5">Excelente</option>
+              <option value="4">Muito Bom</option>
+              <option value="3">Bom</option>
+              <option value="2">Ruim</option>
+              <option value="1">Muito Ruim</option>
+            </select>
+            <Button
+              type="submit"
+              disabled={loading}
+              class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4"
+            >
+              Avaliar este produto
+            </Button>
           </div>
-        </div>
-
-        <div class="avaliacoment">
-          <textarea
-            class="input textAreaAvaliacao valid"
-            id="txtAvaliacaoDescricao"
-            name="txtAvaliacaoDescricao"
-          >
-            Comentários
-          </textarea>
-          <div style="display: none;">
-            Número maximo de caracteres atingido (4000)
-          </div>
-        </div>
-
-        <div class="pontosAvaliacao clear">
-          <a href="javascript:Avaliar(1)">
-            <img
-              src="https://recursos.WORLDTOOLS.com.br/i/aval_on.png"
-              id="aval1"
-              alt="Muito Ruim"
-            />
-          </a>
-          <a href="javascript:Avaliar(2)">
-            <img
-              src="https://recursos.WORLDTOOLS.com.br/i/aval_on.png"
-              id="aval2"
-              alt="Ruim"
-            />
-          </a>
-          <a href="javascript:Avaliar(3)">
-            <img
-              src="https://recursos.WORLDTOOLS.com.br/i/aval_on.png"
-              id="aval3"
-              alt="Bom"
-            />
-          </a>
-          <a href="javascript:Avaliar(4)">
-            <img
-              src="https://recursos.WORLDTOOLS.com.br/i/aval_on.png"
-              id="aval4"
-              alt="Muito Bom"
-            />
-          </a>
-          <a href="javascript:Avaliar(5)">
-            <img
-              src="https://recursos.WORLDTOOLS.com.br/i/aval_on.png"
-              id="aval5"
-              alt="Excelente"
-            />
-          </a>
-
-          <select id="ddlNota">
-            <option selected={true} value="5">Excelente</option>
-            <option value="4">Muito Bom</option>
-            <option value="3">Bom</option>
-            <option value="2">Ruim</option>
-            <option value="1">Muito Ruim</option>
-          </select>
-        </div>
-
-        <div class="">
-          <button>Avaliar Produto</button>
-        </div>
-      </form>
-    </>
+        </form>
+      </div>
+    </div>
   );
 }
 

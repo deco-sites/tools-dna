@@ -19,8 +19,11 @@ import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
 import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
 import Shipping from "$store/islands/Shipping.tsx";
 import { calculate } from "deco-sites/tools-dna/components/product/ProductCardCustom.tsx";
-import ProductReview from "deco-sites/tools-dna/islands/ProductReview.tsx";
+import ProductReview from "$store/islands/ProductReview.tsx";
 import Breadcrumb from "deco-sites/tools-dna/components/ui/Breadcrumb.tsx";
+import { useSignal } from "@preact/signals";
+import Modal from "deco-sites/tools-dna/components/ui/Modal.tsx";
+import Button from "$store/components/ui/Button.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -41,6 +44,7 @@ function range(start: number, end: number) {
 function ProductInfo({ page, layout }: Props) {
   const platform = usePlatform();
   const id = useId();
+  const openReview = useSignal(false);
 
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
@@ -519,14 +523,9 @@ function ProductInfo({ page, layout }: Props) {
                   </span>
                 </div>
               </h3>
-              <div>
-                <button
-                  type="button"
-                  class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4"
-                >
-                  Avaliar este produto
-                </button>
-                {/* <ProductReview productId={product.productID} /> */}
+              
+              <div id={id}>
+                <ProductReview IDProduct={productID}/>
               </div>
             </div>
 

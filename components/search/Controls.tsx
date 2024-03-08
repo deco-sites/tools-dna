@@ -9,9 +9,6 @@ import type { ProductListingPage } from "apps/commerce/types.ts";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import type { SectionProps } from "deco/types.ts";
 
-
-
-
 /**
  * @titleBy matcher
  */
@@ -48,12 +45,12 @@ export type Props =
   >
   & {
     displayFilter?: boolean;
-    banners?: Banner[]
+    banners?: Banner[];
   };
 
 function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions, pageInfo}: Props,
-  props: SectionProps<ReturnType<typeof loader>>
+  { filters, breadcrumb, displayFilter, sortOptions, pageInfo }: Props,
+  props: SectionProps<ReturnType<typeof loader>>,
 ) {
   const open = useSignal(false);
   const itemName = breadcrumb.itemListElement.slice(-1);
@@ -126,6 +123,5 @@ export const loader = (props: Props, req: Request) => {
 
   return { banner };
 };
-
 
 export default SearchControls;
