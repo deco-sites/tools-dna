@@ -21,7 +21,7 @@ const doFetch = async (
 ) => {
   // Debounce query to API speed
   if (latestQuery !== query) return;
-
+  console.log("resolveType", __resolveType)
   try {
     // Figure out a better way to type this loader
     // deno-lint-ignore no-explicit-any

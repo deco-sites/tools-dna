@@ -85,6 +85,21 @@ export interface Layout {
   };
 }
 
+export interface Image {
+  src: ImageWidget;
+  href: string;
+}
+
+export interface Script {
+  /**
+  * @format textarea
+  **/
+  script: string;
+}
+
+type Tag = Image | Script;
+
+
 export interface Props {
   logo?: {
     image: ImageWidget;
@@ -112,6 +127,7 @@ export interface Props {
     text?: string;
   };
   layout?: Layout;
+  tags?: Tag[];
 }
 
 function Footer({
@@ -121,6 +137,7 @@ function Footer({
     description: "",
     form: { placeholder: "", buttonText: "", helpText: "" },
   },
+  tags,
   sections = [{
     "label": "Sobre",
     "items": [
@@ -283,17 +300,30 @@ function Footer({
               {_payments}
               <div class="flex flex-col gap-4">
                 <h3 class="text-lg">Selos de Segurança</h3>
-                <ul class="flex items-center gap-4 flex-wrap">
-                  <li title="Selo Google">
-                    <Image
-                      style="max-width: 228px"
-                      src={asset(`/exemplo-selos-de-seguranca.png`)}
-                      alt="Selos de Segurança"
-                      width={228}
-                      height={100}
-                      loading={"lazy"}
-                    />
-                  </li>
+                <ul class="flex items-center gap-4 flex-wrap"> 
+                    {tags && tags.map((item) => {
+                      return (
+                        <li title="selo">
+                          {(item as Image) && (
+                            <a href={(item as Image).href}>
+                              {(item as Image) && (
+                                <Image
+                                style="max-width: 228px"
+                                src={(item as Image).src}
+                                alt="Selos de Segurança"
+                                width={228}
+                                height={100}
+                                loading={"lazy"}
+                                />
+                              )}
+                              {!(item as Image) && (
+                                <div dangerouslySetInnerHTML={{__html: (item as Script).script}} />
+                              )}
+                            </a>
+                          )}
+                        </li>
+                      )
+                    })}
                 </ul>
               </div>
               {_sectionLinks}

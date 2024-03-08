@@ -27,10 +27,14 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
     try {
       loading.value = true;
 
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
-      const email = (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
-      const review = (e.currentTarget.elements.namedItem("review") as RadioNodeList)?.value;
-      const rating = (e.currentTarget.elements.namedItem("ddlNota") as RadioNodeList)?.value;
+      const name = (
+        e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
+      const email =
+        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+      const review =
+        (e.currentTarget.elements.namedItem("review") as RadioNodeList)?.value;
+      const rating =
+        (e.currentTarget.elements.namedItem("ddlNota") as RadioNodeList)?.value;
 
       await invoke.wake.actions.review.create({
         email,
@@ -38,7 +42,7 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
         productVariantId: Number(IDProduct),
         rating: Number(rating),
         review,
-      })
+      });
     } finally {
       loading.value = false;
     }
@@ -53,17 +57,11 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
       }`}
     >
       <div class="flex flex-col gap-4">
-          <h3 class={tiled ? "text-2xl lg:text-3xl" : "text-lg"}>
-            Titulo
-          </h3>
-        <div>Descrição</div>
-      </div>
-      <div class="flex flex-col gap-4">
         <form
           class="form-control"
           onSubmit={handleSubmit}
         >
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap flex-col gap-3">
             <input
               name="name"
               class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
@@ -74,9 +72,10 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
               class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
               placeholder={"Digite seu email"}
             />
-            <textarea name="review" placeholder={"O que achou do produto?"}></textarea>
+            <textarea class="input input-bordered w-full text-base-content" name="review" placeholder={"O que achou do produto?"}>
+            </textarea>
 
-            <select name="ddlNota">
+            <select name="ddlNota" class="input-bordered w-full">
               <option selected value="5">Excelente</option>
               <option value="4">Muito Bom</option>
               <option value="3">Bom</option>

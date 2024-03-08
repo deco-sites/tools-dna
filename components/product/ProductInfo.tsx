@@ -523,9 +523,9 @@ function ProductInfo({ page, layout }: Props) {
                   </span>
                 </div>
               </h3>
-              
+
               <div id={id}>
-                <ProductReview IDProduct={productID}/>
+                <ProductReview IDProduct={productID} />
               </div>
             </div>
 
