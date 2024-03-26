@@ -17,7 +17,7 @@ export default function SearchButton() {
         <Icon id="MagnifyingGlass" size={24} strokeWidth={0.1} />
       </Button>
       <Button
-        class="btn-circle btn-sm btn-ghost sm:hidden"
+        class="btn-circle w-12 h-12 btn-sm btn-ghost sm:hidden"
         aria-label="search icon button"
         onClick={() => {
           displaySearchDrawer.value = !displaySearchDrawer.value;

@@ -70,7 +70,7 @@ function Navbar({ items, searchbar, logo }: {
             </a>
           )}
         </div>
-        <div class="flex-auto searchbar-content">
+        <div class="flex-auto searchbar-content relative">
           <Searchbar searchbar={searchbar} />
         </div>
         <div class="flex-none flex items-center justify-end gap-2">

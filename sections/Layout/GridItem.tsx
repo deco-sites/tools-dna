@@ -27,7 +27,7 @@ interface Props {
 function GridItem({ children, layout }: Props) {
   return (
     <div
-      class={clx(
+      class={`max-w-[100vw] p-2 md:p-0 ${clx(
         layout?.rowStart?.mobile &&
           grid.rowStart.mobile[layout.rowStart.mobile],
         layout?.rowStart?.desktop &&
@@ -42,7 +42,7 @@ function GridItem({ children, layout }: Props) {
         layout?.colSpan?.mobile && grid.colSpan.mobile[layout.colSpan.mobile],
         layout?.colSpan?.desktop &&
           grid.colSpan.desktop[layout.colSpan.desktop],
-      )}
+      )}`}
     >
       <children.Component {...children.props} />
     </div>

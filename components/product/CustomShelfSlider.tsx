@@ -53,13 +53,13 @@ function CustomShelfSlider({
 
       <div
         id={id}
-        class="container grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
+        class="container relative grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
       >
         <Slider class="carousel carousel-center gap-6 col-span-full row-start-2 row-end-5">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item border border-[#E9E9E9] p-2 rounded-md w-1/4 sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
+              class="carousel-item border border-[#E9E9E9] p-2 rounded-md w-full sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
             >
               <ProductCardCustom
                 product={product}
@@ -73,13 +73,13 @@ function CustomShelfSlider({
         </Slider>
 
         <>
-          <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-            <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
+          <div class="absolute left-0 block z-10 col-start-1 row-start-3">
+            <Slider.PrevButton class="btn btn-circle btn-outline  bg-base-100">
               <Icon size={24} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
           </div>
-          <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-            <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
+          <div class="absolute right-0 block z-10 col-start-3 row-start-3">
+            <Slider.NextButton class="btn btn-circle btn-outline  bg-base-100">
               <Icon size={24} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
           </div>

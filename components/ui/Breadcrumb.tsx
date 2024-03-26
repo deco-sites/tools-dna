@@ -16,7 +16,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
 
   return (
     <div class="breadcrumbs">
-      <ul>
+      <ul class="max-w-[100vw] md:max-w-full">
         {items
           .filter(({ name, item }) => name && item)
           .map(({ name, item }) => (

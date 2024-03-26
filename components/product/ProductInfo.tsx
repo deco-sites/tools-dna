@@ -115,10 +115,10 @@ function ProductInfo({ page, layout }: Props) {
       <section class="mt-4 flex flex-col md:flex-row justify-between items-start gap-[30px]">
         <div
           id={id}
-          class="grid grid-flow-row sm:grid-flow-col w-full max-w-[515px]"
+          class="grid grid-flow-row sm:grid-flow-col w-full max-w-[100vw] md:max-w-[515px]"
         >
           <div
-            class="relative max-w-[515px] justify-center flex flex-col gap-4 items-center"
+            class="relative max-w-[100vw] md:max-w-[515px] justify-center flex flex-col gap-4 items-center"
             id={id}
           >
             <div class="absolute top-3 right-3">
@@ -245,10 +245,10 @@ function ProductInfo({ page, layout }: Props) {
               <h3 class="text-[#727272] text-base mb-4 mt-2">
                 Opções de Escolha
               </h3>
-              <ul>
+              <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] ">
                 {selections &&
                   selections.map((selection, index) => (
-                    <li key={index}>
+                    <li class={`${selection.value == "true" ? '-order-1' : ''}`} key={index}>
                       <a
                         href={selection.url}
                         class={`
@@ -458,7 +458,7 @@ function ProductInfo({ page, layout }: Props) {
         </div>
       </section>
 
-      <section>
+      <section class="max-w-[100vw]">
         <div class="description mt-10">
           <div class="informacoes">
             <div class="mb-4 flex items-center gap-8">
@@ -500,8 +500,8 @@ function ProductInfo({ page, layout }: Props) {
             )}
           </div>
           <div class="reviews mt-6 pt-6 border-t-[#e9e9e9] border-t border-solid">
-            <div class="flex justify-between mb-5">
-              <h3 class="font-semibold text-3xl leading-8 text-black flex items-center gap-16">
+            <div class="flex justify-between mb-5 flex-col md:flex-row">
+              <h3 class="font-semibold text-3xl leading-8 text-black flex items-center md:flex-row flex-col gap-16">
                 Avaliações
                 <div class="rating rating-half flex items-center">
                   {range(0, 4).map((num) => {
@@ -529,10 +529,10 @@ function ProductInfo({ page, layout }: Props) {
               </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
               {product.review &&
                 product.review.map((item) => (
-                  <div class="border p-[50px] rounded-[22px] border-solid border-[#E9E9E9]">
+                  <div class="border p-8 md:p-[50px] rounded-[22px] border-solid border-[#E9E9E9]">
                     <p class="text-[#727272] text-base leading-5 font-medium">
                       {item.reviewBody}
                     </p>
