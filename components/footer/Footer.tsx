@@ -92,13 +92,12 @@ export interface Image {
 
 export interface Script {
   /**
-  * @format textarea
-  **/
+   * @format textarea
+   */
   script: string;
 }
 
 type Tag = Image | Script;
-
 
 export interface Props {
   logo?: {
@@ -300,30 +299,34 @@ function Footer({
               {_payments}
               <div class="flex flex-col gap-4">
                 <h3 class="text-lg">Selos de Segurança</h3>
-                <ul class="flex items-center gap-4 flex-wrap"> 
-                    {tags && tags.map((item) => {
-                      return (
-                        <li title="selo">
-                          {(item as Image) && (
-                            <a href={(item as Image).href}>
-                              {(item as Image) && (
-                                <Image
+                <ul class="flex items-center gap-4 flex-wrap">
+                  {tags && tags.map((item) => {
+                    return (
+                      <li title="selo">
+                        {(item as Image) && (
+                          <a href={(item as Image).href}>
+                            {(item as Image) && (
+                              <Image
                                 style="max-width: 228px"
                                 src={(item as Image).src}
                                 alt="Selos de Segurança"
                                 width={228}
                                 height={100}
                                 loading={"lazy"}
-                                />
-                              )}
-                              {!(item as Image) && (
-                                <div dangerouslySetInnerHTML={{__html: (item as Script).script}} />
-                              )}
-                            </a>
-                          )}
-                        </li>
-                      )
-                    })}
+                              />
+                            )}
+                            {!(item as Image) && (
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: (item as Script).script,
+                                }}
+                              />
+                            )}
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               {_sectionLinks}

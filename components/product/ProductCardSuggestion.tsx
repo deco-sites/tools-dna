@@ -154,7 +154,6 @@ function ProductCardSuggestion(
       </figure>
       {/* Prices & Name */}
       <div>
-
         {l?.hide?.productName && l?.hide?.productDescription ? "" : (
           <div>
             <a href={url && relative(url)}>

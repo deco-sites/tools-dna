@@ -27,22 +27,24 @@ interface Props {
 function GridItem({ children, layout }: Props) {
   return (
     <div
-      class={`max-w-[100vw] p-2 md:p-0 ${clx(
-        layout?.rowStart?.mobile &&
-          grid.rowStart.mobile[layout.rowStart.mobile],
-        layout?.rowStart?.desktop &&
-          grid.rowStart.desktop[layout.rowStart.desktop],
-        layout?.rowSpan?.mobile && grid.rowSpan.mobile[layout.rowSpan.mobile],
-        layout?.rowSpan?.desktop &&
-          grid.rowSpan.desktop[layout.rowSpan.desktop],
-        layout?.colStart?.mobile &&
-          grid.colStart.mobile[layout.colStart.mobile],
-        layout?.colStart?.desktop &&
-          grid.colStart.desktop[layout.colStart.desktop],
-        layout?.colSpan?.mobile && grid.colSpan.mobile[layout.colSpan.mobile],
-        layout?.colSpan?.desktop &&
-          grid.colSpan.desktop[layout.colSpan.desktop],
-      )}`}
+      class={`max-w-[100vw] p-2 md:p-0 ${
+        clx(
+          layout?.rowStart?.mobile &&
+            grid.rowStart.mobile[layout.rowStart.mobile],
+          layout?.rowStart?.desktop &&
+            grid.rowStart.desktop[layout.rowStart.desktop],
+          layout?.rowSpan?.mobile && grid.rowSpan.mobile[layout.rowSpan.mobile],
+          layout?.rowSpan?.desktop &&
+            grid.rowSpan.desktop[layout.rowSpan.desktop],
+          layout?.colStart?.mobile &&
+            grid.colStart.mobile[layout.colStart.mobile],
+          layout?.colStart?.desktop &&
+            grid.colStart.desktop[layout.colStart.desktop],
+          layout?.colSpan?.mobile && grid.colSpan.mobile[layout.colSpan.mobile],
+          layout?.colSpan?.desktop &&
+            grid.colSpan.desktop[layout.colSpan.desktop],
+        )
+      }`}
     >
       <children.Component {...children.props} />
     </div>

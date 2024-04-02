@@ -120,7 +120,9 @@ function Searchbar({
       </form>
 
       <div
-        class={`md:absolute w-full top-full bg-white z-10 overflow-y-scroll ${!hasProducts && !hasTerms ? "hidden" : ""}`}
+        class={`md:absolute w-full top-full bg-white z-10 overflow-y-scroll ${
+          !hasProducts && !hasTerms ? "hidden" : ""
+        }`}
       >
         <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 rounded-2xl p-4 shadow-md">
           <div class="flex flex-col gap-6">
@@ -132,7 +134,7 @@ function Searchbar({
               Sugestões
             </span>
             <ul id="search-suggestion" class="flex flex-col gap-1">
-              {searches.slice(0,4).map(({ term }) => (
+              {searches.slice(0, 4).map(({ term }) => (
                 <li>
                   <a href={`/s?busca=${term}`} class="flex gap-4 items-center">
                     <span dangerouslySetInnerHTML={{ __html: term }} />
@@ -150,13 +152,13 @@ function Searchbar({
               Produtos sugeridos
             </span>
             <ul class="flex flex-col">
-              {products.slice(0,4).map((product, index) => (
-                  <ProductCardSuggestion
-                    product={product}
-                    platform={platform}
-                    index={index}
-                    itemListName="Suggestions"
-                  />
+              {products.slice(0, 4).map((product, index) => (
+                <ProductCardSuggestion
+                  product={product}
+                  platform={platform}
+                  index={index}
+                  itemListName="Suggestions"
+                />
               ))}
             </ul>
           </div>

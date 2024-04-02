@@ -248,7 +248,10 @@ function ProductInfo({ page, layout }: Props) {
               <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] ">
                 {selections &&
                   selections.map((selection, index) => (
-                    <li class={`${selection.value == "true" ? '-order-1' : ''}`} key={index}>
+                    <li
+                      class={`${selection.value == "true" ? "-order-1" : ""}`}
+                      key={index}
+                    >
                       <a
                         href={selection.url}
                         class={`

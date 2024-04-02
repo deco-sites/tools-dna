@@ -1,4 +1,4 @@
-import { asset} from "$fresh/runtime.ts";
+import { asset } from "$fresh/runtime.ts";
 import { SendEventOnView } from "$store/components/Analytics.tsx";
 import { Layout as CardLayout } from "$store/components/product/ProductCard.tsx";
 import Filters from "$store/components/search/Filters.tsx";
@@ -52,10 +52,12 @@ function NotFound() {
           </a>
         </div>
         <div class="image">
-          <img src={asset(`/image/package-not-found.png`)}
+          <img
+            src={asset(`/image/package-not-found.png`)}
             width={660}
             height={660}
-            loading={"lazy"} />
+            loading={"lazy"}
+          />
         </div>
       </div>
     </div>
@@ -157,7 +159,7 @@ function Result({
 
 function SearchResult({ page, ...props }: Props) {
   if (page?.products.length == 0) {
-      return <NotFound />;
+    return <NotFound />;
   }
   if (page) {
     return <Result {...props} page={page} />;

@@ -28,7 +28,8 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
       loading.value = true;
 
       const name = (
-        e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
+        e.currentTarget.elements.namedItem("name") as RadioNodeList
+      )?.value;
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
       const review =
@@ -72,7 +73,11 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
               class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
               placeholder={"Digite seu email"}
             />
-            <textarea class="input input-bordered w-full text-base-content" name="review" placeholder={"O que achou do produto?"}>
+            <textarea
+              class="input input-bordered w-full text-base-content"
+              name="review"
+              placeholder={"O que achou do produto?"}
+            >
             </textarea>
 
             <select name="ddlNota" class="input-bordered w-full">

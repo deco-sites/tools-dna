@@ -63,6 +63,17 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                         <a class="hover:underline" href={leaf.url}>
                           <span class="text-xs">{leaf.name}</span>
                         </a>
+                        {leaf.children && (
+                            <ul>
+                              {leaf.children?.map((i) => (
+                                <li class="pl-4">
+                                  <a class="hover:underline" href={i.url}>
+                                    <span class="text-xs">{i.name}</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                        )}
                       </li>
                     ))}
                   </ul>

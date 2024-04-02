@@ -2,8 +2,8 @@
   "imports": {
     "deco-sites/tools-dna/": "./",
     "$store/": "./",
-    "deco/": "https://denopkg.com/deco-cx/deco@1.57.30/",
-    "apps/": "https://denopkg.com/deco-cx/apps@0.35.20/",
+    "deco/": "https://denopkg.com/deco-cx/deco@1.60.16/",
+    "apps/": "https://denopkg.com/deco-cx/apps@0.35.30/",
     "$fresh/": "https://deno.land/x/fresh@1.6.1/",
     "preact": "https://esm.sh/preact@10.19.2",
     "preact/": "https://esm.sh/preact@10.19.2/",
