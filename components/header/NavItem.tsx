@@ -57,7 +57,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                     <span>{node.name}</span>
                   </a>
 
-                  <ul class="flex flex-col gap-1 mt-4">
+                  <ul class="flex flex-col gap-1 mt-4 max-h-80 overflow-hidden overflow-y-auto">
                     {node.children?.map((leaf) => (
                       <li>
                         <a class="hover:underline" href={leaf.url}>
