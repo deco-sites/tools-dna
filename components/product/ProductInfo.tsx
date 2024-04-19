@@ -196,14 +196,14 @@ function ProductInfo({ page, layout }: Props) {
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
-              {productID && (
+              {product.sku && (
                 <span class="text-sm text-[#727272]">
-                  COD.: {productID}
+                  COD.: {product.sku}
                 </span>
               )}
             </div>
             <h1 class="mb-4">
-              <span class="font-medium text-[25px] leading-[32px] lowercase">
+              <span class="font-medium text-[25px] leading-[32px] first-letter:!uppercase lowercase">
                 {layout?.name === "concat"
                   ? `${isVariantOf?.name} ${name}`
                   : layout?.name === "productGroup"
@@ -232,6 +232,10 @@ function ProductInfo({ page, layout }: Props) {
             </div>
             <div class="mt-2.5 pt-2.5 border-t-[#E9E9E9] border-t border-solid">
               {product.brand && product.brand.logo && (
+                <a
+                style="display: block"
+                href={product.brand?.url}
+              >
                 <Image
                   class="max-w-[90px]"
                   loading={"lazy"}
@@ -239,6 +243,8 @@ function ProductInfo({ page, layout }: Props) {
                   src={product.brand.logo}
                   alt={product.brand.name}
                 />
+              </a>
+                
               )}
             </div>
             <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">

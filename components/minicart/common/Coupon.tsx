@@ -16,7 +16,7 @@ function Coupon({ coupon, onAddCoupon }: Props) {
       {display
         ? (
           <form
-            class="join"
+            class="join px-4"
             onSubmit={async (e) => {
               e.preventDefault();
               const { currentTarget: { elements } } = e;
@@ -37,13 +37,13 @@ function Coupon({ coupon, onAddCoupon }: Props) {
           >
             <input
               name="coupon"
-              class="input join-item"
+              class="input join-item border max-w-[100px] border-solid border-black"
               type="text"
               value={coupon ?? ""}
               placeholder={"Cupom"}
             />
             <Button
-              class="join-item"
+              class="join-item bg-slate-200 rounded border border-solid border-slate-200 px-1"
               type="submit"
               htmlFor="coupon"
               loading={loading}

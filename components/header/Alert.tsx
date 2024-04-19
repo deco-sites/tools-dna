@@ -4,6 +4,10 @@ import { useId } from "$store/sdk/useId.ts";
 
 export interface Props {
   alerts: string[];
+  ctaButton: {
+    buttonText: string;
+    buttonLink: string;
+  },
   /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
@@ -11,7 +15,7 @@ export interface Props {
   interval?: number;
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
+function Alert({ alerts = [], interval = 5, ctaButton }: Props) {
   const id = useId();
 
   return (
@@ -23,7 +27,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
               <p dangerouslySetInnerHTML={{ __html: alert }}></p>
               <a
                 class="button-alert flex items-center justify-center bg-blue-500 text-white font-bold text-base gap-1 rounded-3xl"
-                href="/algo"
+                href={ctaButton.buttonLink}
               >
                 <svg
                   width="12"
@@ -89,7 +93,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                     </radialGradient>
                   </defs>
                 </svg>
-                EU QUERO
+                {ctaButton.buttonText ?? "EU QUERO"}
               </a>
             </span>
           </Slider.Item>

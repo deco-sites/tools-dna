@@ -9,6 +9,10 @@ import { headerHeight } from "./constants.ts";
 
 export interface Props {
   alerts: string[];
+  ctaButton: {
+    buttonText: string;
+    buttonLink: string;
+  },
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -25,6 +29,7 @@ export interface Props {
 
 function Header({
   alerts,
+  ctaButton,
   searchbar,
   navItems,
   logo,
@@ -41,7 +46,7 @@ function Header({
           platform={platform}
         >
           <div class="bg-base-100 fixed w-full z-50">
-            <Alert alerts={alerts} />
+            <Alert alerts={alerts} ctaButton={ctaButton} />
             <Navbar
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}

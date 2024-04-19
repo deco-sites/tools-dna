@@ -32,11 +32,12 @@ function Newsletter(
 
     try {
       loading.value = true;
-
+      const name = "";
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+        await invoke.wake.actions.newsletter.register({email, name});
 
-      await invoke.vtex.actions.newsletter.subscribe({ email });
+      // await invoke.vtex.actions.newsletter.subscribe({ email });
     } finally {
       loading.value = false;
     }

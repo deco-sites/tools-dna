@@ -10,6 +10,7 @@ function GlobalTags() {
       <link href={asset("/tailwind.css")} rel="stylesheet" />
       {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> */}
       <link href={asset("/style.css")} rel="stylesheet" />
+      <link href={asset("/custom.css")} rel="stylesheet" />
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
     </Head>

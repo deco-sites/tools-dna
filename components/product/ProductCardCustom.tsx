@@ -281,17 +281,8 @@ function ProductCardCustom(
             {/* BRAND IMAGE */}
             <a
               style="display: block;min-height: 32px"
-              // data-id={brand?.logo}
               href={brand?.url}
             >
-              {
-                /* <img
-                style={{ maxWidth: "100px" }}
-                src={`https://worldtools.fbitsstatic.net/img/fb/${
-                  brandContent?.replace(" ", "-")
-                }.png`}
-              /> */
-              }
               <img
                 style={{ maxWidth: "100px" }}
                 src={brand?.logo}
@@ -302,10 +293,14 @@ function ProductCardCustom(
               />
             </a>
             {l?.hide?.productName ? "" : (
-              <h2
-                class="card-name truncate text-base lg:text-lg text-base-content"
-                dangerouslySetInnerHTML={{ __html: name ?? "" }}
-              />
+              <a href={url && relative(url)}>
+              {l?.hide?.productName ? "" : (
+                <h2
+                  class="card-name truncate text-base lg:text-lg text-base-content"
+                  dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                />
+              )}
+            </a>
             )}
 
             <div class="rating rating-half flex items-center">

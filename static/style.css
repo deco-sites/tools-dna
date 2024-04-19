@@ -159,15 +159,15 @@
     width: calc(33.33% - 20px);
 }
 
-.shelf-custom-items .card-compact .card-name::first-letter {
+.card-name::first-letter {
     text-transform: uppercase
 }
 
-.shelf-custom-items .card-compact .card-name {
+.card-name {
     width: 100%;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     white-space: unset;
     font-weight: 600;
@@ -176,7 +176,7 @@
     color: var(--gray-dark);
     margin-bottom: 10px;
     text-transform: lowercase;
-    height: 66px
+    height: 86px
 }
 
 .copyright,
