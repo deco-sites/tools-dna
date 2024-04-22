@@ -294,13 +294,13 @@ function ProductCardCustom(
             </a>
             {l?.hide?.productName ? "" : (
               <a href={url && relative(url)}>
-              {l?.hide?.productName ? "" : (
-                <h2
-                  class="card-name truncate text-base lg:text-lg text-base-content"
-                  dangerouslySetInnerHTML={{ __html: name ?? "" }}
-                />
-              )}
-            </a>
+                {l?.hide?.productName ? "" : (
+                  <h2
+                    class="card-name truncate text-base lg:text-lg text-base-content"
+                    dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                  />
+                )}
+              </a>
             )}
 
             <div class="rating rating-half flex items-center">

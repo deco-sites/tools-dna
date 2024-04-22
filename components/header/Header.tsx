@@ -12,7 +12,7 @@ export interface Props {
   ctaButton: {
     buttonText: string;
     buttonLink: string;
-  },
+  };
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;

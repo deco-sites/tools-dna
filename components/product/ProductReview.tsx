@@ -45,7 +45,9 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
         review,
       });
     } finally {
-      loading.value = false;
+      setTimeout(() => {
+        loading.value = false;
+      }, 3000);
     }
   };
 
@@ -62,7 +64,7 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
           class="form-control"
           onSubmit={handleSubmit}
         >
-          <div class="flex flex-wrap flex-col gap-3">
+          <div class="flex flex-wrap flex-col gap-3 ">
             <input
               name="name"
               class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
@@ -74,7 +76,7 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
               placeholder={"Digite seu email"}
             />
             <textarea
-              class="input input-bordered w-full text-base-content"
+              class="input input-bordered w-full text-base-content pt-[10px]"
               name="review"
               placeholder={"O que achou do produto?"}
             >
@@ -89,10 +91,10 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
             </select>
             <Button
               type="submit"
-              disabled={loading}
               class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4"
             >
-              Avaliar este produto
+              {loading.value ? <span>Enviado com sucesso! <span class="loading loading-spinner loading-xs" /></span> : <span>Avaliar este produto</span>}
+             
             </Button>
           </div>
         </form>

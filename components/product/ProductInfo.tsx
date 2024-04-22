@@ -233,18 +233,17 @@ function ProductInfo({ page, layout }: Props) {
             <div class="mt-2.5 pt-2.5 border-t-[#E9E9E9] border-t border-solid">
               {product.brand && product.brand.logo && (
                 <a
-                style="display: block"
-                href={product.brand?.url}
-              >
-                <Image
-                  class="max-w-[90px]"
-                  loading={"lazy"}
-                  width={90}
-                  src={product.brand.logo}
-                  alt={product.brand.name}
-                />
-              </a>
-                
+                  style="display: block"
+                  href={product.brand?.url}
+                >
+                  <Image
+                    class="max-w-[90px]"
+                    loading={"lazy"}
+                    width={90}
+                    src={product.brand.logo}
+                    alt={product.brand.name}
+                  />
+                </a>
               )}
             </div>
             <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">

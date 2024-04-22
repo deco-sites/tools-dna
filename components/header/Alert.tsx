@@ -7,7 +7,7 @@ export interface Props {
   ctaButton: {
     buttonText: string;
     buttonLink: string;
-  },
+  };
   /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
