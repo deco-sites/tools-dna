@@ -1,7 +1,18 @@
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface PaymentItem {
-  label: "Diners" | "Elo" | "Mastercard" | "Pix" | "Visa";
+  label: "Diners" | 
+  "Elo" | 
+  "Mastercard" | 
+  "Pix" | 
+  "Visa" |
+  "Boleto" |
+  "JCB" |
+  "Aura" |
+  "American Express" | 
+  "Discover" | 
+  "Hipercard"
+  ;
 }
 
 export default function PaymentMethods(

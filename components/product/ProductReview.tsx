@@ -93,8 +93,14 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
               type="submit"
               class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4"
             >
-              {loading.value ? <span>Enviado com sucesso! <span class="loading loading-spinner loading-xs" /></span> : <span>Avaliar este produto</span>}
-             
+              {loading.value
+                ? (
+                  <span>
+                    Enviado com sucesso!{" "}
+                    <span class="loading loading-spinner loading-xs" />
+                  </span>
+                )
+                : <span>Avaliar este produto</span>}
             </Button>
           </div>
         </form>

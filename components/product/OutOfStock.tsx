@@ -16,12 +16,16 @@ function Notify({ productID }: Props) {
     try {
       loading.value = true;
 
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
-        ?.value;
-      const email =
-        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
+      const email = (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
-      await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
+      await invoke.wake.actions.notifyme({
+        email,
+        name,
+        productVariantId: Number(productID)
+      })
+
+      // await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
     } finally {
       loading.value = false;
     }
@@ -29,7 +33,7 @@ function Notify({ productID }: Props) {
 
   return (
     <form class="form-control justify-start gap-2" onSubmit={handleSubmit}>
-      <span class="text-base">Este produto está indisponivel no momento</span>
+      <span class="text-base">Este produto está indisponível no momento</span>
       <span class="text-sm">Avise-me quando estiver disponivel</span>
 
       <input placeholder="Nome" class="input input-bordered" name="name" />

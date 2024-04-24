@@ -241,7 +241,7 @@ function Footer({
             <Divider />
             <div class="flex flex-col  items-center md:items-start md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
               <div class="flex flex-col">
-                <div class="flex flex-row gap-4">
+                <a href="tel://554730271106" target={"_blank"} class="flex flex-row gap-4 mb-2">
                   <svg
                     width="32"
                     height="32"
@@ -259,9 +259,15 @@ function Footer({
                     </g>
                   </svg>
                   <h2 class="text-lg telefone-contatos">
-                    47 3027-1106 / 47 3027-1106
+                    47 3027-1106
                   </h2>
-                </div>
+                </a>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=554730271106&text=Contato%20via%20E-commerce%20World%20Tools" class="flex flex-row gap-4">
+                <svg height="32" fill="#164195" width="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 3.5C18.25 1.25 15.2 0 12 0 5.41 0 0 5.41 0 12c0 2.11.65 4.11 1.7 5.92L0 24l6.33-1.55C8.08 23.41 10 24 12 24c6.59 0 12-5.41 12-12 0-3.19-1.24-6.24-3.5-8.5M12 22c-1.78 0-3.48-.59-5.01-1.49l-.36-.22-3.76.99 1-3.67-.24-.38C2.64 15.65 2 13.88 2 12 2 6.52 6.52 2 12 2c2.65 0 5.2 1.05 7.08 2.93S22 9.35 22 12c0 5.48-4.53 10-10 10m5.5-7.55c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.95 1.17c-.17.2-.35.22-.65.07s-1.26-.46-2.4-1.48c-.89-.79-1.49-1.77-1.66-2.07s-.02-.46.13-.61c.13-.13.3-.35.45-.52s.2-.3.3-.5.05-.37-.02-.52c-.08-.15-.68-1.62-.93-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.08-.8.37c-.27.3-1.04 1.03-1.04 2.5s1.07 2.89 1.22 3.09 2.11 3.22 5.1 4.51c.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42s.25-1.3.17-1.42c-.07-.13-.27-.21-.57-.36"/></svg>
+                  <h2 class="text-lg telefone-contatos">
+                    47 3027-1106
+                  </h2>
+                </a>
                 <div class="flex flex-row">
                   <p class="endereco-new">
                     Rua Desembargador Guilherme Abry, 667 - Saguaçú -

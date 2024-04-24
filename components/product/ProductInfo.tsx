@@ -24,6 +24,7 @@ import Breadcrumb from "deco-sites/tools-dna/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import Modal from "deco-sites/tools-dna/components/ui/Modal.tsx";
 import Button from "$store/components/ui/Button.tsx";
+import ImageZoom from "deco-sites/tools-dna/islands/ImageZoom.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -121,7 +122,7 @@ function ProductInfo({ page, layout }: Props) {
             class="relative max-w-[100vw] md:max-w-[515px] justify-center flex flex-col gap-4 items-center"
             id={id}
           >
-            <div class="absolute top-3 right-3">
+            <div class="absolute top-3 right-3 z-10">
               {platform === "wake" && (
                 <WishlistButton
                   productGroupID={productGroupID}
@@ -138,7 +139,10 @@ function ProductInfo({ page, layout }: Props) {
                         index={index}
                         class="carousel-item w-full"
                       >
-                        <Image
+
+                        <ImageZoom src={img.url}/>
+
+                        {/* <Image
                           class="w-full"
                           src={img.url}
                           alt={img.alternateName}
@@ -147,7 +151,7 @@ function ProductInfo({ page, layout }: Props) {
                           // Preload LCP image for better web vitals
                           preload={index === 0}
                           loading={index === 0 ? "eager" : "lazy"}
-                        />
+                        /> */}
                       </Slider.Item>
                     )}
                   </>
@@ -203,12 +207,9 @@ function ProductInfo({ page, layout }: Props) {
               )}
             </div>
             <h1 class="mb-4">
-              <span class="font-medium text-[25px] leading-[32px] first-letter:!uppercase lowercase">
-                {layout?.name === "concat"
-                  ? `${isVariantOf?.name} ${name}`
-                  : layout?.name === "productGroup"
-                  ? isVariantOf?.name
-                  : name}
+              <span class="font-medium text-[25px] leading-[32px]">
+                {name?.toLocaleLowerCase().charAt(0).toUpperCase()}{name?.toLocaleLowerCase().slice(1)}
+                {/* {layout?.name === "concat" ? `${isVariantOf?.name} ${name}` : layout?.name === "productGroup" ? isVariantOf?.name : name} */}
               </span>
             </h1>
             {/* <p class="mt-3">Vendido e entregue por World Tools</p> */}
@@ -250,7 +251,7 @@ function ProductInfo({ page, layout }: Props) {
               <h3 class="text-[#727272] text-base mb-4 mt-2">
                 Opções de Escolha
               </h3>
-              <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] ">
+              <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] custom-scrollbar">
                 {selections &&
                   selections.map((selection, index) => (
                     <li

@@ -295,10 +295,9 @@ function ProductCardCustom(
             {l?.hide?.productName ? "" : (
               <a href={url && relative(url)}>
                 {l?.hide?.productName ? "" : (
-                  <h2
-                    class="card-name truncate text-base lg:text-lg text-base-content"
-                    dangerouslySetInnerHTML={{ __html: name ?? "" }}
-                  />
+                  <h2 class="card-name truncate text-base lg:text-lg text-base-content">
+                    {name?.toLocaleLowerCase().charAt(0).toUpperCase()}{name?.toLocaleLowerCase().slice(1)}
+                  </h2>
                 )}
               </a>
             )}
