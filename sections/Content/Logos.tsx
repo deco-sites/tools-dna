@@ -1,8 +1,11 @@
 import Image from "apps/website/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
-import { useMemo } from "preact/hooks";
+import { useId, useMemo } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { SectionProps } from "deco/types.ts";
+import Slider from "$store/components/ui/Slider.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Image {
   image: ImageWidget;
@@ -36,6 +39,8 @@ const IMAGES = [
 function Logos(props: SectionProps<ReturnType<typeof loader>>) {
   const { logo } = props;
 
+  const id = useId();
+
   if (!logo) {
     return null;
   }
@@ -57,21 +62,39 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <div class="w-full logos-element text-center items-center justify-between flex">
-        {list.map((element) => (
-          <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
-            <div class="flex w-full h-full items-center justify-center">
-              <a href={element.altText}>
-                <img
-                  class="max-w-full max-h-full"
-                  src={element.image}
-                  alt={element.altText || ""}
-                  loading={"lazy"}
-                />
-              </a>
-            </div>
+      <div
+        id={id}
+        class="container relative grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
+      >
+        <Slider class="carousel gap-6 col-span-full row-start-2 row-end-5">
+          {list.map((element, index) => (
+            <Slider.Item index={index} class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
+              <div class="flex w-full h-full items-center justify-center">
+                <a href={element.altText}>
+                  <img
+                    class="max-w-full max-h-full"
+                    src={element.image}
+                    alt={element.altText || ""}
+                    loading={"lazy"}
+                  />
+                </a>
+              </div>
+            </Slider.Item>
+          ))}
+        </Slider>
+        <>
+          <div class="absolute left-0 block z-10 col-start-1 row-start-3">
+            <Slider.PrevButton class="btn btn-circle btn-outline  bg-base-100">
+              <Icon size={24} id="ChevronLeft" strokeWidth={3} />
+            </Slider.PrevButton>
           </div>
-        ))}
+          <div class="absolute right-0 block z-10 col-start-3 row-start-3">
+            <Slider.NextButton class="btn btn-circle btn-outline  bg-base-100">
+              <Icon size={24} id="ChevronRight" strokeWidth={3} />
+            </Slider.NextButton>
+          </div>
+        </>
+        <SliderJS rootId={id} />
       </div>
     </div>
   );
