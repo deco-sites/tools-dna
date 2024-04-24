@@ -16,14 +16,16 @@ function Notify({ productID }: Props) {
     try {
       loading.value = true;
 
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
-      const email = (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
+        ?.value;
+      const email =
+        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
       await invoke.wake.actions.notifyme({
         email,
         name,
-        productVariantId: Number(productID)
-      })
+        productVariantId: Number(productID),
+      });
 
       // await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
     } finally {

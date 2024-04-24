@@ -19,11 +19,15 @@ function ValueItem(
   { url, selected, label, quantity }: FilterToggleValue,
 ) {
   return (
-    <a href={url} rel="nofollow" class="flex items-center gap-2">
-      <div aria-checked={selected} class="checkbox" />
-      <span class="text-sm">{label}</span>
-      {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
-    </a>
+    <>
+      {quantity > 0 && (
+        <a href={url} rel="nofollow" class="flex items-center gap-2">
+          <div aria-checked={selected} class="checkbox" />
+          <span class="text-sm">{label}</span>
+          {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
+        </a>
+      )}
+    </>
   );
 }
 
@@ -33,41 +37,61 @@ function FilterValues({ key, values }: FilterToggle) {
     : "flex-col";
 
   return (
-    <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
-      {values.map((item) => {
-        const { url, selected, value, quantity } = item;
+    <>
+      <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
+        {values.map((item) => {
+          const { url, selected, value, quantity } = item;
 
-        if (key === "cor" || key === "tamanho") {
-          return (
-            <a href={url} rel="nofollow">
-              <Avatar
-                content={value}
-                variant={selected ? "active" : "default"}
+          if (key === "cor" || key === "tamanho") {
+            return (
+              <a href={url} rel="nofollow">
+                <Avatar
+                  content={value}
+                  variant={selected ? "active" : "default"}
+                />
+              </a>
+            );
+          }
+
+          if (key === "price") {
+            const range = parseRange(item.value);
+
+            return range && (
+              <ValueItem
+                {...item}
+                label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
               />
-            </a>
-          );
-        }
+            );
+          }
 
-        if (key === "price") {
-          const range = parseRange(item.value);
-
-          return range && (
-            <ValueItem
-              {...item}
-              label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
-            />
-          );
-        }
-
-        return <ValueItem {...item} />;
-      })}
-    </ul>
+          return <ValueItem {...item} />;
+        })}
+      </ul>
+    </>
   );
 }
 
 function Filters({ filters }: Props) {
   return (
     <ul class="flex flex-col gap-6 py-4">
+      {/* {filters
+        .filter(isToggle)
+        .map((filter) => {
+          const values = filter.values;
+          values.map((item) => {
+            if(item.selected) {
+                <div class="collapse collapse-plus">
+                  <input type="checkbox" />
+                  <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">
+                    SELECIONADOS
+                  </div>
+                  <div class="collapse-content">
+                    <ValueItem {...item} />
+                  </div>
+                </div>
+            }
+          })
+        })} */}
       {filters
         .filter(isToggle)
         .map((filter) => (

@@ -139,10 +139,10 @@ function ProductInfo({ page, layout }: Props) {
                         index={index}
                         class="carousel-item w-full"
                       >
+                        <ImageZoom src={img.url} />
 
-                        <ImageZoom src={img.url}/>
-
-                        {/* <Image
+                        {
+                          /* <Image
                           class="w-full"
                           src={img.url}
                           alt={img.alternateName}
@@ -151,7 +151,8 @@ function ProductInfo({ page, layout }: Props) {
                           // Preload LCP image for better web vitals
                           preload={index === 0}
                           loading={index === 0 ? "eager" : "lazy"}
-                        /> */}
+                        /> */
+                        }
                       </Slider.Item>
                     )}
                   </>
@@ -208,7 +209,8 @@ function ProductInfo({ page, layout }: Props) {
             </div>
             <h1 class="mb-4">
               <span class="font-medium text-[25px] leading-[32px]">
-                {name?.toLocaleLowerCase().charAt(0).toUpperCase()}{name?.toLocaleLowerCase().slice(1)}
+                {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
+                {name?.toLocaleLowerCase().slice(1)}
                 {/* {layout?.name === "concat" ? `${isVariantOf?.name} ${name}` : layout?.name === "productGroup" ? isVariantOf?.name : name} */}
               </span>
             </h1>

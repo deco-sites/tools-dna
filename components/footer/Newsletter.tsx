@@ -87,7 +87,7 @@
 //                 )
 //                 : <span>{content?.form?.buttonText || "Inscrever"}</span>
 //               }
-              
+
 //             </button>
 //           </div>
 //         </form>
@@ -103,8 +103,6 @@
 // }
 
 // export default Newsletter;
-
-
 
 import Header from "$store/components/ui/SectionHeader.tsx";
 import { useSignal } from "@preact/signals";
@@ -163,9 +161,11 @@ export default function Newsletter(props: Props) {
 
     try {
       loading.value = true;
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)?.value;
-      const email = (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
-        console.log("Email do cliente: ", email, name)
+      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
+        ?.value;
+      const email =
+        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+      console.log("Email do cliente: ", email, name);
       await invoke.wake.actions.newsletter.register({ email, name });
 
       // await invoke.vtex.actions.newsletter.subscribe({ email });
@@ -195,20 +195,19 @@ export default function Newsletter(props: Props) {
           name="email"
           placeholder={form.placeholder}
         />
-        <input type={"hidden"} value={"."} name={"name"}/>
+        <input type={"hidden"} value={"."} name={"name"} />
         <button
           class={`btn ${isReverse ? "btn-accent" : ""}`}
           type="submit"
         >
           {loading.value
-                ? (
-                  <span>
-                    Assinado com sucesso!{" "}
-                    <span class="loading loading-spinner loading-xs" />
-                  </span>
-                )
-                : <span>{form.buttonText}</span>
-              }
+            ? (
+              <span>
+                Assinado com sucesso!{" "}
+                <span class="loading loading-spinner loading-xs" />
+              </span>
+            )
+            : <span>{form.buttonText}</span>}
         </button>
       </div>
       {
