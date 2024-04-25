@@ -37,7 +37,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
       {children && children.length > 0 &&
         (
           <div
-            class="absolute hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
+            class="h-[55vh] overflow-hidden overflow-y-auto absolute hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
             style={{ top: "0px", left: "0px", marginTop: "60px" }}
           >
             {image?.url && (
@@ -50,18 +50,18 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                 loading="lazy"
               />
             )}
-            <ul class="flex items-start justify-center gap-6">
+            <ul class="flex items-start justify-center gap-6 first-submenu">
               {children.map((node) => (
                 <li class="p-6">
                   <a class="hover:underline" href={node.url}>
                     <span>{node.name}</span>
                   </a>
 
-                  <ul class="flex flex-col gap-1 mt-4 max-h-80 overflow-hidden overflow-y-auto">
+                  <ul class="flex flex-col gap-1 mt-4 max-h-80">
                     {node.children?.map((leaf) => (
                       <li>
                         <a class="hover:underline" href={leaf.url}>
-                          <span class="text-xs">{leaf.name}</span>
+                          <span class="text-xs font-bold">{leaf.name}</span>
                         </a>
                         {leaf.children && (
                           <ul>

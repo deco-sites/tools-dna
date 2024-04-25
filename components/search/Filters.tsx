@@ -7,13 +7,13 @@ import type {
   ProductListingPage,
 } from "apps/commerce/types.ts";
 import { parseRange } from "apps/commerce/utils/filters.ts";
+import ClearFilters from "deco-sites/tools-dna/islands/ClearFilters.tsx";
 
 interface Props {
   filters: ProductListingPage["filters"];
 }
 
-const isToggle = (filter: Filter): filter is FilterToggle =>
-  filter["@type"] === "FilterToggle";
+const isToggle = (filter: Filter): filter is FilterToggle => filter["@type"] === "FilterToggle";
 
 function ValueItem(
   { url, selected, label, quantity }: FilterToggleValue,
@@ -74,24 +74,25 @@ function FilterValues({ key, values }: FilterToggle) {
 function Filters({ filters }: Props) {
   return (
     <ul class="flex flex-col gap-6 py-4">
-      {/* {filters
-        .filter(isToggle)
-        .map((filter) => {
-          const values = filter.values;
-          values.map((item) => {
-            if(item.selected) {
-                <div class="collapse collapse-plus">
-                  <input type="checkbox" />
-                  <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">
-                    SELECIONADOS
-                  </div>
-                  <div class="collapse-content">
-                    <ValueItem {...item} />
-                  </div>
-                </div>
-            }
-          })
-        })} */}
+
+      <div class="collapse collapse-plus">
+        <input type="checkbox" />
+        <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">
+          SELECIONADOS
+        </div>
+        <div class="collapse-content">
+          {filters.filter(isToggle)
+            .map((filter) => (
+              filter.values.map((item) => (
+                item.selected && (
+                  <FilterValues {...filter} />
+                )
+              ))
+            ))}
+            <ClearFilters />
+        </div>
+      </div>
+
       {filters
         .filter(isToggle)
         .map((filter) => (

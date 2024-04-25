@@ -125,7 +125,7 @@ function ProductCardCustom(
   return (
     <div
       id={id}
-      class={`card card-compact group w-full ${
+      class={`card card-compact group w-full md:w-[23%] ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
@@ -284,7 +284,7 @@ function ProductCardCustom(
               href={brand?.url}
             >
               <img
-                style={{ maxWidth: "100px" }}
+                style={{ maxWidth: "100px", maxHeight: "20px" }}
                 src={brand?.logo}
                 alt={brand?.name}
                 width={100}
