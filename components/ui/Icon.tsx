@@ -43,6 +43,11 @@ export type AvailableIcons =
   | "Twitter"
   | "User"
   | "Visa"
+  | "Hipercard"
+  | "Aura"
+  | "Boleto"
+  | "Discover"
+  | "JCB"
   | "WhatsApp"
   | "XMark"
   | "Zoom";

@@ -13,7 +13,8 @@ interface Props {
   filters: ProductListingPage["filters"];
 }
 
-const isToggle = (filter: Filter): filter is FilterToggle => filter["@type"] === "FilterToggle";
+const isToggle = (filter: Filter): filter is FilterToggle =>
+  filter["@type"] === "FilterToggle";
 
 function ValueItem(
   { url, selected, label, quantity }: FilterToggleValue,
@@ -24,7 +25,9 @@ function ValueItem(
         <a href={url} rel="nofollow" class="flex items-center gap-2">
           <div aria-checked={selected} class="checkbox" />
           <span class="text-sm">{label}</span>
-          {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
+          {quantity > 0 && (
+            <span class="text-sm text-base-300">({quantity})</span>
+          )}
         </a>
       )}
     </>
@@ -54,6 +57,7 @@ function FilterValues({ key, values }: FilterToggle) {
           }
 
           if (key === "price") {
+            console.log(item)
             const range = parseRange(item.value);
 
             return range && (
@@ -74,8 +78,7 @@ function FilterValues({ key, values }: FilterToggle) {
 function Filters({ filters }: Props) {
   return (
     <ul class="flex flex-col gap-6 py-4">
-
-      <div class="collapse collapse-plus">
+      <div class="collapse collapse-plus collapse-open">
         <input type="checkbox" />
         <div class="mb-2.5 rounded-none border-b-[#e9e9e9] border-b border-solid collapse-title font-semibold text-[18px] leading-9 after:!w-[30px] after:!h-[30px] after:!flex after:!items-center after:!justify-center after:rounded-md after:border after:border-solid after:border-[#164195]">
           SELECIONADOS
@@ -84,12 +87,10 @@ function Filters({ filters }: Props) {
           {filters.filter(isToggle)
             .map((filter) => (
               filter.values.map((item) => (
-                item.selected && (
-                  <FilterValues {...filter} />
-                )
+                item.selected && <FilterValues {...filter} />
               ))
             ))}
-            <ClearFilters />
+          <ClearFilters />
         </div>
       </div>
 

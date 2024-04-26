@@ -105,9 +105,9 @@ function CategoryList(props: Props) {
                 )}
               {image &&
                 (
-                  <figure>
+                  <figure class="max-h-44">
                     <Image
-                      class="card w-full"
+                      class="card w-full max-h-full"
                       src={image}
                       alt={`Departamento de ${description || label || tag}`}
                       width={100}

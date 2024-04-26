@@ -23,7 +23,7 @@ export default function PaymentMethods(
       {content && content.items && content.items.length > 0 && (
         <div class="flex flex-col gap-4">
           {content.title && <h3 class="text-lg">{content.title}</h3>}
-          <ul class="flex items-center gap-4 flex-wrap">
+          <ul class="gap-4 grid grid-cols-5">
             {content.items.map((item) => {
               return (
                 <li

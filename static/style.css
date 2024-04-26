@@ -187,11 +187,31 @@
 }
 
 .shelf-custom-items {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.shelf-custom-items.odd {
+    grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 1280px) {
+    .shelf-custom-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .shelf-custom-items.odd {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    .shelf-custom-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .shelf-custom-items.odd {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .shelf-custom-items .card-compact {
@@ -333,11 +353,11 @@
     position: absolute;
     right: 12px;
     height: 40px;
-    width: 86px;
+    width: auto;
     max-height: 32px;
     min-height: 32px;
     top: 8px;
-    font-size: 12px
+    font-size: 14px
 }
 
 .category-list {
@@ -434,9 +454,9 @@
 
 .floating-tags {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 10px;
-    width: 100%;
+    /* width: 100%; */
     z-index: 2;
     display: flex;
     align-items: center;

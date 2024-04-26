@@ -115,7 +115,25 @@ function ProductCardOdd(
   // const brandContent = brand?.name;
 
   return (
-    <div class="flex flex-row gap-0 w-full md:w-[32%]">
+    <div class="flex relative flex-row gap-0 w-full">
+      <div class="floating-tags">
+          <div class="percentageTag">
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.463 7.07h1.214m3.643 4.858h1.214m0-5.464-6.07 6.071M8.65 1.351 7.28 2.72a1.2 1.2 0 0 1-.848.352h-2.16a1.2 1.2 0 0 0-1.199 1.2V6.43a1.2 1.2 0 0 1-.352.847L1.35 8.652a1.2 1.2 0 0 0 0 1.696l1.372 1.371a1.198 1.198 0 0 1 .351.848v2.159a1.2 1.2 0 0 0 1.2 1.2h2.159c.318 0 .623.126.847.352l1.372 1.37a1.2 1.2 0 0 0 1.697 0l1.37-1.371a1.2 1.2 0 0 1 .848-.351h2.16a1.2 1.2 0 0 0 1.199-1.2v-2.16c0-.317.126-.622.352-.847l1.37-1.372a1.2 1.2 0 0 0 0-1.696L16.278 7.28a1.2 1.2 0 0 1-.351-.848v-2.16a1.2 1.2 0 0 0-1.2-1.199h-2.159a1.2 1.2 0 0 1-.847-.352l-1.374-1.37a1.2 1.2 0 0 0-1.696 0Z"
+                stroke="#164195"
+              />
+            </svg>
+            {listPrice && pixPrice &&
+              calculate(listPrice, pixPrice)}
+          </div>
+        </div>
       <div
         id={id}
         class={`card card-compact card-odd group w-full max-w-[70%] ${align === "center" ? "text-center" : "text-start"
@@ -239,26 +257,6 @@ function ProductCardOdd(
           class="relative overflow-hidden card-figure"
           style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
         >
-
-          <div class="floating-tags">
-            <div class="percentageTag">
-              <svg
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.463 7.07h1.214m3.643 4.858h1.214m0-5.464-6.07 6.071M8.65 1.351 7.28 2.72a1.2 1.2 0 0 1-.848.352h-2.16a1.2 1.2 0 0 0-1.199 1.2V6.43a1.2 1.2 0 0 1-.352.847L1.35 8.652a1.2 1.2 0 0 0 0 1.696l1.372 1.371a1.198 1.198 0 0 1 .351.848v2.159a1.2 1.2 0 0 0 1.2 1.2h2.159c.318 0 .623.126.847.352l1.372 1.37a1.2 1.2 0 0 0 1.697 0l1.37-1.371a1.2 1.2 0 0 1 .848-.351h2.16a1.2 1.2 0 0 0 1.199-1.2v-2.16c0-.317.126-.622.352-.847l1.37-1.372a1.2 1.2 0 0 0 0-1.696L16.278 7.28a1.2 1.2 0 0 1-.351-.848v-2.16a1.2 1.2 0 0 0-1.2-1.199h-2.159a1.2 1.2 0 0 1-.847-.352l-1.374-1.37a1.2 1.2 0 0 0-1.696 0Z"
-                  stroke="#164195"
-                />
-              </svg>
-              {listPrice && pixPrice &&
-                calculate(listPrice, pixPrice)}
-            </div>
-          </div>
-
           {/* Wishlist button */}
           <div
             class={`absolute top-2 z-10

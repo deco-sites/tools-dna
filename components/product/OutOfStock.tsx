@@ -29,6 +29,9 @@ function Notify({ productID }: Props) {
 
       // await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
     } finally {
+      setTimeout(() => {
+        alert("Sua solicitação foi enviada com sucesso! Assim que este produto estiver disponível, você será avisado imediatamente por e-mail.")
+      }, 1200);
       loading.value = false;
     }
   };

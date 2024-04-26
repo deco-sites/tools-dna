@@ -68,7 +68,10 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
       >
         <Slider class="carousel gap-6 col-span-full row-start-2 row-end-5">
           {list.map((element, index) => (
-            <Slider.Item index={index} class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
+            <Slider.Item
+              index={index}
+              class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle"
+            >
               <div class="flex w-full h-full items-center justify-center">
                 <a href={element.altText}>
                   <img
