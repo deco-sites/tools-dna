@@ -1,22 +1,38 @@
 import { useEffect, useId, useRef } from "preact/hooks";
 import { RefObject } from "preact";
 import { useSignal } from "@preact/signals";
-import type { FilterRangeValue } from "deco-sites/std/commerce/types.ts";
-import useDebounce from "../sdk/useDebounce.ts";
 import { formatPrice } from "deco-sites/tools-dna/sdk/format.ts";
+
+function useDebounce(
+  // deno-lint-ignore no-explicit-any
+  func: (...args: any[]) => void,
+  timeout = 300,
+  // deno-lint-ignore no-explicit-any
+): (...args: any[]) => void {
+  let timer: ReturnType<typeof setTimeout>;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+}
 
 const thumbsize = 14;
 
-interface FilterRangeProps extends FilterRangeValue {
-  currentUrlFilterPrice: string;
-  currentMaxFacet: string;
-  currentMinFacet: string;
+interface FilterRangeProps {
+  min: number;
+  max: number;
+  currentUrlFilterPrice?: string;
+  currentMaxFacet?: string;
+  currentMinFacet?: string;
 }
 
 function applyFilterPrice(
   { min, max, currentUrlFilterPrice }: FilterRangeProps,
 ) {
   const searchParams = new URLSearchParams(currentUrlFilterPrice);
+  console.log("searchParams", searchParams)
   searchParams.set("filter.price", `${min}:${max}`);
   const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
 
@@ -90,7 +106,7 @@ function FilterRange(
     }
   }
 
-  function update(props: FilterRangeValue): void {
+  function update(props: FilterRangeProps): void {
     if (min.current && max.current) {
       const minvalue = props.min;
       const maxvalue = props.max;
@@ -103,7 +119,7 @@ function FilterRange(
     }
   }
 
-  function handleInput(props: FilterRangeValue) {
+  function handleInput(props: FilterRangeProps) {
     update(props);
     debouncedApplyFilterPrice({
       min: rangemin.value,

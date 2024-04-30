@@ -8,6 +8,7 @@ import type {
 } from "apps/commerce/types.ts";
 import { parseRange } from "apps/commerce/utils/filters.ts";
 import ClearFilters from "deco-sites/tools-dna/islands/ClearFilters.tsx";
+// import FilterRange from "deco-sites/tools-dna/components/search/FilterRange.tsx";
 
 interface Props {
   filters: ProductListingPage["filters"];
@@ -57,14 +58,15 @@ function FilterValues({ key, values }: FilterToggle) {
           }
 
           if (key === "price") {
-            console.log(item)
             const range = parseRange(item.value);
 
             return range && (
-              <ValueItem
+              <>
+                <ValueItem
                 {...item}
                 label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
-              />
+                />
+              </>
             );
           }
 

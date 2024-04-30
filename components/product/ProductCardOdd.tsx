@@ -116,7 +116,7 @@ function ProductCardOdd(
 
   return (
     <div class="flex relative flex-row gap-0 w-full">
-      <div class="floating-tags">
+      <div class="floating-tags top-2 right-2">
           <div class="percentageTag">
             <svg
               width="19"

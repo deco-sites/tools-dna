@@ -300,7 +300,7 @@ function ProductInfo({ page, layout }: Props) {
           {/* Prices */}
           <div class="mt-4">
             <div class="flex flex-col relative">
-              <div class="floating-tags !top-[-20px] !justify-end">
+              <div class="floating-tags right-0 -top-4 !flex-nowrap">
                 <div class="percentageTag">
                   <svg
                     width="19"
