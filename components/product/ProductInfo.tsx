@@ -81,8 +81,6 @@ function ProductInfo({ page, layout }: Props) {
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
 
-  console.log(product);
-
   const eventItem = mapProductToAnalyticsItem({
     product,
     breadcrumbList: breadcrumb,

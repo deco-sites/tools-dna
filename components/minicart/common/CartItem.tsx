@@ -41,7 +41,7 @@ function CartItem(
     itemToAnalyticsItem,
   }: Props,
 ) {
-  const { image, name, price: { sale, list }, quantity } = item;
+  const { image, name, price: { sale, list}, quantity } = item;
   const isGift = sale < 0.01;
   const [loading, setLoading] = useState(false);
 
@@ -97,7 +97,7 @@ function CartItem(
           <span class="line-through text-base-300 text-sm">
             {formatPrice(list, currency, locale)}
           </span>
-          <span class="text-sm text-secondary">
+          <span class="text-sm text-black">
             {isGift ? "Grátis" : formatPrice(sale, currency, locale)}
           </span>
         </div>

@@ -18,24 +18,33 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-button:single-button {
-    background-color: #ffffff;
-    display: block;
-    height: 16px;
-    width: 16px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-button:single-button:vertical:decrement {
-    width: 16px;
-    height: 16px;
-    background-color: #ffffff;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48H0z" fill="none"/><path d="m6.586 30.586 2.828 2.828L24 18.828l14.586 14.586 2.828-2.828L24 13.172z"/></svg>');
-  }
-  .custom-scrollbar::-webkit-scrollbar-button:single-button:vertical:increment {
-    width: 16px;
-    height: 16px;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48H0z" fill="none"/><path d="M24 29.172 9.414 14.586l-2.828 2.828L24 34.828l17.414-17.414-2.828-2.828z"/></svg>');
-  }
+  background-color: #ffffff;
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button:single-button:vertical:decrement {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48H0z" fill="none"/><path d="m6.586 30.586 2.828 2.828L24 18.828l14.586 14.586 2.828-2.828L24 13.172z"/></svg>');
+}
+
+.custom-scrollbar::-webkit-scrollbar-button:single-button:vertical:increment {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48H0z" fill="none"/><path d="M24 29.172 9.414 14.586l-2.828 2.828L24 34.828l17.414-17.414-2.828-2.828z"/></svg>');
+}
+
+.progress::-webkit-progress-value {
+  background-color: #164195;
+}
+.progress::-moz-progress-bar {
+  background-color: #164195;
+}
