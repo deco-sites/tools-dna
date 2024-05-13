@@ -9,6 +9,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Image {
   image: ImageWidget;
+  link: string;
   altText: string;
 }
 
@@ -73,7 +74,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
               class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle"
             >
               <div class="flex w-full h-full items-center justify-center">
-                <a href={element.altText}>
+                <a href={element.link}>
                   <img
                     class="max-w-full max-h-full"
                     src={element.image}
