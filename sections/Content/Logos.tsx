@@ -8,9 +8,9 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Image {
-  image: ImageWidget;
-  link: string;
-  altText: string;
+  image?: ImageWidget;
+  link?: string;
+  altText?: string;
 }
 
 export interface Secao {
@@ -29,6 +29,7 @@ const IMAGES = [
     altText: "deco",
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7",
+    link: "/teste/algo"
   },
   {
     altText: "deco",
@@ -74,7 +75,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
               class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle"
             >
               <div class="flex w-full h-full items-center justify-center">
-                <a href={element.link}>
+                <a href={element?.link}>
                   <img
                     class="max-w-full max-h-full"
                     src={element.image}
