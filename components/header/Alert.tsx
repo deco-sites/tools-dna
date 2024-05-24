@@ -7,6 +7,7 @@ export interface Props {
   ctaButton: {
     buttonText: string;
     buttonLink: string;
+    alertsActive: boolean;
   };
   /**
    * @title Autoplay interval
@@ -19,7 +20,7 @@ function Alert({ alerts = [], interval = 5, ctaButton }: Props) {
   const id = useId();
 
   return (
-    <div id={id}>
+    <div id={id} class={`${ ctaButton.alertsActive ? "" : "hidden"}`}>
       <Slider class="topbar-carousel carousel carousel-center w-screen bg-secondary gap-6">
         {alerts.map((alert, index) => (
           <Slider.Item index={index} class="carousel-item">

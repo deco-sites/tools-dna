@@ -146,7 +146,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const onClickPrev = () => {
     const indices = getElementsInsideContainer();
     // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
+    const itemsPerPage = 1;
 
     const isShowingFirst = indices[0] === 0;
     const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
@@ -159,7 +159,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const onClickNext = () => {
     const indices = getElementsInsideContainer();
     // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
+    const itemsPerPage = 1;
 
     const isShowingLast = indices[indices.length - 1] === items.length - 1;
     const pageIndex = Math.floor(indices[0] / itemsPerPage);

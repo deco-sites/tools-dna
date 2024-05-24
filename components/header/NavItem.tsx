@@ -10,7 +10,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
     <li class="group flex items-center categories-items">
       <a href={url} class="px-4 py-3">
         <span
-          class={`group-hover:underline ${
+          class={`group-hover:bg-[#e6e6e6] ${
             children && children.length > 0 ? "relative" : ""
           } `}
         >
@@ -53,21 +53,21 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             <ul class="flex items-start justify-center gap-6 first-submenu">
               {children.map((node) => (
                 <li class="p-6">
-                  <a class="hover:underline" href={node.url}>
+                  <a class="hover:bg-[#e6e6e6]" href={node.url}>
                     <span>{node.name}</span>
                   </a>
 
                   <ul class="flex flex-col gap-1 mt-4 max-h-80">
                     {node.children?.map((leaf) => (
                       <li>
-                        <a class="hover:underline" href={leaf.url}>
+                        <a class="hover:bg-[#e6e6e6]" href={leaf.url}>
                           <span class="text-xs font-bold">{leaf.name}</span>
                         </a>
                         {leaf.children && (
                           <ul>
                             {leaf.children?.map((i) => (
                               <li class="pl-4">
-                                <a class="hover:underline" href={i.url}>
+                                <a class="hover:bg-[#e6e6e6]" href={i.url}>
                                   <span class="text-xs">{i.name}</span>
                                 </a>
                               </li>

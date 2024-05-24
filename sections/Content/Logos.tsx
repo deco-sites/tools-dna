@@ -150,6 +150,11 @@ const DEFAULT_PROPS = {
 
 export interface Props {
   logos?: Secao[];
+    /**
+   * @title Autoplay interval
+   * @description time (in seconds) to start the carousel autoplay
+   */
+  interval?: number;
 }
 
 export const loader = (props: Props, req: Request) => {

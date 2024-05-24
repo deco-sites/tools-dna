@@ -12,6 +12,7 @@ export interface Props {
   ctaButton: {
     buttonText: string;
     buttonLink: string;
+    alertsActive: boolean;
   };
 
   /** @title Search Bar */
@@ -39,7 +40,7 @@ function Header({
 
   return (
     <>
-      <header style={{ height: headerHeight }}>
+      <header style={{ height: `${ctaButton.alertsActive ? headerHeight : "150px"}` }}>
         <Drawers
           menu={{ items }}
           searchbar={searchbar}

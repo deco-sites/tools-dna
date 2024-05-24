@@ -168,8 +168,11 @@ export default function Newsletter(props: Props) {
       console.log("Email do cliente: ", email, name);
       await invoke.wake.actions.newsletter.register({ email, name });
 
-      // await invoke.vtex.actions.newsletter.subscribe({ email });
-    } finally {
+    } 
+    catch(err) {
+      sucesso.value = false;
+    }
+    finally {
       setTimeout(() => {
         loading.value = false;
       }, 2000);
@@ -203,7 +206,7 @@ export default function Newsletter(props: Props) {
           {loading.value
             ? (
               <span>
-                Assinado com sucesso!{" "}
+                Enviando suas informações!{" "}
                 <span class="loading loading-spinner loading-xs" />
               </span>
             )

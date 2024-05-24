@@ -12,6 +12,7 @@ function WhatsApp({ link }: Props) {
   return (
     <a
       href={link}
+      target={"_blank"}
       class="fixed bottom-6 right-6 z-40"
       aria-label="Chat on WhatsApp"
     >
