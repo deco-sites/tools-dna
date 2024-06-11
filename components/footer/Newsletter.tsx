@@ -108,7 +108,6 @@ import Header from "$store/components/ui/SectionHeader.tsx";
 import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
-
 export interface Form {
   placeholder?: string;
   buttonText?: string;
@@ -155,12 +154,15 @@ export default function Newsletter(props: Props) {
   const bordered = Boolean(layout?.content?.border);
 
   const loading = useSignal(false);
+  const submitStatus = useSignal("");
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     try {
       loading.value = true;
+      submitStatus.value = "ENVIANDO";
+
       const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
         ?.value;
       const email =
@@ -168,13 +170,16 @@ export default function Newsletter(props: Props) {
       console.log("Email do cliente: ", email, name);
       await invoke.wake.actions.newsletter.register({ email, name });
 
-    } 
-    catch(err) {
-      sucesso.value = false;
+      submitStatus.value = "ENVIADO COM SUCESSO";
+    }
+    // deno-lint-ignore no-unused-vars
+    catch (err) {
+      submitStatus.value = "ERRO AO ENVIAR";
     }
     finally {
       setTimeout(() => {
         loading.value = false;
+        submitStatus.value = "";
       }, 2000);
     }
   };
@@ -200,17 +205,25 @@ export default function Newsletter(props: Props) {
         />
         <input type={"hidden"} value={"."} name={"name"} />
         <button
-          class={`btn ${isReverse ? "btn-accent" : ""}`}
           type="submit"
+          class={`btn ${isReverse ? "btn-accent" : ""}`}
         >
-          {loading.value
-            ? (
-              <span>
-                Enviando suas informações!{" "}
-                <span class="loading loading-spinner loading-xs" />
-              </span>
-            )
-            : <span>{form.buttonText}</span>}
+          {loading.value ? (
+            <span>
+              {submitStatus.value === "ENVIANDO" ? (
+                <>
+                  Enviando suas informações!{" "}
+                  <span class="loading loading-spinner loading-xs" />
+                </>
+              ) : submitStatus.value === "ENVIADO COM SUCESSO" ? (
+                <span>Enviado com sucesso!</span>
+              ) : <span>Cadastrar</span>
+              }
+
+            </span>
+          ) : <span id={"botao-avaliacao"}>Cadastrar</span>
+          }
+
         </button>
       </div>
       {
@@ -230,23 +243,22 @@ export default function Newsletter(props: Props) {
 
   return (
     <div
-      class={`${
-        bordered
-          ? isReverse ? "bg-secondary-content" : "bg-secondary"
-          : bgLayout
-      } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
+      class={`${bordered
+        ? isReverse ? "bg-secondary-content" : "bg-secondary"
+        : bgLayout
+        } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
     >
       {(!layout?.content?.alignment ||
         layout?.content?.alignment === "Center") && (
-        <div
-          class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
-        >
-          {headerLayout}
-          <div class="flex justify-center form-content">
-            {formLayout}
+          <div
+            class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          >
+            {headerLayout}
+            <div class="flex justify-center form-content">
+              {formLayout}
+            </div>
           </div>
-        </div>
-      )}
+        )}
       {layout?.content?.alignment === "Left" && (
         <div
           class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}

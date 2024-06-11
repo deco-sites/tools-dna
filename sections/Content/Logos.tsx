@@ -99,7 +99,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
             </Slider.NextButton>
           </div>
         </>
-        <SliderJS rootId={id} />
+        <SliderJS rootId={id} interval={3000}/>
       </div>
     </div>
   );

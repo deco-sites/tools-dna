@@ -25,12 +25,14 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
   const loading = useSignal(false);
   const id = useId();
   const open = useSignal(false);
+  const submitStatus = useSignal(""); // Nova variável de estado para o status do envio
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     try {
       loading.value = true;
+      submitStatus.value = "ENVIANDO";
 
       const name = (
         e.currentTarget.elements.namedItem("name") as RadioNodeList
@@ -49,11 +51,21 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
         rating: Number(rating),
         review,
       });
+
+      // Atualiza o status para "ENVIADO COM SUCESSO" quando a requisição for bem-sucedida
+      submitStatus.value = "ENVIADO COM SUCESSO";
+
+    } catch {
+      // Trate o erro aqui, se necessário
+      submitStatus.value = "ERRO AO ENVIAR"; // Adicionei uma mensagem de erro opcional
     } finally {
       setTimeout(() => {
         loading.value = false;
-        open.value = false;
-      }, 3000);
+        setTimeout(() => {
+          submitStatus.value = ""; // Retorna ao estado normal após 2 segundos
+          open.value = false;
+        }, 2000); // 2 segundos para mostrar "ENVIADO COM SUCESSO"
+      }, 2000);
     }
   };
 
@@ -115,12 +127,21 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
                   >
                     {loading.value
                       ? (
-                        <span>
-                          Enviado com sucesso!{" "}
-                          <span class="loading loading-spinner loading-xs" />
+                        <span id={"botao-avaliacao"}>
+                          {submitStatus.value === "ENVIANDO" ? (
+                            <>
+                              Enviando
+                              <span class="loading loading-spinner loading-xs" />
+                            </>
+                          ) : submitStatus.value === "ENVIADO COM SUCESSO" ? (
+                            <span>Enviado com sucesso!</span>
+                          ) : (
+                            <span>Avaliar este produto</span>
+                          )}
                         </span>
                       )
-                      : <span>Avaliar este produto</span>}
+                      : <span id={"botao-avaliacao"}>Avaliar este produto</span>
+                    }
                   </Button>
                 </div>
               </form>
