@@ -7,13 +7,13 @@ export default function MenuButton() {
 
   return (
     <Button
-      class="btn btn-circle btn-sm btn-ghost"
+      class="btn btn-circle btn-sm btn-ghost bg-[#164195] w-[50px] h-[50px]"
       aria-label="open menu"
       onClick={() => {
         displayMenu.value = true;
       }}
     >
-      <Icon id="Bars3" size={24} strokeWidth={0.01} />
+      <Icon id="BarsNewMenu" size={18} strokeWidth={0.01} />
     </Button>
   );
 }

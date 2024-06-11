@@ -115,7 +115,7 @@ function ProductCardOdd(
   // const brandContent = brand?.name;
 
   return (
-    <div class="flex relative flex-row gap-0 w-full">
+    <div class="flex relative md:flex-row flex-col-reverse gap-0 w-full">
       <div class="floating-tags top-2 right-2">
           <div class="percentageTag">
             <svg
@@ -136,7 +136,7 @@ function ProductCardOdd(
         </div>
       <div
         id={id}
-        class={`card card-compact card-odd group w-full max-w-[70%] ${align === "center" ? "text-center" : "text-start"
+        class={`card card-compact card-odd group w-full md:max-w-[70%] ${align === "center" ? "text-center" : "text-start"
           } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${l?.onMouseOver?.card === "Move up" &&
           "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
@@ -252,7 +252,7 @@ function ProductCardOdd(
             : ""}
         </div>
       </div>
-      <div class="rounded-2xl justify-center max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
+      <div class="rounded-2xl justify-center md:max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
         <figure
           class="relative overflow-hidden card-figure"
           style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}

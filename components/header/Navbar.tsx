@@ -29,8 +29,6 @@ function Navbar({ items, searchbar, logo }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
-        <MenuButton />
-
         {logo && (
           <a
             href="/"
@@ -43,7 +41,19 @@ function Navbar({ items, searchbar, logo }: {
         )}
 
         <div class="flex gap-1 wake-mobile-search">
-          <SearchButton />
+          {/* <SearchButton /> */}
+          <a
+            class="w-auto flex btn btn-circle btn-sm btn-ghost"
+            href="//checkout.worldtools.com.br/Login/Authenticate?"
+            aria-label="Log in"
+          >
+            <Icon
+              style="padding: 10px;border-radius: 100px;background: #4BAEE9; width: 48px; height:48px; color: #ffffff;"
+              id="User"
+              size={18}
+              strokeWidth={0.4}
+            />
+          </a>
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
           {platform === "wake" && (
@@ -51,6 +61,7 @@ function Navbar({ items, searchbar, logo }: {
               <CartButtonWake />
             </div>
           )}
+          <MenuButton />
         </div>
       </div>
 

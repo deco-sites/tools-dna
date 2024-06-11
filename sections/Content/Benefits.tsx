@@ -46,17 +46,12 @@ export default function Benefits(
 
     return (
       <div
-        class={`${
-          reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
-        } flex gap-4 items-center ${
-          benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
-        } ${
-          showDivider && benefitLayout !== "piledup"
-            ? "border-b border-neutral-300"
-            : ""
-        } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
-          showDivider && !reverse ? "lg:pb-0" : ""
-        }`}
+        class={`${ reverse ? "bg-primary text-primary-content lg:px-8 lg:py-4" : ""} px-4 py-8 md:p-0 flex-col md:flex-row text-center flex gap-4 items-center
+        ${ benefitLayout == "piledup" ? "flex-col items-center text-center" : ""}
+        ${ showDivider && benefitLayout !== "piledup" ? "border-b border-neutral-300" : "" }
+        ${ showDivider ? "lg:pr-8 lg:border-r lg:border-b-0" : ""} 
+        ${ showDivider && !reverse ? "lg:pb-0" : "" }`
+      }
       >
         <div class="flex-none icon-content">
           <Icon
@@ -94,14 +89,14 @@ export default function Benefits(
     <>
       {!layout?.variation || layout?.variation === "Simple"
         ? (
-          <div class="w-full sm:border-b sm:border-neutral-300 px-4 py-4 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
+          <div class="w-full sm:border-b sm:border-neutral-300 px-0 py-0 flex flex-col gap-8 lg:gap-10 lg:py-4 lg:px-0">
             <Header
               title={title}
               description={description}
               alignment={layout?.headerAlignment || "center"}
             />
             <div class="w-full flex container justify-center">
-              <div class="listOfBenefits flex gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
+              <div class="listOfBenefits md:flex gap-4 lg:gap-8 w-full">
                 {listOfBenefits}
               </div>
             </div>

@@ -72,7 +72,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
           {list.map((element, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle"
+              class="carousel-item w-1/2 md:w-1/5 h-17 lg:h-20 px-2 lg:px-6 py-6 lg:py-4 inline-block align-middle"
             >
               <div class="flex w-full h-full items-center justify-center">
                 <a href={element?.link}>
@@ -88,12 +88,12 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
           ))}
         </Slider>
         <>
-          <div class="absolute left-0 block z-10 col-start-1 row-start-3">
+          <div class="absolute left-0 z-10 col-start-1 row-start-3 hidden md:block">
             <Slider.PrevButton class="btn btn-circle btn-outline  bg-base-100">
               <Icon size={24} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
           </div>
-          <div class="absolute right-0 block z-10 col-start-3 row-start-3">
+          <div class="absolute right-0 hidden md:block z-10 col-start-3 row-start-3">
             <Slider.NextButton class="btn btn-circle btn-outline  bg-base-100">
               <Icon size={24} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
