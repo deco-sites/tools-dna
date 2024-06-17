@@ -195,7 +195,7 @@ function ProductInfo({ page, layout }: Props) {
           </div>
         </div>
 
-        <div class="flex flex-col w-full min-w-[376px] max-w-[376px]" id={id}>
+        <div class="flex flex-col w-full md:min-w-[376px] max-w-[376px]" id={id}>
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
@@ -261,7 +261,7 @@ function ProductInfo({ page, layout }: Props) {
                       <a
                         href={selection.url}
                         class={`
-                      mb-2 max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
+                      mb-2 max-w-full md:max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
                       ${
                           selection.value == "false"
                             ? "opacity-50"
@@ -292,7 +292,7 @@ function ProductInfo({ page, layout }: Props) {
         </div>
 
         <div
-          class="py-[20px] px-[48px] flex flex-col w-full min-w-[415px] max-w-[415px] border rounded-3xl border-solid border-[#E9E9E9]"
+          class="py-[20px] px-6 md:px-[48px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl bg-[#DFEAFF80]"
           id={id}
         >
           {/* Prices */}
@@ -407,7 +407,7 @@ function ProductInfo({ page, layout }: Props) {
           </div>
 
           {/* Shipping Simulation */}
-          <div class="mt-8">
+          <div class="mt-8 pt-4 md:pt-0 border-t border-[#DFEAFF]">
             {platform === "wake" && (
               <Shipping
                 items={{

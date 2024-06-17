@@ -10,7 +10,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
     <li class="group flex items-center categories-items">
       <a href={url} class="px-4 py-3">
         <span
-          class={`group-hover:bg-[#e6e6e6] ${
+          class={`${
             children && children.length > 0 ? "relative" : ""
           } `}
         >

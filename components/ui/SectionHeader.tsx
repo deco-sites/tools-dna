@@ -23,7 +23,7 @@ function Header(props: Props) {
               (
                 <h2
                   class={`
-                  flex-col md:flex-row text-3xl items-start
+                  flex-col md:flex-row text-xl md:text-3xl items-start
                   ${
                     props.colorReverse
                       ? "text-primary-content"

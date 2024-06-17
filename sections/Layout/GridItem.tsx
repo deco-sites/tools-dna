@@ -27,7 +27,7 @@ interface Props {
 function GridItem({ children, layout }: Props) {
   return (
     <div
-      class={`max-w-[100vw] p-2 md:p-0 ${
+      class={`max-w-[100vw] py-2 px-6 md:p-0 ${
         clx(
           layout?.rowStart?.mobile &&
             grid.rowStart.mobile[layout.rowStart.mobile],

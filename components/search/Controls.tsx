@@ -81,7 +81,7 @@ function SearchControls(
     >
       <div class="flex flex-col justify-between p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] mb-4">
         <div class="flex flex-row items-center sm:p-0 mb-2">
-          <span class="text-[30px] text-[#020202] font-semibold">
+          <span class="text-2xl md:text-[30px] text-[#020202] font-semibold">
             {banner?.image && (
               <img
                 src={banner.image.desktop}
@@ -96,9 +96,9 @@ function SearchControls(
           {/*<Breadcrumb itemListElement={breadcrumb?.itemListElement} />*/}
         </div>
 
-        <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
+        <div class="flex flex-row-reverse md:flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
           <Button
-            class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden"}
+            class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden w-full max-w-[130px] border border-[#e9e9e9] rounded-md flex items-center justify-center flex-row-reverse gap-2 p-1"}
             onClick={() => {
               open.value = true;
             }}
@@ -106,7 +106,9 @@ function SearchControls(
             Filtrar
             <Icon id="FilterList" width={16} height={16} />
           </Button>
-          {pageInfo.records} produtos encontrados
+          <>
+            {pageInfo.records} produtos encontrados
+          </>
           {sortOptions.length > 0 && <Sort sortOptions={sortOptions} />}
         </div>
       </div>
