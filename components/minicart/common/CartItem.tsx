@@ -74,7 +74,7 @@ function CartItem(
 
       <div class="flex flex-col gap-2">
         <div class="flex justify-between items-center">
-          <span>{name}</span>
+          <span class="lowercase">{name}</span>
           <Button
             disabled={loading || isGift}
             loading={loading}

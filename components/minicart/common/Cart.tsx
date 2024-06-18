@@ -78,7 +78,7 @@ function Cart({
               class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
             >
               {items.map((item, index) => (
-                <li key={index}>
+                <li key={index} class="border-b-[#E9E9E9] border-b pb-4">
                   <CartItem
                     item={item}
                     index={index}
@@ -103,7 +103,7 @@ function Cart({
                     </span>
                   </div>
                 )}
-                <div class="w-full flex justify-between px-4 text-sm">
+                <div class="w-full flex justify-between px-4 text-sm text-[#727272]">
                   <span>Subtotal</span>
                   <span class="px-4">
                     {formatPrice(subtotal, currency, locale)}
@@ -122,7 +122,7 @@ function Cart({
                     {formatPrice(total, currency, locale)}
                   </span>
                 </div>
-                <span class="text-sm text-base-300">
+                <span class="text-sm text-[#727272]">
                   Taxas e fretes serão calculados no checkout
                 </span>
               </div>
@@ -134,7 +134,7 @@ function Cart({
                 >
                   <Button
                     data-deco="buy-button"
-                    class="btn-primary btn-block"
+                    class="btn-primary btn-block bg-black h-16 text-white rounded-xl"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({
@@ -153,6 +153,16 @@ function Cart({
                     Fechar pedido
                   </Button>
                 </a>
+                <div class={"w-full flex items-center justify-center pt-4"}>
+                  <Button
+                  class="btn-outline"
+                  onClick={() => {
+                    displayCart.value = false;
+                  }}
+                  >
+                  Continuar Comprando
+                </Button>
+              </div>
               </div>
             </footer>
           </>
