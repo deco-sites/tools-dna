@@ -6,14 +6,23 @@ export interface Props {
 }
 
 function MenuItem({ item }: { item: SiteNavigationElement }) {
-  return (
+  if(item.children && item.children.length == 0) {
+    return (
+      <li class="w-full p-4 min-h-[3.75rem] transition-all relative">
+        <a class="text-md font-semibold" href={item.url}>
+          {item.name}
+        </a>
+      </li>
+    )
+  } else {
+    return (
     <div class="collapse collapse-plus">
       <input type="checkbox" />
       <div class="collapse-title">{item.name}</div>
       <div class="collapse-content">
         <ul>
           <li>
-            <a class="underline text-sm" href={item.url}>Ver todos</a>
+            <a class="underline text-sm" href={item.url}>Ver Categoria</a>
           </li>
           {item.children?.map((node) => (
             <li>
@@ -23,7 +32,11 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
         </ul>
       </div>
     </div>
-  );
+    )
+  }
+
+    
+
 }
 
 function Menu({ items }: Props) {

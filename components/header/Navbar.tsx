@@ -36,7 +36,7 @@ function Navbar({ items, searchbar, logo }: {
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
-            <Image src={logo.src} alt={logo.alt} width={126} height={16} />
+            <Image src={logo.src} alt={logo.alt} width={159} height={35} />
           </a>
         )}
 
@@ -64,7 +64,9 @@ function Navbar({ items, searchbar, logo }: {
           <MenuButton />
         </div>
       </div>
-
+      <div class="flex-auto searchbar-content relative">
+        <Searchbar searchbar={searchbar} />
+      </div>
       {/* Desktop Version */}
       <div
         style="gap: 5rem"
