@@ -1,5 +1,5 @@
 import BackToTop from "$store/components/footer/BackToTop.tsx";
-import ColorClasses from "$store/components/footer/ColorClasses.tsx";
+// import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
 import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
@@ -389,12 +389,17 @@ function Footer({
             </div>
             <Divider /> */
             }
-            {
-              /* <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredByDeco />
-              {_links}
-            </div> */
-            }
+            <div class="flex flex-row justify-center w-full gap-10 items-center">
+              <a href={"https://dna360.ag"} class={"flex flex-row items-center justify-center"}>
+                <p>developed by: </p>
+                <img
+                  class="w-24"
+                  src={asset(`/image/logotipo-dna-360.png`)}
+                  loading={"lazy"}
+                />
+              </a>
+            </div>
+            
           </div>
         )}
         {layout?.variation == "Variation 2" && (

@@ -48,8 +48,9 @@ function Navbar({ items, searchbar, logo }: {
             aria-label="Log in"
           >
             <Icon
-              style="padding: 10px;border-radius: 100px;background: #4BAEE9; width: 48px; height:48px; color: #ffffff;"
+              style="padding: 10px;border-radius: 100px;background: #4BAEE9; color: #ffffff;"
               id="User"
+              class="h-[40px] w-[40px] md:h-[48px] md:w-[48px]"
               size={18}
               strokeWidth={0.4}
             />
@@ -64,7 +65,7 @@ function Navbar({ items, searchbar, logo }: {
           <MenuButton />
         </div>
       </div>
-      <div class="flex-auto searchbar-content relative">
+      <div class="flex-auto searchbar-content relative md:hidden p-4 pt-0">
         <Searchbar searchbar={searchbar} />
       </div>
       {/* Desktop Version */}
@@ -96,8 +97,9 @@ function Navbar({ items, searchbar, logo }: {
              padding-right: 15px"
           >
             <Icon
-              style="padding: 10px;border-radius: 100px;background: #4BAEE9; width: 48px; height:48px; color: #ffffff;"
+              style="padding: 10px;border-radius: 100px;background: #4BAEE9; color: #ffffff;"
               id="User"
+              class="h-[40px] w-[40px] md:h-[48px] md:w-[48px]"
               size={24}
               strokeWidth={0.4}
             />
@@ -108,7 +110,7 @@ function Navbar({ items, searchbar, logo }: {
             </p>
           </a>
           <a
-            class="btn btn-circle btn-sm btn-ghost wishlist-button"
+            class="btn btn-circle btn-sm btn-ghost wishlist-button h-[40px] w-[40px] md:h-[48px] md:w-[48px]"
             href="/wishlist"
             aria-label="Wishlist"
           >

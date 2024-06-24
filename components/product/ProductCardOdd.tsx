@@ -134,9 +134,7 @@ function ProductCardOdd(
               calculate(listPrice, pixPrice)}
           </div>
         </div>
-      <div
-        id={id}
-        class={`card card-compact card-odd group w-full md:max-w-[70%] ${align === "center" ? "text-center" : "text-start"
+      <div id={id} style={{backgroundImage: `url(${front.url!})` }} class={`bg-right-bottom card card-compact card-odd group w-full bg-no-repeat bg-[length:140px] ${align === "center" ? "text-center" : "text-start"
           } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${l?.onMouseOver?.card === "Move up" &&
           "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
@@ -182,7 +180,7 @@ function ProductCardOdd(
                 {l?.hide?.productName
                   ? ""
                   : (
-                    <h2 class="card-name truncate text-base lg:text-lg text-base-content">
+                    <h2 class="card-name truncate text-base lg:text-lg text-base-content max-w-[70%]">
                       {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
                       {name?.toLocaleLowerCase().slice(1)}
                     </h2>
@@ -252,12 +250,14 @@ function ProductCardOdd(
             : ""}
         </div>
       </div>
-      <div class="rounded-2xl justify-center md:max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
+      
+      
+      {/*<div class="rounded-2xl justify-center md:max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
         <figure
           class="relative overflow-hidden card-figure"
           style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
         >
-          {/* Wishlist button */}
+          
           <div
             class={`absolute top-2 z-10
           ${l?.elementsPositions?.favoriteIcon === "Top left"
@@ -277,7 +277,7 @@ function ProductCardOdd(
               />
             )}
           </div>
-          {/* Product Images */}
+          
           <a
             href={url && relative(url)}
             aria-label="view product"
@@ -318,7 +318,7 @@ function ProductCardOdd(
                 : "lg:hidden"
               }`}
           >
-            {/* SKU Selector */}
+            
             {l?.onMouseOver?.showSkuSelector && (
               <ul>
                 {skuSelector}
@@ -327,7 +327,7 @@ function ProductCardOdd(
             {l?.onMouseOver?.showCta && cta}
           </figcaption>
         </figure>
-      </div>
+      </div> */}
     </div>
   );
 }

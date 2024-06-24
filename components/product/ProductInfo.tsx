@@ -102,6 +102,12 @@ function ProductInfo({ page, layout }: Props) {
     property.valueReference === "SELECTIONS"
   );
 
+  const prazoDeEnvio = product.additionalProperty?.filter((property) => 
+    property.name === "Sinopse"
+  )
+
+  console.log(prazoDeEnvio)
+
   const ratingValueCustom = product.aggregateRating?.ratingValue
     ? product.aggregateRating?.ratingValue
     : 0;
@@ -231,6 +237,11 @@ function ProductInfo({ page, layout }: Props) {
                 </div>
               )}
             </div>
+            {prazoDeEnvio && (
+              <p class="text-[#717171]">
+                Prazo de envio: <span class={"text-[#385fa6] font-bold"}>{prazoDeEnvio[0].value}</span>
+              </p>
+            )}
             <div class="mt-2.5 pt-2.5 border-t-[#E9E9E9] border-t border-solid">
               {product.brand && product.brand.logo && (
                 <a
