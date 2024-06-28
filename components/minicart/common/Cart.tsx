@@ -155,14 +155,14 @@ function Cart({
                 </a>
                 <div class={"w-full flex items-center justify-center pt-4"}>
                   <Button
-                  class="btn-outline"
-                  onClick={() => {
-                    displayCart.value = false;
-                  }}
+                    class="btn-outline"
+                    onClick={() => {
+                      displayCart.value = false;
+                    }}
                   >
-                  Continuar Comprando
-                </Button>
-              </div>
+                    Continuar Comprando
+                  </Button>
+                </div>
               </div>
             </footer>
           </>

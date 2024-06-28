@@ -493,8 +493,16 @@
 
 @media screen and (max-width: 768px) {
     .shelf-custom-items:not(.odd) .floating-tags {
-        top: 30%;
-        flex-wrap: nowrap;
+        top: 1rem;
+        flex-wrap: wrap;
+    }
+    .shelf-custom-items:not(.odd) figure {
+        margin-top: 3rem;
+    }
+
+    .shelf-custom-items:not(.odd) .floating-tags .installmentsTag, 
+    .shelf-custom-items:not(.odd) .floating-tags .percentageTag {
+        font-size: 10px;
     }
 }
 

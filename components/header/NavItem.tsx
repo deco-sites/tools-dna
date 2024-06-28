@@ -10,9 +10,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
     <li class="group flex items-center categories-items">
       <a href={url} class="px-4 py-3">
         <span
-          class={`${
-            children && children.length > 0 ? "relative" : ""
-          } `}
+          class={`${children && children.length > 0 ? "relative" : ""} `}
         >
           {name}
           {children && children.length > 0 &&

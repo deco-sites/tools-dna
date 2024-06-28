@@ -77,7 +77,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
               <div class="flex w-full h-full items-center justify-center">
                 <a href={element?.link}>
                   <img
-                    class="max-w-full max-h-full"
+                    class="w-full h-full max-w-[200px] max-h-[50px]"
                     src={element.image}
                     alt={element.altText || ""}
                     loading={"lazy"}

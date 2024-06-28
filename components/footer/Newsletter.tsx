@@ -171,12 +171,10 @@ export default function Newsletter(props: Props) {
       await invoke.wake.actions.newsletter.register({ email, name });
 
       submitStatus.value = "ENVIADO COM SUCESSO";
-    }
-    // deno-lint-ignore no-unused-vars
+    } // deno-lint-ignore no-unused-vars
     catch (err) {
       submitStatus.value = "ERRO AO ENVIAR";
-    }
-    finally {
+    } finally {
       setTimeout(() => {
         loading.value = false;
         submitStatus.value = "";
@@ -208,22 +206,22 @@ export default function Newsletter(props: Props) {
           type="submit"
           class={`btn ${isReverse ? "btn-accent" : ""}`}
         >
-          {loading.value ? (
-            <span>
-              {submitStatus.value === "ENVIANDO" ? (
-                <>
-                  Enviando suas informações!{" "}
-                  <span class="loading loading-spinner loading-xs" />
-                </>
-              ) : submitStatus.value === "ENVIADO COM SUCESSO" ? (
-                <span>Enviado com sucesso!</span>
-              ) : <span>Cadastrar</span>
-              }
-
-            </span>
-          ) : <span id={"botao-avaliacao"}>Cadastrar</span>
-          }
-
+          {loading.value
+            ? (
+              <span>
+                {submitStatus.value === "ENVIANDO"
+                  ? (
+                    <>
+                      Enviando suas informações!{" "}
+                      <span class="loading loading-spinner loading-xs" />
+                    </>
+                  )
+                  : submitStatus.value === "ENVIADO COM SUCESSO"
+                  ? <span>Enviado com sucesso!</span>
+                  : <span>Cadastrar</span>}
+              </span>
+            )
+            : <span id={"botao-avaliacao"}>Cadastrar</span>}
         </button>
       </div>
       {
@@ -243,22 +241,23 @@ export default function Newsletter(props: Props) {
 
   return (
     <div
-      class={`${bordered
-        ? isReverse ? "bg-secondary-content" : "bg-secondary"
-        : bgLayout
-        } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
+      class={`${
+        bordered
+          ? isReverse ? "bg-secondary-content" : "bg-secondary"
+          : bgLayout
+      } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
     >
       {(!layout?.content?.alignment ||
         layout?.content?.alignment === "Center") && (
-          <div
-            class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
-          >
-            {headerLayout}
-            <div class="flex justify-center form-content">
-              {formLayout}
-            </div>
+        <div
+          class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+        >
+          {headerLayout}
+          <div class="flex justify-center form-content">
+            {formLayout}
           </div>
-        )}
+        </div>
+      )}
       {layout?.content?.alignment === "Left" && (
         <div
           class={`newsletter-content container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}

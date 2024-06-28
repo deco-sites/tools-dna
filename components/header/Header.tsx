@@ -40,7 +40,9 @@ function Header({
 
   return (
     <>
-      <header style={{ height: `${ctaButton.alertsActive ? headerHeight : "150px"}` }}>
+      <header
+        style={{ height: `${ctaButton.alertsActive ? headerHeight : "150px"}` }}
+      >
         <Drawers
           menu={{ items }}
           searchbar={searchbar}

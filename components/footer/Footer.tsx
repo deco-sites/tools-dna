@@ -390,11 +390,11 @@ function Footer({
             <Divider /> */
             }
             <div class="flex flex-row justify-center w-full gap-10 items-center">
-              <a href={"https://dna360.ag"} class={"flex flex-row items-center justify-center"}>
-                <p>developed by: </p>
+              <a href={"https://dna360.ag"} class={"text-[#727272] gap-1 flex flex-row items-center justify-center"}>
+                <p>Desenvolvido por: </p>
                 <img
                   class="w-24"
-                  src={asset(`/image/logotipo-dna-360.png`)}
+                  src={asset(`/image/logotipo-dna360-black.png`)}
                   loading={"lazy"}
                 />
               </a>

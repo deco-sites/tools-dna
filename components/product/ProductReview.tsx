@@ -54,7 +54,6 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
 
       // Atualiza o status para "ENVIADO COM SUCESSO" quando a requisição for bem-sucedida
       submitStatus.value = "ENVIADO COM SUCESSO";
-
     } catch {
       // Trate o erro aqui, se necessário
       submitStatus.value = "ERRO AO ENVIAR"; // Adicionei uma mensagem de erro opcional
@@ -71,24 +70,28 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
 
   return (
     <div
-      class={`flex ${tiled
+      class={`flex ${
+        tiled
           ? "flex-col gap-4 lg:flex-row lg:w-full lg:justify-between"
           : "flex-col gap-4"
-        }`}
+      }`}
     >
       <div class="flex flex-col gap-4">
-
         <Button
           class="hidden sm:inline-flex btn-ghost"
           onClick={() => open.value = true}
         >
-          <div class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4 flex items-center justify-center" >
+          <div class="font-semibold text-white text-2xl bg-[#15AD40] min-h-[70px] rounded-xl w-full px-4 flex items-center justify-center">
             <span>Avaliar este produto</span>
           </div>
         </Button>
 
         <div id={id}>
-          <Modal loading="lazy" open={open.value} onClose={() => open.value = false}>
+          <Modal
+            loading="lazy"
+            open={open.value}
+            onClose={() => open.value = false}
+          >
             <div class="modal-box w-2/5 max-w-7xl">
               <form
                 class="form-control"
@@ -114,7 +117,10 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
                   >
                   </textarea>
 
-                  <select name="ddlNota" class="input-bordered w-full border h-8">
+                  <select
+                    name="ddlNota"
+                    class="input-bordered w-full border h-8"
+                  >
                     <option selected value="5">Excelente</option>
                     <option value="4">Muito Bom</option>
                     <option value="3">Bom</option>
@@ -128,20 +134,23 @@ function ProductReview({ IDProduct, layout = {} }: Props) {
                     {loading.value
                       ? (
                         <span id={"botao-avaliacao"}>
-                          {submitStatus.value === "ENVIANDO" ? (
-                            <>
-                              Enviando
-                              <span class="loading loading-spinner loading-xs" />
-                            </>
-                          ) : submitStatus.value === "ENVIADO COM SUCESSO" ? (
-                            <span>Enviado com sucesso!</span>
-                          ) : (
-                            <span>Avaliar este produto</span>
-                          )}
+                          {submitStatus.value === "ENVIANDO"
+                            ? (
+                              <>
+                                Enviando
+                                <span class="loading loading-spinner loading-xs" />
+                              </>
+                            )
+                            : submitStatus.value === "ENVIADO COM SUCESSO"
+                            ? <span>Enviado com sucesso!</span>
+                            : <span>Avaliar este produto</span>}
                         </span>
                       )
-                      : <span id={"botao-avaliacao"}>Avaliar este produto</span>
-                    }
+                      : (
+                        <span id={"botao-avaliacao"}>
+                          Avaliar este produto
+                        </span>
+                      )}
                   </Button>
                 </div>
               </form>

@@ -98,7 +98,9 @@ function SearchControls(
 
         <div class="flex flex-row-reverse md:flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
           <Button
-            class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden w-full max-w-[130px] border border-[#e9e9e9] rounded-md flex items-center justify-center flex-row-reverse gap-2 p-1"}
+            class={displayFilter
+              ? "btn-ghost"
+              : "btn-ghost sm:hidden w-full max-w-[130px] border border-[#e9e9e9] rounded-md flex items-center justify-center flex-row-reverse gap-2 p-1"}
             onClick={() => {
               open.value = true;
             }}

@@ -8,8 +8,14 @@ import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
+import type { ImageObject } from "apps/commerce/types.ts";
+
 
 export interface Layout {
+    
+  customProductImages?: {
+    items: ImageObject[]
+  };
   basics?: {
     contentAlignment?: "Left" | "Center";
     oldPriceSize?: "Small" | "Normal";
@@ -36,6 +42,7 @@ export interface Layout {
     showCta?: boolean;
   };
 }
+
 
 interface Props {
   product: Product;
@@ -117,28 +124,42 @@ function ProductCardOdd(
   return (
     <div class="flex relative md:flex-row flex-col-reverse gap-0 w-full">
       <div class="floating-tags top-2 right-2">
-          <div class="percentageTag">
-            <svg
-              width="19"
-              height="19"
-              viewBox="0 0 19 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.463 7.07h1.214m3.643 4.858h1.214m0-5.464-6.07 6.071M8.65 1.351 7.28 2.72a1.2 1.2 0 0 1-.848.352h-2.16a1.2 1.2 0 0 0-1.199 1.2V6.43a1.2 1.2 0 0 1-.352.847L1.35 8.652a1.2 1.2 0 0 0 0 1.696l1.372 1.371a1.198 1.198 0 0 1 .351.848v2.159a1.2 1.2 0 0 0 1.2 1.2h2.159c.318 0 .623.126.847.352l1.372 1.37a1.2 1.2 0 0 0 1.697 0l1.37-1.371a1.2 1.2 0 0 1 .848-.351h2.16a1.2 1.2 0 0 0 1.199-1.2v-2.16c0-.317.126-.622.352-.847l1.37-1.372a1.2 1.2 0 0 0 0-1.696L16.278 7.28a1.2 1.2 0 0 1-.351-.848v-2.16a1.2 1.2 0 0 0-1.2-1.199h-2.159a1.2 1.2 0 0 1-.847-.352l-1.374-1.37a1.2 1.2 0 0 0-1.696 0Z"
-                stroke="#164195"
-              />
-            </svg>
-            {listPrice && pixPrice &&
-              calculate(listPrice, pixPrice)}
-          </div>
+        <div class="percentageTag">
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.463 7.07h1.214m3.643 4.858h1.214m0-5.464-6.07 6.071M8.65 1.351 7.28 2.72a1.2 1.2 0 0 1-.848.352h-2.16a1.2 1.2 0 0 0-1.199 1.2V6.43a1.2 1.2 0 0 1-.352.847L1.35 8.652a1.2 1.2 0 0 0 0 1.696l1.372 1.371a1.198 1.198 0 0 1 .351.848v2.159a1.2 1.2 0 0 0 1.2 1.2h2.159c.318 0 .623.126.847.352l1.372 1.37a1.2 1.2 0 0 0 1.697 0l1.37-1.371a1.2 1.2 0 0 1 .848-.351h2.16a1.2 1.2 0 0 0 1.199-1.2v-2.16c0-.317.126-.622.352-.847l1.37-1.372a1.2 1.2 0 0 0 0-1.696L16.278 7.28a1.2 1.2 0 0 1-.351-.848v-2.16a1.2 1.2 0 0 0-1.2-1.199h-2.159a1.2 1.2 0 0 1-.847-.352l-1.374-1.37a1.2 1.2 0 0 0-1.696 0Z"
+              stroke="#164195"
+            />
+          </svg>
+          {listPrice && pixPrice &&
+            calculate(listPrice, pixPrice)}
         </div>
-      <div id={id} style={{backgroundImage: `url(${front.url!})` }} class={`bg-right-bottom card card-compact card-odd group w-full bg-no-repeat bg-[length:140px] ${align === "center" ? "text-center" : "text-start"
-          } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
-        ${l?.onMouseOver?.card === "Move up" &&
-          "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
+      </div>
+      <div
+        id={id}
+        data-index={index}
+        style={{ backgroundImage: `url(
+          ${
+            index != undefined ? (
+              layout?.customProductImages?.items[index] != undefined ?
+              layout?.customProductImages?.items[index].url : front.url!
+              ) : 
+            front.url! 
           }
+          )` }}
+        class={`${index ? (index > 2 ? "!bg-white": "") : ""} bg-right-bottom card card-compact card-odd group w-full bg-no-repeat bg-[length:140px] ${
+          align === "center" ? "text-center" : "text-start"
+        } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
+        ${
+          l?.onMouseOver?.card === "Move up" &&
+          "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
+        }
       `}
         data-deco="view-product"
       >
@@ -165,14 +186,14 @@ function ProductCardOdd(
           {/* SKU Selector */}
           {(!l?.elementsPositions?.skuSelector ||
             l?.elementsPositions?.skuSelector === "Top") && (
-              <>
-                {l?.hide?.skuSelector ? "" : (
-                  <ul>
-                    {skuSelector}
-                  </ul>
-                )}
-              </>
-            )}
+            <>
+              {l?.hide?.skuSelector ? "" : (
+                <ul>
+                  {skuSelector}
+                </ul>
+              )}
+            </>
+          )}
 
           {l?.hide?.productName && l?.hide?.productDescription ? "" : (
             <div>
@@ -180,7 +201,7 @@ function ProductCardOdd(
                 {l?.hide?.productName
                   ? ""
                   : (
-                    <h2 class="card-name truncate text-base lg:text-lg text-base-content max-w-[70%]">
+                    <h2 class={`${index ? (index > 2 ? "!text-[#164195]" : "") : ""} card-name truncate text-base lg:text-lg text-base-content max-w-[70%]`}>
                       {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
                       {name?.toLocaleLowerCase().slice(1)}
                     </h2>
@@ -196,28 +217,30 @@ function ProductCardOdd(
           )}
           {l?.hide?.allPrices ? "" : (
             <div
-            //   class="flex flex-col gap-2"
+              //   class="flex flex-col gap-2"
             >
               <div
-                class={`flex flex-col gap-0 ${l?.basics?.oldPriceSize === "Normal"
+                class={`flex flex-col gap-0 ${
+                  l?.basics?.oldPriceSize === "Normal"
                     ? "lg:flex-row lg:gap-2"
                     : ""
-                  } ${align === "center" ? "justify-center" : "justify-start"}`}
+                } ${align === "center" ? "justify-center" : "justify-start"}`}
               >
                 <div
-                  class={` card-oldPrice line-through text-base-300 text-xs ${l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
-                    }`}
+                  class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-oldPrice line-through text-base-300 text-xs ${
+                    l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
+                  }`}
                 >
                   De {formatPrice(listPrice, offers?.priceCurrency)}
                 </div>
-                <div class="card-price text-base-600 text-xl lg:text-xl">
+                <div class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-price text-base-600 text-xl lg:text-xl`}>
                   {formatPrice(pixPrice, offers?.priceCurrency)}
                 </div>
               </div>
               {l?.hide?.installments
                 ? ""
                 : (
-                  <div class="card-installments text-base lg:text-base truncate">
+                  <div class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-installments text-base lg:text-base truncate`}>
                     ou em <strong>{installments} no cartão</strong>
                   </div>
                 )}
@@ -229,8 +252,9 @@ function ProductCardOdd(
             <>
               {l?.hide?.skuSelector ? "" : (
                 <ul
-                  class={`flex items-center gap-2 w-full ${align === "center" ? "justify-center" : "justify-start"
-                    } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
+                  class={`flex items-center gap-2 w-full ${
+                    align === "center" ? "justify-center" : "justify-start"
+                  } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
                 >
                   {skuSelector}
                 </ul>
@@ -241,8 +265,9 @@ function ProductCardOdd(
           {!l?.hide?.cta
             ? (
               <div
-                class={`flex-auto flex items-end ${l?.onMouseOver?.showCta ? "lg:hidden" : ""
-                  }`}
+                class={`flex-auto flex items-end ${
+                  l?.onMouseOver?.showCta ? "lg:hidden" : ""
+                }`}
               >
                 {cta}
               </div>
@@ -250,14 +275,14 @@ function ProductCardOdd(
             : ""}
         </div>
       </div>
-      
-      
-      {/*<div class="rounded-2xl justify-center md:max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
+
+      {
+        /*<div class="rounded-2xl justify-center md:max-w-[32%] border border-solid border-[#164195] flex flex-col items-center">
         <figure
           class="relative overflow-hidden card-figure"
           style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
         >
-          
+
           <div
             class={`absolute top-2 z-10
           ${l?.elementsPositions?.favoriteIcon === "Top left"
@@ -277,7 +302,7 @@ function ProductCardOdd(
               />
             )}
           </div>
-          
+
           <a
             href={url && relative(url)}
             aria-label="view product"
@@ -318,7 +343,7 @@ function ProductCardOdd(
                 : "lg:hidden"
               }`}
           >
-            
+
             {l?.onMouseOver?.showSkuSelector && (
               <ul>
                 {skuSelector}
@@ -327,7 +352,8 @@ function ProductCardOdd(
             {l?.onMouseOver?.showCta && cta}
           </figcaption>
         </figure>
-      </div> */}
+      </div> */
+      }
     </div>
   );
 }

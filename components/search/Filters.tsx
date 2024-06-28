@@ -63,8 +63,10 @@ function FilterValues({ key, values }: FilterToggle) {
             return range && (
               <>
                 <ValueItem
-                {...item}
-                label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
+                  {...item}
+                  label={`${formatPrice(range.from)} - ${
+                    formatPrice(range.to)
+                  }`}
                 />
               </>
             );
