@@ -10,11 +10,9 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import Image from "apps/website/components/Image.tsx";
 import type { ImageObject } from "apps/commerce/types.ts";
 
-
 export interface Layout {
-    
   customProductImages?: {
-    items: ImageObject[]
+    items: ImageObject[];
   };
   basics?: {
     contentAlignment?: "Left" | "Center";
@@ -42,7 +40,6 @@ export interface Layout {
     showCta?: boolean;
   };
 }
-
 
 interface Props {
   product: Product;
@@ -122,7 +119,7 @@ function ProductCardOdd(
   // const brandContent = brand?.name;
 
   return (
-    <div class="flex relative md:flex-row flex-col-reverse gap-0 w-full">
+    <div class={`flex relative md:flex-row flex-col-reverse gap-0 w-full ${index && index > 3 ? "hidden md:flex" : "flex md:flex"}`}>
       <div class="floating-tags top-2 right-2">
         <div class="percentageTag">
           <svg
@@ -144,16 +141,22 @@ function ProductCardOdd(
       <div
         id={id}
         data-index={index}
-        style={{ backgroundImage: `url(
+        style={{
+          backgroundImage: `url(
           ${
-            index != undefined ? (
-              layout?.customProductImages?.items[index] != undefined ?
-              layout?.customProductImages?.items[index].url : front.url!
-              ) : 
-            front.url! 
+            index != undefined
+              ? (
+                layout?.customProductImages?.items[index] != undefined
+                  ? layout?.customProductImages?.items[index].url
+                  : front.url!
+              )
+              : front.url!
           }
-          )` }}
-        class={`${index ? (index > 2 ? "!bg-white": "") : ""} bg-right-bottom card card-compact card-odd group w-full bg-no-repeat bg-[length:140px] ${
+          )`,
+        }}
+        class={`${
+          index ? (index > 2 ? "!bg-white" : "") : ""
+        } bg-right-bottom card card-compact card-odd group w-full bg-no-repeat bg-[length:140px] ${
           align === "center" ? "text-center" : "text-start"
         } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
@@ -198,14 +201,16 @@ function ProductCardOdd(
           {l?.hide?.productName && l?.hide?.productDescription ? "" : (
             <div>
               <a href={url && relative(url)}>
-                {l?.hide?.productName
-                  ? ""
-                  : (
-                    <h2 class={`${index ? (index > 2 ? "!text-[#164195]" : "") : ""} card-name truncate text-base lg:text-lg text-base-content max-w-[70%]`}>
-                      {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
-                      {name?.toLocaleLowerCase().slice(1)}
-                    </h2>
-                  )}
+                {l?.hide?.productName ? "" : (
+                  <h2
+                    class={`${
+                      index ? (index > 2 ? "!text-[#164195]" : "") : ""
+                    } card-name truncate text-base lg:text-lg text-base-content max-w-[70%]`}
+                  >
+                    {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
+                    {name?.toLocaleLowerCase().slice(1)}
+                  </h2>
+                )}
               </a>
               {l?.hide?.productDescription ? "" : (
                 <div
@@ -227,23 +232,31 @@ function ProductCardOdd(
                 } ${align === "center" ? "justify-center" : "justify-start"}`}
               >
                 <div
-                  class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-oldPrice line-through text-base-300 text-xs ${
+                  class={`${
+                    index ? (index > 2 ? "!text-[#020202]" : "") : ""
+                  } card-oldPrice line-through text-base-300 text-xs ${
                     l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                   }`}
                 >
                   De {formatPrice(listPrice, offers?.priceCurrency)}
                 </div>
-                <div class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-price text-base-600 text-xl lg:text-xl`}>
+                <div
+                  class={`${
+                    index ? (index > 2 ? "!text-[#020202]" : "") : ""
+                  } card-price text-base-600 text-xl lg:text-xl`}
+                >
                   {formatPrice(pixPrice, offers?.priceCurrency)}
                 </div>
               </div>
-              {l?.hide?.installments
-                ? ""
-                : (
-                  <div class={`${index ? (index > 2 ? "!text-[#020202]" : "") : ""} card-installments text-base lg:text-base truncate`}>
-                    ou em <strong>{installments} no cartão</strong>
-                  </div>
-                )}
+              {l?.hide?.installments ? "" : (
+                <div
+                  class={`${
+                    index ? (index > 2 ? "!text-[#020202]" : "") : ""
+                  } card-installments text-base lg:text-base truncate`}
+                >
+                  ou em <strong>{installments} no cartão</strong>
+                </div>
+              )}
             </div>
           )}
 

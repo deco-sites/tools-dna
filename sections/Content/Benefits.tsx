@@ -46,12 +46,17 @@ export default function Benefits(
 
     return (
       <div
-        class={`${ reverse ? "bg-primary text-primary-content lg:px-8 lg:py-4" : ""} px-4 py-8 md:p-0 flex-col md:flex-row text-center flex gap-4 items-center
-        ${ benefitLayout == "piledup" ? "flex-col items-center text-center" : ""}
-        ${ showDivider && benefitLayout !== "piledup" ? "border-b border-neutral-300" : "" }
-        ${ showDivider ? "lg:pr-8 lg:border-r lg:border-b-0" : ""} 
-        ${ showDivider && !reverse ? "lg:pb-0" : "" }`
-      }
+        class={`${
+          reverse ? "bg-primary text-primary-content lg:px-8 lg:py-4" : ""
+        } px-4 py-8 md:p-0 flex-col md:flex-row text-center flex gap-4 items-center
+        ${benefitLayout == "piledup" ? "flex-col items-center text-center" : ""}
+        ${
+          showDivider && benefitLayout !== "piledup"
+            ? "border-b border-neutral-300"
+            : ""
+        }
+        ${showDivider ? "lg:pr-8 lg:border-r lg:border-b-0" : ""} 
+        ${showDivider && !reverse ? "lg:pb-0" : ""}`}
       >
         <div class="flex-none icon-content">
           <Icon

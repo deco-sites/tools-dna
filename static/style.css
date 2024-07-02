@@ -75,6 +75,12 @@
     background-color: var(--blue-dark-1)
 }
 
+@media screen and (max-width: 768px) {
+    .shelf-custom-items.odd .card-compact:nth-child(3) {
+        background-color: #ffffff;
+    }
+}
+
 #search-input {
     border-radius: 300px;
     border-color: var(--border-color-1)

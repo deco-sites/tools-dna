@@ -32,7 +32,7 @@ function applyFilterPrice(
   { min, max, currentUrlFilterPrice }: FilterRangeProps,
 ) {
   const searchParams = new URLSearchParams(currentUrlFilterPrice);
-  console.log("searchParams", searchParams)
+  console.log("searchParams", searchParams);
   searchParams.set("filter.price", `${min}:${max}`);
   const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
 

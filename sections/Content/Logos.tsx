@@ -29,7 +29,7 @@ const IMAGES = [
     altText: "deco",
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7",
-    link: "/teste/algo"
+    link: "/teste/algo",
   },
   {
     altText: "deco",
@@ -99,7 +99,7 @@ function Logos(props: SectionProps<ReturnType<typeof loader>>) {
             </Slider.NextButton>
           </div>
         </>
-        <SliderJS rootId={id} interval={3000}/>
+        <SliderJS rootId={id} interval={3000} />
       </div>
     </div>
   );
@@ -150,7 +150,7 @@ const DEFAULT_PROPS = {
 
 export interface Props {
   logos?: Secao[];
-    /**
+  /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
    */

@@ -37,17 +37,17 @@ export interface SocialItem {
 }
 
 export interface PaymentItem {
-  label: 
-  "Diners" 
-  | "Elo" 
-  | "Mastercard" 
-  | "Pix" 
-  | "Visa"
-  | "Hipercard"
-  | "Aura"
-  | "Boleto"
-  | "Discover"
-  | "JCB";
+  label:
+    | "Diners"
+    | "Elo"
+    | "Mastercard"
+    | "Pix"
+    | "Visa"
+    | "Hipercard"
+    | "Aura"
+    | "Boleto"
+    | "Discover"
+    | "JCB";
 }
 
 export interface MobileApps {
@@ -390,8 +390,11 @@ function Footer({
             <Divider /> */
             }
             <div class="flex flex-row justify-center w-full gap-10 items-center">
-              <a href={"https://dna360.ag"} class={"text-[#727272] gap-1 flex flex-row items-center justify-center"}>
-                <p>Desenvolvido por: </p>
+              <a
+                href={"https://dna360.ag"}
+                class={"text-[#727272] gap-1 flex flex-row items-center justify-center"}
+              >
+                <p>Desenvolvido por:</p>
                 <img
                   class="w-24"
                   src={asset(`/image/logotipo-dna360-black.png`)}
@@ -399,7 +402,6 @@ function Footer({
                 />
               </a>
             </div>
-            
           </div>
         )}
         {layout?.variation == "Variation 2" && (
