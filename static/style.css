@@ -112,7 +112,8 @@
     padding: 1px 15px
 }
 
-.categories-items:first-child:hover {
+.categories-items:first-child:hover,
+.categories-items:first-child a:hover {
     background-color: #25498f;
     transition: 0.3s;
 }
