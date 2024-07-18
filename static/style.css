@@ -58,14 +58,18 @@
 }
 
 .wishlist-button:hover {
-    background-color: var(--primary-color) !important
+    background-color: #198bcc;
 }
 
 .wake-button .indicator {
     background-color: var(--blue-dark-2);
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+}
+
+.wake-button .indicator:hover {
+    background: #142739;
 }
 
 .categories-items:first-child,

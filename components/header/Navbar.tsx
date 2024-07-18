@@ -58,7 +58,7 @@ function Navbar({ items, searchbar, logo }: {
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
           {platform === "wake" && (
-            <div class="wake-button">
+            <div class="wake-button transition-all">
               <CartButtonWake />
             </div>
           )}
