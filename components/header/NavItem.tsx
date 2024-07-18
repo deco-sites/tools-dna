@@ -8,9 +8,9 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
   return (
     <li class="group flex items-center categories-items">
-      <a href={url} class="px-4 py-3">
+      <a href={url} class="px-4 py-3 hover:bg-[#e6e6e6] transition-all">
         <span
-          class={`${children && children.length > 0 ? "relative" : ""} `}
+          class={`${children && children.length > 0 ? "relative" : ""}`}
         >
           {name}
           {children && children.length > 0 &&
