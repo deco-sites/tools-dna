@@ -58,7 +58,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                   <ul class="flex flex-col gap-1 mt-4 max-h-80">
                     {node.children?.map((leaf) => (
                       <li>
-                        <a class="hover:bg-[#e6e6e6]" href={leaf.url}>
+                        <a class="hover:bg-[#e6e6e6] px-2 py-1" href={leaf.url}>
                           <span class="text-xs font-bold">{leaf.name}</span>
                         </a>
                         {leaf.children && (
