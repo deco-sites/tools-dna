@@ -61,14 +61,14 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                         class="hover:bg-[#e6e6e6] px-2 py-[2px] rounded-3xl"
                         href={leaf.url}
                       >
-                        <span class="text-xs font-semibold !hover:text-[#25498f]">{leaf.name}</span>
+                        <span class="text-xs font-semibold">{leaf.name}</span>
                       </a>
                       {leaf.children && (
                         <ul>
                           {leaf.children?.map((i) => (
                             <li class="pl-4">
                               <a class="hover:bg-[#e6e6e6] px-2 py-[2px] rounded-3xl" href={i.url}>
-                                <span class="text-xs !hover:text-[#25498f]">{i.name}</span>
+                                <span class="text-xs">{i.name}</span>
                               </a>
                             </li>
                           ))}
