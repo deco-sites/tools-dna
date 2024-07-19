@@ -128,6 +128,7 @@ div.flex-auto li.categories-items:not(:first-child) a:hover {
     color: var(--blue-dark-1);
 }
 
+
 /* .categories-items:first-child .first-submenu {
     flex-direction: column;
     width: 100%;
