@@ -123,7 +123,8 @@
     background: var(--blue-dark-1);
 }
 
-li.categories-items .first-submenu ul li a:hover {
+li.categories-items .first-submenu ul li a:hover,
+div.flex-auto li.categories-items:not(:first-child) a:hover {
     color: var(--blue-dark-1);
 }
 
