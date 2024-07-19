@@ -108,16 +108,20 @@
 }
 
 .categories-items:first-child {
+    padding: 1px 15px;
+    margin-right: 4px;
     border-radius: 40px;
-    padding: 1px 15px
 }
 
 .categories-items:first-child:hover,
 .categories-items:first-child a:hover {
-    background-color: #25498f;
     transition: 0.3s;
+    border-radius: 40px;
 }
 
+ li.categories-items:first-child>a:hover {
+    background: var(--blue-dark-1);
+}
 
 /* .categories-items:first-child .first-submenu {
     flex-direction: column;
