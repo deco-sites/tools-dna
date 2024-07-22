@@ -24,9 +24,9 @@ export default function InstitucionalBanner({
 }: Props) {
   return (
     <section class="container mt-4">
-      <div class="flex items-center relative">
-        <div class="flex flex-col justify-around pt-[60px] pr-[75px] pb-[60px] pl-[60px] absolute h-full left-0 top-0 bg-[#164195] text-white max-w-[600px] rounded-[35px]">
-          <span class="bg-[#1D3B55] rounded-[42px] w-[124px] h-12 flex justify-center items-center">
+      <div class="flex flex-col-reverse relative justify-end h-[950px] lg:h-[610px]">
+        <div class="flex flex-col absolute top-60 justify-around p-8 bg-[#164195] text-white w-full lg:max-w-[600px] rounded-[35px] gap-4 lg:h-[610px] lg:top-0 lg:left-4">
+          <span class="bg-[#1D3B55] rounded-[42px] w-[124px] h-12 flex justify-center items-center mb-4">
             {badge}
           </span>
           <h2 class="text-[30px] font-semibold text-[#ffffff]">{title}</h2>
@@ -36,9 +36,9 @@ export default function InstitucionalBanner({
           >
           </p>
         </div>
-        <div class="w-full max-h-[610px] overflow-hidden flex">
+        <div class="w-full overflow-hidden flex lg:rounded-s-full">
           <Image
-            class="object-cover object-right w-full"
+            class="lg:object-contain lg:object-right w-full lg:w-[1400px]"
             src={image.src}
             width={image.width}
             height={image.height}
