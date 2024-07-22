@@ -25,7 +25,7 @@ export default function InstitucionalBanner({
   return (
     <section class="container mt-4">
       <div class="flex flex-col-reverse relative justify-end h-[950px] lg:h-[610px]">
-        <div class="flex flex-col absolute top-60 justify-around p-8 bg-[#164195] text-white w-full lg:max-w-[600px] rounded-[35px] gap-4 lg:h-[610px] lg:top-0 lg:left-4">
+        <div class="flex flex-col absolute top-60 justify-around p-8 bg-[#164195] text-white w-full lg:max-w-[600px] rounded-[35px] gap-4 lg:h-[610px] lg:top-0 ">
           <span class="bg-[#1D3B55] rounded-[42px] w-[124px] h-12 flex justify-center items-center mb-4">
             {badge}
           </span>
@@ -38,7 +38,7 @@ export default function InstitucionalBanner({
         </div>
         <div class="w-full overflow-hidden flex lg:rounded-s-full">
           <Image
-            class="lg:object-contain lg:object-right w-full lg:w-[1400px]"
+            class="object-cover lg:object-right w-full"
             src={image.src}
             width={image.width}
             height={image.height}
