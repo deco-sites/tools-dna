@@ -13,7 +13,7 @@ export interface Props {
 export default function InstitucionalCards(cards: Props) {
   return (
     <section class="container mt-4">
-      <div class="lg:grid grid-cols-3 gap-5">
+      <div class="flex lg:grid grid-cols-3 gap-5">
         {cards && cards.cards.map((card) => {
           return (
             <div class="card border p-[45px] rounded-[22px] border-solid border-[#E9E9E9] mb-4">
