@@ -610,10 +610,7 @@ div.flex-auto li.categories-items:not(:first-child) a:hover {
         gap: 1rem;
         padding-bottom: 12px
     }
-    .shelf-custom-items:not(.odd) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+
     .shelf-custom-items.odd {
         column-gap: 20px;
         margin: 0 auto 36px;
@@ -625,10 +622,7 @@ div.flex-auto li.categories-items:not(:first-child) a:hover {
         width: 100%;
         min-width: calc(100% - 5rem)
     }
-    .shelf-custom-items:not(.odd) .card-compact {
-        width: calc(50% - 10px);
-        min-width: calc(50% - 10px)
-    }
+
     .newsletter-content {
         padding: 40px 20px;
         width: calc(100% - 2rem)
