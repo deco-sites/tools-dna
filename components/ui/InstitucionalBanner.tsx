@@ -24,7 +24,7 @@ export default function InstitucionalBanner({
 }: Props) {
   return (
     <section class="container mt-4">
-      <div class="flex flex-col-reverse lg:flex-row relative justify-end h-[1040px] lg:h-[610px]">
+      <div class="flex flex-col-reverse lg:flex-row-reverse relative justify-end h-[1040px] lg:h-[610px]">
         <div class="flex flex-col absolute top-60 justify-around p-8 bg-[#164195] text-white w-full lg:max-w-[600px] rounded-[36px] gap-4 lg:h-[610px] lg:top-0 ">
           <span class="bg-[#1D3B55] rounded-[42px] w-[124px] h-12 flex justify-center items-center mb-4">
             {badge}
