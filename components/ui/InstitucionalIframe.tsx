@@ -4,7 +4,7 @@ export interface Props {
 
 export default function InstitucionalIframe({ link }: Props) {
   return (
-    <section class="container mt-4">
+    <section class="container mt-4 rounded-[36px] overflow-hidden">
       <iframe
         height="450"
         loading="lazy"
