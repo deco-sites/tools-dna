@@ -63,7 +63,6 @@ function ProductInfo({ page, layout }: Props) {
     isVariantOf,
     additionalProperty = [],
   } = product;
-  const description = product.description || isVariantOf?.description;
   const {
     pixPrice,
     price = 0,
