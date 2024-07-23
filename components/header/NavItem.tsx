@@ -67,7 +67,10 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                         <ul>
                           {leaf.children?.map((i) => (
                             <li class="pl-4">
-                              <a class="hover:bg-[#e6e6e6] px-2 py-[2px] rounded-3xl" href={i.url}>
+                              <a
+                                class="hover:bg-[#e6e6e6] px-2 py-[2px] rounded-3xl"
+                                href={i.url}
+                              >
                                 <span class="text-xs">{i.name}</span>
                               </a>
                             </li>
