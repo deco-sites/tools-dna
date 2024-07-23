@@ -119,7 +119,11 @@ function ProductCardOdd(
   // const brandContent = brand?.name;
 
   return (
-    <div class={`flex relative md:flex-row flex-col-reverse gap-0 w-full ${index && index > 3 ? "hidden md:flex" : "flex md:flex"}`}>
+    <div
+      class={`flex relative md:flex-row flex-col-reverse gap-0 w-full ${
+        index && index > 3 ? "hidden md:flex" : "flex md:flex"
+      }`}
+    >
       <div class="floating-tags top-2 right-2">
         <div class="percentageTag">
           <svg
