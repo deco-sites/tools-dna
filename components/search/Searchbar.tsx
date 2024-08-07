@@ -120,7 +120,7 @@ function Searchbar({
       </form>
 
       <div
-        class={`md:absolute w-full top-full bg-white z-10 overflow-y-scroll ${
+        class={`md:absolute w-full top-full bg-white z-10 overflow-y-scroll search-result ${
           !hasProducts && !hasTerms ? "hidden" : ""
         }`}
       >

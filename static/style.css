@@ -284,6 +284,10 @@ div.flex-auto li.categories-items:not(:first-child) a:hover {
     height: 86px
 }
 
+.search-result .card-name{
+    height: 45px
+}
+
 .copyright,
 .endereco-new {
     color: var(--placeholder-color)

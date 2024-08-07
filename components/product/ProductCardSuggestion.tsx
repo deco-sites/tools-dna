@@ -104,7 +104,7 @@ function ProductCardSuggestion(
   return (
     <div
       id={id}
-      class="flex flex-row max-w-full overflow-hidden"
+      class="flex flex-row max-w-full overflow-hidden mb-5"
       data-deco="view-product"
     >
       <SendEventOnClick
