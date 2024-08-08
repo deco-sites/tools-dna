@@ -92,7 +92,9 @@ function ProductCardCustom(
   const { listPrice, price, installments, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
-
+  const insttallmentsValue = Number(installments?.replace(/\D/g, ''))
+  const pricePerInstallment = listPrice && listPrice / insttallmentsValue
+  console.log("preço da parcela", pricePerInstallment)
   const ratingValueCustom = product.aggregateRating?.ratingValue
     ? product.aggregateRating?.ratingValue
     : 0;
@@ -350,16 +352,16 @@ function ProductCardCustom(
               >
                 De: {formatPrice(listPrice, offers?.priceCurrency)}
               </div>
-              <div class="card-price text-base-600 text-xl lg:text-xl">
+              <div class="card-price text-base-600 text-xl lg:text-xl flex gap-2 items-end">
                 {/* {formatPrice(price, offers?.priceCurrency)} */}
-                {formatPrice(pixPrice, offers?.priceCurrency)}
+                {formatPrice(pixPrice, offers?.priceCurrency)} <p class="font-semibold text-lg">a vista</p>
               </div>
             </div>
-            {l?.hide?.installments
+            {l?.hide?.installments 
               ? ""
               : (
                 <div class="card-installments !text-[#164195] text-base lg:text-base truncate">
-                  ou em <strong>{installments} no cartão</strong>
+                  ou em <strong>{installments} de {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem juros no cartão</strong>
                 </div>
               )}
           </div>
