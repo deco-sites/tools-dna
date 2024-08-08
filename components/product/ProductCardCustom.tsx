@@ -94,7 +94,6 @@ function ProductCardCustom(
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
   const insttallmentsValue = Number(installments?.replace(/\D/g, ''))
   const pricePerInstallment = listPrice && listPrice / insttallmentsValue
-  console.log("preço da parcela", pricePerInstallment)
   const ratingValueCustom = product.aggregateRating?.ratingValue
     ? product.aggregateRating?.ratingValue
     : 0;

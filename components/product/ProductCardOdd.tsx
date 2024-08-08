@@ -91,6 +91,8 @@ function ProductCardOdd(
   const { listPrice, price, installments, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
+  const insttallmentsValue = Number(installments?.replace(/\D/g, ''))
+  const pricePerInstallment = listPrice && listPrice / insttallmentsValue
 
   const l = layout;
   const align =
@@ -258,7 +260,7 @@ function ProductCardOdd(
                     index ? (index > 2 ? "!text-[#020202]" : "") : ""
                   } card-installments text-base lg:text-base truncate`}
                 >
-                  ou em <strong>{installments} no cartão</strong>
+                  ou em <strong>{installments}</strong> de {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem juros
                 </div>
               )}
             </div>
