@@ -51,10 +51,7 @@ function ProductInfo({ page, layout }: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  const {
-    breadcrumbList,
-    product,
-  } = page;
+  const { breadcrumbList, product } = page;
   const {
     productID,
     offers,
@@ -88,22 +85,22 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
-  const informacoes = product.additionalProperty?.find((property) =>
-    property.name === "Informações"
+  const informacoes = product.additionalProperty?.find(
+    (property) => property.name === "Informações"
   );
-  const DadosTecnicos = product.additionalProperty?.find((property) =>
-    property.name === "Dados Técnicos"
+  const DadosTecnicos = product.additionalProperty?.find(
+    (property) => property.name === "Dados Técnicos"
   );
-  const tabelaDeMedidas = product.additionalProperty?.find((property) =>
-    property.name === "Tabela de Medidas"
-  );
-
-  const selections = product.additionalProperty?.filter((property) =>
-    property.valueReference === "SELECTIONS"
+  const tabelaDeMedidas = product.additionalProperty?.find(
+    (property) => property.name === "Tabela de Medidas"
   );
 
-  const prazoDeEnvio = product.additionalProperty?.filter((property) =>
-    property.name === "Sinopse"
+  const selections = product.additionalProperty?.filter(
+    (property) => property.valueReference === "SELECTIONS"
+  );
+
+  const prazoDeEnvio = product.additionalProperty?.filter(
+    (property) => property.name === "Sinopse"
   );
 
   console.log(prazoDeEnvio);
@@ -135,18 +132,15 @@ function ProductInfo({ page, layout }: Props) {
               )}
             </div>
             <Slider class="carousel carousel-center gap-6">
-              {product.image && product.image.map((img, index) => {
-                return (
-                  <>
-                    {img.url && (
-                      <Slider.Item
-                        index={index}
-                        class="carousel-item w-full"
-                      >
-                        <ImageZoom src={img.url} />
+              {product.image &&
+                product.image.map((img, index) => {
+                  return (
+                    <>
+                      {img.url && (
+                        <Slider.Item index={index} class="carousel-item w-full">
+                          <ImageZoom src={img.url} />
 
-                        {
-                          /* <Image
+                          {/* <Image
                           class="w-full"
                           src={img.url}
                           alt={img.alternateName}
@@ -155,13 +149,12 @@ function ProductInfo({ page, layout }: Props) {
                           // Preload LCP image for better web vitals
                           preload={index === 0}
                           loading={index === 0 ? "eager" : "lazy"}
-                        /> */
-                        }
-                      </Slider.Item>
-                    )}
-                  </>
-                );
-              })}
+                        /> */}
+                        </Slider.Item>
+                      )}
+                    </>
+                  );
+                })}
             </Slider>
 
             <Slider.PrevButton
@@ -209,9 +202,7 @@ function ProductInfo({ page, layout }: Props) {
           <div class="mt-4 sm:mt-8">
             <div>
               {product.sku && (
-                <span class="text-sm text-[#727272]">
-                  COD.: {product.sku}
-                </span>
+                <span class="text-sm text-[#727272]">COD.: {product.sku}</span>
               )}
             </div>
             <h1 class="mb-4">
@@ -250,10 +241,7 @@ function ProductInfo({ page, layout }: Props) {
             )}
             <div class="mt-2.5 pt-2.5 border-t-[#E9E9E9] border-t border-solid">
               {product.brand && product.brand.logo && (
-                <a
-                  style="display: block"
-                  href={product.brand?.url}
-                >
+                <a style="display: block" href={product.brand?.url}>
                   <Image
                     class="max-w-[90px]"
                     loading={"lazy"}
@@ -280,10 +268,10 @@ function ProductInfo({ page, layout }: Props) {
                         class={`
                       mb-2 max-w-full md:max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
                       ${
-                          selection.value == "false"
-                            ? "opacity-50"
-                            : "opacity-100"
-                        }`}
+                        selection.value == "false"
+                          ? "opacity-50"
+                          : "opacity-100"
+                      }`}
                       >
                         {selection.name}
                         {selection.value == "true" && (
@@ -301,15 +289,13 @@ function ProductInfo({ page, layout }: Props) {
             </div>
           </div>
           {/* Sku Selector */}
-          {
-            /* <div class="mt-4 sm:mt-6">
+          {/* <div class="mt-4 sm:mt-6">
         <ProductSelector product={product} />
-      </div> */
-          }
+      </div> */}
         </div>
 
         <div
-          class="py-[20px] px-6 md:px-[48px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-[#DFEAFF80] bg-white md:border-none border border-black"
+          class="py-[20px] px-6 md:px-[44px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-[#DFEAFF80] bg-white md:border-none border border-black"
           id={id}
         >
           {/* Prices */}
@@ -329,8 +315,7 @@ function ProductInfo({ page, layout }: Props) {
                       stroke="#164195"
                     />
                   </svg>
-                  {listPrice && pixPrice &&
-                    calculate(listPrice, pixPrice)}
+                  {listPrice && pixPrice && calculate(listPrice, pixPrice)}
                 </div>
                 <div class="installmentsTag">
                   {installments}
@@ -342,9 +327,12 @@ function ProductInfo({ page, layout }: Props) {
                   {formatPrice(listPrice, offers?.priceCurrency)}
                 </span>
               )}
-              <span class="leading-[44px] text-[35px] font-bold text-[#020202]">
-                {formatPrice(pixPrice, offers?.priceCurrency)}
-              </span>
+              <div class="flex items-end gap-2">
+                <span class="leading-[44px] text-[35px] font-bold text-[#020202]">
+                  {formatPrice(pixPrice, offers?.priceCurrency)}
+                </span>
+                <p class="font-semibold text-lg">a vista</p>
+              </div>
             </div>
             <span class="text-[#164195]">
               ou em{" "}
@@ -352,75 +340,73 @@ function ProductInfo({ page, layout }: Props) {
                 {installments} de{" "}
                 {formatPrice(parcelamentoValue, offers?.priceCurrency)}
               </strong>{" "}
-              sem juros
+              sem juros <strong>no cartão</strong>
             </span>
           </div>
           {/* Sku Selector */}
-          {
-            /* <div class="mt-4 sm:mt-6">
+          {/* <div class="mt-4 sm:mt-6">
         <ProductSelector product={product} />
-      </div> */
-          }
+      </div> */}
           {/* Add to Cart and Favorites button */}
           <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-            {availability === "https://schema.org/InStock"
-              ? (
-                <>
-                  {platform === "vtex" && (
-                    <>
-                      <AddToCartButtonVTEX
-                        eventParams={{ items: [eventItem] }}
-                        productID={productID}
-                        seller={seller}
-                      />
-                      <WishlistButton
-                        variant="full"
-                        productID={productID}
-                        productGroupID={productGroupID}
-                      />
-                    </>
-                  )}
-                  {platform === "wake" && (
-                    <AddToCartButtonWake
+            {availability === "https://schema.org/InStock" ? (
+              <>
+                {platform === "vtex" && (
+                  <>
+                    <AddToCartButtonVTEX
                       eventParams={{ items: [eventItem] }}
                       productID={productID}
+                      seller={seller}
                     />
-                  )}
-                  {platform === "linx" && (
-                    <AddToCartButtonLinx
-                      eventParams={{ items: [eventItem] }}
+                    <WishlistButton
+                      variant="full"
                       productID={productID}
                       productGroupID={productGroupID}
                     />
-                  )}
-                  {platform === "vnda" && (
-                    <AddToCartButtonVNDA
-                      eventParams={{ items: [eventItem] }}
-                      productID={productID}
-                      additionalProperty={additionalProperty}
-                    />
-                  )}
-                  {platform === "shopify" && (
-                    <AddToCartButtonShopify
-                      eventParams={{ items: [eventItem] }}
-                      productID={productID}
-                    />
-                  )}
-                  {platform === "nuvemshop" && (
-                    <AddToCartButtonNuvemshop
-                      productGroupID={productGroupID}
-                      eventParams={{ items: [eventItem] }}
-                      additionalProperty={additionalProperty}
-                    />
-                  )}
-                  {inventory && inventory < 20 && (
-                    <p class="mt-3 text-center">
-                      Apenas {inventory} peças no estoque
-                    </p>
-                  )}
-                </>
-              )
-              : <OutOfStock productID={productID} />}
+                  </>
+                )}
+                {platform === "wake" && (
+                  <AddToCartButtonWake
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
+                  />
+                )}
+                {platform === "linx" && (
+                  <AddToCartButtonLinx
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
+                    productGroupID={productGroupID}
+                  />
+                )}
+                {platform === "vnda" && (
+                  <AddToCartButtonVNDA
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
+                    additionalProperty={additionalProperty}
+                  />
+                )}
+                {platform === "shopify" && (
+                  <AddToCartButtonShopify
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
+                  />
+                )}
+                {platform === "nuvemshop" && (
+                  <AddToCartButtonNuvemshop
+                    productGroupID={productGroupID}
+                    eventParams={{ items: [eventItem] }}
+                    additionalProperty={additionalProperty}
+                  />
+                )}
+                {inventory && inventory < 20 && (
+                  <p class="mt-3 text-center">
+                    Apenas {inventory} peças no estoque
+                  </p>
+                )}
+              </>
+            ) : (
+              <OutOfStock productID={productID} />
+            )}
           </div>
 
           {/* Shipping Simulation */}
@@ -436,16 +422,13 @@ function ProductInfo({ page, layout }: Props) {
             )}
           </div>
 
-          {
-            /* <div class="mt-10">
+          {/* <div class="mt-10">
           <div dangerouslySetInnerHTML={{ __html: informacoes?.value }}></div>
           <div dangerouslySetInnerHTML={{ __html: DadosTecnicos?.value }}></div>
-        </div> */
-          }
+        </div> */}
 
           {/* Description card */}
-          {
-            /* <div class="mt-4 sm:mt-6">
+          {/* <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {product.additionalProperty?.map((property) => {
             return (
@@ -467,8 +450,7 @@ function ProductInfo({ page, layout }: Props) {
             </details>
           )}
         </span>
-      </div> */
-          }
+      </div> */}
           {/* Analytics Event */}
           <SendEventOnView
             id={id}
@@ -491,12 +473,12 @@ function ProductInfo({ page, layout }: Props) {
               <h3 class="whitespace-nowrap uppercase ml-0 text-[1.125rem] font-semibold text-[#173C51] pl-0">
                 {informacoes?.name}
               </h3>
-              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]">
-              </span>
+              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]"></span>
             </div>
             {informacoes && informacoes.value && (
-              <div dangerouslySetInnerHTML={{ __html: informacoes?.value }}>
-              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: informacoes?.value }}
+              ></div>
             )}
           </div>
           <div class="DadosTecnicos">
@@ -504,12 +486,12 @@ function ProductInfo({ page, layout }: Props) {
               <h3 class="whitespace-nowrap uppercase ml-0 text-[1.125rem] font-semibold text-[#173C51] pl-0">
                 {DadosTecnicos?.name}
               </h3>
-              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]">
-              </span>
+              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]"></span>
             </div>
             {DadosTecnicos && DadosTecnicos.value && (
-              <div dangerouslySetInnerHTML={{ __html: DadosTecnicos?.value }}>
-              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: DadosTecnicos?.value }}
+              ></div>
             )}
           </div>
           <div class="tabelaDeMedidas">
@@ -517,12 +499,12 @@ function ProductInfo({ page, layout }: Props) {
               <h3 class="whitespace-nowrap uppercase ml-0 text-[1.125rem] font-semibold text-[#173C51] pl-0">
                 {tabelaDeMedidas?.name}
               </h3>
-              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]">
-              </span>
+              <span class="flex w-full h-px border-b-[5px] border-b-[#3e90c2] border-solid left-0 top-[9px] md:top-[7px]"></span>
             </div>
             {tabelaDeMedidas && tabelaDeMedidas.value && (
-              <div dangerouslySetInnerHTML={{ __html: tabelaDeMedidas?.value }}>
-              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: tabelaDeMedidas?.value }}
+              ></div>
             )}
           </div>
           <div class="reviews mt-6 pt-6 border-t-[#e9e9e9] border-t border-solid">
@@ -563,7 +545,7 @@ function ProductInfo({ page, layout }: Props) {
                       {item.reviewBody}
                     </p>
                     <span class="text-black text-base leading-5 font-medium">
-                      {item.author && (item.author[0].name)}
+                      {item.author && item.author[0].name}
                     </span>
                   </div>
                 ))}
