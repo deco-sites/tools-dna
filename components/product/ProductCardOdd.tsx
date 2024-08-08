@@ -249,9 +249,9 @@ function ProductCardOdd(
                 <div
                   class={`${
                     index ? (index > 2 ? "!text-[#020202]" : "") : ""
-                  } card-price text-base-600 text-xl lg:text-xl`}
+                  } card-price text-base-600 text-xl lg:text-xl flex items-end gap-2`}
                 >
-                  {formatPrice(pixPrice, offers?.priceCurrency)}
+                  {formatPrice(pixPrice, offers?.priceCurrency)} <p class="font-semibold text-lg">a vista</p>
                 </div>
               </div>
               {l?.hide?.installments ? "" : (
