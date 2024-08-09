@@ -11,7 +11,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { Section } from "deco/blocks/section.ts";
-import CustomBreadCrumb from "deco-sites/tools-dna/components/search/CustomBreadCrumb.tsx";
+import CustomBreadCrumb from "site/components/search/CustomBreadCrumb.tsx";
 
 export interface Layout {
   /**

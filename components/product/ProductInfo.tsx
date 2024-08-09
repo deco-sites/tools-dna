@@ -13,18 +13,18 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Slider from "deco-sites/tools-dna/components/ui/Slider.tsx";
+import Slider from "site/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
 import Shipping from "$store/islands/Shipping.tsx";
-import { calculate } from "deco-sites/tools-dna/components/product/ProductCardCustom.tsx";
+import { calculate } from "site/components/product/ProductCardCustom.tsx";
 import ProductReview from "$store/islands/ProductReview.tsx";
-import Breadcrumb from "deco-sites/tools-dna/components/ui/Breadcrumb.tsx";
+import Breadcrumb from "site/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
-import Modal from "deco-sites/tools-dna/components/ui/Modal.tsx";
+import Modal from "site/components/ui/Modal.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import ImageZoom from "deco-sites/tools-dna/islands/ImageZoom.tsx";
+import ImageZoom from "site/islands/ImageZoom.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;

@@ -7,8 +7,8 @@ import type {
   ProductListingPage,
 } from "apps/commerce/types.ts";
 import { parseRange } from "apps/commerce/utils/filters.ts";
-import ClearFilters from "deco-sites/tools-dna/islands/ClearFilters.tsx";
-// import FilterRange from "deco-sites/tools-dna/components/search/FilterRange.tsx";
+import ClearFilters from "site/islands/ClearFilters.tsx";
+// import FilterRange from "site/components/search/FilterRange.tsx";
 
 interface Props {
   filters: ProductListingPage["filters"];

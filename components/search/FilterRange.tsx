@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef } from "preact/hooks";
 import { RefObject } from "preact";
 import { useSignal } from "@preact/signals";
-import { formatPrice } from "deco-sites/tools-dna/sdk/format.ts";
+import { formatPrice } from "site/sdk/format.ts";
 
 function useDebounce(
   // deno-lint-ignore no-explicit-any
