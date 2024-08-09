@@ -1,10 +1,10 @@
 import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
-import Button from "deco-sites/tools-dna/components/ui/Button.tsx";
-import { useId } from "deco-sites/tools-dna/sdk/useId.ts";
-import Icon from "deco-sites/tools-dna/components/ui/Icon.tsx";
-import Modal from "deco-sites/tools-dna/components/ui/Modal.tsx";
+import Button from "site/components/ui/Button.tsx";
+import { useId } from "site/sdk/useId.ts";
+import Icon from "site/components/ui/Icon.tsx";
+import Modal from "site/components/ui/Modal.tsx";
 
 export interface Form {
   placeholder?: string;
