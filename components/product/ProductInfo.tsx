@@ -16,14 +16,12 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import Slider from "site/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "site/components/ui/Icon.tsx";
-import Image from "https://denopkg.com/deco-cx/apps@0.32.26/website/components/Image.tsx";
 import Shipping from "$store/islands/Shipping.tsx";
 import { calculate } from "site/components/product/ProductCardCustom.tsx";
 import ProductReview from "$store/islands/ProductReview.tsx";
 import Breadcrumb from "site/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
-import Modal from "site/components/ui/Modal.tsx";
-import Button from "$store/components/ui/Button.tsx";
+import Image from "apps/website/components/Image.tsx";
 import ImageZoom from "site/islands/ImageZoom.tsx";
 
 interface Props {
