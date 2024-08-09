@@ -22,6 +22,16 @@
                 "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/e0a9a2cf-af05-42bd-993d-70ea8ff2d79d"
               },
               {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/382effe8-4ab5-4101-abff-dbb084e1c6f5",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/029c1b21-2934-472d-834d-2ffa8d5dc746",
+                "alt": "Produtos Prumer",
+                "action": {
+                  "href": "https://www.worldtools.com.br/fabricante/prumer",
+                  "subTitle": "Produtos Prumer",
+                  "label": "Ver categoria"
+                }
+              },
+              {
                 "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/0b34a2a1-b5d1-4772-ba46-714a5a97900a",
                 "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bec5f263-9f71-41d1-ad35-6f54f352c1f0",
                 "alt": "Produtos Sansui",
@@ -29,6 +39,16 @@
                   "href": "https://www.worldtools.com.br/fabricante/sansui",
                   "subTitle": "Produtos Sansui",
                   "label": "Comprar"
+                }
+              },
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/18a05e61-4572-46ab-a945-68dac657e8c0",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bf435417-67e0-491f-bb49-37529219e806",
+                "alt": "Produtos Raikon",
+                "action": {
+                  "href": "https://www.worldtools.com.br/fabricante/raikon",
+                  "subTitle": "Produtos Raikon",
+                  "label": "Ver categoria"
                 }
               }
             ],
