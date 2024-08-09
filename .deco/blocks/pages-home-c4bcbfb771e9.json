@@ -50,6 +50,16 @@
                   "subTitle": "Produtos Raikon",
                   "label": "Ver categoria"
                 }
+              },
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/c718a3bf-aa32-43d9-9f40-20ee0cc8370b",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/eec4f1df-5b72-4635-bb65-60c6b261d963",
+                "alt": "Fresas de Metal Duro",
+                "action": {
+                  "href": "https://www.worldtools.com.br/ferramentas-para-usinagem/fresas-em-metal-duro",
+                  "subTitle": "Fresas em Metal Duro",
+                  "label": "Ver categoria"
+                }
               }
             ],
             "preload": true,
