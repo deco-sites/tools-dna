@@ -260,7 +260,7 @@ function ProductCardOdd(
                     index ? (index > 2 ? "!text-[#020202]" : "") : ""
                   } card-installments text-base lg:text-base truncate`}
                 >
-                  ou em <strong>{installments}</strong> de {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem juros
+                  ou em <strong>{installments}</strong> de {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem juros no cartão
                 </div>
               )}
             </div>
