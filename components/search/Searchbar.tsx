@@ -12,7 +12,6 @@
 import ProductCardSuggestion from "$store/components/product/ProductCardSuggestion.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import { useSuggestions } from "$store/sdk/useSuggestions.ts";

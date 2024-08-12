@@ -33,7 +33,6 @@ function Cart({
   currency,
   discounts,
   freeShippingTarget,
-  checkoutHref,
   itemToAnalyticsItem,
   onUpdateQuantity,
   onAddCoupon,

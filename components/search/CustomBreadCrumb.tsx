@@ -1,5 +1,3 @@
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
 import Sort from "$store/components/search/Sort.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
@@ -14,7 +12,7 @@ export type Props =
 function CustomBreadCrumb(
   { breadcrumb, sortOptions, pageInfo }: Props,
 ) {
-  const open = useSignal(false);
+  const _open = useSignal(false);
 
   return (
     <div class="flex flex-col justify-between p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] mb-4">

@@ -68,7 +68,7 @@ const WIDTH = 314;
 const HEIGHT = 272;
 
 function range(start: number, end: number) {
-  return new Array(end - start + 1).fill(1).map((d, i) => i + start);
+  return new Array(end - start + 1).fill(1).map((_d, i) => i + start);
 }
 
 function ProductCardCustom(

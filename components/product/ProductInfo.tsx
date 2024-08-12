@@ -37,13 +37,13 @@ interface Props {
 }
 
 function range(start: number, end: number) {
-  return new Array(end - start + 1).fill(1).map((d, i) => i + start);
+  return new Array(end - start + 1).fill(1).map((_d, i) => i + start);
 }
 
-function ProductInfo({ page, layout }: Props) {
+function ProductInfo({ page }: Props) {
   const platform = usePlatform();
   const id = useId();
-  const openReview = useSignal(false);
+  const _openReview = useSignal(false);
 
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
@@ -54,11 +54,10 @@ function ProductInfo({ page, layout }: Props) {
     productID,
     offers,
     name = "",
-    gtin,
     isVariantOf,
     additionalProperty = [],
   } = product;
-  const description = product.description || isVariantOf?.description;
+  const _description = product.description || isVariantOf?.description;
   const {
     pixPrice,
     price = 0,

@@ -9,9 +9,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
-import Image from "apps/website/components/Image.tsx";
 import { Section } from "deco/blocks/section.ts";
-import CustomBreadCrumb from "site/components/search/CustomBreadCrumb.tsx";
 
 export interface Layout {
   /**

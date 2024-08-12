@@ -1,11 +1,11 @@
-import ProductCard, {
+import {
   Layout as CardLayout,
 } from "$store/components/product/ProductCard.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { Product } from "apps/commerce/types.ts";
 
 import ProductCardCustom, {
-  Layout as cardLayout,
+  Layout as _cardLayout,
 } from "$store/components/product/ProductCardCustom.tsx";
 
 export interface Columns {
@@ -36,8 +36,8 @@ const DESKTOP_COLUMNS = {
 
 function ProductGallery({ products, layout, offset }: Props) {
   const platform = usePlatform();
-  const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
-  const desktop = DESKTOP_COLUMNS[layout?.columns?.desktop ?? 4];
+  const _mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
+  const _desktop = DESKTOP_COLUMNS[layout?.columns?.desktop ?? 4];
 
   return (
     <div class={`shelf-custom-items catalog`}>

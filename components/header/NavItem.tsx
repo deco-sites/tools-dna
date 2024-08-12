@@ -1,6 +1,5 @@
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { navbarHeight } from "./constants.ts";
 
 function NavItem({ item }: { item: SiteNavigationElement }) {
   const { url, name, children } = item;

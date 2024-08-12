@@ -30,7 +30,6 @@ function CustomShelfSlider({
   products,
   title,
   description,
-  layout,
   cardLayout,
   imageUrl,
 }: Props) {

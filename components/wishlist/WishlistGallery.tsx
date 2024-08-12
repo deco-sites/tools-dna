@@ -9,7 +9,7 @@ export type Props = {
   cardLayout?: cardLayout;
 };
 
-export const loader = async (props: Props, req: Request, ctx: AppContext) => {
+export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
   const { invoke } = ctx;
 
   const productId = props.wishlist.map((item) => Number(item.productId));
@@ -41,7 +41,7 @@ function WishlistGallery(
       <div class="bg-[#ff0000]">
         <div class="container">
           <div class="shelf-custom-items">
-            {products?.map((product, index) => (
+            {products?.map((product, index:number) => (
               <ProductCardCustom
                 product={product}
                 itemListName={"Wishlist"}

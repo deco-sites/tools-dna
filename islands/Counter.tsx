@@ -3,7 +3,7 @@ import { useEffect } from "preact/compat";
 
 export default function Counter() {
   useEffect(() => {
-    const swiper = new Swiper(".swiper", {
+    const _swiper = new Swiper(".swiper", {
       slidesPerView: 1,
     });
   });

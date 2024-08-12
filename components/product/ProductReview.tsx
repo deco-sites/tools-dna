@@ -3,7 +3,6 @@ import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
 import Button from "site/components/ui/Button.tsx";
 import { useId } from "site/sdk/useId.ts";
-import Icon from "site/components/ui/Icon.tsx";
 import Modal from "site/components/ui/Modal.tsx";
 
 export interface Form {

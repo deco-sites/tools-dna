@@ -1,6 +1,6 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
+import { MenuButton } from "$store/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
 import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";

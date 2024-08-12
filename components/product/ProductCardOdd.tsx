@@ -1,13 +1,11 @@
 import type { Platform } from "$store/apps/site.ts";
 import { SendEventOnClick } from "$store/components/Analytics.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import WishlistButton from "$store/islands/WishlistButton.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Image from "apps/website/components/Image.tsx";
 import type { ImageObject } from "apps/commerce/types.ts";
 
 export interface Layout {
@@ -68,11 +66,10 @@ const calculate = (item: number, item2: number) => {
   }
 };
 
-const WIDTH = 314;
-const HEIGHT = 272;
+
 
 function ProductCardOdd(
-  { product, preload, itemListName, layout, platform, index }: Props,
+  { product, itemListName, layout, index }: Props,
 ) {
   const {
     url,
@@ -85,9 +82,8 @@ function ProductCardOdd(
   } = product;
   const id = `product-card-${productID}`;
   const hasVariant = isVariantOf?.hasVariant ?? [];
-  const productGroupID = isVariantOf?.productGroupID;
   const description = product.description || isVariantOf?.description;
-  const [front, back] = images ?? [];
+  const [front] = images ?? [];
   const { listPrice, price, installments, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});

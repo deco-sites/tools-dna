@@ -1,7 +1,6 @@
 import type { Platform } from "$store/apps/site.ts";
 import { SendEventOnClick } from "$store/components/Analytics.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import WishlistButton from "$store/islands/WishlistButton.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
@@ -57,7 +56,7 @@ const relative = (url: string) => {
   return `${link.pathname}${link.search}`;
 };
 
-const calculate = (item: number, item2: number) => {
+const _calculate = (item: number, item2: number) => {
   if ((item - item2) > 0) {
     const percentValue = Math.round((item - item2) / item * 100);
     return `${percentValue}% OFF`;
@@ -68,7 +67,7 @@ const WIDTH = 314;
 const HEIGHT = 272;
 
 function ProductCardSuggestion(
-  { product, preload, itemListName, layout, platform, index }: Props,
+  { product, preload, itemListName, layout,  index }: Props,
 ) {
   const {
     url,
@@ -80,8 +79,8 @@ function ProductCardSuggestion(
   } = product;
   const id = `product-card-${productID}`;
   const hasVariant = isVariantOf?.hasVariant ?? [];
-  const [front, back] = images ?? [];
-  const { listPrice, price, installments, pixPrice } = useOffer(offers);
+  const [front] = images ?? [];
+  const { listPrice, price, pixPrice } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
 
@@ -90,7 +89,7 @@ function ProductCardSuggestion(
     !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left"
       ? "left"
       : "center";
-  const skuSelector = variants.map(([value, link]) => (
+  const _skuSelector = variants.map(([value, link]) => (
     <li>
       <a href={link}>
         <Avatar

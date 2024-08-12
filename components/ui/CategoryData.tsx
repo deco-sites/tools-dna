@@ -1,4 +1,3 @@
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { SectionProps } from "deco/types.ts";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 

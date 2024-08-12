@@ -1,15 +1,13 @@
-import { SendEventOnView } from "$store/components/Analytics.tsx";
 import ProductCardOdd, {
   Layout as cardLayout,
 } from "$store/components/product/ProductCardOdd.tsx";
-// import Icon from "$store/components/ui/Icon.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import { useId } from "$store/sdk/useId.ts";
-// import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { Product } from "apps/commerce/types.ts";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 // import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+// import { useOffer } from "$store/sdk/useOffer.ts";
 
 export interface Props {
   products: Product[] | null;
@@ -27,7 +25,6 @@ function CustomOddGrid({
   products,
   title,
   description,
-  layout,
   cardLayout,
   imageUrl,
 }: Props) {
