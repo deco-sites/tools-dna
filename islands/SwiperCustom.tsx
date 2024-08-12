@@ -1,7 +1,7 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
 function SwiperCustom() {
-  const swiper = new Swiper(".swiper", {
+  const _swiper = new Swiper(".swiper", {
     // Optional parameters
     direction: "horizontal",
     loop: true,

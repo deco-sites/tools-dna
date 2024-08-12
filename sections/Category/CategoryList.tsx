@@ -1,6 +1,4 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
@@ -90,7 +88,6 @@ function CategoryList(props: Props) {
       <div class="grid-category-list">
         {list.map((
           { tag, label, description, href, image, buttonText },
-          index,
         ) => (
           <>
             <a href={href} class="card-content flex flex-col gap-4 lg:h-auto">

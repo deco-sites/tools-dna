@@ -1,4 +1,4 @@
-import { Signal, useSignal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import { useCallback, useState } from "preact/hooks";
 import Button from "$store/components/ui/Button.tsx";
 import { invoke } from "$store/runtime.ts";
@@ -19,7 +19,7 @@ export interface Simulate {
   value?: number | null;
 }
 
-const formatShippingEstimate = (estimate: string) => {
+const _formatShippingEstimate = (estimate: string) => {
   const [, time, type] = estimate.split(/(\d+)/);
 
   if (type === "bd") return `${time} dias úteis`;
@@ -54,7 +54,7 @@ function Shipping({ items }: Props) {
       }));
       console.log(filterResult);
       setSimuteResult(filterResult);
-    } catch (e) {
+    } catch (_e) {
       setSimuteResult(null);
     } finally {
       loading.value = false;

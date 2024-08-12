@@ -8,7 +8,7 @@ export interface Props {
 }
 // { item }: {item: extraLink[];}
 
-function ExtraItems({ links }: Props) {
+function ExtraItems() {
   return (
     <>
       {
