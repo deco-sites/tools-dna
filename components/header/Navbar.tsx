@@ -71,7 +71,7 @@ function Navbar({ items, searchbar, logo }: {
       {/* Desktop Version */}
       <div
         style="gap: 5rem"
-        class="container hidden md:flex flex-row justify-between items-center w-full"
+        class="container hidden md:flex flex-row justify-between items-center w-full py-1"
       >
         <div class="flex-none">
           {logo && (
