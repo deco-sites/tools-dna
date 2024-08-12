@@ -389,7 +389,7 @@ function Footer({
             </div>
             <Divider /> */
             }
-            <div class="flex flex-row justify-center w-full gap-10 items-center">
+            {/* <div class="flex flex-row justify-center w-full gap-10 items-center">
               <a
                 href={"https://dna360.ag"}
                 class={"text-[#727272] gap-1 flex flex-row items-center justify-center"}
@@ -401,7 +401,7 @@ function Footer({
                   loading={"lazy"}
                 />
               </a>
-            </div>
+            </div> */}
           </div>
         )}
         {layout?.variation == "Variation 2" && (
