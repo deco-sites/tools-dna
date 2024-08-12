@@ -14,7 +14,6 @@ export default function ImageZoom({ src }: Props) {
     const x = `${(e.pageX - left) / width * 160}%`;
     const y = `${(e.pageY - top) / height * 160}%`;
     setPosition({ x, y });
-    console.log(position);
   };
   return (
     <figure
