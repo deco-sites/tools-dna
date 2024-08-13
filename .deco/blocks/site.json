@@ -14,6 +14,9 @@
       "link": "https://api.whatsapp.com/send?phone=554730271106&text=Contato%20via%20E-commerce%20World%20Tools",
       "phone": "https://api.whatsapp.com/send?phone=554730271106&text=Contato%20via%20E-commerce%20World%20Tools",
       "__resolveType": "site/sections/Social/WhatsApp.tsx"
+    },
+    {
+      "__resolveType": "Analytics Test"
     }
   ],
   "routes": [
