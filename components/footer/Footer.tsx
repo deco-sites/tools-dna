@@ -11,7 +11,6 @@ import Social from "$store/components/footer/Social.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
-import { asset } from "$fresh/runtime.ts";
 import Image from "apps/website/components/Image.tsx";
 
 export type Item = {
