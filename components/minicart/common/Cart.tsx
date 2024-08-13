@@ -5,7 +5,7 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { AnalyticsItem } from "apps/commerce/types.ts";
 import CartItem, { Item, Props as ItemProps } from "./CartItem.tsx";
 import Coupon, { Props as CouponProps } from "./Coupon.tsx";
-import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
+// import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
 
 interface Props {
   items: Item[];
@@ -32,7 +32,7 @@ function Cart({
   loading,
   currency,
   discounts,
-  freeShippingTarget,
+  // freeShippingTarget,
   itemToAnalyticsItem,
   onUpdateQuantity,
   onAddCoupon,
@@ -62,14 +62,14 @@ function Cart({
         : (
           <>
             {/* Free Shipping Bar */}
-            <div class="px-2 py-4 w-full">
+            {/* <div class="px-2 py-4 w-full">
               <FreeShippingProgressBar
                 total={total}
                 locale={locale}
                 currency={currency}
                 target={freeShippingTarget}
               />
-            </div>
+            </div> */}
 
             {/* Cart Items */}
             <ul
