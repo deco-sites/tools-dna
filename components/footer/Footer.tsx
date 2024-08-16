@@ -210,7 +210,9 @@ function Footer({
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
-      content={newsletter}
+      title={newsletter.title}
+      description={newsletter.description}
+      form={newsletter.form}
       layout={{
         tiled: layout?.variation == "Variation 4" ||
           layout?.variation == "Variation 5",
@@ -388,7 +390,8 @@ function Footer({
             </div>
             <Divider /> */
             }
-            {/* <div class="flex flex-row justify-center w-full gap-10 items-center">
+            {
+              /* <div class="flex flex-row justify-center w-full gap-10 items-center">
               <a
                 href={"https://dna360.ag"}
                 class={"text-[#727272] gap-1 flex flex-row items-center justify-center"}
@@ -400,7 +403,8 @@ function Footer({
                   loading={"lazy"}
                 />
               </a>
-            </div> */}
+            </div> */
+            }
           </div>
         )}
         {layout?.variation == "Variation 2" && (

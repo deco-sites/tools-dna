@@ -121,6 +121,7 @@ export interface Props {
   description?: string;
   form?: Form;
   layout?: {
+    tiled?: boolean;
     headerFontSize?: "Large" | "Normal";
     content?: {
       border?: boolean;
