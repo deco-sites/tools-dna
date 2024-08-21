@@ -162,6 +162,7 @@ function SearchResult({ page, ...props }: Props) {
   if (page) {
     return <Result {...props} page={page} />;
   }
+  return null;
 }
 
 export default SearchResult;
