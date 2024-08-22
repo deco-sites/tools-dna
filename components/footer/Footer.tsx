@@ -210,7 +210,9 @@ function Footer({
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
-      content={newsletter}
+      title={newsletter.title}
+      description={newsletter.description}
+      form={newsletter.form}
       layout={{
         tiled: layout?.variation == "Variation 4" ||
           layout?.variation == "Variation 5",
