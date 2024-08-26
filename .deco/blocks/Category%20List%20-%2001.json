@@ -2,15 +2,18 @@
   "list": [
     {
       "href": "/s?busca=cone+mawbra&sort=SALES%3ADESC",
-      "label": "Cones e Mandris"
+      "label": "Cones e Mandris",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/90fbecb1-c71c-4ff3-a6a9-dd622a324446"
     },
     {
       "href": "/s?busca=placa+de+torno+mawbra&sort=SALES%3ADESC",
-      "label": "Placas de Torno"
+      "label": "Placas de Torno",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/3ad33b21-c3c3-4d41-87c6-fd10a8a45797"
     },
     {
       "href": "/s?busca=morsa+mawbra&sort=SALES%3ADESC",
-      "label": "Morsas"
+      "label": "Morsas",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/b74f9489-33a9-4c62-8ce7-7ca778c302a0"
     },
     {
       "href": "/s?busca=inserto+sansui&sort=SALES%3ADESC",
