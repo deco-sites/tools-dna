@@ -1,1 +1,32 @@
-{"layout":{"variation":"Simple","headerAlignment":"center"},"benefits":[{"icon":"CheckSelection","label":"Há 14 anos fornecendo soluções para a indústria nacional."},{"icon":"Truck","label":"Entregamos em todo o Brasil!","description":"."},{"icon":"CreditCard","label":"Pagamento em até 10X sem juros no cartão","description":"."},{"icon":"Discount","label":"10% off em todo  o site pagando a vista","description":"."}],"__resolveType":"site/sections/Content/Benefits.tsx"}
+{
+  "layout": {
+    "variation": "Simple",
+    "headerAlignment": "center"
+  },
+  "benefits": [
+    {
+      "icon": "CheckSelection",
+      "label": "Há 14 anos fornecendo soluções para a indústria nacional."
+    },
+    {
+      "icon": "Truck",
+      "label": "Entregamos em todo o Brasil!",
+      "description": "."
+    },
+    {
+      "icon": "CreditCard",
+      "label": "Pagamento em até 10X sem juros no cartão",
+      "description": "."
+    },
+    {
+      "icon": "Discount",
+      "label": "10% off em todo  o site pagando a vista",
+      "description": "."
+    },
+    {
+      "label": "Compre diretamente com um dos nossos vendedores",
+      "icon": "User"
+    }
+  ],
+  "__resolveType": "site/sections/Content/Benefits.tsx"
+}

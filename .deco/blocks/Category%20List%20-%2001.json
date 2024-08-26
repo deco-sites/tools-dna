@@ -1,1 +1,39 @@
-{"list":[{"href":"/ferramentas-manuais","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/337afd8e-604b-403f-9edd-dd32a282d815","label":"Ferramentas"},{"href":"/componentes-para-moldes/pinos-de-guia","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/9c7d76ed-5042-498c-8bd4-d110e0e23a01","label":"Pinos de fixação"},{"href":"/acessorios-para-maquinas","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/e5d79882-0938-42f0-8eee-4b28dced6562","label":"Acessórios"},{"href":"/componentes-para-moldes","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/f8d7cab4-29a3-4b8e-97ec-4842a88b134a","label":"Componentes"},{"href":"/ferramentas-para-usinagem/brocas","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/6ae4a833-37b1-4e14-abba-19aecc57d0eb","label":"Brocas"},{"href":"/acessorios-para-maquinas/morsas","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/0dececc4-85fe-4179-b912-bf9a56cee235","label":"Morsas"}],"header":{"title":"Procure por departamento"},"layout":{"categoryCard":{"textPosition":"bottom","textAlignment":"center"},"headerAlignment":"center"},"__resolveType":"site/sections/Category/CategoryList.tsx"}
+{
+  "list": [
+    {
+      "href": "/s?busca=cone+mawbra&sort=SALES%3ADESC",
+      "label": "Cones e Mandris"
+    },
+    {
+      "href": "/s?busca=placa+de+torno+mawbra&sort=SALES%3ADESC",
+      "label": "Placas de Torno"
+    },
+    {
+      "href": "/s?busca=morsa+mawbra&sort=SALES%3ADESC",
+      "label": "Morsas"
+    },
+    {
+      "href": "/s?busca=inserto+sansui&sort=SALES%3ADESC",
+      "label": "Insertos de Metal Duro"
+    },
+    {
+      "href": "/fabricante/prumer?sort=SALES%3ADESC",
+      "label": "Machos e Brocas"
+    },
+    {
+      "href": "/fabricante/raikon?sort=SALES%3ADESC",
+      "label": "Instrumentos de Medição"
+    }
+  ],
+  "header": {
+    "title": "Principais departamentos"
+  },
+  "layout": {
+    "categoryCard": {
+      "textAlignment": "center",
+      "textPosition": "bottom"
+    },
+    "headerAlignment": "center"
+  },
+  "__resolveType": "site/sections/Category/CategoryList.tsx"
+}
