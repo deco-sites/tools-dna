@@ -14,15 +14,18 @@
     },
     {
       "href": "/s?busca=inserto+sansui&sort=SALES%3ADESC",
-      "label": "Insertos de Metal Duro"
+      "label": "Insertos",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/07bca278-fc78-4664-952c-7377d691a804"
     },
     {
       "href": "/fabricante/prumer?sort=SALES%3ADESC",
-      "label": "Machos e Brocas"
+      "label": "Machos e Brocas",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2cbeb64d-18ef-4264-b7c8-fd1d758205d3"
     },
     {
       "href": "/fabricante/raikon?sort=SALES%3ADESC",
-      "label": "Instrumentos de Medição"
+      "label": "Metrologia",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/8707f486-829b-48a3-955d-4639a320c8ff"
     }
   ],
   "header": {
