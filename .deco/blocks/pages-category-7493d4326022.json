@@ -14,8 +14,8 @@
     },
     {
       "page": {
-        "sort": "NAME:ASC",
-        "limit": 36,
+        "sort": "SALES:DESC",
+        "limit": 39,
         "filters": {
           "ean": [],
           "sku": [],
@@ -63,7 +63,8 @@
         "onMouseOver": {
           "image": "Change image",
           "showCta": true,
-          "showFavoriteIcon": true
+          "showFavoriteIcon": true,
+          "card": "Move up"
         },
         "elementsPositions": {
           "skuSelector": "Bottom",
