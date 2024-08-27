@@ -51,12 +51,12 @@
       "__resolveType": "site/sections/Product/SearchResult.tsx"
     },
     {
-      "title": "Novidades",
+      "title": "Preços promocionais, Aproveite!",
       "layout": {
         "headerfontSize": "Normal",
         "headerAlignment": "center"
       },
-      "imageUrl": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/9a4893a1-ade3-4e76-8f6a-3a282d5a5bf4",
+      "imageUrl": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/aec5469c-7dbf-4505-a4b5-e21b20b2c29f",
       "products": {
         "first": 6,
         "filters": {
