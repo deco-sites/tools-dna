@@ -156,7 +156,7 @@
                   "dcName": []
                 },
                 "prices": {},
-                "available": false
+                "available": true
               }
             }
           },
@@ -218,7 +218,7 @@
                 "productVariantId": [],
                 "hasImages": true
               },
-              "sortKey": "RANDOM",
+              "sortKey": "NAME",
               "__resolveType": "wake/loaders/productList.ts",
               "sortDirection": "ASC"
             },
@@ -252,7 +252,17 @@
                   {
                     "image": [],
                     "video": [],
-                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/6288435a-0f74-4878-bcfb-c1576748be7e"
+                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/93e1a6d1-0393-4320-b094-30e7ef2acc8a"
+                  },
+                  {
+                    "image": [],
+                    "video": [],
+                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/6016693f-2e0f-4b49-820d-66bea1c12a55"
+                  },
+                  {
+                    "image": [],
+                    "video": [],
+                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/9c64eb9e-8682-42ff-8743-7cb5bd65f824"
                   },
                   {
                     "image": [],
@@ -262,7 +272,7 @@
                   {
                     "image": [],
                     "video": [],
-                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/93e1a6d1-0393-4320-b094-30e7ef2acc8a"
+                    "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/6288435a-0f74-4878-bcfb-c1576748be7e"
                   }
                 ]
               }
