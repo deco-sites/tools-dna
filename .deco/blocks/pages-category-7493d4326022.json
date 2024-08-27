@@ -1,1 +1,173 @@
-{"name":"Category","path":"/*","sections":[{"jsonLD":{"operation":"AND","__resolveType":"wake/loaders/productListingPage.ts"},"__resolveType":"commerce/sections/Seo/SeoPLP.tsx"},{"__resolveType":"Header - 01"},{"page":{"sort":"NAME:ASC","limit":36,"filters":{"ean":[],"sku":[],"stocks":{"dcId":[],"dcName":[]},"brandId":[],"productId":[],"attributes":{"id":[],"name":[],"type":[],"value":[]},"categoryId":[],"sameParentAs":[],"productVariantId":[]},"operation":"AND","pageOffset":0,"__resolveType":"wake/loaders/productListingPage.ts","getVariations":false},"layout":{"columns":{"mobile":1,"desktop":3},"variant":"aside"},"sections":[{"__resolveType":"Logos - 01"},{"__resolveType":"Category List - 01"}],"cardLayout":{"basics":{"oldPriceSize":"Small","contentAlignment":"Left"},"onMouseOver":{"image":"Change image","showCta":true,"showFavoriteIcon":true},"elementsPositions":{"skuSelector":"Bottom","favoriteIcon":"Top right"}},"startingPage":1,"__resolveType":"site/sections/Product/SearchResult.tsx"},{"title":"Novidades","layout":{"headerfontSize":"Normal","headerAlignment":"center"},"imageUrl":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/9a4893a1-ade3-4e76-8f6a-3a282d5a5bf4","products":{"first":3,"filters":{"ean":[],"sku":[],"prices":{},"stocks":{"dcId":[],"dcName":[]},"brandId":[],"available":true,"productId":[],"attributes":{"id":[],"name":[],"type":[],"value":[]},"categoryId":[],"sameParentAs":[],"productVariantId":[]},"sortKey":"RANDOM","__resolveType":"wake/loaders/productList.ts","sortDirection":"ASC"},"cardLayout":{"hide":{"cta":true,"allPrices":false,"skuSelector":true,"installments":false,"productDescription":true},"basics":{"oldPriceSize":"Small","contentAlignment":"Left"},"onMouseOver":{"card":"None","image":"Change image"},"elementsPositions":{"skuSelector":"Top","favoriteIcon":"Top right"}},"description":"Produtos mais aguardados sempre com o melhor preço!","__resolveType":"site/sections/Product/CustomOddGrid.tsx"},{"__resolveType":"Footer - 01"}],"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Category",
+  "path": "/*",
+  "sections": [
+    {
+      "jsonLD": {
+        "operation": "AND",
+        "__resolveType": "wake/loaders/productListingPage.ts"
+      },
+      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "page": {
+        "sort": "NAME:ASC",
+        "limit": 36,
+        "filters": {
+          "ean": [],
+          "sku": [],
+          "stocks": {
+            "dcId": [],
+            "dcName": []
+          },
+          "brandId": [],
+          "productId": [],
+          "attributes": {
+            "id": [],
+            "name": [],
+            "type": [],
+            "value": []
+          },
+          "categoryId": [],
+          "sameParentAs": [],
+          "productVariantId": []
+        },
+        "operation": "AND",
+        "pageOffset": 0,
+        "__resolveType": "wake/loaders/productListingPage.ts",
+        "getVariations": false
+      },
+      "layout": {
+        "columns": {
+          "mobile": 1,
+          "desktop": 3
+        },
+        "variant": "aside"
+      },
+      "sections": [
+        {
+          "__resolveType": "Logos - 01"
+        },
+        {
+          "__resolveType": "Category List - 01"
+        }
+      ],
+      "cardLayout": {
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "image": "Change image",
+          "showCta": true,
+          "showFavoriteIcon": true
+        },
+        "elementsPositions": {
+          "skuSelector": "Bottom",
+          "favoriteIcon": "Top right"
+        }
+      },
+      "startingPage": 1,
+      "__resolveType": "site/sections/Product/SearchResult.tsx"
+    },
+    {
+      "title": "Preços promocionais, Aproveite!",
+      "layout": {
+        "headerfontSize": "Normal",
+        "headerAlignment": "center"
+      },
+      "imageUrl": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/aec5469c-7dbf-4505-a4b5-e21b20b2c29f",
+      "products": {
+        "first": 6,
+        "filters": {
+          "ean": [],
+          "sku": [
+            "003541",
+            "003731",
+            "000001",
+            "004591",
+            "009929",
+            "010579"
+          ],
+          "prices": {},
+          "stocks": {
+            "dcId": [],
+            "dcName": []
+          },
+          "brandId": [
+            1262,
+            1259,
+            1253,
+            1273,
+            1271,
+            1274,
+            1240
+          ],
+          "available": true,
+          "productId": [],
+          "attributes": {
+            "id": [],
+            "name": [],
+            "type": [],
+            "value": []
+          },
+          "categoryId": [],
+          "sameParentAs": [],
+          "productVariantId": []
+        },
+        "sortKey": "NAME",
+        "__resolveType": "wake/loaders/productList.ts",
+        "sortDirection": "ASC"
+      },
+      "cardLayout": {
+        "hide": {
+          "cta": true,
+          "allPrices": false,
+          "skuSelector": true,
+          "installments": false,
+          "productDescription": true
+        },
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "card": "Move up",
+          "image": "Change image"
+        },
+        "elementsPositions": {
+          "skuSelector": "Top",
+          "favoriteIcon": "Top right"
+        },
+        "customProductImages": {
+          "items": [
+            {
+              "image": [],
+              "video": [],
+              "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/3ceb8d53-1109-4871-b638-db60aa2c59b5"
+            },
+            {
+              "image": [],
+              "video": [],
+              "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/450fab68-2ff4-4c98-b9c5-42419edac4a7"
+            },
+            {
+              "image": [],
+              "video": [],
+              "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2c6141d6-4597-4484-8bf8-881621bc3987"
+            }
+          ]
+        }
+      },
+      "description": "Produtos mais aguardados sempre com o melhor preço!",
+      "__resolveType": "site/sections/Product/CustomOddGrid.tsx"
+    },
+    {
+      "__resolveType": "Footer - 01"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}
