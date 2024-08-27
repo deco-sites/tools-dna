@@ -14,8 +14,8 @@
     },
     {
       "page": {
-        "sort": "NAME:ASC",
-        "limit": 24,
+        "sort": "SALES:DESC",
+        "limit": 39,
         "filters": {
           "ean": [],
           "sku": [],
@@ -48,7 +48,12 @@
       },
       "sections": null,
       "startingPage": 1,
-      "__resolveType": "site/sections/Product/SearchResult.tsx"
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "cardLayout": {
+        "onMouseOver": {
+          "card": "Move up"
+        }
+      }
     },
     {
       "title": "Preços promocionais, Aproveite!",
