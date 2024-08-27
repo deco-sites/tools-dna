@@ -22,10 +22,6 @@
       "icon": "Discount",
       "label": "10% off em todo  o site pagando a vista",
       "description": "."
-    },
-    {
-      "label": "Compre diretamente com um dos nossos vendedores",
-      "icon": "User"
     }
   ],
   "__resolveType": "site/sections/Content/Benefits.tsx"
