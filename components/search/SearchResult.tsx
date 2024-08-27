@@ -75,6 +75,7 @@ function Result({
 
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
+  console.log("page info: ", pageInfo)
 
   return (
     <>
@@ -114,7 +115,7 @@ function Result({
               aria-label="previous page link"
               rel="prev"
               href={pageInfo.previousPage ?? "#"}
-              class="btn btn-ghost join-item"
+              class="btn btn-ghost join-item bg-slate-500"
             >
               <Icon id="ChevronLeft" size={24} strokeWidth={2} />
             </a>
@@ -124,7 +125,7 @@ function Result({
             <a
               aria-label="next page link"
               rel="next"
-              href={pageInfo.nextPage ?? "#"}
+              href={`${pageInfo.currentPage == 1 ? '?page=2' : pageInfo.nextPage}`}
               class="btn btn-ghost join-item"
             >
               <Icon id="ChevronRight" size={24} strokeWidth={2} />
