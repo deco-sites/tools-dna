@@ -133,7 +133,7 @@ function Navbar({ items, searchbar, logo }: {
           {platform === "nuvemshop" && <CartButtonNuvemshop />}
         </div>
       </div>
-      <div class="relative hidden md:flex flex-row justify-between items-center border-t border-base-200 w-full pl-2 pr-6 py-4">
+      <div class="relative hidden md:flex flex-row justify-between items-center border-t border-[#E9E9E9] w-full pl-2 pr-6 py-4">
         <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem item={item} />)}
         </div>

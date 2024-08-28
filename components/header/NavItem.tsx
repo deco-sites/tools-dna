@@ -33,7 +33,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
       {children && children.length > 0 && (
         <div
-          class="h-[55vh] overflow-hidden overflow-y-auto absolute hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
+          class="h-[55vh] overflow-hidden overflow-y-auto absolute hidden hover:flex group-hover:flex bg-white z-50 items-start justify-center gap-6 border-t border-b-2 border-[#E9E9E9] w-screen"
           style={{ top: "0px", left: "0px", marginTop: "60px" }}
         >
           {image?.url && (
