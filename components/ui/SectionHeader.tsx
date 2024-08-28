@@ -51,7 +51,7 @@ function Header(props: Props) {
                   class={`
                   leading-6 lg:leading-8 text-left
                   ${
-                    props.colorReverse ? "text-neutral" : "text-primary-content"
+                    props.colorReverse ? "text-neutral" : "text-[#737373]"
                   }
                   ${props.fontSize === "Normal" ? "lg:text-sm" : "lg:text-sm"}
                 `}
