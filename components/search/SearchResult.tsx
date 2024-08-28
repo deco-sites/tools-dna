@@ -115,13 +115,13 @@ function Result({
               aria-label="previous page link"
               rel="prev"
               href={pageInfo.previousPage ?? "#"}
-              class={`btn btn-ghost join-item ${pageInfo.currentPage === 1 && 'opacity-30' }`}
+              class={`btn btn-ghost join-item `}
               disabled={pageInfo.currentPage === 1}
             >
               <Icon id="ChevronLeft" size={24} strokeWidth={2} />
             </a>
             <span class="btn btn-ghost join-item">
-              Page {zeroIndexedOffsetPage + 1}
+              Página {zeroIndexedOffsetPage + 1}
             </span>
             <a
               aria-label="next page link"
