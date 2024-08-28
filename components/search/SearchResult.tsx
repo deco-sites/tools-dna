@@ -115,7 +115,8 @@ function Result({
               aria-label="previous page link"
               rel="prev"
               href={pageInfo.previousPage ?? "#"}
-              class="btn btn-ghost join-item bg-slate-500"
+              class={`btn btn-ghost join-item ${pageInfo.currentPage === 1 && 'opacity-35' }`}
+              disabled={pageInfo.currentPage === 1}
             >
               <Icon id="ChevronLeft" size={24} strokeWidth={2} />
             </a>
