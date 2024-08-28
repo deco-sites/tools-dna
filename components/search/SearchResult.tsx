@@ -75,8 +75,6 @@ function Result({
 
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
-  console.log("page info: ", pageInfo)
-
   return (
     <>
       <div class="container">
@@ -128,6 +126,7 @@ function Result({
               rel="next"
               href={`${pageInfo.currentPage == 1 ? '?page=2' : pageInfo.nextPage}`}
               class="btn btn-ghost join-item"
+              disabled={ products.length < (pageInfo?.recordPerPage ?? 0)}
             >
               <Icon id="ChevronRight" size={24} strokeWidth={2} />
             </a>
