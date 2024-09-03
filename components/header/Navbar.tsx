@@ -91,7 +91,7 @@ function Navbar({ items, searchbar, logo }: {
           {/* <SearchButton /> */}
           <a
             class="w-auto flex btn btn-circle btn-sm btn-ghost"
-            href="//checkout.worldtools.com.br/Login/Authenticate?"
+            href="//checkout.worldtools.com.br/MinhaConta/"
             aria-label="Log in"
             style="border: 1px solid #4BAEE9; height: auto;border-radius: 30px;
              padding-right: 15px"
