@@ -13,6 +13,7 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
+import UserLoggedIn from "site/islands/UserLoggedIn.tsx";
 
 function Navbar({ items, searchbar, logo }: {
   items: SiteNavigationElement[];
@@ -89,26 +90,7 @@ function Navbar({ items, searchbar, logo }: {
         </div>
         <div class="flex-none flex items-center justify-end gap-2">
           {/* <SearchButton /> */}
-          <a
-            class="w-auto flex btn btn-circle btn-sm btn-ghost"
-            href="//checkout.worldtools.com.br/MinhaConta/"
-            aria-label="Log in"
-            style="border: 1px solid #4BAEE9; height: auto;border-radius: 30px;
-             padding-right: 15px"
-          >
-            <Icon
-              style="padding: 10px;border-radius: 100px;background: #4BAEE9; color: #ffffff;"
-              id="User"
-              class="h-[40px] w-[40px] md:h-[48px] md:w-[48px]"
-              size={24}
-              strokeWidth={0.4}
-            />
-            <p>
-              Olá! Faça seu <strong class="strong-color">Login</strong>
-              <br></br>
-              ou <strong class="strong-color">Cadastre-se</strong>
-            </p>
-          </a>
+          <UserLoggedIn />
           <a
             class="btn btn-circle btn-sm btn-ghost wishlist-button h-[40px] w-[40px] md:h-[48px] md:w-[48px]"
             href="/wishlist"

@@ -31,6 +31,7 @@ import * as $Shipping from "./islands/Shipping.tsx";
 import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $SwiperCustom from "./islands/SwiperCustom.tsx";
+import * as $UserLoggedIn from "./islands/UserLoggedIn.tsx";
 import * as $WishlistButton from "./islands/WishlistButton.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -67,6 +68,7 @@ const manifest = {
     "./islands/ShippingSimulation.tsx": $ShippingSimulation,
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/SwiperCustom.tsx": $SwiperCustom,
+    "./islands/UserLoggedIn.tsx": $UserLoggedIn,
     "./islands/WishlistButton.tsx": $WishlistButton,
   },
   baseUrl: import.meta.url,
