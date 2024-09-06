@@ -19,7 +19,7 @@ export default function UserLoggedIn () {
           {!isUserLoggedIn && (
             <a
             class="w-auto flex btn btn-circle btn-sm btn-ghost"
-            href="//checkout.worldtools.com.br/MinhaConta/"
+            href={`${!isUserLoggedIn ? "//checkout.worldtools.com.br/Login/Authenticate?returnUrl=https://www.worldtools.com.br" : "//checkout.worldtools.com.br/MinhaConta/"}`}
             aria-label="Log in"
             style="border: 1px solid #4BAEE9; height: auto;border-radius: 30px;
             padding-right: 15px"
@@ -73,13 +73,13 @@ export default function UserLoggedIn () {
                     Meus pedidos
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a  class="exit-account flex flex-row gap-1 text-base font-normal leading-5 text-left" 
                     onClick={() => { exitAccount()}}>
                       <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m.693 12 4.496-6.016v.496L.9.72h1.568l3.52 4.816h-.416L9.06.72h1.584L6.34 6.48v-.496L10.837 12H9.269l-3.76-5.104h.512L2.26 12z" fill="#000"/></svg>
                     Sair
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           )}
