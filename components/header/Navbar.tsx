@@ -45,7 +45,7 @@ function Navbar({ items, searchbar, logo }: {
           {/* <SearchButton /> */}
           <a
             class="w-auto flex btn btn-circle btn-sm btn-ghost"
-            href="//checkout.worldtools.com.br/Login/Authenticate?"
+            href="//checkout.worldtools.com.br/MinhaConta/"
             aria-label="Log in"
           >
             <Icon
