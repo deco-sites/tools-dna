@@ -5,11 +5,12 @@ export default function UserLoggedIn () {
     const user = useUser();
 
     const exitAccount = () => {
-        document.cookie = 'fbits-login=; path=/;';
-        console.log("Teste Cookie removido");
+        document.cookie = 'fbits-login=; path=/; domain=.worldtools.com.br;';
+        document.cookie = 'fbits-login=; path=/; domain=www.worldtools.com.br;';
+        console.log("Cookie de usuário, removido");
         setTimeout(() => {
           location.reload()
-        }, 200);
+        }, 300);
     }
 
     const isUserLoggedIn = Boolean(user.user.value?.email)
