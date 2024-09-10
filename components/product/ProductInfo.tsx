@@ -163,7 +163,7 @@ function ProductInfo({ page }: Props) {
 
             <Slider.NextButton
               class=" absolute right-2 top-[90%]"
-              disabled={product.image && product.image.length < 2}
+              disabled={Boolean(product.image && product.image.length < 2)}
             >
               <Icon size={18} id="ChevronRightCustom" strokeWidth={3} />
             </Slider.NextButton>
