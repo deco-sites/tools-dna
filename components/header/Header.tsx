@@ -6,6 +6,7 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import { Head } from "$fresh/runtime.ts";
 
 export interface Props {
   alerts: string[];
@@ -40,6 +41,9 @@ function Header({
 
   return (
     <>
+      <Head>
+        <meta name="facebook-domain-verification" content="xlrui46nujovk2wvavt6pitnwakknm" />
+      </Head>
       <header
         style={{ height: `${ctaButton.alertsActive ? headerHeight : "150px"}` }}
       >
