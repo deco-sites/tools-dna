@@ -56,7 +56,7 @@ export default function UserLoggedIn () {
                   strokeWidth={0.4}
                 />
                 <p class="truncate max-w-[160px]">
-                  Bem-vindo(a), {user.user.value?.givenName || user.user.value?.email}
+                  Olá, <strong class="strong-color">{user.user.value?.givenName || user.user.value?.email}</strong>
                 </p>
               </a>
               </div>
