@@ -3,10 +3,10 @@
     "fontFamily": "'Georgia'"
   },
   "mainColors": {
-    "primary": "#000000",
+    "primary": "#09090b",
     "base-100": "#09090b",
     "tertiary": "#cddef9",
-    "secondary": "#a0b7de",
+    "secondary": "#164195",
     "neutral": "#ffffff"
   },
   "buttonStyle": {
