@@ -73,7 +73,8 @@ function Searchbar({
   }, [displaySearchPopup.value]);
 
   return (
-    <div class="w-full grid gap-8 overflow-y-hidden" // style={{ gridTemplateRows: "min-content auto" }}
+    <div
+      class="w-full grid gap-8 overflow-y-hidden px-1" // style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join">
         <Button
@@ -83,9 +84,11 @@ function Searchbar({
           for={id}
           tabIndex={-1}
         >
-          {loading.value
-            ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
+          {loading.value ? (
+            <span class="loading loading-spinner loading-xs" />
+          ) : (
+            <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />
+          )}
         </Button>
         <input
           ref={searchInputRef}
@@ -112,7 +115,7 @@ function Searchbar({
         <Button
           type="button"
           class="md:hidden join-item btn-ghost btn-square hidden sm:inline-flex"
-          onClick={() => displaySearchPopup.value = false}
+          onClick={() => (displaySearchPopup.value = false)}
         >
           <Icon id="XMark" size={24} strokeWidth={2} />
         </Button>
@@ -125,11 +128,7 @@ function Searchbar({
       >
         <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 rounded-2xl p-4 shadow-md">
           <div class="flex flex-col gap-6">
-            <span
-              class="font-medium text-xl"
-              role="heading"
-              aria-level={3}
-            >
+            <span class="font-medium text-xl" role="heading" aria-level={3}>
               Sugestões
             </span>
             <ul id="search-suggestion" class="flex flex-col gap-1">
@@ -143,11 +142,7 @@ function Searchbar({
             </ul>
           </div>
           <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <span
-              class="font-medium text-xl"
-              role="heading"
-              aria-level={3}
-            >
+            <span class="font-medium text-xl" role="heading" aria-level={3}>
               Produtos sugeridos
             </span>
             <ul class="flex flex-col">

@@ -292,7 +292,7 @@ function ProductInfo({ page }: Props) {
         </div>
 
         <div
-          class="py-[20px] px-6 md:px-[44px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-[#DFEAFF80] bg-white md:border-none border border-black"
+          class="py-[20px] px-6 md:px-[44px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-base-300 bg-white md:border-none border border-black"
           id={id}
         >
           {/* Prices */}

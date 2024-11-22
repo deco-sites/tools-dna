@@ -52,7 +52,7 @@ function Header({
           searchbar={searchbar}
           platform={platform}
         >
-          <div class="bg-white fixed w-full z-50">
+          <div class="bg-primary fixed w-full z-50">
             <Alert alerts={alerts} ctaButton={ctaButton} />
             <Navbar
               items={items}

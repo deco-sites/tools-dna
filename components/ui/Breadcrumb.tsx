@@ -15,17 +15,20 @@ function Breadcrumb({ itemListElement = [] }: Props) {
   ];
 
   return (
-    <div class="breadcrumbs">
-      <ul class="max-w-[100vw] md:max-w-full">
-        {items
-          .filter(({ name, item }) => name && item)
-          .map(({ name, item }) => (
-            <li class="text-[#164195]">
-              {name &&
-                <a href={item} dangerouslySetInnerHTML={{ __html: name }}></a>}
-            </li>
-          ))}
-      </ul>
+      <div class="bg-base-300 w-full h-full rounded-xl">
+    <div class="breadcrumbs bg-base-300 opacity-100 p-2 ">
+        <ul class="max-w-[100vw] md:max-w-full  ">
+          {items
+            .filter(({ name, item }) => name && item)
+            .map(({ name, item }) => (
+              <li class="text-[#164195]">
+                {name && (
+                  <a href={item} dangerouslySetInnerHTML={{ __html: name }}></a>
+                )}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
