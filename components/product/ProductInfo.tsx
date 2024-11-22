@@ -50,6 +50,7 @@ function ProductInfo({ page }: Props) {
   }
 
   const { breadcrumbList, product } = page;
+
   const {
     productID,
     offers,
@@ -68,6 +69,7 @@ function ProductInfo({ page }: Props) {
     parcelamentoValue,
     inventory,
   } = useOffer(offers);
+
   const productGroupID = isVariantOf?.productGroupID ?? "";
   const breadcrumb = {
     ...breadcrumbList,
@@ -99,8 +101,6 @@ function ProductInfo({ page }: Props) {
   const prazoDeEnvio = product.additionalProperty?.filter(
     (property) => property.name === "Sinopse"
   );
-
-  console.log(prazoDeEnvio);
 
   const ratingValueCustom = product.aggregateRating?.ratingValue
     ? product.aggregateRating?.ratingValue
@@ -177,7 +177,7 @@ function ProductInfo({ page }: Props) {
                     index={index}
                   >
                     <Image
-                      class="group-disabled:border-[#164195] border-2 border-solid border-[#E9E9E9] rounded-[22px] "
+                      class="group-disabled:border-secondary border-2 border-solid border-[#E9E9E9] rounded-[22px] "
                       width={125}
                       height={108}
                       src={img.url!}
@@ -292,7 +292,7 @@ function ProductInfo({ page }: Props) {
         </div>
 
         <div
-          class="py-[20px] px-6 md:px-[44px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-[#DFEAFF80] bg-white md:border-none border border-black"
+          class="py-[20px] px-6 md:px-[44px] flex flex-col w-full md:min-w-[415px] max-w-[415px] rounded-3xl md:bg-base-300 bg-white md:border-none border border-black"
           id={id}
         >
           {/* Prices */}

@@ -34,7 +34,7 @@ function CustomShelfGrid({
   }
 
   return (
-    <div class="w-full container">
+    <div class="w-full container mb-8">
       <Header
         title={title || ""}
         description={description || ""}

@@ -58,10 +58,12 @@ const relative = (url: string) => {
 };
 
 export const calculate = (item: number, item2: number) => {
-  if ((item - item2) > 0) {
-    const percentValue = Math.round((item - item2) / item * 100);
-    return `${percentValue}% OFF`;
+  if (item - item2 > 0) {
+    // const percentValue = Math.round((item - item2) / item * 100);
+    // return `${percentValue}% OFF`;
   }
+  //este valor esta colocado diretamente no codigo por causa de um erro na API da wake. Retirar e descomentar o codigo acima para calcular automaticamente.
+  return "12% OFF";
 };
 
 const WIDTH = 314;
@@ -126,13 +128,13 @@ function ProductCardCustom(
   return (
     <div
       id={id}
-      class={`card card-compact group w-full ${
+      class={`card card-compact group w-full bg-neutral p-2 ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
-        l?.onMouseOver?.card === "Move up" &&
-        "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
-      }
+          l?.onMouseOver?.card === "Move up" &&
+          "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
+        }
       `}
       data-deco="view-product"
     >
@@ -167,8 +169,7 @@ function ProductCardCustom(
               stroke="#164195"
             />
           </svg>
-          {listPrice && pixPrice &&
-            calculate(listPrice, pixPrice)}
+          {listPrice && pixPrice && calculate(listPrice, pixPrice)}
         </div>
         <div class="installmentsTag">
           {installments}
@@ -179,15 +180,15 @@ function ProductCardCustom(
       <div
         class={`absolute top-2 z-10
           ${
-          l?.elementsPositions?.favoriteIcon === "Top left"
-            ? "left-2"
-            : "right-2"
-        }
+            l?.elementsPositions?.favoriteIcon === "Top left"
+              ? "left-2"
+              : "right-2"
+          }
           ${
-          l?.onMouseOver?.showFavoriteIcon
-            ? "lg:hidden lg:group-hover:block"
-            : "lg:hidden lg:group-hover:block"
-        }
+            l?.onMouseOver?.showFavoriteIcon
+              ? "lg:hidden lg:group-hover:block"
+              : "lg:hidden lg:group-hover:block"
+          }
         `}
       >
         {platform === "wake" && (
@@ -247,7 +248,7 @@ function ProductCardCustom(
           {/* SKU Selector */}
           {l?.onMouseOver?.showSkuSelector && (
             <ul
-              // class="flex justify-center items-center gap-2 w-full"
+            // class="flex justify-center items-center gap-2 w-full"
             >
               {skuSelector}
             </ul>
@@ -257,17 +258,19 @@ function ProductCardCustom(
       </figure>
       {/* Prices & Name */}
       <div
-        //   class="flex-auto flex flex-col p-2 gap-3 lg:gap-4"
+      //   class="flex-auto flex flex-col p-2 gap-3 lg:gap-4"
       >
         {/* SKU Selector */}
         {(!l?.elementsPositions?.skuSelector ||
           l?.elementsPositions?.skuSelector === "Top") && (
           <>
-            {l?.hide?.skuSelector ? "" : (
+            {l?.hide?.skuSelector ? (
+              ""
+            ) : (
               <ul
-                // class={`flex items-center gap-2 w-full overflow-auto p-3 ${
-                //   align === "center" ? "justify-center" : "justify-start"
-                // } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
+              // class={`flex items-center gap-2 w-full overflow-auto p-3 ${
+              //   align === "center" ? "justify-center" : "justify-start"
+              // } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
               >
                 {skuSelector}
               </ul>
@@ -275,15 +278,14 @@ function ProductCardCustom(
           </>
         )}
 
-        {l?.hide?.productName && l?.hide?.productDescription ? "" : (
+        {l?.hide?.productName && l?.hide?.productDescription ? (
+          ""
+        ) : (
           <div
-            // class="flex flex-col gap-0"
+          // class="flex flex-col gap-0"
           >
             {/* BRAND IMAGE */}
-            <a
-              style="display: block;min-height: 32px"
-              href={brand?.url}
-            >
+            <a style="display: block;min-height: 32px" href={brand?.url}>
               <img
                 style={{ maxWidth: "100px", maxHeight: "20px" }}
                 src={brand?.logo}
@@ -293,16 +295,18 @@ function ProductCardCustom(
                 loading={"lazy"}
               />
             </a>
-            {l?.hide?.productName ? "" : (
+            {l?.hide?.productName ? (
+              ""
+            ) : (
               <a href={url && relative(url)}>
-                {l?.hide?.productName
-                  ? ""
-                  : (
-                    <h2 class="card-name truncate text-base lg:text-lg text-base-content">
-                      {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
-                      {name?.toLocaleLowerCase().slice(1)}
-                    </h2>
-                  )}
+                {l?.hide?.productName ? (
+                  ""
+                ) : (
+                  <h2 class="card-name truncate text-base lg:text-lg text-base-content">
+                    {name?.toLocaleLowerCase().charAt(0).toUpperCase()}
+                    {name?.toLocaleLowerCase().slice(1)}
+                  </h2>
+                )}
               </a>
             )}
 
@@ -325,7 +329,9 @@ function ProductCardCustom(
               )}
             </div>
 
-            {l?.hide?.productDescription ? "" : (
+            {l?.hide?.productDescription ? (
+              ""
+            ) : (
               <div
                 class="card-description truncate text-sm lg:text-sm text-neutral"
                 dangerouslySetInnerHTML={{ __html: description ?? "" }}
@@ -333,9 +339,11 @@ function ProductCardCustom(
             )}
           </div>
         )}
-        {l?.hide?.allPrices ? "" : (
+        {l?.hide?.allPrices ? (
+          ""
+        ) : (
           <div
-            //   class="flex flex-col gap-2"
+          //   class="flex flex-col gap-2"
           >
             <div
               class={`flex flex-col gap-0 ${
@@ -353,23 +361,31 @@ function ProductCardCustom(
               </div>
               <div class="card-price text-base-600 text-xl lg:text-xl flex gap-2 items-end">
                 {/* {formatPrice(price, offers?.priceCurrency)} */}
-                {formatPrice(pixPrice, offers?.priceCurrency)} <p class="font-semibold text-lg">a vista</p>
+                {formatPrice(pixPrice, offers?.priceCurrency)}{" "}
+                <p class="font-semibold text-lg">a vista</p>
               </div>
             </div>
-            {l?.hide?.installments 
-              ? ""
-              : (
-                <div class="card-installments !text-[#164195] text-base lg:text-base truncate">
-                  ou em <strong>{installments} de {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem juros no cartão</strong>
-                </div>
-              )}
+            {l?.hide?.installments ? (
+              ""
+            ) : (
+              <div class="card-installments !text-[#164195] text-base lg:text-base truncate">
+                ou em{" "}
+                <strong>
+                  {installments} de{" "}
+                  {formatPrice(pricePerInstallment, offers?.priceCurrency)} sem
+                  juros no cartão
+                </strong>
+              </div>
+            )}
           </div>
         )}
 
         {/* SKU Selector */}
         {l?.elementsPositions?.skuSelector === "Bottom" && (
           <>
-            {l?.hide?.skuSelector ? "" : (
+            {l?.hide?.skuSelector ? (
+              ""
+            ) : (
               <ul
                 class={`flex items-center gap-2 w-full ${
                   align === "center" ? "justify-center" : "justify-start"
@@ -381,17 +397,17 @@ function ProductCardCustom(
           </>
         )}
 
-        {!l?.hide?.cta
-          ? (
-            <div
-              class={`flex-auto flex items-end ${
-                l?.onMouseOver?.showCta ? "lg:hidden" : ""
-              }`}
-            >
-              {cta}
-            </div>
-          )
-          : ""}
+        {!l?.hide?.cta ? (
+          <div
+            class={`flex-auto flex items-end ${
+              l?.onMouseOver?.showCta ? "lg:hidden" : ""
+            }`}
+          >
+            {cta}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

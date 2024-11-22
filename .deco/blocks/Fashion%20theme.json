@@ -54,5 +54,7 @@
     "primary": {
       "primary-content": "#ffffff"
     }
-  }
+  },
+  "colorScheme": "dark",
+  "mode": "dark"
 }
