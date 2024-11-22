@@ -4,6 +4,7 @@ import BaseCart from "../common/Cart.tsx";
 function Cart() {
   const { cart, loading, updateItem, addCoupon } = useCart();
   const items = cart.value.products ?? [];
+  console.log("item",items)
 
   const total = cart.value.total ?? 0;
   const subtotal = cart.value.subtotal ?? 0;

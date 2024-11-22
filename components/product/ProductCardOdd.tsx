@@ -61,9 +61,10 @@ const relative = (url: string) => {
 
 const calculate = (item: number, item2: number) => {
   if ((item - item2) > 0) {
-    const percentValue = Math.round((item - item2) / item * 100);
-    return `${percentValue}% OFF`;
+    // const percentValue = Math.round((item - item2) / item * 100);
+    // return `${percentValue}% OFF`;
   }
+  return "12% OFF"
 };
 
 

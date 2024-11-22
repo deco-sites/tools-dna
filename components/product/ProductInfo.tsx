@@ -50,6 +50,7 @@ function ProductInfo({ page }: Props) {
   }
 
   const { breadcrumbList, product } = page;
+
   const {
     productID,
     offers,
@@ -68,6 +69,7 @@ function ProductInfo({ page }: Props) {
     parcelamentoValue,
     inventory,
   } = useOffer(offers);
+
   const productGroupID = isVariantOf?.productGroupID ?? "";
   const breadcrumb = {
     ...breadcrumbList,
