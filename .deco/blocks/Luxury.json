@@ -3,6 +3,7 @@
     "fontFamily": "'Georgia'"
   },
   "mainColors": {
+
     "primary": "#09090b",
     "base-100": "#09090b",
     "tertiary": "#cddef9",
@@ -20,18 +21,20 @@
   "complementaryColors": {
     "base": {
       "base-200": "#171618",
-      "base-300": "#2e2d2f",
       "base-content": "#dca54c"
-    },
     "base-300": "#dfeaffd4"
   },
   "colorScheme": "any",
+
   "otherStyles": {
     "--rounded-box": "1rem",
     "--rounded-badge": "1.9rem",
     "--animation-input": "0.2s",
     "--tab-border": "1px",
     "--tab-radius": "0.5rem"
+
   },
-  "mode": "dark"
+
+  }
+
 }
