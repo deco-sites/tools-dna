@@ -5,8 +5,8 @@
   "mainColors": {
     "primary": "#000000",
     "base-100": "#09090b",
-    "tertiary": "#513448",
-    "secondary": "#152747",
+    "tertiary": "#cddef9",
+    "secondary": "#a0b7de",
     "neutral": "#ffffff"
   },
   "buttonStyle": {
