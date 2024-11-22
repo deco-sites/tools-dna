@@ -100,8 +100,6 @@ function ProductInfo({ page }: Props) {
     (property) => property.name === "Sinopse"
   );
 
-  console.log(prazoDeEnvio);
-
   const ratingValueCustom = product.aggregateRating?.ratingValue
     ? product.aggregateRating?.ratingValue
     : 0;
@@ -177,7 +175,7 @@ function ProductInfo({ page }: Props) {
                     index={index}
                   >
                     <Image
-                      class="group-disabled:border-[#164195] border-2 border-solid border-[#E9E9E9] rounded-[22px] "
+                      class="group-disabled:border-secondary border-2 border-solid border-[#E9E9E9] rounded-[22px] "
                       width={125}
                       height={108}
                       src={img.url!}
