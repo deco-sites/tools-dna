@@ -19,9 +19,9 @@
               {
                 "alt": "Banner Morsa",
                 "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/5564b8da-8c6a-4aaa-ab36-2816c16aa66d",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2f97d0d4-eba6-4753-8ba2-47a5038293e3",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/b897fb66-4426-495c-bf1f-b520a4cc86f2/Banner01.jpg",
                 "action": {
-                  "href": "https://www.worldtools.com.br/produto/morsa-mecanica-giratoria-abertura-0-a-115mm-mordentes-100mm-qm16-100l-daigo-102703",
+                  "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
                   "label": "Comprar",
                   "subTitle": "Morsa QM Daigo"
                 }
