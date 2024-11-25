@@ -33,7 +33,8 @@
           },
           "categoryId": [],
           "sameParentAs": [],
-          "productVariantId": []
+          "productVariantId": [],
+          "prices": {}
         },
         "operation": "AND",
         "pageOffset": 0,
