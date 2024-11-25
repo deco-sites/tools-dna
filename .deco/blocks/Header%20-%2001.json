@@ -7,15 +7,15 @@
     "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bb49f28f-6070-4d85-b88a-9ce3c7b1a4b2"
   },
   "alerts": [
-    "<b>Promoção</b> por tempo limitado - <b>Frete Grátis</b> para compras acima de R$ 500,00"
+    "<b>APROVEITE</b> Todo o site <b>com desconto de 12% a vista</b> ou em até 12x sem juros no cartão!"
   ],
   "navItems": {
     "__resolveType": "navbar"
   },
   "ctaButton": {
     "buttonLink": "/acessorios-para-maquinas",
-    "buttonText": "EU QUERO",
-    "alertsActive": false
+    "buttonText": "BLACK WORLD",
+    "alertsActive": true
   },
   "searchbar": {
     "name": "busca",
