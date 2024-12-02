@@ -3,9 +3,9 @@
     "fontFamily": "'Georgia'"
   },
   "mainColors": {
-    "primary": "#000000",
-    "base-100": "#09090b",
-    "tertiary": "#cddef9",
+    "primary": "#FFFFFF",
+    "base-100": "#FFFFFF",
+    "tertiary": "#000000",
     "secondary": "#164195"
   },
   "buttonStyle": {
@@ -24,7 +24,6 @@
     },
     "base-300": "#dfeaffd4"
   },
-  "colorScheme": "any",
   "otherStyles": {
     "--rounded-box": "1rem",
     "--rounded-badge": "1.9rem",
@@ -32,5 +31,6 @@
     "--tab-border": "1px",
     "--tab-radius": "0.5rem"
   },
-  "mode": "dark"
+  "mode": "dark",
+  "colorScheme": "any"
 }
