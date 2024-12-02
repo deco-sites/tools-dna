@@ -12,7 +12,40 @@
             "__resolveType": "website/sections/Seo/Seo.tsx"
           },
           {
-            "__resolveType": "Header - 01"
+            "__resolveType": "site/sections/Header/Header.tsx",
+            "cart": {
+              "freeShippingObjectiveQuantity": 600
+            },
+            "logo": {
+              "alt": "World Tools Logo",
+              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bb49f28f-6070-4d85-b88a-9ce3c7b1a4b2"
+            },
+            "alerts": [
+              "<b>APROVEITE</b> Itens Selecionados <b>com desconto de 15% a vista</b> ou em até 10x sem juros no cartão!"
+            ],
+            "navItems": {
+              "__resolveType": "navbar"
+            },
+            "ctaButton": {
+              "buttonLink": "/blackdecember",
+              "buttonText": "BLACK DECEMBER",
+              "alertsActive": true
+            },
+            "searchbar": {
+              "name": "busca",
+              "action": "/s",
+              "loader": {
+                "data": {
+                  "__resolveType": "wake/loaders/suggestion.ts"
+                },
+                "__resolveType": "resolved"
+              },
+              "placeholder": "O que está procurando hoje ?"
+            },
+            "suggestions": {
+              "products": [],
+              "searches": []
+            }
           },
           {
             "images": [
