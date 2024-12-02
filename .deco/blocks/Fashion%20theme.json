@@ -30,9 +30,9 @@
     }
   ],
   "mainColors": {
-    "primary": "#384c53",
+    "primary": "#FFFFFF",
     "base-100": "#FFFFFF",
-    "tertiary": "#5f9a99",
+    "tertiary": "#000000",
     "secondary": "#020202"
   },
   "buttonStyle": {
