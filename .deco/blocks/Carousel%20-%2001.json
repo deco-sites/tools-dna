@@ -1,1 +1,17 @@
-{"images":[{"alt":"/feminino","action":{"href":"https://www.deco.cx/","label":"Label","subTitle":"Subtitle"},"mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/24278f9e-412d-4a8a-b2d3-57353bb1b368","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/c0951669-d6a5-44d4-9428-5a92bfdbe135"},{"alt":"/feminino","action":{"href":"/","label":"labem","subTitle":"sub"},"mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/eeaa624c-a3e1-45e8-a6fe-034233cfbcd0","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/6476128d-a44d-4b87-9314-0b0a9ed0c514"},{"alt":"Banner Morça","mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/205fa69e-a879-4c93-9c14-5995798e120d","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/5a339bf2-67af-4e96-86e3-176aef2ec274"}],"preload":true,"interval":4,"__resolveType":"site/sections/Images/Carousel.tsx"}
+{
+  "images": [
+    {
+      "alt": "/blackdecember",
+      "action": {
+        "label": "Label",
+        "subTitle": "Subtitle",
+        "href": "https://www.worldtools.com.br/blackdecember"
+      },
+      "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/8df8053a-cd8e-4147-8c08-e3bb285bac00/WhatsApp-Image-2024-12-03-at-13.37.33.jpeg",
+      "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/8df8053a-cd8e-4147-8c08-e3bb285bac00/WhatsApp-Image-2024-12-03-at-13.37.33.jpeg"
+    }
+  ],
+  "preload": true,
+  "interval": 4,
+  "__resolveType": "site/sections/Images/Carousel.tsx"
+}
