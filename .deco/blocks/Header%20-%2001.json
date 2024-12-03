@@ -1,1 +1,36 @@
-{"cart":{"freeShippingObjectiveQuantity":600},"logo":{"alt":"World Tools Logo","src":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bb49f28f-6070-4d85-b88a-9ce3c7b1a4b2"},"alerts":["<b>Promoção</b> por tempo limitado - <b>Frete Grátis</b> para compras acima de R$ 500,00"],"navItems":{"__resolveType":"navbar"},"ctaButton":{"buttonLink":"/acessorios-para-maquinas","buttonText":"EU QUERO"},"searchbar":{"name":"busca","action":"/s","loader":{"data":{"__resolveType":"wake/loaders/suggestion.ts"},"__resolveType":"resolved"},"placeholder":"O que está procurando hoje ?"},"suggestions":{"products":[],"searches":[]},"__resolveType":"site/sections/Header/Header.tsx"}
+{
+  "cart": {
+    "freeShippingObjectiveQuantity": 600
+  },
+  "logo": {
+    "alt": "World Tools Logo",
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bb49f28f-6070-4d85-b88a-9ce3c7b1a4b2"
+  },
+  "alerts": [
+    "<b>Promoção</b> por tempo limitado - <b>Frete Grátis</b> para compras acima de R$ 500,00"
+  ],
+  "navItems": {
+    "__resolveType": "navbar"
+  },
+  "ctaButton": {
+    "buttonLink": "/acessorios-para-maquinas",
+    "buttonText": "EU QUERO",
+    "alertsActive": false
+  },
+  "searchbar": {
+    "name": "busca",
+    "action": "/s",
+    "loader": {
+      "data": {
+        "__resolveType": "wake/loaders/suggestion.ts"
+      },
+      "__resolveType": "resolved"
+    },
+    "placeholder": "O que está procurando hoje ?"
+  },
+  "suggestions": {
+    "products": [],
+    "searches": []
+  },
+  "__resolveType": "site/sections/Header/Header.tsx"
+}

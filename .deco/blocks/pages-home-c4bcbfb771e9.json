@@ -156,7 +156,8 @@
                   "dcName": []
                 },
                 "prices": {},
-                "available": true
+                "available": true,
+                "hasImages": false
               }
             }
           },
