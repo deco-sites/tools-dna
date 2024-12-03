@@ -6,7 +6,8 @@
     "primary": "#FFFFFF",
     "base-100": "#FFFFFF",
     "tertiary": "#000000",
-    "secondary": "#164195"
+    "secondary": "#164195",
+    "neutral": "#000000"
   },
   "buttonStyle": {
     "--border-btn": "1px",

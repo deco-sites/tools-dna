@@ -20,6 +20,29 @@
     },
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "layout": {
+        "columns": {
+          "mobile": 1,
+          "desktop": 3
+        },
+        "variant": "aside"
+      },
+      "cardLayout": {
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "image": "Change image",
+          "card": "Move up",
+          "showCta": true,
+          "showFavoriteIcon": true
+        },
+        "elementsPositions": {
+          "skuSelector": "Bottom",
+          "favoriteIcon": "Top right"
+        }
+      },
       "page": {
         "sort": "SALES:DESC",
         "limit": 39,
@@ -48,13 +71,6 @@
         "__resolveType": "wake/loaders/productListingPage.ts",
         "getVariations": false
       },
-      "layout": {
-        "columns": {
-          "mobile": 1,
-          "desktop": 3
-        },
-        "variant": "aside"
-      },
       "sections": [
         {
           "__resolveType": "Logos - 01"
@@ -63,22 +79,6 @@
           "__resolveType": "Category List - 01"
         }
       ],
-      "cardLayout": {
-        "basics": {
-          "oldPriceSize": "Small",
-          "contentAlignment": "Left"
-        },
-        "onMouseOver": {
-          "image": "Change image",
-          "showCta": true,
-          "showFavoriteIcon": true,
-          "card": "Move up"
-        },
-        "elementsPositions": {
-          "skuSelector": "Bottom",
-          "favoriteIcon": "Top right"
-        }
-      },
       "startingPage": 1
     },
     {
