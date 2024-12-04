@@ -29,8 +29,6 @@ export interface Props {
   cardLayout?: CardLayout;
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
-  min: number;
-  max: number;
 }
 
 function NotFound() {
@@ -65,8 +63,6 @@ function NotFound() {
 }
 
 function Result({
-  min,
-  max,
   page,
   layout,
   cardLayout,
@@ -100,7 +96,6 @@ function Result({
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[262px]">
               <Filters filters={filters} />
-   
             </aside>
           )}
           <div class="flex-grow" id={id}>
@@ -129,11 +124,9 @@ function Result({
             <a
               aria-label="next page link"
               rel="next"
-              href={`${
-                pageInfo.currentPage == 1 ? "?page=2" : pageInfo.nextPage
-              }`}
+              href={`${pageInfo.currentPage == 1 ? '?page=2' : pageInfo.nextPage}`}
               class="btn btn-ghost join-item"
-              disabled={products.length < (pageInfo?.recordPerPage ?? 0)}
+              disabled={ products.length < (pageInfo?.recordPerPage ?? 0)}
             >
               <Icon id="ChevronRight" size={24} strokeWidth={2} />
             </a>
@@ -150,7 +143,7 @@ function Result({
             item_list_id: breadcrumb.itemListElement?.at(-1)?.item,
             items: page.products?.map((product, index) =>
               mapProductToAnalyticsItem({
-                ...useOffer(product.offers),
+                ...(useOffer(product.offers)),
                 index: offset + index,
                 product,
                 breadcrumbList: page.breadcrumb,

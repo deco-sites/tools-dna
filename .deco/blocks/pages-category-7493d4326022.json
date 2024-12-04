@@ -73,9 +73,7 @@
         }
       },
       "startingPage": 1,
-      "__resolveType": "site/sections/Product/SearchResult.tsx",
-      "min": 0,
-      "max": 60000
+      "__resolveType": "site/sections/Product/SearchResult.tsx"
     },
     {
       "title": "Preços promocionais, Aproveite!",
