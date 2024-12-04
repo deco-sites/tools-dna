@@ -58,7 +58,7 @@ function CustomShelfSlider({
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item rounded-md w-full sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
+              class="carousel-item rounded-md border border-[#E9E9E9] w-full sm:w-1/4 first:pl-0 sm:first:pl-0 last:pr-0 sm:last:pr-0"
             >
               <ProductCardCustom
                 product={product}
@@ -94,7 +94,7 @@ function CustomShelfSlider({
                 mapProductToAnalyticsItem({
                   index,
                   product,
-                  ...(useOffer(product.offers)),
+                  ...useOffer(product.offers),
                 })
               ),
             },
@@ -102,8 +102,7 @@ function CustomShelfSlider({
         />
       </div>
 
-      {
-        /* <div id={id} class="shelf-custom-items">
+      {/* <div id={id} class="shelf-custom-items">
         {products?.map((product, index) => (
           <ProductCardCustom
             product={product}
@@ -113,8 +112,7 @@ function CustomShelfSlider({
             index={index}
           />
         ))}
-      </div> */
-      }
+      </div> */}
     </div>
   );
 }
