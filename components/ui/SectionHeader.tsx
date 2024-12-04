@@ -40,7 +40,7 @@ function Header(props: Props) {
                 />
               )}
 
-              <p class="text-success text-xl md:text-2xl items-start ">
+              <p class="text-[#000] text-xl md:text-2xl items-start ">
                 {props.title}
               </p>
             </div>
