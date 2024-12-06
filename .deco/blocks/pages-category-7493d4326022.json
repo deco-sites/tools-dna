@@ -76,6 +76,7 @@
       "__resolveType": "site/sections/Product/SearchResult.tsx"
     },
     {
+      "__resolveType": "site/sections/Product/CustomOddGrid.tsx",
       "title": "Preços promocionais, Aproveite!",
       "layout": {
         "headerfontSize": "Normal",
@@ -164,8 +165,7 @@
           ]
         }
       },
-      "description": "Produtos mais aguardados sempre com o melhor preço!",
-      "__resolveType": "site/sections/Product/CustomOddGrid.tsx"
+      "description": "Produtos mais aguardados sempre com o melhor preço!"
     },
     {
       "__resolveType": "Footer - 01"

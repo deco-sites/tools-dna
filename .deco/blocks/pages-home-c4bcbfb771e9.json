@@ -3345,8 +3345,8 @@
             "images": [
               {
                 "alt": "Banner Morsa",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/39b98559-2502-40f9-b99a-605296c96183/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(1200-x-1346-px)-(2).png",
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/b897fb66-4426-495c-bf1f-b520a4cc86f2/Banner01.jpg",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/adf92dcc-6ad2-42c7-8f33-8ce1b0050894/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/e0384020-7c34-4ac1-b888-1c5a7671a799/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px).png",
                 "action": {
                   "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
                   "label": "Comprar",
@@ -3354,8 +3354,8 @@
                 }
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/5b8ed06a-5ebe-437c-8d2d-126dbf6dea65/Banner05.jpg",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/a3126c0b-d5c2-4b03-8b7b-edb359ab1f1d",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/a4b3fc03-0a3a-428d-a7b9-09bd553b022a/Banner-para-site-de-frete-gratis-colorido-roxo-(2).png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/c70fe581-2d84-422d-968d-2e367049b2b2/Banner-para-site-de-frete-gratis-colorido-roxo-(1200-x-1346-px)-(720-x-1200-px).png",
                 "alt": "Produtos Prumer",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/prumer",
