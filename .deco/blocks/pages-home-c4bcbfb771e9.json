@@ -3344,13 +3344,17 @@
           {
             "images": [
               {
-                "alt": "Banner Morsa",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/adf92dcc-6ad2-42c7-8f33-8ce1b0050894/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
+                "mobile": "https://data.decoassets.com/tools-dna/0503aade-4013-4dfd-8b22-c83ad9f71057/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
+                "desktop": "https://data.decoassets.com/tools-dna/239cd222-2233-4dfc-af4f-e23254002fc1/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(4).png"
+              },
+              {
                 "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/e0384020-7c34-4ac1-b888-1c5a7671a799/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px).png",
+                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/adf92dcc-6ad2-42c7-8f33-8ce1b0050894/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
+                "alt": "Banner Morsa",
                 "action": {
                   "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
-                  "label": "Comprar",
-                  "subTitle": "Morsa QM Daigo"
+                  "subTitle": "Morsa QM Daigo",
+                  "label": "Comprar"
                 }
               },
               {
