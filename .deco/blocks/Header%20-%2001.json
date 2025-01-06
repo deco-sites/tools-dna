@@ -7,14 +7,14 @@
     "src": "https://data.decoassets.com/tools-dna/947486ab-61ad-435b-91a1-99fd3aee7607/Logo2025.png"
   },
   "alerts": [
-    "<b>APROVEITE</b> Itens Selecionados <b>com desconto de 15% a vista</b> ou em até 10x sem juros no cartão!"
+    "✨ FELIZ ANO NOVO! ✨ Que 2025 seja repleto de alegria e conquistas para você e sua família!"
   ],
   "navItems": {
     "__resolveType": "navbar"
   },
   "ctaButton": {
-    "buttonLink": "/blackdecember",
-    "buttonText": "BLACK DECEMBER",
+    "buttonLink": "/ofertasimperdiveis",
+    "buttonText": "APROVEITE AS PROMOÇÕES DE JANEIRO",
     "alertsActive": true
   },
   "searchbar": {
