@@ -3344,12 +3344,8 @@
           {
             "images": [
               {
-                "mobile": "https://data.decoassets.com/tools-dna/0503aade-4013-4dfd-8b22-c83ad9f71057/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
-                "desktop": "https://data.decoassets.com/tools-dna/239cd222-2233-4dfc-af4f-e23254002fc1/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(4).png"
-              },
-              {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/e0384020-7c34-4ac1-b888-1c5a7671a799/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px).png",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/adf92dcc-6ad2-42c7-8f33-8ce1b0050894/Banner-para-site-de-loja-de-smartphones-chamativo-preto-e-roxo-(1900-x-720-px)-(720-x-1200-px).png",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/5564b8da-8c6a-4aaa-ab36-2816c16aa66d",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2f97d0d4-eba6-4753-8ba2-47a5038293e3",
                 "alt": "Banner Morsa",
                 "action": {
                   "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
@@ -3358,8 +3354,8 @@
                 }
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/a4b3fc03-0a3a-428d-a7b9-09bd553b022a/Banner-para-site-de-frete-gratis-colorido-roxo-(2).png",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/c70fe581-2d84-422d-968d-2e367049b2b2/Banner-para-site-de-frete-gratis-colorido-roxo-(1200-x-1346-px)-(720-x-1200-px).png",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/9a10efbd-acf2-4eae-96ab-9e15b35a0316",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/a3126c0b-d5c2-4b03-8b7b-edb359ab1f1d",
                 "alt": "Produtos Prumer",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/prumer",
@@ -3368,8 +3364,8 @@
                 }
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/ff98cf6f-bffa-4126-95ff-854dd3d73de9/Banner-para-site-de-frete-gratis-chamativo-azul-e-laranja-(1900-x-720-px)-(2).png",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/6d7f8a22-5b11-4d5f-a3dc-3ae0f04b7b88/Banner-para-site-de-frete-gratis-chamativo-azul-e-laranja-(1900-x-720-px)-(720-x-1200-px).png",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/0b34a2a1-b5d1-4772-ba46-714a5a97900a",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bec5f263-9f71-41d1-ad35-6f54f352c1f0",
                 "alt": "Produtos Sansui",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/mawbra",
@@ -3378,8 +3374,8 @@
                 }
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/94f34b7e-1287-4f2b-9f2c-9e2d1ff0a961/Banner-para-site-de-frete-gratis-neon-amarelo-(3).png",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/588b04b6-6d8d-441a-861a-aee4f268ac3c/Banner-para-site-de-frete-gratis-neon-amarelo-(720-x-1200-px).png",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/18a05e61-4572-46ab-a945-68dac657e8c0",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/bf435417-67e0-491f-bb49-37529219e806",
                 "alt": "Produtos Raikon",
                 "action": {
                   "href": "https://www.worldtools.com.br/s?busca=rosqueadeira+eletrica",
@@ -3388,8 +3384,8 @@
                 }
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/97c8f06a-3b91-45f4-9f02-b9e35e5bae4c/Banner-Loja-Virtual-Moda-e-Vestuario-Moderno-Preto-Vermelho-Branco-(1900-x-720-px)-(3).png",
-                "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/tools-dna/353f35b4-4e41-4904-bb0c-8775c5833530/Banner-Loja-Virtual-Moda-e-Vestuario-Moderno-Preto-Vermelho-Branco-(1900-x-720-px)-(1200-x-1346-px)-(2).png",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/b2cf7925-6859-4fd6-a273-46805c59a578",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/782421c7-58a5-4083-ad99-c14e90a652e2",
                 "alt": "Fresas de Metal Duro",
                 "action": {
                   "href": "https://www.worldtools.com.br/produto/painel-indicador-digital-3-eixos-x-y-e-z-para-maquinas-operatrizes-fabricado-em-abs-sds3ms-sino-105695",
