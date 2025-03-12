@@ -3348,7 +3348,9 @@
                 "desktop": "https://data.decoassets.com/tools-dna/3de7b985-1a4a-4dc5-bb3a-e043b7c02997/Semana-do-Consumidor.png",
                 "alt": "Banner semana do consumidor",
                 "action": {
-                  "href": "www.worldtools.com.br/consumidor"
+                  "href": "www.worldtools.com.br/consumidor",
+                  "subTitle": "Semana do consumidor",
+                  "label": "Semana do consumidor"
                 }
               },
               {
