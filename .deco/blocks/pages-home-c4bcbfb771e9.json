@@ -3344,18 +3344,8 @@
           {
             "images": [
               {
-                "mobile": "https://data.decoassets.com/tools-dna/883526af-08e2-48d7-a865-1e6f09d0456b/Banner-para-nuvem-shop-look-fitness-neon-preto-e-azul-(1905-x-702-px)-(370-x-600-px)-(1).png",
-                "desktop": "https://data.decoassets.com/tools-dna/3de7b985-1a4a-4dc5-bb3a-e043b7c02997/Semana-do-Consumidor.png",
-                "alt": "Banner semana do consumidor",
-                "action": {
-                  "href": "/consumidor",
-                  "subTitle": "Semana do consumidor",
-                  "label": "Semana do consumidor"
-                }
-              },
-              {
-                "desktop": "https://assets.decocache.com/tools-dna/bc0df076-2cba-4f7f-a05d-9112aa56c629/1742494182749-2f97d0d4-eba6-4753-8ba2-47a5038293e3",
-                "mobile": "https://assets.decocache.com/tools-dna/1dac8407-584a-40b4-8991-d1d977dcc1c4/1742494185025-5564b8da-8c6a-4aaa-ab36-2816c16aa66d",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/5564b8da-8c6a-4aaa-ab36-2816c16aa66d",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2f97d0d4-eba6-4753-8ba2-47a5038293e3",
                 "alt": "Banner Morsa",
                 "action": {
                   "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
