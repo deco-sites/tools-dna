@@ -3344,18 +3344,8 @@
           {
             "images": [
               {
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/5564b8da-8c6a-4aaa-ab36-2816c16aa66d",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3444/2f97d0d4-eba6-4753-8ba2-47a5038293e3",
-                "alt": "Banner Morsa",
-                "action": {
-                  "href": "https://www.worldtools.com.br/s?busca=carrinho+rosqueadeira",
-                  "subTitle": "Morsa QM Daigo",
-                  "label": "Comprar"
-                }
-              },
-              {
-                "desktop": "https://assets.decocache.com/tools-dna/0814618a-bd6e-45db-9c8c-f112d9700888/1742494188314-9a10efbd-acf2-4eae-96ab-9e15b35a0316",
                 "mobile": "https://assets.decocache.com/tools-dna/329ab7a1-3825-42f9-b708-8ad5372117ec/1742494191977-a3126c0b-d5c2-4b03-8b7b-edb359ab1f1d",
+                "desktop": "https://assets.decocache.com/tools-dna/0814618a-bd6e-45db-9c8c-f112d9700888/1742494188314-9a10efbd-acf2-4eae-96ab-9e15b35a0316",
                 "alt": "Produtos Prumer",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/prumer",
@@ -3406,6 +3396,7 @@
               "headerfontSize": "Normal",
               "headerAlignment": "center"
             },
+            "__resolveType": "site/sections/Product/CustomOddGrid.tsx",
             "cardLayout": {
               "hide": {
                 "cta": true,
@@ -3451,7 +3442,6 @@
                 ]
               }
             },
-            "__resolveType": "site/sections/Product/CustomOddGrid.tsx",
             "products": {
               "__resolveType": "wake/loaders/productList.ts",
               "first": 6,
@@ -3486,24 +3476,6 @@
                 "available": true,
                 "hasImages": false
               }
-            }
-          },
-          {
-            "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
-            "layout": {
-              "content": {
-                "border": false,
-                "bgColor": "Normal",
-                "alignment": "Side to side"
-              },
-              "headerFontSize": "Large"
-            },
-            "title": "Fique por dentro das melhores ofertas!",
-            "description": "Cadastre o seu e-mail e aproveite o que há de melhor na <strong>World Tools</strong>",
-            "form": {
-              "helpText": "<p><br data-mce-bogus=\"1\"></p>",
-              "buttonText": "Cadastrar",
-              "placeholder": "Digite seu e-mail aqui"
             }
           },
           {
@@ -3604,6 +3576,25 @@
                   }
                 ]
               }
+            }
+          },
+          {
+            "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+            "layout": {
+              "content": {
+                "border": false,
+                "bgColor": "Normal",
+                "alignment": "Side to side"
+              },
+              "headerFontSize": "Large",
+              "tiled": false
+            },
+            "title": "Fique por dentro das melhores ofertas!",
+            "description": "Cadastre o seu e-mail e aproveite o que há de melhor na <strong>World Tools</strong>",
+            "form": {
+              "helpText": "<p><br data-mce-bogus=\"1\"></p>",
+              "buttonText": "Cadastrar",
+              "placeholder": "Digite seu e-mail aqui"
             }
           },
           {
