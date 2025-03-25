@@ -3344,43 +3344,40 @@
           {
             "images": [
               {
-                "mobile": "https://assets.decocache.com/tools-dna/329ab7a1-3825-42f9-b708-8ad5372117ec/1742494191977-a3126c0b-d5c2-4b03-8b7b-edb359ab1f1d",
-                "desktop": "https://assets.decocache.com/tools-dna/0814618a-bd6e-45db-9c8c-f112d9700888/1742494188314-9a10efbd-acf2-4eae-96ab-9e15b35a0316",
-                "alt": "Produtos Prumer",
+                "desktop": "https://assets.decocache.com/tools-dna/738e11f6-2783-4494-80ba-45506ffd6a7a/BANNER-PRINCIPAL.png",
+                "alt": "Banner Principal - World Tools",
+                "mobile": "https://assets.decocache.com/tools-dna/738e11f6-2783-4494-80ba-45506ffd6a7a/BANNER-PRINCIPAL.png"
+              },
+              {
+                "desktop": "https://assets.decocache.com/tools-dna/2c7fc5b8-6219-4fd9-b3f6-be63b6cf9fea/BANNER-MAWBRA.png",
+                "alt": "Banner Mawbra",
+                "mobile": "https://assets.decocache.com/tools-dna/2c7fc5b8-6219-4fd9-b3f6-be63b6cf9fea/BANNER-MAWBRA.png",
                 "action": {
-                  "href": "https://www.worldtools.com.br/fabricante/prumer",
-                  "subTitle": "Produtos Prumer",
-                  "label": "Ver categoria"
+                  "href": "https://www.worldtools.com.br/fabricante/mawbra"
                 }
               },
               {
-                "desktop": "https://assets.decocache.com/tools-dna/64345bf6-ddb0-4b12-8215-b807f4684667/1742494196255-0b34a2a1-b5d1-4772-ba46-714a5a97900a",
-                "mobile": "https://assets.decocache.com/tools-dna/0bcaa8c3-fc8b-4b23-bc6b-87a7c21abaf9/1742494197938-bec5f263-9f71-41d1-ad35-6f54f352c1f0",
-                "alt": "Produtos Sansui",
+                "desktop": "https://assets.decocache.com/tools-dna/457b2b95-c585-47f0-972e-628f83f0fcb5/BANNER-SANSUI.png",
+                "alt": "Banner Sansui",
+                "mobile": "https://assets.decocache.com/tools-dna/457b2b95-c585-47f0-972e-628f83f0fcb5/BANNER-SANSUI.png",
                 "action": {
-                  "href": "https://www.worldtools.com.br/fabricante/mawbra",
-                  "subTitle": "Produtos Sansui",
-                  "label": "Comprar"
+                  "href": "https://www.worldtools.com.br/fabricante/sansui"
                 }
               },
               {
-                "desktop": "https://assets.decocache.com/tools-dna/350d44fd-b5ff-42af-aad9-39ad3cd4932a/1742494199612-18a05e61-4572-46ab-a945-68dac657e8c0",
-                "mobile": "https://assets.decocache.com/tools-dna/d90a775c-6b3d-442c-a0f2-393bd5d8467d/1742494201708-bf435417-67e0-491f-bb49-37529219e806",
-                "alt": "Produtos Raikon",
+                "desktop": "https://assets.decocache.com/tools-dna/f5fedf46-5bf4-487d-9d23-64c7010c40a7/BANNER-RAIKON.png",
+                "alt": "Banner Raikon",
+                "mobile": "https://assets.decocache.com/tools-dna/f5fedf46-5bf4-487d-9d23-64c7010c40a7/BANNER-RAIKON.png",
                 "action": {
-                  "href": "https://www.worldtools.com.br/s?busca=rosqueadeira+eletrica",
-                  "subTitle": "Produtos Raikon",
-                  "label": "Ver categoria"
+                  "href": "https://www.worldtools.com.br/fabricante/raikon"
                 }
               },
               {
-                "desktop": "https://assets.decocache.com/tools-dna/d5177748-60d1-401a-857a-d76480da8fbc/1742494203717-b2cf7925-6859-4fd6-a273-46805c59a578",
-                "mobile": "https://assets.decocache.com/tools-dna/9cb4333d-35dd-49da-9e9c-6a09f2fe1681/1742494206531-782421c7-58a5-4083-ad99-c14e90a652e2",
-                "alt": "Fresas de Metal Duro",
+                "desktop": "https://assets.decocache.com/tools-dna/e29ec2d7-17f7-4767-9505-9277c749eae8/BANNER-PRUMER.png",
+                "alt": "Banner Prumer",
+                "mobile": "https://assets.decocache.com/tools-dna/e29ec2d7-17f7-4767-9505-9277c749eae8/BANNER-PRUMER.png",
                 "action": {
-                  "href": "https://www.worldtools.com.br/produto/painel-indicador-digital-3-eixos-x-y-e-z-para-maquinas-operatrizes-fabricado-em-abs-sds3ms-sino-105695",
-                  "subTitle": "Fresas em Metal Duro",
-                  "label": "Ver categoria"
+                  "href": "https://www.worldtools.com.br/fabricante/prumer"
                 }
               }
             ],
