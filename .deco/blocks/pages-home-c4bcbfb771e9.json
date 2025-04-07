@@ -3344,6 +3344,16 @@
           {
             "images": [
               {
+                "desktop": "https://assets.decocache.com/tools-dna/cb9ac5db-66d9-4dfb-94a3-ac29955cf49c/Banner-para-loja-online-de-smartwatch-(1906-x-702-px)-(5).png",
+                "alt": "Expomafe 2025",
+                "mobile": "https://assets.decocache.com/tools-dna/d52fab70-2f8a-41a3-a5de-751c7da96734/Venha-nos-visitar-na.png",
+                "action": {
+                  "href": "https://www.expomafe.com.br/pt/credenciamento_pt.html",
+                  "subTitle": "Expomafe",
+                  "label": "Venha nos visitar"
+                }
+              },
+              {
                 "desktop": "https://assets.decocache.com/tools-dna/563a5f3c-30e1-4a3f-8f4e-eb51ab0048a1/Precisao-e-desempenho-para-sua-usinagem-(4).png",
                 "alt": "Banner Principal - World Tools",
                 "mobile": "https://assets.decocache.com/tools-dna/15097eb4-7970-4475-ae05-dee7d6cd4178/BANNER-PRINCIPAL-MOBILE.png"
@@ -3374,8 +3384,8 @@
               },
               {
                 "desktop": "https://assets.decocache.com/tools-dna/e29ec2d7-17f7-4767-9505-9277c749eae8/BANNER-PRUMER.png",
-                "alt": "Banner Prumer",
                 "mobile": "https://assets.decocache.com/tools-dna/d14cc380-f220-480b-8202-1d8ed68958bc/BANNER-PRUMER-MOBILE.png",
+                "alt": "Banner Prumer",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/prumer"
                 }
