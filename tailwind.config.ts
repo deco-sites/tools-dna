@@ -10,6 +10,10 @@ export default {
           neutral: "#ffffff", // Branco
           "base-100": "#ffffff", // Fundo branco
         },
+        extend: {
+          screens: {
+            totem: '2535px', // Breakpoint para a largura do totem
+          },
       },
     ],
     logs: false,

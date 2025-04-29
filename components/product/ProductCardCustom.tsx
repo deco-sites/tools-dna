@@ -127,7 +127,7 @@ function ProductCardCustom(
   return (
     <div
       id={id}
-      class={`card card-compact group w-full bg-neutral p-2 ${
+      class={`card card-compact group w-full bg-neutral base-100 p-2 ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
