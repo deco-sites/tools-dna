@@ -1,0 +1,181 @@
+{
+  "name": "Category - Ofertas Imperdíveis",
+  "path": "/blackdecember",
+  "sections": [
+    {
+      "jsonLD": {
+        "operation": "AND",
+        "__resolveType": "wake/loaders/productListingPage.ts"
+      },
+      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Carousel - 01"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "layout": {
+        "columns": {
+          "mobile": 1,
+          "desktop": 3
+        },
+        "variant": "aside"
+      },
+      "cardLayout": {
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "image": "Change image",
+          "card": "Move up",
+          "showCta": true,
+          "showFavoriteIcon": true
+        },
+        "elementsPositions": {
+          "skuSelector": "Bottom",
+          "favoriteIcon": "Top right"
+        }
+      },
+      "page": {
+        "sort": "SALES:DESC",
+        "limit": 39,
+        "filters": {
+          "ean": [],
+          "sku": [],
+          "stocks": {
+            "dcId": [],
+            "dcName": []
+          },
+          "brandId": [],
+          "productId": [],
+          "attributes": {
+            "id": [],
+            "name": [],
+            "type": [],
+            "value": []
+          },
+          "categoryId": [],
+          "sameParentAs": [],
+          "productVariantId": [],
+          "prices": {}
+        },
+        "operation": "AND",
+        "pageOffset": 0,
+        "__resolveType": "wake/loaders/productListingPage.ts",
+        "getVariations": false
+      },
+      "sections": [
+        {
+          "__resolveType": "Logos - 01"
+        },
+        {
+          "__resolveType": "Category List - 01"
+        }
+      ],
+      "startingPage": 1
+    },
+    {
+      "__resolveType": "site/sections/Product/CustomOddGrid.tsx",
+      "title": "Preços promocionais, Aproveite!",
+      "layout": {
+        "headerfontSize": "Normal",
+        "headerAlignment": "center"
+      },
+      "imageUrl": "https://assets.decocache.com/tools-dna/bcce190f-c36d-4b16-b0b7-b99abf758852/1742494171112-aec5469c-7dbf-4505-a4b5-e21b20b2c29f",
+      "products": {
+        "first": 6,
+        "filters": {
+          "ean": [],
+          "sku": [
+            "003541",
+            "003731",
+            "000001",
+            "004591",
+            "009929",
+            "010579"
+          ],
+          "prices": {},
+          "stocks": {
+            "dcId": [],
+            "dcName": []
+          },
+          "brandId": [
+            1262,
+            1259,
+            1253,
+            1273,
+            1271,
+            1274,
+            1240
+          ],
+          "available": true,
+          "productId": [],
+          "attributes": {
+            "id": [],
+            "name": [],
+            "type": [],
+            "value": []
+          },
+          "categoryId": [],
+          "sameParentAs": [],
+          "productVariantId": []
+        },
+        "sortKey": "NAME",
+        "__resolveType": "wake/loaders/productList.ts",
+        "sortDirection": "ASC"
+      },
+      "cardLayout": {
+        "hide": {
+          "cta": true,
+          "allPrices": false,
+          "skuSelector": true,
+          "installments": false,
+          "productDescription": true
+        },
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "card": "Move up",
+          "image": "Change image"
+        },
+        "elementsPositions": {
+          "skuSelector": "Top",
+          "favoriteIcon": "Top right"
+        },
+        "customProductImages": {
+          "items": [
+            {
+              "image": [],
+              "video": [],
+              "url": "https://assets.decocache.com/tools-dna/4c6f0e18-6d8b-4580-a200-25d82612f62f/1742494172556-3ceb8d53-1109-4871-b638-db60aa2c59b5"
+            },
+            {
+              "image": [],
+              "video": [],
+              "url": "https://assets.decocache.com/tools-dna/33d80d37-8532-4434-8f3f-71a4a0930eef/1742494173855-450fab68-2ff4-4c98-b9c5-42419edac4a7"
+            },
+            {
+              "image": [],
+              "video": [],
+              "url": "https://assets.decocache.com/tools-dna/17463b92-5cc4-4940-bb0a-d66f09bc936c/1742494175174-2c6141d6-4597-4484-8bf8-881621bc3987"
+            }
+          ]
+        }
+      },
+      "description": "Produtos mais aguardados sempre com o melhor preço!"
+    },
+    {
+      "__resolveType": "Footer - 01"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

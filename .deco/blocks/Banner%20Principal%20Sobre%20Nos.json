@@ -1,0 +1,12 @@
+{
+  "badge": "Sobre nós",
+  "image": {
+    "alt": "Imagem da loja",
+    "src": "https://assets.decocache.com/tools-dna/231663bb-e680-4159-81fe-7bcbc76b7b74/1742494179019-d96e1ebe-d273-4079-aeb2-d3e624de2e14",
+    "width": 1400,
+    "height": 1050
+  },
+  "title": "World tools, soluções completas em ferramentas e equipamentos para usinagem",
+  "description": "<p>A&nbsp;World Tools&nbsp;chegou ao mercado brasileiro com a proposta de tornar-se uma das principais opções na compra de acessórios, instrumentos de medição, máquinas e ferramentas para usinagem. </p><p>Com larga experiência no ramo metalmecânico, os idealizadores da World Tools buscaram não apenas criar \"mais\" uma empresa, mas sim uma empresa marcante, que possa oferecer aquilo que o cliente procura de forma rápida e eficiente, com marcas conceituadas, produtos diferenciados e é claro, um preço incontestavelmente acessível e justo.</p>",
+  "__resolveType": "site/sections/Content/InstitucionalBanner.tsx"
+}

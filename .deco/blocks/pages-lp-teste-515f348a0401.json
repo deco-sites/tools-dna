@@ -1,0 +1,45 @@
+{
+  "name": "LP-Teste",
+  "path": "/lp-teste",
+  "sections": [
+    {
+      "cart": {
+        "freeShippingObjectiveQuantity": 600
+      },
+      "logo": {
+        "alt": "World Tools Logo",
+        "src": "https://assets.decocache.com/tools-dna/8742aaaf-bf1e-4f12-ade5-66040bb046de/1742494309270-ee295c9c-ee96-4500-aabb-cc599919ccfa"
+      },
+      "alerts": [
+        "<b>Promoção</b> por tempo ilimitado - <b>Frete Grátis</b> para compras acima de R$ 1500,00"
+      ],
+      "navItems": {
+        "__resolveType": "navbar"
+      },
+      "searchbar": {
+        "name": "busca",
+        "action": "/busca",
+        "loader": {
+          "data": {
+            "products": [],
+            "searches": []
+          },
+          "__resolveType": "resolved"
+        },
+        "placeholder": "O que deseja busca?"
+      },
+      "suggestions": {
+        "products": [],
+        "searches": []
+      },
+      "__resolveType": "site/sections/Header/Header.tsx"
+    },
+    {
+      "__resolveType": "Image Gallery - 02"
+    },
+    {
+      "__resolveType": "Footer - 01"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

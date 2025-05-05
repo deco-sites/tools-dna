@@ -1,0 +1,33 @@
+{
+  "title": "Title",
+  "layout": {
+    "headerfontSize": "Normal",
+    "headerAlignment": "center"
+  },
+  "imageUrl": "https://assets.decocache.com/tools-dna/21f8c8bc-2859-486d-9017-9905994b2ad2/1742494326965-dcbae981-f177-4f18-a0d7-34a6ce5075d9",
+  "products": {
+    "slug": {
+      "param": "slug",
+      "__resolveType": "website/functions/requestToParam.ts"
+    },
+    "quantity": 8,
+    "algorithm": "DEFAULT",
+    "__resolveType": "wake/loaders/recommendations.ts"
+  },
+  "cardLayout": {
+    "basics": {
+      "oldPriceSize": "Small",
+      "contentAlignment": "Left"
+    },
+    "onMouseOver": {
+      "card": "None",
+      "image": "Change image"
+    },
+    "elementsPositions": {
+      "skuSelector": "Top",
+      "favoriteIcon": "Top right"
+    }
+  },
+  "description": "Descrição",
+  "__resolveType": "site/sections/Product/CustomShelfSlider.tsx"
+}

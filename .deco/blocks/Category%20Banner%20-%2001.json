@@ -1,0 +1,14 @@
+{
+  "banners": [
+    {
+      "image": {
+        "mobile": "https://assets.decocache.com/tools-dna/9ffb4b72-e442-4b68-a962-ddd89ac0eec5/1742494322427-91102b71-4832-486a-b683-5f7b06f649af",
+        "desktop": "https://assets.decocache.com/tools-dna/f82f2e85-8932-41e1-a65a-8f8e1d7ef482/1742494323559-ec597b6a-dcf1-48ca-a99d-95b3c6304f96"
+      },
+      "title": "Woman",
+      "matcher": "/feminino/*",
+      "subtitle": "As"
+    }
+  ],
+  "__resolveType": "site/sections/Category/CategoryBanner.tsx"
+}

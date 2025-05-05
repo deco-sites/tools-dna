@@ -1,0 +1,26 @@
+{
+  "title": "Vitrine",
+  "layout": { "headerfontSize": "Normal", "headerAlignment": "center" },
+  "products": {
+    "first": 3,
+    "filters": {
+      "ean": [],
+      "sku": [],
+      "prices": {},
+      "stocks": { "dcId": [], "dcName": [] },
+      "brandId": [],
+      "productId": [],
+      "attributes": { "id": [], "name": [], "type": [], "value": [] },
+      "categoryId": [],
+      "sameParentAs": [],
+      "productVariantId": []
+    },
+    "sortKey": "DISCOUNT",
+    "__resolveType": "wake/loaders/productList.ts",
+    "sortDirection": "ASC"
+  },
+  "cardLayout": { "__resolveType": "Product Card Layout - 01" },
+  "description": "A melhor seleção para você",
+  "slideActive": false,
+  "__resolveType": "site/sections/Product/ProductShelf.tsx"
+}

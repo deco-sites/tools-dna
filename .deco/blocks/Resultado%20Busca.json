@@ -1,0 +1,17 @@
+{
+  "page": {
+    "sort": "SALES:DESC",
+    "limit": 48,
+    "operation": "AND",
+    "pageOffset": 1,
+    "__resolveType": "wake/loaders/productListingPage.ts"
+  },
+  "layout": { "columns": { "mobile": 1, "desktop": 2 }, "variant": "aside" },
+  "cardLayout": {
+    "basics": { "oldPriceSize": "Small", "contentAlignment": "Left" },
+    "onMouseOver": { "card": "None", "image": "Change image" },
+    "elementsPositions": { "skuSelector": "Top", "favoriteIcon": "Top right" }
+  },
+  "startingPage": 1,
+  "__resolveType": "site/sections/Product/SearchResult.tsx"
+}

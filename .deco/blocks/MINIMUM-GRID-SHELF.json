@@ -1,0 +1,64 @@
+{
+  "title": "Novidades",
+  "layout": {
+    "headerfontSize": "Normal",
+    "headerAlignment": "center"
+  },
+  "imageUrl": "https://assets.decocache.com/tools-dna/95c186cb-05e7-4199-8f60-de704857ee15/1742494256096-9a4893a1-ade3-4e76-8f6a-3a282d5a5bf4",
+  "products": {
+    "first": 12,
+    "filters": {
+      "ean": [],
+      "sku": [],
+      "prices": {},
+      "stocks": {
+        "dcId": [],
+        "dcName": []
+      },
+      "brandId": [
+        1262,
+        1259,
+        1253,
+        1273,
+        1271,
+        1274,
+        1240
+      ],
+      "available": true,
+      "hasImages": true,
+      "productId": [],
+      "attributes": {
+        "id": [],
+        "name": [],
+        "type": [],
+        "value": []
+      },
+      "categoryId": [],
+      "sameParentAs": [],
+      "productVariantId": []
+    },
+    "sortKey": "RELEASE_DATE",
+    "__resolveType": "wake/loaders/productList.ts",
+    "sortDirection": "ASC"
+  },
+  "cardLayout": {
+    "hide": {
+      "cta": true
+    },
+    "basics": {
+      "oldPriceSize": "Small",
+      "contentAlignment": "Left"
+    },
+    "onMouseOver": {
+      "card": "Move up",
+      "image": "Change image",
+      "showCta": true
+    },
+    "elementsPositions": {
+      "skuSelector": "Top",
+      "favoriteIcon": "Top right"
+    }
+  },
+  "description": "Sempre inovando e trazendo as melhores tecnologias do mundo para o Brasil!",
+  "__resolveType": "site/sections/Product/CustomShelfGrid.tsx"
+}

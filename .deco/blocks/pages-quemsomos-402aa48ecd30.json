@@ -1,0 +1,15 @@
+{
+  "name": "Quem Somos",
+  "path": "/quemsomos",
+  "sections": [
+    { "__resolveType": "Header - 01" },
+    { "__resolveType": "Banner Principal Sobre Nos" },
+    { "__resolveType": "Cards Institucionais" },
+    {
+      "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.5157439761388!2d-48.84782954858951!3d-26.277375673254227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deae22347cb7ff%3A0xdde4e8531f11a0fb!2sWorld%20Tools%20Com%C3%A9rcio%20de%20Ferramentas%20LTDA!5e0!3m2!1spt-BR!2sbr!4v1647866243312!5m2!1spt-BR!2sbr",
+      "__resolveType": "site/sections/Content/InstitucionalIframce.tsx"
+    },
+    { "__resolveType": "Footer - 01" }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}
