@@ -1,3 +1,4 @@
+import React from "https://esm.sh/react@17.0.2";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
 // import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
@@ -12,6 +13,8 @@ import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import Image from "apps/website/components/Image.tsx";
+// import GoogleRatingBadge from "$store/components/footer/GoogleRatingBadge.tsx";
+
 
 export type Item = {
   label: string;
@@ -336,37 +339,57 @@ function Footer({
               {_logo}
               {_payments}
               <div class="flex flex-col gap-4">
-                <h3 class="text-lg">Selos de Segurança</h3>
-                <ul class="flex items-center gap-4 flex-wrap">
-                  {tags && tags.map((item) => {
-                    return (
-                      <li title="selo">
-                        {(item as Image) && (
-                          <a href={(item as Image).href}>
-                            {(item as Image) && (
-                              <Image
-                                style="max-width: 228px"
-                                src={(item as Image).src}
-                                alt="Selos de Segurança"
-                                width={228}
-                                height={100}
-                                loading={"lazy"}
-                              />
-                            )}
-                            {!(item as Image) && (
-                              <div
-                                dangerouslySetInnerHTML={{
-                                  __html: (item as Script).script,
-                                }}
-                              />
-                            )}
-                          </a>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+  <h3 class="text-lg">Selos de Segurança</h3>
+  <div class="flex items-center gap-4">
+    {/* Avaliações do Consumidor - Google Meu Negócio */}
+    {/* <GoogleRatingBadge /> */}
+    <script
+  src="https://apis.google.com/js/platform.js?onload=renderBadge"
+  async
+  defer
+></script>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.renderBadge = function() {
+        console.log("Iniciando renderização do selo...");
+        var ratingBadgeContainer = document.createElement("div");
+        document.body.appendChild(ratingBadgeContainer);
+        if (window.gapi) {
+          console.log("Objeto gapi disponível:", window.gapi);
+          window.gapi.load('ratingbadge', function() {
+            console.log("Carregando módulo ratingbadge...");
+            window.gapi.ratingbadge.render(
+              ratingBadgeContainer, {
+                "merchant_id": "100653993",
+                "position": "INLINE"
+              }
+            );
+            console.log("Selo renderizado com sucesso.");
+          });
+        } else {
+          console.error("Objeto gapi não está disponível.");
+        }
+      };
+    `,
+  }}
+></script>
+    
+    {/* Google Safe Browsing */}
+    <a
+      href="https://transparencyreport.google.com/safe-browsing/search?url=www.worldtools.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://imagedelivery.net/KxWh-mxPGDbsqJB3c5_fmA/58f1b522-250f-4ecd-1086-aa2f972be700/public"
+        alt="Google Safe Browsing"
+        style={{ maxWidth: "228px" }}
+        loading="lazy"
+      />
+    </a>
+  </div>
+</div>
               {_sectionLinks}
               {_newsletter}
             </div>

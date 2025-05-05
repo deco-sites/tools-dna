@@ -11,6 +11,7 @@
   mark {
     @apply bg-accent text-accent-content;
   }
+  
 
   /** Remove default styles from input[type=number] */
   input[type="number"]::-webkit-inner-spin-button,
@@ -237,3 +238,15 @@ div.range-slider > input[type="range"]::-ms-tooltip {
 .range-slider-tooltip-text {
   opacity: 0;
 }
+
+/* #rating-badge-container iframe {
+  position: initial !important;
+  top: auto !important;
+  left: auto !important;
+  border: 0 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  box-shadow: none !important;
+} */

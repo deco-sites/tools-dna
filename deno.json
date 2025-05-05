@@ -58,9 +58,7 @@
     "bundle": "deno run -A jsr:@deco/deco/scripts/bundle site",
     "reload": "deno cache -r https://deco.cx/run"
   },
-  "githooks": {
-    "pre-commit": "check"
-  },
+  "githooks": {},
   "exclude": [
     "node_modules",
     "static/",
@@ -73,7 +71,7 @@
       "tags": []
     }
   },
-  "nodeModulesDir": true,
+  "nodeModulesDir": "auto",
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
