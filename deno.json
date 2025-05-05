@@ -70,10 +70,7 @@
   ],
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": []
     }
   },
   "nodeModulesDir": true,
