@@ -1,5 +1,14 @@
+/** @jsx h */
 import { h } from "preact";
 import { useEffect } from "preact/hooks";
+
+// Extending the Window interface to include the gapi property
+declare global {
+  interface Window {
+    gapi?: any;
+    renderBadge?: () => void;
+  }
+}
 
 const GoogleRatingBadge = () => {
   useEffect(() => {

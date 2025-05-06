@@ -56,7 +56,8 @@
     "dev": "deno run -A --env --unstable-kv --unstable-hmr dev.ts",
     "update": "deno run -Ar https://deco.cx/update",
     "bundle": "deno run -A jsr:@deco/deco/scripts/bundle site",
-    "reload": "deno cache -r https://deco.cx/run"
+    "reload": "deno cache -r https://deco.cx/run",
+    "deploy": "deno run -A https://nova-url-do-deploy"
   },
   "githooks": {},
   "exclude": [
@@ -71,7 +72,7 @@
       "tags": []
     }
   },
-  "nodeModulesDir": "auto",
+  "nodeModulesDir": true,
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
