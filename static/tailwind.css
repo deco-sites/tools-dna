@@ -6220,7 +6220,7 @@ div.range-slider > input[type="range"]::-ms-tooltip {
   opacity: 0;
 }
 
-/* #rating-badge-container iframe {
+#rating-badge-container iframe {
   position: initial !important;
   top: auto !important;
   left: auto !important;
@@ -6230,7 +6230,7 @@ div.range-slider > input[type="range"]::-ms-tooltip {
   width: auto !important;
   height: auto !important;
   box-shadow: none !important;
-} */
+}
 
 .disabled\:loading:disabled {
   pointer-events: none;
@@ -7720,4 +7720,4 @@ div.range-slider > input[type="range"]::-ms-tooltip {
   .group:hover .lg\:group-hover\:opacity-100 {
     opacity: 1;
   }
-}
+} 

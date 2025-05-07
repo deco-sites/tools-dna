@@ -1,50 +1,49 @@
-/** @jsx h */
 import { h } from "preact";
-import { useEffect } from "preact/hooks";
-
-// Extending the Window interface to include the gapi property
-declare global {
-  interface Window {
-    gapi?: any;
-    renderBadge?: () => void;
-  }
-}
 
 const GoogleRatingBadge = () => {
-  useEffect(() => {
-    // Adiciona o script do Google dinamicamente
-    const script = document.createElement("script");
-    script.src = "https://apis.google.com/js/platform.js?onload=renderBadge";
-    script.async = true;
-    script.defer = true;
-
-    // Define a função renderBadge no escopo global
-    window.renderBadge = function () {
-      console.log("Iniciando renderização do selo...");
-      const ratingBadgeContainer = document.createElement("div");
-      document.body.appendChild(ratingBadgeContainer);
-      if (window.gapi) {
-        console.log("Objeto gapi disponível:", window.gapi);
-        window.gapi.load("ratingbadge", function () {
-          console.log("Carregando módulo ratingbadge...");
-          window.gapi.ratingbadge.render(ratingBadgeContainer, {
-            merchant_id: "100653993",
-            position: "INLINE",
-          });
-          console.log("Selo renderizado com sucesso.");
-        });
-      } else {
-        console.error("Objeto gapi não está disponível.");
-      }
-    };
-
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <div>
       {/* Container onde o selo será renderizado */}
       <div id="rating-badge-container"></div>
+
+      {/* Script para carregar o Google API */}
+      <script
+        src="https://apis.google.com/js/platform.js?onload=renderBadge"
+        async
+        defer
+      ></script>
+
+      {/* Script para definir a função renderBadge */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.renderBadge = function() {
+              console.log("Iniciando renderização do selo...");
+              var ratingBadgeContainer = document.getElementById("rating-badge-container");
+              if (ratingBadgeContainer && window.gapi) {
+                console.log("Objeto gapi disponível:", window.gapi);
+                window.gapi.load('ratingbadge', function() {
+                  try {
+                    console.log("Carregando módulo ratingbadge...");
+                    window.gapi.ratingbadge.render(
+                      ratingBadgeContainer, {
+                        "merchant_id": "100653993",
+                        "position": "INLINE",
+                        "origin": window.location.origin
+                      }
+                    );
+                    console.log("Selo renderizado com sucesso.");
+                  } catch (e) {
+                    console.error("Erro ao renderizar o selo:", e);
+                  }
+                });
+              } else {
+                console.error("Objeto gapi não está disponível ou o container não foi encontrado.");
+              }
+            };
+          `,
+        }}
+      ></script>
     </div>
   );
 };

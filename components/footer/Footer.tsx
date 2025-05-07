@@ -13,7 +13,7 @@ import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import Image from "apps/website/components/Image.tsx";
-// import GoogleRatingBadge from "$store/components/footer/GoogleRatingBadge.tsx";
+import GoogleRatingBadge from "$store/components/footer/GoogleRatingBadge.tsx";
 
 
 export type Item = {
@@ -342,38 +342,7 @@ function Footer({
   <h3 class="text-lg">Selos de Segurança</h3>
   <div class="flex items-center gap-4">
     {/* Avaliações do Consumidor - Google Meu Negócio */}
-    {/* <GoogleRatingBadge /> */}
-    <script
-  src="https://apis.google.com/js/platform.js?onload=renderBadge"
-  async
-  defer
-></script>
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
-      window.renderBadge = function() {
-        console.log("Iniciando renderização do selo...");
-        var ratingBadgeContainer = document.createElement("div");
-        document.body.appendChild(ratingBadgeContainer);
-        if (window.gapi) {
-          console.log("Objeto gapi disponível:", window.gapi);
-          window.gapi.load('ratingbadge', function() {
-            console.log("Carregando módulo ratingbadge...");
-            window.gapi.ratingbadge.render(
-              ratingBadgeContainer, {
-                "merchant_id": "100653993",
-                "position": "INLINE"
-              }
-            );
-            console.log("Selo renderizado com sucesso.");
-          });
-        } else {
-          console.error("Objeto gapi não está disponível.");
-        }
-      };
-    `,
-  }}
-></script>
+    <GoogleRatingBadge />
     
     {/* Google Safe Browsing */}
     <a
