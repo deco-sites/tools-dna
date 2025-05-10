@@ -56,67 +56,62 @@ function ProductInfo({ page }: Props) {
   // Declaração única de breadcrumbList e product
   const { breadcrumbList, product } = page;
 
-  // Log para verificar os dados da página e do produto
-  //console.log("Dados da página:", page);
-  //console.log("Produto:", product);
-
   if (!product) {
     console.error("Produto não encontrado");
     return null;
   }
+
+  console.log(product);
 
   const {
     productID,
     offers,
     name = "",
     isVariantOf,
-    hasVariant,
     additionalProperty = [],
-    isSimilarTo,
   } = product;
 
   const selections = product.additionalProperty?.filter(
+    (property) => property.valueReference === "SELECTIONS"
+  );
+  /* const selections = product.additionalProperty?.filter(
     (property) =>
       property.valueReference === "SPECIFICATION" || // Captura propriedades de especificação
       property.name?.toLowerCase().includes("opções") // Captura propriedades com "opções" no nome
-  );
+  ); */
   
-  
-  
-  // Filtrar e simplificar as variações
-const simplifiedVariants = isVariantOf?.hasVariant?.map((variant) => ({
-  url: variant.url,
-  sku: variant.sku,
-  productID: variant.productID,
-  name: variant.name,
+  const BASE_URL = "http://localhost:8000/";
 
-})) || [];
 
-console.log("Variações simplificadas:", simplifiedVariants);
-  // Log para o DataLayer do produto
-  console.log("DataLayer do Produto:", {
-    "ID do Produto": productID,
-    "Nome do Produto": name,
-    "Tem Variação": selections && selections.length > 0,
-    "Preço": offers?.price,
-    listPrice: offers?.listPrice,
-    "Avaliações": offers?.availability,
-    "Brand": product.brand?.name,
-    "Categorias": breadcrumbList?.itemListElement.map((item) => item.name).join(" > "),
-    "Variações": selections?.map((selection) => {
-    const variant = isVariantOf?.hasVariant?.find((variant) =>
-      variant.additionalProperty?.some(
-        (prop) => prop.name === selection.name && prop.value === selection.value
-      )
-    );
+console.log("DataLayer do Produto:", {
+  "ID do Produto": productID,
+  "Nome do Produto": name,
+  "Tem Variação": selections && selections.length > 0,
+  "Preço": offers?.price,
+  listPrice: offers?.listPrice,
+  "Avaliações": offers?.availability,
+  "Brand": product.brand?.name,
+  "Categorias": breadcrumbList?.itemListElement.map((item) => item.name).join(" > "),
+  "Variações": product.additionalProperty
+    ?.filter((property) => 
+      property.valueReference === "SELECTIONS" && property.value === "true" // Filtrar apenas os com value "true"
+    )
+    .map((property) => {
+      // Construir a URL completa para a variação
+      let completeUrl = property.url || "#"; // Fallback padrão
 
-    return {
-      name: selection.name,
-      value: selection.value,
-      url: variant?.url || "#",
-    };
-  }),
+      if (property.url && !property.url.startsWith("http")) {
+        completeUrl = `${BASE_URL}${property.url}`; // Adicionar domínio base
+      }
+
+      return {
+        name: property.name,
+        value: property.value,
+        url: completeUrl,
+      };
+    }),
 });
+
 
   const _description = product.description || isVariantOf?.description;
   const {
@@ -153,6 +148,7 @@ console.log("Variações simplificadas:", simplifiedVariants);
   const tabelaDeMedidas = product.additionalProperty?.find(
     (property) => property.name === "Tabela de Medidas",
   );
+  
 
   const prazoDeEnvio = product.additionalProperty?.filter(
     (property) => property.name === "Sinopse",
@@ -310,29 +306,35 @@ console.log("Variações simplificadas:", simplifiedVariants);
             <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">
   <h3 class="text-[#727272] text-base mb-4 mt-2">Opções de Escolha</h3>
   <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] custom-scrollbar">
-  {simplifiedVariants && simplifiedVariants.length > 0 ? (
-    simplifiedVariants.map((variant, index) => {
-      // Ajustar a URL da variação com base no SKU
-      const variationUrl = variant.url?.replace(/skuId=\d+/, `skuId=${variant.sku}`) || "#";
-
-      return (
-        <li key={index} class="mb-2 max-w-full md:max-w-[280px]">
-          <a
-            href={variationUrl}
-            class={`
-              p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195]
-              opacity-100
-            `}
-          >
-            {variant.name || "Opção Indisponível"}
-          </a>
-        </li>
-      );
-    })
-  ) : (
-    <li class="text-[#727272] text-sm">Nenhuma variação disponível para este produto.</li>
-  )}
-</ul>
+                {selections &&
+                  selections.map((selection, index) => (
+                    <li
+                      class={`${selection.value == "true" ? "-order-1" : ""}`}
+                      key={index}
+                    >
+                      <a
+                        href={selection.url}
+                        class={`
+                      mb-2 max-w-full md:max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
+                      ${
+                        selection.value == "false"
+                          ? "opacity-50"
+                          : "opacity-100"
+                      }`}
+                      >
+                        {selection.name}
+                        {selection.value == "true" && (
+                          <Icon
+                            style={{ color: "#164195" }}
+                            size={16}
+                            id="CheckSelection"
+                            strokeWidth={3}
+                          />
+                        )}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
 </div>
           </div>
           {/* Sku Selector */}
