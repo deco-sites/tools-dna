@@ -53,8 +53,14 @@ interface Props {
 }
 
 const relative = (url: string) => {
-  const link = new URL(url);
-  return `${link.pathname}${link.search}`;
+  try {
+    // Remove manualmente o parâmetro `?skuId=` e tudo que vem depois
+    const cleanedUrl = url.split("?skuId=")[0];
+    return cleanedUrl; // Retorna a URL limpa
+  } catch (error) {
+    console.error("Erro ao processar a URL:", url, error);
+    return url; // Retorna a URL original em caso de erro
+  }
 };
 
 export const calculate = (item: number, item2: number) => {
@@ -105,7 +111,7 @@ function ProductCardCustom(
       : "center";
   const skuSelector = variants.map(([value, link]) => (
     <li>
-      <a href={link}>
+      <a href={url && url.split("?skuId=")[0]}>
         <Avatar
           variant={link === url ? "active" : link ? "default" : "disabled"}
           content={value}
@@ -115,11 +121,11 @@ function ProductCardCustom(
   ));
   const cta = (
     <a
-      href={url && relative(url)}
+      href={url && url.split("?skuId=")[0]}
       aria-label="view product"
       class="btn btn-block"
     >
-      {l?.basics?.ctaText || "Ver produto"}
+      {l?.basics?.ctaText || "Ver produto aqui"}
     </a>
   );
 
@@ -202,7 +208,7 @@ function ProductCardCustom(
       >
         {/* Product Images */}
         <a
-          href={url && relative(url)}
+          href={url && url.split("?skuId=")[0]}
           aria-label="view product"
           class="grid grid-cols-1 grid-rows-1 w-full card-image-link"
         >
@@ -302,7 +308,7 @@ function ProductCardCustom(
                   ""
                 )
                 : (
-                  <a href={url && relative(url)}>
+                  <a href={url && url.split("?skuId=")[0]}>
                     {l?.hide?.productName
                       ? (
                         ""
