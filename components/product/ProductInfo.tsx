@@ -23,6 +23,7 @@ import Breadcrumb from "site/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import Image from "apps/website/components/Image.tsx";
 import ImageZoom from "site/islands/ImageZoom.tsx";
+import { useEffect, useState } from "preact/hooks";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -41,9 +42,16 @@ function range(start: number, end: number) {
 }
 
 function ProductInfo({ page }: Props) {
+  const BASE_URL = typeof window !== "undefined" ? window.location.origin : ""; // Pega a URL do navegador
+
   const platform = usePlatform();
   const id = useId();
   const _openReview = useSignal(false);
+
+  if (!page || !page.product) {
+    console.error("Dados do produto não estão disponíveis.");
+    return <div>Carregando informações do produto...</div>;
+  }
 
   // Log inicial para verificar se o componente está carregando
   console.log("Componente ProductInfo carregado");
@@ -71,16 +79,42 @@ function ProductInfo({ page }: Props) {
     additionalProperty = [],
   } = product;
 
-  const selections = product.additionalProperty?.filter(
+  const selections =
+  product.additionalProperty?.filter(
     (property) => property.valueReference === "SELECTIONS"
-  );
+  ) ||
+  product.isVariantOf?.hasVariant
+    ?.flatMap((variant) =>
+      variant.additionalProperty?.filter(
+        (property) => property.valueReference === "SELECTIONS"
+      )
+    ) ||
+  product.isSimilarTo?.map((similar) => {
+    const nameProperty = similar.additionalProperty?.find(
+      (property) => property.valueReference === "SPECIFICATION"
+    );
+    const url = similar.isVariantOf?.url || similar.url;
+
+    return {
+      name: nameProperty?.value || "Opção Indisponível",
+      value: "true", // Assumimos que todas as opções do `isSimilarTo` são válidas
+      url,
+    };
+  }) ||
+  [];
+
+
   /* const selections = product.additionalProperty?.filter(
     (property) =>
       property.valueReference === "SPECIFICATION" || // Captura propriedades de especificação
       property.name?.toLowerCase().includes("opções") // Captura propriedades com "opções" no nome
   ); */
   
-  const BASE_URL = "http://localhost:8000/";
+
+// Construir a URL completa para as seleções
+const buildUrl = (url) =>
+  url?.startsWith("http") ? url : `${BASE_URL}${url || "#"}`;
+  
 
 
 console.log("DataLayer do Produto:", {
@@ -92,26 +126,38 @@ console.log("DataLayer do Produto:", {
   "Avaliações": offers?.availability,
   "Brand": product.brand?.name,
   "Categorias": breadcrumbList?.itemListElement.map((item) => item.name).join(" > "),
-  "Variações": product.additionalProperty
-    ?.filter((property) => 
-      property.valueReference === "SELECTIONS" && property.value === "true" // Filtrar apenas os com value "true"
-    )
-    .map((property) => {
-      // Construir a URL completa para a variação
-      let completeUrl = property.url || "#"; // Fallback padrão
-
-      if (property.url && !property.url.startsWith("http")) {
-        completeUrl = `${BASE_URL}${property.url}`; // Adicionar domínio base
-      }
+  "Variações": (
+    product.additionalProperty?.filter(
+      (property) => property.valueReference === "SELECTIONS" && property.value === "true"
+    ) ||
+    product.isSimilarTo?.map((similar) => {
+      const nameProperty = similar.additionalProperty?.find(
+        (property) => property.valueReference === "SPECIFICATION"
+      );
+      const url = similar.isVariantOf?.url || similar.url;
 
       return {
-        name: property.name,
-        value: property.value,
-        url: completeUrl,
+        name: nameProperty?.value || "Opção Indisponível",
+        value: "true", // Assumimos que todas as opções do `isSimilarTo` são válidas
+        url: url?.startsWith("http") ? url : `${BASE_URL}${url || "#"}`,
       };
-    }),
-});
+    }) ||
+    []
+  ).map((property) => {
+    // Construir a URL completa para a variação
+    let completeUrl = property.url || "#"; // Fallback padrão
 
+    if (property.url && !property.url.startsWith("http")) {
+      completeUrl = `${BASE_URL}${property.url}`; // Adicionar domínio base
+    }
+
+    return {
+      name: property.name,
+      value: property.value,
+      url: completeUrl,
+    };
+  }),
+});
 
   const _description = product.description || isVariantOf?.description;
   const {
@@ -306,35 +352,35 @@ console.log("DataLayer do Produto:", {
             <div class="selections mt-2.5 border-t-[#E9E9E9] border-t border-solid">
   <h3 class="text-[#727272] text-base mb-4 mt-2">Opções de Escolha</h3>
   <ul class="overflow-y-auto overflow-hidden flex flex-col max-h-[200px] custom-scrollbar">
-                {selections &&
-                  selections.map((selection, index) => (
-                    <li
-                      class={`${selection.value == "true" ? "-order-1" : ""}`}
-                      key={index}
-                    >
-                      <a
-                        href={selection.url}
-                        class={`
-                      mb-2 max-w-full md:max-w-[280px] p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195] 
-                      ${
-                        selection.value == "false"
-                          ? "opacity-50"
-                          : "opacity-100"
-                      }`}
-                      >
-                        {selection.name}
-                        {selection.value == "true" && (
-                          <Icon
-                            style={{ color: "#164195" }}
-                            size={16}
-                            id="CheckSelection"
-                            strokeWidth={3}
-                          />
-                        )}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
+    {selections.length > 0 ? (
+      selections.map((selection, index) => (
+        <li
+          key={index}
+          class={`${selection.value === "true" ? "-order-1" : ""} mb-2 max-w-full md:max-w-[280px]`}
+        >
+          <a
+            href={buildUrl(selection.url)}
+            class={`
+              p-3 justify-evenly text-xs flex items-center border rounded-[10px] border-solid border-[#164195]
+              ${selection.value === "false" ? "opacity-50" : "opacity-100"}
+            `}
+          >
+            {selection.name || "Opção Indisponível"}
+            {selection.value === "true" && (
+              <Icon
+                style={{ color: "#164195" }}
+                size={16}
+                id="CheckSelection"
+                strokeWidth={3}
+              />
+            )}
+          </a>
+        </li>
+      ))
+    ) : (
+      <li class="text-[#727272] text-sm">Nenhuma variação disponível para este produto.</li>
+    )}
+  </ul>
 </div>
           </div>
           {/* Sku Selector */}
