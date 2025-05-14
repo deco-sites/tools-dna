@@ -54,10 +54,24 @@ interface Props {
   platform?: Platform;
 }
 
-const relative = (url: string) => {
+/* const relative = (url: string) => {
   const link = new URL(url);
   return `${link.pathname}${link.search}`;
-};
+}; */
+// Função utilitária para remover o parâmetro skuId e tudo depois dele
+function removeSkuIdAndAfter(url?: string) {
+  if (!url) return "";
+  const idx = url.indexOf("?skuId=");
+  if (idx !== -1) {
+    return url.substring(0, idx);
+  }
+  // Caso venha como &skuId= no meio da querystring
+  const idx2 = url.indexOf("&skuId=");
+  if (idx2 !== -1) {
+    return url.substring(0, idx2);
+  }
+  return url;
+}
 
 const calculate = (item: number, item2: number) => {
   if ((item - item2) > 0) {
@@ -95,7 +109,7 @@ function ProductCardOdd(
       : "center";
   const skuSelector = variants.map(([value, link]) => (
     <li>
-      <a href={link}>
+      <a href={removeSkuIdAndAfter(url)}>
         <Avatar
           variant={link === url ? "active" : link ? "default" : "disabled"}
           content={value}
@@ -105,7 +119,7 @@ function ProductCardOdd(
   ));
   const cta = (
     <a
-      href={url && relative(url)}
+      href={removeSkuIdAndAfter(url)}
       aria-label="view product"
       class="btn btn-block"
     >
@@ -200,7 +214,7 @@ function ProductCardOdd(
 
           {l?.hide?.productName && l?.hide?.productDescription ? "" : (
             <div>
-              <a href={url && relative(url)}>
+              <a href={removeSkuIdAndAfter(url)}>
                 {l?.hide?.productName ? "" : (
                   <h2
                     class={`${
