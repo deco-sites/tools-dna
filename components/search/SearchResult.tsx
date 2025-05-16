@@ -130,7 +130,7 @@ function Result(
               </a>
             )}
             <span class="btn btn-ghost join-item">
-              Página {zeroIndexedOffsetPage + 1}
+              Página {zeroIndexedOffsetPage + 1} de {pageInfo.totalPages ?? 1}
             </span>
             {isNextDisabled ? (
               <button
