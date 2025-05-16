@@ -120,11 +120,12 @@ function Result(
             <a
               aria-label="next page link"
               rel="next"
-              href={`${
-                pageInfo.currentPage == 1 ? "?page=2" : pageInfo.nextPage
-              }`}
+              href={pageInfo.nextPage ?? "#"}
               class="btn btn-ghost join-item"
-              disabled={products.length < (pageInfo?.recordPerPage ?? 0)}
+              disabled={
+                !pageInfo.nextPage ||
+                products.length < (pageInfo?.recordPerPage ?? 0)
+              }
             >
               <Icon id="ChevronRight" size={24} strokeWidth={2} />
             </a>
