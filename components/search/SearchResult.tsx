@@ -10,6 +10,7 @@ import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import { type Section } from "@deco/deco/blocks";
+
 export interface Layout {
   /**
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
@@ -71,6 +72,9 @@ function Result(
   const id = useId();
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
+  const isNextDisabled = !pageInfo.nextPage || products.length < (pageInfo?.recordPerPage ?? 0);
+  const isPrevDisabled = pageInfo.currentPage === 1;
+
   return (
     <>
       <div class="container">
@@ -83,9 +87,10 @@ function Result(
         />
       </div>
 
-      {sections?.map(({ Component, props }, index) => (
-        <Component key={index} {...props} />
-      ))}
+      {sections?.map((section, index) => {
+        const { Component, props } = section;
+        return <Component key={index} {...props} />;
+      })}
 
       <div class="container px-4 sm:py-10">
         <div class="flex flex-row gap-8">
@@ -105,30 +110,47 @@ function Result(
 
         <div class="flex justify-center my-4">
           <div class="join">
-            <a
-              aria-label="previous page link"
-              rel="prev"
-              href={pageInfo.previousPage ?? "#"}
-              class={`btn btn-ghost join-item `}
-              disabled={pageInfo.currentPage === 1}
-            >
-              <Icon id="ChevronLeft" size={24} strokeWidth={2} />
-            </a>
+            {isPrevDisabled ? (
+              <button
+                aria-label="previous page link"
+                class="btn btn-ghost join-item"
+                disabled
+                type="button"
+              >
+                <Icon id="ChevronLeft" size={24} strokeWidth={2} />
+              </button>
+            ) : (
+              <a
+                aria-label="previous page link"
+                rel="prev"
+                href={pageInfo.previousPage ?? "#"}
+                class="btn btn-ghost join-item"
+              >
+                <Icon id="ChevronLeft" size={24} strokeWidth={2} />
+              </a>
+            )}
             <span class="btn btn-ghost join-item">
               Página {zeroIndexedOffsetPage + 1}
             </span>
-            <a
-              aria-label="next page link"
-              rel="next"
-              href={pageInfo.nextPage ?? "#"}
-              class="btn btn-ghost join-item"
-              disabled={
-                !pageInfo.nextPage ||
-                products.length < (pageInfo?.recordPerPage ?? 0)
-              }
-            >
-              <Icon id="ChevronRight" size={24} strokeWidth={2} />
-            </a>
+            {isNextDisabled ? (
+              <button
+                aria-label="next page link"
+                class="btn btn-ghost join-item"
+                disabled
+                type="button"
+              >
+                <Icon id="ChevronRight" size={24} strokeWidth={2} />
+              </button>
+            ) : (
+              <a
+                aria-label="next page link"
+                rel="next"
+                href={pageInfo.nextPage}
+                class="btn btn-ghost join-item"
+              >
+                <Icon id="ChevronRight" size={24} strokeWidth={2} />
+              </a>
+            )}
           </div>
         </div>
       </div>
