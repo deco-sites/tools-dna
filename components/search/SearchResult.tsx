@@ -75,6 +75,11 @@ function Result(
   const isNextDisabled = !pageInfo.nextPage || products.length < (pageInfo?.recordPerPage ?? 0);
   const isPrevDisabled = pageInfo.currentPage === 1;
 
+  // Cálculo robusto do total de páginas
+  const totalPages = pageInfo.totalPages
+    ?? Math.ceil((pageInfo.records ?? 0) / (pageInfo.recordPerPage ?? 1))
+    ?? 1;
+
   return (
     <>
       <div class="container">
@@ -130,7 +135,7 @@ function Result(
               </a>
             )}
             <span class="btn btn-ghost join-item">
-              Página {zeroIndexedOffsetPage + 1} de {pageInfo.totalPages ?? 1}
+              Página {zeroIndexedOffsetPage + 1} de {totalPages}
             </span>
             {isNextDisabled ? (
               <button
