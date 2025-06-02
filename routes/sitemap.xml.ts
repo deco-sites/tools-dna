@@ -2462,6 +2462,7 @@ export const handler = {
   <lastmod>2025-05-27T19:25:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+
 <url>
   <loc>https://www.worldtools.com.br/produto/suporte-interno-de-rosca-o-13mm-snr-0013-m16-para-inserto-16ir-dry-cut-103155</loc>
   <lastmod>2025-05-27T19:25:31+00:00</lastmod>
