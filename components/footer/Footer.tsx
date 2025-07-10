@@ -364,7 +364,7 @@ function Footer({
             </div>
 
             <Divider />
-            <div class="flex flex-col copyright">
+            <div class="flex flex-col copyright break-words">
               © 2010 - 2023 - WORLD TOOLS COMERCIO DE FERRAMENTAS LTDA - CNPJ:
               13.064.755/0001-00. Todos os Direitos Reservados.
               <br></br>
