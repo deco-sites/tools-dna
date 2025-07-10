@@ -43,7 +43,9 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
   }
   const { title, subtitle, image } = banner;
   return (
-    <div class="grid grid-cols-1 grid-rows-1">
+    <div class="grid grid-cols-1 grid-rows-1 group relative">
+      {/* Hover overlay for darkening effect */}
+      <div class="absolute h-full w-full top-0 left-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 z-5 col-start-1 col-span-1 row-start-1 row-span-1"></div>
       <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
         <Source
           src={image.mobile}

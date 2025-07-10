@@ -145,8 +145,10 @@ export default function BannnerGrid(props: Props) {
             href={href}
             class={`overflow-hidden ${
               RADIUS_MOBILE[borderRadius.mobile ?? "none"]
-            } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
+            } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} relative group`}
           >
+            {/* Hover overlay for darkening effect */}
+            <div class="absolute h-full w-full top-0 left-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 z-5"></div>
             <Picture>
               <Source
                 media="(max-width: 767px)"

@@ -105,8 +105,10 @@ function BannerItem(
       id={id}
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class="relative overflow-y-hidden w-full"
+      class="relative overflow-y-hidden w-full group"
     >
+      {/* Hover overlay for darkening effect */}
+      <div class="absolute h-full w-full top-0 left-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 z-5"></div>
       <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"

@@ -138,8 +138,10 @@ function Banner(
   return (
     <a
       href={props.href}
-      class={`overflow-hidden ${radiusDesktop} ${radiusMobile}`}
+      class={`overflow-hidden ${radiusDesktop} ${radiusMobile} relative group`}
     >
+      {/* Hover overlay for darkening effect */}
+      <div class="absolute h-full w-full top-0 left-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 z-5"></div>
       <Picture>
         <Source
           width={190}

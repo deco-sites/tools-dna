@@ -50,7 +50,9 @@ export default function ShoppableBanner(props: Props) {
   return (
     <div class="container">
       <div class="card lg:card-side rounded grid grid-cols-1 lg:grid-cols-[70%_30%]">
-        <figure class="relative">
+        <figure class="relative group">
+          {/* Hover overlay for darkening effect */}
+          <div class="absolute h-full w-full top-0 left-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 z-5"></div>
           <Picture>
             <Source
               media="(max-width: 767px)"
