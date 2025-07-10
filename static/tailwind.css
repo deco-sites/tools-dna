@@ -5997,6 +5997,9 @@ details.collapse summary::-webkit-details-marker {
 .duration-200 {
   transition-duration: 200ms;
 }
+.duration-300 {
+  transition-duration: 300ms;
+}
 .duration-500 {
   transition-duration: 500ms;
 }
@@ -6583,6 +6586,10 @@ div.range-slider > input[type="range"]::-ms-tooltip {
 
 .group:hover .group-hover\:opacity-0 {
   opacity: 0;
+}
+
+.group:hover .group-hover\:opacity-30 {
+  opacity: 0.3;
 }
 
 .group:hover .group-hover\:brightness-90 {
