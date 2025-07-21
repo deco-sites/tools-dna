@@ -3344,16 +3344,6 @@
           {
             "images": [
               {
-                "desktop": "https://assets.decocache.com/tools-dna/44e3fa28-e5bf-492d-9afc-4f638b1c350f/banner_intermach_world-tool-(6).png",
-                "alt": "Venha nos visitar na Intermach",
-                "mobile": "https://assets.decocache.com/tools-dna/907809fe-f598-4e62-9822-e8e7debb56a1/banner_intermach_world-tool-(6)_mobile.jpeg",
-                "action": {
-                  "href": " https://intermach.com.br/",
-                  "subTitle": "Feira Intermach",
-                  "label": "Feira Intermach"
-                }
-              },
-              {
                 "desktop": "https://assets.decocache.com/tools-dna/563a5f3c-30e1-4a3f-8f4e-eb51ab0048a1/Precisao-e-desempenho-para-sua-usinagem-(4).png",
                 "alt": "Banner Principal - World Tools",
                 "mobile": "https://assets.decocache.com/tools-dna/15097eb4-7970-4475-ae05-dee7d6cd4178/BANNER-PRINCIPAL-MOBILE.png"
@@ -3384,11 +3374,11 @@
               },
               {
                 "desktop": "https://assets.decocache.com/tools-dna/e29ec2d7-17f7-4767-9505-9277c749eae8/BANNER-PRUMER.png",
+                "alt": "Banner Prumer",
+                "mobile": "https://assets.decocache.com/tools-dna/d14cc380-f220-480b-8202-1d8ed68958bc/BANNER-PRUMER-MOBILE.png",
                 "action": {
                   "href": "https://www.worldtools.com.br/fabricante/prumer"
-                },
-                "alt": "Banner Prumer",
-                "mobile": "https://assets.decocache.com/tools-dna/d14cc380-f220-480b-8202-1d8ed68958bc/BANNER-PRUMER-MOBILE.png"
+                }
               }
             ],
             "preload": true,
