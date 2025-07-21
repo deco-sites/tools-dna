@@ -124,7 +124,7 @@ function Searchbar(
             <ul id="search-suggestion" class="flex flex-col gap-1">
               {searches.slice(0, 4).map(({ term }) => (
                 <li>
-                  <a href={`/s?busca=${term}`} class="flex gap-4 items-center">
+                  <a href={`${action}?${name}=${encodeURIComponent(term)}`} class="flex gap-4 items-center">
                     <span dangerouslySetInnerHTML={{ __html: term }} />
                   </a>
                 </li>
