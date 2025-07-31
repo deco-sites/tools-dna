@@ -66,6 +66,16 @@ const _calculate = (item: number, item2: number) => {
 const WIDTH = 314;
 const HEIGHT = 272;
 
+function removeSkuId(url: string) {
+  try {
+    const urlObj = new URL(url, window.location.origin);
+    urlObj.searchParams.delete("skuId");
+    return `${urlObj.pathname}${urlObj.search}`;
+  } catch {
+    return url;
+  }
+}
+
 function ProductCardSuggestion(
   { product, preload, itemListName, layout, index }: Props,
 ) {
@@ -91,7 +101,7 @@ function ProductCardSuggestion(
       : "center";
   const _skuSelector = variants.map(([value, link]) => (
     <li>
-      <a href={link}>
+        <a href={link && removeSkuId(relative(link))}>
         <Avatar
           variant={link === url ? "active" : link ? "default" : "disabled"}
           content={value}
@@ -130,7 +140,7 @@ function ProductCardSuggestion(
       >
         {/* Product Images */}
         <a
-          href={url && relative(url)}
+          href={url && removeSkuId(relative(url))}
           aria-label="view product"
           class="grid grid-cols-1 grid-rows-1 w-full card-image-link"
         >
@@ -155,7 +165,7 @@ function ProductCardSuggestion(
       <div>
         {l?.hide?.productName && l?.hide?.productDescription ? "" : (
           <div>
-            <a href={url && relative(url)}>
+            <a href={url && removeSkuId(relative(url))}>
               {l?.hide?.productName ? "" : (
                 <h2
                   class="card-name truncate text-base lg:text-lg text-base-content"
